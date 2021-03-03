@@ -1,0 +1,229 @@
+@import url('http://fonts.cdnfonts.com/css/gemina-2-3d');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    
+}
+
+h1{
+    font-family: 'Gemina 2', sans-serif;
+    font-size : 35px;
+    color: white;
+}
+
+h2{
+    color:#3a738f;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+h3{
+    font-size:30px;
+    color:#3a738f; 
+}
+
+h4{
+    font-size: 24px;
+    color: #3a738f;
+}
+
+p{
+    line-height:20px;
+    color: dimgray;
+}
+
+.wrapper{
+    margin:0 auto;
+    padding: 0 10px;
+}
+
+.clear{
+    clear: both;
+}
+
+header{
+    height: 50px;
+    background-color: #3a738f;
+}
+
+header h1{
+    float: left;
+    margin-top: 4px;
+}
+
+header nav{
+    float: right;
+    margin-top: 10px;
+}
+
+
+header nav ul li{
+    display: inline-block;
+
+}
+
+header nav ul li a{
+    text-transform: uppercase;
+    color: white;
+    margin-right: 35px;
+}
+
+header nav li a:hover{
+    border-bottom: 1px solid #97a5aa;
+    color:#97a5aa;
+    transition: all 0.3s ease 0s;
+
+}
+
+
+/*bannière*/
+
+#main-image{
+    display: flex;
+    height: 850px;
+    background:url("Site_complet\images\accueil\vue.png") no-repeat center center fixed;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#main-image h2{
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 100px 0 40px 0;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.button-1{
+    width: 120px;
+    height:50px;
+    display: block;
+    background: #3a738f;
+    color: white;
+    margin: 0 auto;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.button-1:hover{
+    background: #5EA2C4;
+}
+
+/* PRESENTATION */
+
+#presentation p{
+    
+    margin-top: 40px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#presentation h2{
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+/* STEPS */
+
+#steps h2{
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+#steps ul{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#steps ul li{
+    width: 300px;
+    padding-top: 60px;
+    text-align: center;
+    margin-right: 10px;
+    display: inline-block;
+    
+}
+
+#steps h4{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#steps p{
+    margin-bottom: 20px;
+}
+
+#step-1{
+    background: url("images\baseline_face_black_18dp.png") no-repeat top center;
+}
+ 
+#step-2{
+    background: url("images\baseline_face_black_18dp.png") no-repeat top center;
+}
+
+#step-3{
+    background: url("images\baseline_face_black_18dp.png") no-repeat top center;
+}
+
+
+/* POSSIBILITIES */
+#possibilities{
+    margin-top: 80px;
+    padding-left: 400px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #d4d8d9;
+}
+
+
+.button-2{
+    width: 120px;
+    height:40px;
+    display: block;
+    background: #3a738f;
+    color: white;
+    margin-top: 20px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.button-2:hover{
+    background: #5EA2C4;
+}
+
+#possibilities p{
+    margin-top: 20px;
+}
+
+/* CONTACT */
+
+#contact{
+    padding:80px 0;
+    text-align: center;
+}
+
