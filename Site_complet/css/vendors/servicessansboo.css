@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none; 
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+  
+}
+   
+
+
+body{
+    width:100%;
+    margin: 0;
+    
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+}
+
+/*a regarder en ddétail*/
+.col-md-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-xl-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* bande de navigation avec logo*/
+.bande{
+    background-color: #3A738f;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.image{
+    height: 16%;
+    width: 16%;
+    margin-top: 2.5px;
+}
+
+header nav .nav-list{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+#pageactuelle{
+    text-shadow: #FC0 1px 0 2px;
+}
+  
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+
+ul{
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+}
+  
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.navigation{
+    width: 60%;
+    padding-right: 7%;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.list a{
+    margin-top: 100px;
+    color: white;
+}
+
+.list{
+    margin-top: 12px;
+}
+
+/*bande du bas µ*/
+.coordonnees{
+    text-align: center;
+    color: white;
+}
+
+.bandebas{
+    background-color: #5EA2C4;
+    margin-bottom: 0%;
+    display: block;
+    height: 170px;
+}
+
+.mail{
+    text-align: center;
+    color: white;
+}
+
+/*milieu*/
+/*image avion*/
+h1 {
+    font-size: 2.5rem;
+    
+}
+.intro{
+    height: 180px;
+    background-image: url("../../images/service/rafale2.jpg");
+    background-size: cover;
+	background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5%;
+}
+
+/*citation*/
+.citation{
+    background-color: #D4D8D9;
+    height: 100px;
+    color: #565757;
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*services*/
+.nosservices{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 60%;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nosservices h4 {
+    color: #565757;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 5%;
+}
+
+.nosservices h6{
+    color: #3A738F;
+     font-size: 1rem;
+}
+
+.nosservices p{
+    color: #565757;
+}
+
+.services{
+    display: flex;
+    margin-top: 7%;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap; 
+}
+
+.sonlumiere{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    justify-content: space-between;
+    width: 65%;
+}
+
+/*image avec un v */
+.verifier{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.service:hover > .verifier{
+    animation: animation 1s;
+    
+}
+
+.service{
+    text-align: center;
+}
+
+@keyframes animation{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+
+
+
