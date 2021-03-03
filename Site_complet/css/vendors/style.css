@@ -75,13 +75,7 @@ header nav .nav-list {
 	margin-bottom: 0;
 }
 
-<<<<<<< HEAD
 header nav .nav-list .list a {
-=======
-
-
-header nav .nav-list .list a{
->>>>>>> origin/Jad
 	display: block;
 	padding: 15px 0;
 	margin: 9px 0;
@@ -237,7 +231,6 @@ header nav .nav-list .list a:hover {
 	margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
 form {
 	/* Just to center the form on the page */
 	margin: 0 auto;
@@ -313,52 +306,3 @@ button {
 	margin: auto;
 	display: inline-block;
 }
-=======
-.imageForm{
-	margin-top: 100px;
-	margin: center;
-}
-
-.form{
-	background-color: #fff;
-	width: 500px;
-	height: 500px;
-	border: #000;
-	border-radius: 01em;
-	margin-left: 60%;
-	
-}
-.textArea{
-	margin-top: 15px;
-}
-
-
-
-
-
-
-.buttons{
-	margin-top: 30px;
-}
-
-
-
-.row{
-	margin: 0px;
-	background-color: rgb(169, 169, 169);
-	 
-}
-
-
-
-
-.bienvenue{
-	float: left;
-	width: 60%;
-	text-align: center;
-}
-
-			
-
-			
->>>>>>> origin/Jad
