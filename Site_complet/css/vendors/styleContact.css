@@ -1,0 +1,57 @@
+
+.bandehaut {
+    background-color: #5EA2C4;
+    margin-bottom: 0%;
+    color : white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.bandehaut img {
+    position: relative;
+    right: 0;
+    object-fit: fill;
+    
+}
+
+.titrePage {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.sousTitre{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+input[type = text]{
+    border: 1px dotted #999;
+    border-radius: 0;
+    
+}
+
+
+.bandebas {
+    background-color: #5EA2C4;
+    margin-bottom: 0%;
+    color: white;
+    position:relative;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 400px;
+    
+}
+
+.bandebas img {
+    position: absolute;
+    object-fit: fill;
+    left : 0;
+}
+.coordonnees {
+    margin: 20px;
+}
+
+.info {
+    font-size: 20px;
+
+}
