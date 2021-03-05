@@ -1,0 +1,17 @@
+#logoSensAir {
+	width: 60%;
+	max-width: 80px;
+	height: auto;
+}
+
+.container {
+	background-color: blue;
+	width: 100%;
+}
+.mainPage {
+	height: 100vh;
+	background-image: url("../images/home/plane.png");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
