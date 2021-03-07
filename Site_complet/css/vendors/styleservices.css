@@ -71,7 +71,7 @@ header nav .nav-list{
     display: flex;
     flex-direction: column;
     height: 70%;
-    width: 65%;
+    width: 70%;
     align-items: center;
     justify-content: space-around;
     margin-left: auto;
@@ -97,6 +97,8 @@ header nav .nav-list{
     align-content: space-between;
     flex-wrap: wrap;
     margin-top: 7%;
+    
+    width: 100%;
    
 }
 
@@ -107,6 +109,7 @@ header nav .nav-list{
    justify-content: space-between;
    flex: wrap;
    height: 30%;
+   
 }
 
 .sonlumiere{
@@ -116,7 +119,9 @@ header nav .nav-list{
     margin-right: auto;
     margin-top: 7%;
     justify-content: space-between;
-    width: 65%;
+    /*width: 65%;*/
+    
+    min-width: 60%;
     
 }
 /*image avec un v */

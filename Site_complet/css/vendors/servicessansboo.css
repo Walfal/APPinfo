@@ -148,7 +148,7 @@ h1 {
     display: flex;
     flex-direction: column;
     height: 70%;
-    width: 65%;
+    width: 70%;
     align-items: center;
     justify-content: space-around;
     margin-left: auto;
@@ -178,6 +178,7 @@ h1 {
     justify-content: space-between;
     align-content: space-between;
     flex-wrap: wrap; 
+    width: 100%;
 }
 
 .ligneune{
@@ -197,7 +198,8 @@ h1 {
     margin-right: auto;
     margin-top: 7%;
     justify-content: space-between;
-    width: 65%;
+    /*width: 65%;*/
+    min-width: 60%;
 }
 
 /*image avec un v */
