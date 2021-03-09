@@ -1,0 +1,81 @@
+.bande{
+    background-color: #3A738f;
+}
+header nav .nav-list{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+ .image{
+  height: 50px;
+  width: 50px;
+}
+
+.list a{
+    margin-top: 100px;
+    color: white;
+}
+
+
+.list{
+    margin-top: 12px;
+}
+.headline{
+    color: white;
+    background-color: #5EA2C4;
+    margin-bottom: 5%;
+
+    padding: 30px;
+}    
+
+.imgProfil{
+    height: 70px;
+    width: 70px;
+}
+
+
+
+.linedisplay{
+    display: flex;
+    list-style:none;
+    padding-bottom: 2%;   
+    color: #5EA2C4;
+    font-weight: bold;
+    
+    
+
+}
+
+.espacement{
+    padding-left: 20px;
+
+}
+
+.champ{
+    width:300px;
+    border-radius: 5px;
+    border-color: #5EA2C4;
+}
+.home{
+	height: 100vh;
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.coordonnees{
+    text-align: center;
+    color: white;
+}
+
+.bandebas{
+    background-color: #5EA2C4;
+    margin-bottom: 0%;
+}
+
+.mail{
+    text-align: center;
+    color: white;
+}

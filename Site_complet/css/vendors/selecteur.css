@@ -1,0 +1,25 @@
+.democlass{
+    color: red;
+}
+
+#identifiant{
+    background-color: blue;
+    color: white;
+}
+
+* div{
+    text-align: center;
+}
+
+a[title="Hypertext Markup Language"] {
+    font: 1rem 'Fira Sans', sans-serif;
+    color: purple;
+}
+
+div > p{
+    background-color: yellow;
+}
+
+div ul{
+    background-color: green;
+}
