@@ -1,9 +1,13 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 #logoSensAir {
 	width: 60%;
 	max-width: 80px;
 	height: auto;
 }
-
 header {
 	padding: 0px;
 	width: 100%;
@@ -13,17 +17,31 @@ header {
 	background-color: grey;
 	display: row;
 }
-.mainPage {
-	height: 100vh;
-	background-color: #fff;
-}
 /* General Styles */
 .list {
 	color: red;
 }
-.1stbox {
-	display: row;
+.aboutUs {
+	float: left;
+	width: 50%;
+	text-align: center;
 }
+.imPrez {
+	width: 100%;
+	height: auto;
+}
+.bigBox {
+	height: 450px;
+	padding: 5%;
+}
+.imProfil {
+	width: 10%;
+}
+.qualités {
+	border: 2px;
+	border-color: black;
+}
+
 /*
 body {
 	font-family: lucida sans;
