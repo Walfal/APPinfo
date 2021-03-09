@@ -1,57 +1,152 @@
 
-.bandehaut {
+.bande{
+    background-color: #3A738f;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.image{
+    height: 50px;
+    width: 50px;
+  }
+
+  .list a{
+    margin-top: 100px;
+    color: white;
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+.home{
+	height: 100vh;
+	background-image: url("../../images/home/plane.png");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+header nav .nav-list{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.bandehaut{
     background-color: #5EA2C4;
-    margin-bottom: 0%;
-    color : white;
-    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../../images/SAV.jpg") ;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+    font-family:  Arial;
+    color: white;
     
 }
 
-.bandehaut img {
-    position: relative;
-    right: 0;
-    object-fit: fill;
-    
-}
+hatml, body{
+    margin:0;
+    padding:0;
+  }
 
 .titrePage {
-    font-size: 30px;
-    font-weight: 900;
-}
-
-.sousTitre{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-input[type = text]{
-    border: 1px dotted #999;
-    border-radius: 0;
+    padding-top: 2%;
+    padding-left: 10%;
+    margin-top: 0%;
+    border-top: 0%;  
+    font-size: 250%;
     
 }
 
+.sousTitre {
+    padding-left: 20%;
+    margin-top: 0%;
+    border-top: 0%;
+    font-size: 200%;
+    padding-top: 2%;
+}
 
+
+.consigne{
+    color: #3A738f;
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+.formulaire {
+    position: float;
+    font-size: 175%;
+    float: center;
+    text-align: center;
+    
+
+}
+
+.boite{
+   padding: 14px 40px;
+   margin: 10px;
+   width: 30%;
+   border-radius: 10px;
+   border-style: outset;
+}
+
+.boiteMessage{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 14px 40px;
+    margin: 10px;
+    height: 150px;
+    width: 30%;
+    border-radius: 10px;
+    border-style: outset;
+}
+
+
+.boiteEnvoyer {
+    background: #3A738f;
+    color: white;
+    border-style: none;
+    height: 30px;;
+    width: 5%;
+    border-radius: 10px;
+    font:  15px arial, sans-serif;
+   margin-bottom: 1%%;
+}
 .bandebas {
     background-color: #5EA2C4;
-    margin-bottom: 0%;
+    background-image: url("../../images/map.png");
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+  
     color: white;
     position:relative;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    height: 400px;
+    height: 350px;
+    padding-left: 20%;
     
+}
+
+.champs {
+    padding-bottom: 2%;
+    text-align: right;
 }
 
 .bandebas img {
     position: absolute;
-    object-fit: fill;
     left : 0;
 }
-.coordonnees {
-    margin: 20px;
-}
 
-.info {
+
+.coordonnees{
     font-size: 20px;
-
+    padding-top: 5%;
 }
+
+.info{
+    font-size: 20px;
+    padding-top: 2%;
+}
+
