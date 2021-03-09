@@ -27,12 +27,13 @@ header {
 	text-align: center;
 }
 .imPrez {
-	width: 100%;
+	width: auto;
 	height: auto;
 }
 .bigBox {
-	height: 450px;
+	height: 100%;
 	padding: 5%;
+	overflow: hidden;
 }
 .imProfil {
 	width: 10%;
