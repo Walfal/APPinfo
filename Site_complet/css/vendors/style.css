@@ -231,14 +231,20 @@ header nav .nav-list .list a:hover {
 	margin-bottom: 20px;
 }
 
-form {
-	/* Just to center the form on the page */
-	margin: 0 auto;
-	width: 400px;
-	/* To see the outline of the form */
-	padding: 1em;
-	border: 1px solid #ccc;
-	border-radius: 1em;
+.imageForm{
+	margin-top: 100px;
+	margin: center;
+}
+
+
+.form{
+	background-color: #fff;
+	width: 500px;
+	height: 500px;
+	border: #000;
+	border-radius: 01em;
+	margin-left: 60%;
+	
 }
 
 ul {
