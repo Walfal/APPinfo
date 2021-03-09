@@ -239,6 +239,17 @@ form {
 	padding: 1em;
 	border: 1px solid #ccc;
 	border-radius: 1em;
+	background-color: #fff;
+	width: 500px;
+	height: 500px;
+	border: #000;
+	border-radius: 01em;
+	margin-left: 60%;
+}
+
+.imageForm {
+	margin-top: 100px;
+	margin: center;
 }
 
 ul {
