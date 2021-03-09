@@ -1,0 +1,358 @@
+@import url('http://fonts.cdnfonts.com/css/gemina-2-3d');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    list-style: none;
+}
+
+.wrapper{
+    margin:0 auto;
+    padding: 0 10px;
+}
+
+.clear{
+    clear: both;
+}
+
+/*    -----------------------------    BARRE DE NAVIGATION     ----------------------------------------          */
+
+nav{
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    font-family: 'Montserrat', sans-serif;
+    height: 50px;
+    background-color: #3a738f;
+}
+
+nav .logo{
+    float: left;
+	width: 250px;
+	display: flex;
+	align-items: center;
+	
+}
+
+nav .links {
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 60%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+nav .links li {
+	list-style: none;
+}
+
+nav .links a {
+	display: block;
+	padding: 1em;
+	font-size: 16px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.links li a:hover{
+    color:#97a5aa;
+    transition: all 0.3s ease 0s;
+}
+
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+
+nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+nav .icon-burger .line {
+	width: 20px;
+	height: 3px;
+	background-color: #fff;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+	nav .logo {
+		float: none;
+		width: none;
+		margin-right: auto;
+        margin-left: auto;
+	}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 50px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(0,0,0,.8);
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+	}
+    nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(8px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-8px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+}
+
+
+/*milieu*/
+/*image avion*/
+h1 {
+    font-size: 2.5rem;
+    
+}
+.intro{
+    height: 180px;
+    background-image: url("../../images/service/rafale2.jpg");
+    background-size: cover;
+	background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5%;
+}
+
+/*citation*/
+.citation{
+    background-color: #D4D8D9;
+    height: 100px;
+    color: #565757;
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*services*/
+.nosservices{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 70%;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+}
+
+.nosservices h4 {
+    color: #565757;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 5%;
+}
+
+.nosservices h6{
+    color: #3A738F;
+     font-size: 1rem;
+}
+
+.nosservices p{
+    color: #565757;
+}
+
+.services{
+    display: flex;
+    margin-top: 7%;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap; 
+    width: 100%;
+    margin-bottom: 7%;
+}
+
+.ligneune{
+    display: flex;
+    align-content: stretch;
+    width: 100%;
+    justify-content: space-between;
+    flex: wrap;
+    height: 30%;
+   
+}
+
+.sonlumiere{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    justify-content: space-between;
+    /*width: 65%;*/
+    min-width: 60%;
+}
+
+/*image avec un v */
+.verifier{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.service:hover > .verifier{
+    animation: animation 1s;
+    
+}
+
+.service{
+    text-align: center;
+}
+
+@keyframes animation{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+
+
+
+/* --------------------------FOOTER -------------------------------*/
+footer{
+    background-color: #3a738f;
+    flex-shrink: 0;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.contenu-footer{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 20px;
+    
+}
+
+.bloc{
+    width: 33%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.logo{
+    width: 150px;
+}
+
+.coor{
+    padding-top: 30px;
+    text-align: left;
+}
+
+.coor li {
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+.coor li a{
+    text-decoration: none;
+    text-transform: none;
+    color: white;
+}
+
+.res{
+    text-align: center;
+}
+.res h4{
+    color: white;
+    text-decoration: underline white 2px;    
+    margin-bottom: 20px;
+}
+
+.facebook{
+    width: 30px;
+}
+.google{
+    width: 40px;
+}
+.linkedin{
+    width: 40px;
+}
+
+.liens{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.liens li{
+    margin-bottom: 25px;
+    list-style: none;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.liens li a {
+    text-decoration: none;
+    text-transform: none;
+    color: white;
+}
+
+.liens li a:hover{
+    border-bottom: 1px solid #97a5aa;
+    color:#97a5aa;
+    transition: all 0.3s ease 0s;
+}
+
+#coyright{
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
