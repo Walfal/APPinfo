@@ -1,0 +1,314 @@
+/* General Styles */
+.list {
+	color: red;
+}
+
+body {
+	font-family: lucida sans;
+}
+.sections {
+	padding: 20px 0;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.section-header .section-title {
+	font-size: 40px;
+}
+
+.section-header .line {
+	width: 150px;
+	background: #ddd;
+	height: 3px;
+	margin: auto;
+}
+
+.section-header .line span {
+	display: block;
+	width: 100px;
+	height: 4px;
+	background-color: #7cb62f;
+	margin: auto;
+	position: relative;
+	bottom: 0.5px;
+}
+
+.section-header p {
+	width: 50%;
+	color: #888;
+	margin: 20px auto;
+	line-height: 1, 5;
+}
+
+header {
+	height: auto;
+	padding: 10px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+}
+
+header i.icon {
+	position: absolute;
+	right: 30px;
+	top: 34px;
+	z-index: 10;
+	display: none;
+}
+
+header .logo h2 {
+	font-size: 35px;
+	color: #fff;
+}
+
+header nav .nav-list {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 0;
+}
+
+header nav .nav-list .list a {
+	display: block;
+	padding: 15px 0;
+	margin: 9px 0;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+	color: white;
+	font-size: 20px;
+}
+
+header nav .nav-list .list a:hover {
+	color: #7cb62f;
+}
+
+.sticky {
+	background: #000;
+	color: #fff;
+}
+
+@media (max-width: 575px) {
+	header {
+		background: #000;
+	}
+	header nav .nav-list {
+		display: none;
+		text-align: center;
+		padding: 0;
+	}
+
+	header .logo {
+		text-align: center;
+	}
+
+	header i.icon {
+		display: block;
+	}
+
+	.section-header p {
+		width: 85%;
+	}
+}
+
+/* Home Section */
+
+.home {
+	height: 100vh;
+	background-image: url("../../images/home/plane.png");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.home .home-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.home .home-title {
+	color: #fff;
+	font-size: 45px;
+	margin-bottom: 20px;
+}
+
+.home .home-desc {
+	color: #fff;
+	font-size: 19px;
+}
+
+@media (max-width: 575px) {
+	.home .home-title {
+		font-size: 22px;
+	}
+
+	.home .button {
+		margin-bottom: 10px;
+	}
+}
+
+/* About Us */
+.about .about-info h3 {
+	font-size: 25px;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+.about .about-info h3 span {
+	color: #7cb62f;
+}
+
+.about .about-info .about-info-desc {
+	line-height: 1.8;
+	color: #888;
+	margin-bottom: 20px;
+}
+
+.about .about-info .about-info-btn {
+	background-color: #7cb62f;
+	padding: 10px 20px;
+	border: 0;
+	color: #fff;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.about .about-img img {
+	width: 100%;
+}
+
+@media (max-width: 575px) {
+	.about .about-info h3 {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+	.about .about-info {
+		text-align: center;
+	}
+}
+
+/* Services section*/
+.services {
+	background: #f7f7f7;
+}
+
+.services .serv {
+	background: #fff;
+	padding: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.services .serv .icon {
+	background: #7cb62f;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	color: #fff;
+	border-radius: 50%;
+}
+
+.services .serv-title {
+	font-weight: bold;
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.services .serv-desc {
+	font-size: 17px;
+	color: #888;
+	margin-bottom: 20px;
+}
+
+.imageForm{
+	margin-top: 100px;
+	margin: center;
+}
+
+
+.form{
+	background-color: #fff;
+	width: 500px;
+	height: 500px;
+	border: #000;
+	border-radius: 01em;
+	margin-left: 60%;
+	
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+form li + li {
+	margin-top: 1em;
+}
+
+label {
+	/* To make sure that all labels have the same size and are properly aligned */
+	display: inline-block;
+	width: 90px;
+	/*text-align:center;*/
+	font-family: "Gemina 2 3D", sans-serif;
+}
+
+input,
+textarea {
+	background-color: #5baece;
+	/* To make sure that all text fields have the same font settings By default, textareas have a monospace font */
+	font: 1em sans-serif;
+	/* To give the same size to all text fields */
+	width: 300px;
+	box-sizing: border-box; /* To harmonize the look & feel of text field border */
+	border: 1px solid #999;
+	border-color: #17202a;
+	border-width: medium;
+}
+
+input:focus,
+textarea:focus {
+	/* To give a little highlight on active elements */
+	border-color: #17202a;
+	border-width: medium;
+}
+
+textarea {
+	/* To properly align multiline text fields with their labels */
+	vertical-align: top;
+	background-color: #5baece;
+	/* To give enough room to type some text */
+	height: 5em;
+	border-color: #17202a;
+	border-width: medium;
+}
+
+.button {
+	/* To position the buttons to the same position of the text fields */
+	padding-left: 90px;
+	display: inline-block;
+	/* same size as the label elements */
+}
+
+button {
+	/* This extra margin represent roughly the same space as the space between the labels and their text fields */
+	/*margin-left: -4em;*/
+	font-family: "Gemina 2 3D", sans-serif;
+	background-color: #5baece;
+	border-color: #17202a;
+	border-width: medium;
+	margin: auto;
+	display: inline-block;
+}
