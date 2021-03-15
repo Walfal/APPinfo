@@ -9,8 +9,10 @@
 }
 
 .wrapper{
-    margin:0 auto;
+    margin-top: 2%;
     padding: 0 10px;
+    overflow: hidden;
+    width: 100%;
 }
 
 .clear{
@@ -140,7 +142,7 @@ nav .icon-burger .line {
     display: block;
 	width: 100%;
     height: 550px;
-    background:url("../../images/accueil/vue.png") no-repeat; 
+   /* background:url("../../images/accueil/vue.png") no-repeat;*/ 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -174,178 +176,68 @@ nav .icon-burger .line {
     background: #5EA2C4;
 }
 
+.intro{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+
+}
+
 /* ------------------------------------------PRESENTATION --------------------------------------------------*/
 
-#presentation p{
+.textBienvenue{
     
     margin-bottom: 10%;
     width: 50%;
-    margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    margin-left: 2%;
+    text-align: left;
     line-height:20px;
     color: dimgray;
+    float: left;
 }
 
 #presentation h2{
     margin-bottom: 3%;
     margin-top: 7%;
+    margin-left: 2%;
     color:#3a738f;
-    text-align: center;
+    text-align: left;
+    margin-right: 60%;
     text-transform: uppercase;
     font-size: 40px;
+    float: left;
 }
 
-/*------------------------------------------- ENGAGEMENTS ----------------------------------------------------*/
 
-#steps h2{
-    margin-bottom: 3%;
-    margin-top: 10%;
-    color:#3a738f;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 40px;
-    
+
+
+
+#steps{
+    background-color: #fff;
 }
 
-#steps ul{
+#imageDate{
+    overflow: hidden;
+    text-align: right;
+    margin-right: 10%;
     margin-top: 2%;
-    text-align: center;
-    list-style: none;
 }
 
-#steps ul li{
-    width: 28%;
-    padding-top: 5%;
-    text-align: center;
+#date{
     margin-right: 2%;
-    display: inline-block;
-    
-}
-
-#steps h4{
-    text-transform: uppercase;
-    margin-bottom: 5%;
-    font-size: 24px;
-    color: #3a738f;
-}
-
-#steps p{
-    margin-bottom: 35%;
-    line-height:20px;
-    color: dimgray;
-}
-
-#step-1{
-    background: url("../../images/accueil/baseline_face_black_18dp.png") no-repeat top center;
-}
- 
-#step-2{
-    background: url("../../images/accueil/baseline_face_black_18dp.png") no-repeat top center;
-}
-
-#step-3{
-    background: url("../../images/accueil/baseline_face_black_18dp.png") no-repeat top center;
 }
 
 
-/* ------------------------------------POSSIBILITIES ---------------------------------------*/
-#possibilities{
 
-    margin: 0 auto;
-    padding-bottom: 30px;
-    background-color: #d4d8d9; 
-}
 
-.content{
-    text-align: center;
-}
 
-.content h4{
-    font-size: 24px;
-    color: #3a738f;
-}
 
-.content p{
-    width: 60%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    line-height:20px;
-    color: dimgray;
-}
 
-.avion{
-    width: 50%;
-    margin: 3% auto;
-}
-
-.button-2{
-    width: 8%;
-    display: block;
-    margin: 0 auto;
-    background: #3a738f;
-    color: white;
-    margin-top: 20px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.button-2:hover{
-    background: #5EA2C4;
-}
-
-#possibilities p{
-    margin-top: 20px;
-    line-height:20px;
-    color: dimgray;
-}
-
-/* ---------------------------------------CONTACT------------------------------------ */
-
-#contact{
-    padding: 5% 0;
-    text-align: center;
-}
-
-#contact h2{
-    margin-bottom: 3%;
-    border-bottom: 2px solid #3a738f;
-    width: 35%;
-    margin-left: auto;
-    margin-right: auto;
-    color:#3a738f;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 40px;
-}
-
-#contact p{
-    margin: 2% 5%;
-    line-height:20px;
-    color: dimgray;
-}
-
-.button-3{
-    width: 8%;
-    display: block;
-    margin: 0 auto;
-    background: #3a738f;
-    color: white;
-    margin-top: 20px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.button-3:hover{
-    background: #5EA2C4;
-}
 
 /* --------------------------FOOTER -------------------------------*/
 footer{
-    background-color: #3a738f;
+   background-color: #3a738f;
     flex-shrink: 0;
     width: 100%;
     padding-top: 20px;
@@ -437,6 +329,33 @@ footer{
     text-align: center;
     margin-top: 10px;
 }
+
+/*------------------buttons------------------------*/
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
+.bouttons{
+    background-color: #fff;
+    text-align: center;
+    margin-bottom: 20%;
+    margin-top: 10%;
+}
+
+.boutton{
+    width: 10%;
+    height: 100px;
+    background-color: #3a738f;
+    border-radius: 20%;
+    border: none;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+
 
 
 
