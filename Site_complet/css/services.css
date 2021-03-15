@@ -1,11 +1,13 @@
 @import url('http://fonts.cdnfonts.com/css/gemina-2-3d');
 
+
 *{
     margin: 0px;
     padding: 0px;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
+    list-style: none;
 }
 
 .wrapper{
@@ -133,215 +135,134 @@ nav .icon-burger .line {
 }
 
 
-/*----------------------------------bannière-------------------------------------------------------------------*/
-
-#main-image{
-    position: relative;
-    display: block;
-	width: 100%;
-    height: 550px;
-    background:url("../../images/accueil/vue.png") no-repeat; 
+/*milieu*/
+/*image avion*/
+h1 {
+    font-size: 2.5rem;
+    
+}
+.intro{
+    height: 180px;
+    background-image: url("../images/planes/rafale2.jpg");
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-
-#main-image h2{
-    font-weight:bolder;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 200px 0 40px 0;
+	background-position: center;
     color: white;
-    margin-bottom: 20px;
     text-align: center;
-    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5%;
 }
 
-.button-1{
-    width: 120px;
-    height:50px;
-    display: block;
-    background: #3a738f;
-    color: white;
-    margin: 0 auto;
-    line-height: 50px;
+/*citation*/
+.citation{
+    background-color: #D4D8D9;
+    height: 100px;
+    color: #565757;
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
     text-align: center;
-    border-radius: 10px;
 }
 
-.button-1:hover{
-    background: #5EA2C4;
-}
-
-/* ------------------------------------------PRESENTATION --------------------------------------------------*/
-
-#presentation p{
-    
-    margin-bottom: 10%;
-    width: 50%;
+/*services*/
+.nosservices{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 70%;
+    align-items: center;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-    line-height:20px;
-    color: dimgray;
+    flex-wrap: wrap;
 }
 
-#presentation h2{
-    margin-bottom: 3%;
+.nosservices h4 {
+    color: #565757;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 5%;
+}
+
+.nosservices h6{
+    color: #3A738F;
+     font-size: 1rem;
+}
+
+.nosservices p{
+    color: #565757;
+}
+
+.services{
+    display: flex;
     margin-top: 7%;
-    color:#3a738f;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 40px;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap; 
+    width: 100%;
+    margin-bottom: 7%;
 }
 
-/*------------------------------------------- ENGAGEMENTS ----------------------------------------------------*/
+.ligneune{
+    display: flex;
+    align-content: stretch;
+    width: 100%;
+    justify-content: space-between;
+    flex: wrap;
+    height: 30%;
+   
+}
 
-#steps h2{
-    margin-bottom: 3%;
-    margin-top: 10%;
-    color:#3a738f;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 40px;
+.sonlumiere{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    justify-content: space-between;
+    /*width: 65%;*/
+    min-width: 60%;
+}
+
+/*image avec un v */
+.verifier{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.service:hover > .verifier{
+    animation: animation 1s;
     
 }
 
-#steps ul{
-    margin-top: 2%;
-    text-align: center;
-    list-style: none;
-}
-
-#steps ul li{
-    width: 28%;
-    padding-top: 5%;
-    text-align: center;
-    margin-right: 2%;
-    display: inline-block;
-    
-}
-
-#steps h4{
-    text-transform: uppercase;
-    margin-bottom: 5%;
-    font-size: 24px;
-    color: #3a738f;
-}
-
-#steps p{
-    margin-bottom: 35%;
-    line-height:20px;
-    color: dimgray;
-}
-
-#step-1{
-    background: url("../../images/accueil/baseline_face_black_18dp.png") no-repeat top center;
-}
- 
-#step-2{
-    background: url("../../images/accueil/baseline_face_black_18dp.png") no-repeat top center;
-}
-
-#step-3{
-    background: url("../../images/accueil/baseline_face_black_18dp.png") no-repeat top center;
-}
-
-
-/* ------------------------------------POSSIBILITIES ---------------------------------------*/
-#possibilities{
-
-    margin: 0 auto;
-    padding-bottom: 30px;
-    background-color: #d4d8d9; 
-}
-
-.content{
+.service{
     text-align: center;
 }
 
-.content h4{
-    font-size: 24px;
-    color: #3a738f;
+@keyframes animation{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 
-.content p{
-    width: 60%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    line-height:20px;
-    color: dimgray;
-}
 
-.avion{
-    width: 50%;
-    margin: 3% auto;
-}
 
-.button-2{
-    width: 8%;
-    display: block;
-    margin: 0 auto;
-    background: #3a738f;
-    color: white;
-    margin-top: 20px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 10px;
-}
 
-.button-2:hover{
-    background: #5EA2C4;
-}
 
-#possibilities p{
-    margin-top: 20px;
-    line-height:20px;
-    color: dimgray;
-}
 
-/* ---------------------------------------CONTACT------------------------------------ */
 
-#contact{
-    padding: 5% 0;
-    text-align: center;
-}
 
-#contact h2{
-    margin-bottom: 3%;
-    border-bottom: 2px solid #3a738f;
-    width: 35%;
-    margin-left: auto;
-    margin-right: auto;
-    color:#3a738f;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 40px;
-}
-
-#contact p{
-    margin: 2% 5%;
-    line-height:20px;
-    color: dimgray;
-}
-
-.button-3{
-    width: 8%;
-    display: block;
-    margin: 0 auto;
-    background: #3a738f;
-    color: white;
-    margin-top: 20px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.button-3:hover{
-    background: #5EA2C4;
-}
 
 /* --------------------------FOOTER -------------------------------*/
 footer{
