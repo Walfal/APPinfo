@@ -131,27 +131,6 @@ nav .icon-burger .line {
 	}
 }
 
-/*-------------------------section1-----------------------------------*/
-.section {
-	display: flex;
-	display: flex;
-	flex-direction: column;
-}
-.text1 {
-	width: 50px;
-	height: 100px;
-	display: flex;
-	flex-grow: 1;
-}
-.divImg1 {
-	display: flex;
-	flex-grow: 1;
-	width: 50%;
-}
-.img1 {
-	width: 21%;
-}
-
 /* --------------------------FOOTER -------------------------------*/
 footer {
 	background-color: #3a738f;
