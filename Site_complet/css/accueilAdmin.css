@@ -1,112 +1,101 @@
-.bande{
-    background-color: #3A738f;
-    height: 5%;
-    overflow: auto;
+.bande {
+	background-color: #3a738f;
+	height: 5%;
+	overflow: auto;
 }
-header nav .nav-list{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-}
-
- .image{
-  height: 20%;
-  width: 20%;
+header nav .nav-list {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
 }
 
-.list a{
-    margin-top: 100px;
-    color: white;
+.image {
+	height: 20%;
+	width: 20%;
 }
 
-
-.list{
-    margin-top: 12px;
+.list a {
+	margin-top: 100px;
+	color: white;
 }
 
-
-.coordonnees{
-    text-align: center;
-    color: white;
-    background-color: #5EA2C4;
+.list {
+	margin-top: 12px;
 }
 
-.bandebas{
-    background-color: #5EA2C4;
-    padding-bottom: 0px;
-    text-align: center;
-    color: white;
-    overflow-y: hidden;
+.coordonnees {
+	text-align: center;
+	color: white;
+	background-color: #5ea2c4;
 }
 
-.textImage{
-    display: block;
+.bandebas {
+	background-color: #5ea2c4;
+	padding-bottom: 0px;
+	text-align: center;
+	color: white;
+	overflow-y: hidden;
 }
 
-.numero{
-    background-color: #5EA2C4;
-    margin-bottom: 0%;
-}
-.bienvenue{
-    color:  #3A738f;
-    font-size: xx-large;
-    font-weight: bold;
-    margin-top: 5%;
-    margin-left: 5%;
+.textImage {
+	display: block;
 }
 
-.textBienvenue{
-    color:  black;
-    margin-right: 50%;
-    margin-left: 5%;
+.numero {
+	background-color: #5ea2c4;
+	margin-bottom: 0%;
+}
+.bienvenue {
+	color: #3a738f;
+	font-size: xx-large;
+	font-weight: bold;
+	margin-top: 5%;
+	margin-left: 5%;
 }
 
-.ecriture{
-position: relative;
-float: left;
+.textBienvenue {
+	color: black;
+	margin-right: 50%;
+	margin-left: 5%;
 }
 
-.dateImage{
-    overflow: auto;
-    padding-right: 15%;
-    margin-left: 60%;
-    background-image: url("images/about/user.png");
+.ecriture {
+	position: relative;
+	float: left;
 }
 
-.listBouttons{
-    display: inline;
-    text-align: center;
-    margin-left: 20%;
-    margin-right: 50%;
-
+.dateImage {
+	overflow: auto;
+	padding-right: 15%;
+	margin-left: 60%;
+	background-image: url("../images/icons/user.png");
 }
 
-.action{
-    background-color: #3A738f;
-    width: 15%;
-    height: 150px; 
-    color: white;
-    text-decoration: none;
-    border-radius: 15%;
-    margin-top: 10%;
-    margin-bottom: 10%;
+.listBouttons {
+	display: inline;
+	text-align: center;
+	margin-left: 20%;
+	margin-right: 50%;
 }
 
-.divider{
-    width:50px;
-    height:auto;
-    display:inline-block;
-    background-color: white;
+.action {
+	background-color: #3a738f;
+	width: 15%;
+	height: 150px;
+	color: white;
+	text-decoration: none;
+	border-radius: 15%;
+	margin-top: 10%;
+	margin-bottom: 10%;
 }
 
-button a{
-    color: white;
+.divider {
+	width: 50px;
+	height: auto;
+	display: inline-block;
+	background-color: white;
 }
 
-
-
-
-
-
-
-
+button a {
+	color: white;
+}
