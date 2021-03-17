@@ -122,7 +122,7 @@ nav .icon-burger .line {
 .bandehaut{
     margin-top: 2.5%;
     background-color: #5EA2C4;
-    background-image: url("../../images/SAV.jpg") ;
+    background-image: url("../../images/divers/SAV.jpg") ;
     background-size: contain;
     background-position: right;
     background-repeat: no-repeat;
@@ -133,7 +133,7 @@ nav .icon-burger .line {
     
 }
 
-hatml, body{
+*{
     margin:0;
     padding:0;
   }
@@ -198,11 +198,11 @@ hatml, body{
     width: 5%;
     border-radius: 10px;
     font:  15px arial, sans-serif;
-   margin-bottom: 1%%;
+   margin-bottom: 1%;
 }
 .bandebas {
     background-color: #5EA2C4;
-    background-image: url("../../images/map.png");
+    background-image: url("../images/divers/map.png");
     background-size: contain;
     background-position: left;
     background-repeat: no-repeat;

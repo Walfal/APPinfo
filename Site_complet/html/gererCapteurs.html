@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../css/contact.css">
+        <link rel="stylesheet" href="../css/gererCapteur.css">
         <title>Document</title>
     </head>
 
@@ -33,33 +33,46 @@
 
 
 <body>
-	
+    <div class = "hautPage">
+	    <p class = "titrePage"><b>Gestion des tests et des capteurs</b></p>
+        <img class= "imIcone" src="../images/icons/gestioncapteur.svg" alt="icone gestion capteur">
+    </div>
 
-	<div class = "bandehaut">
-		
-		<p class="titrePage" style="line-height:100%"><b>Contactez-nous</b></p>
-		<p class= "sousTitre"><i>Nous sommes là pour vous aider</i></p>
-	</div>
+    <img  class ="temperature" src="../images/divers/temperature.jpg" alt="capteur Température">
+    <div class="capteur1">
+        <p class = "nomCapteur">Capteur de température : </p><br>
+        <p class="miseJour">Dernière mise à jour : JJ/MM/AAAA</p>
+        <input  class="modifier" type="submit" name="modifier" id="modifier" value="Modifier">
+        <input  class="supprimer" type="submit" name="supprimer" id="supprimer" value="Supprimer">
+    </div>
 
-		<form class="formulaire">
-			<p class="consigne"><i> Envoyez-nous un message :</i></p>
-			<input  class = "boite" type="text" name="nomPrenom" id="nomPrenom" placeholder="Nom et Prénom*">
-			<br>
-			<input class = "boite" type="text" name="numerotel" id="numerotel" placeholder="Numéro de téléphone*">
-			<br>
-			<input class = "boite" type="text" name="email" id="email" placeholder="E-mail*">
-			<br>
-			<textarea class="boiteMessage" type="textarea" name="message" id="message" placeholder="Votre message*" wrap ="soft"></textarea>
-			<br>
-			<input  class="boiteEnvoyer" type="submit" name="Envoyer" id="Envoyer" value="Envoyer">
-		</form>
+    <img class =" tonalite" src="../images/divers/tonalite.png" alt="capteur de tonalité">
+    <div class="capteur2">
+        <p class = "nomCapteur">Capteur de tonalité :</p><br>
+        <p class="miseJour">Dernière mise à jour : JJ/MM/AAAA</p>
+        <input  class="modifier" type="submit" name="modifier" id="modifier" value="Modifier">
+        <input  class="supprimer" type="submit" name="supprimer" id="supprimer" value="Supprimer">
+    </div>
 
-		<p class="champs">* Les champs doivent nécessairement être complétés </p>
-	
+    <img class ="frequenceCardiaque" src="../images/divers/frequence cardiaque.jpg" alt="capteur fréquence cardiaque">
+    <div class="capteur3">
+        <p class = "nomCapteur">Capteur de fréquence cardiaque : </p><br>
+        <p class="miseJour">Dernière mise à jour : JJ/MM/AAAA</p>
+        <input  class="modifier" type="submit" name="modifier" id="modifier" value="Modifier">
+        <input  class="supprimer" type="submit" name="supprimer" id="supprimer" value="Supprimer">
+    </div>
+
+    <img class="tempsReaction" src="../images/divers/tempsReaction.jpg" alt="capteur / bouton mesure du temps de réaction">
+    <div class="capteur4">
+        <p class = "nomCapteur">Capteur du temps de réaction : </p><br>
+        <p class = "miseJour">Dernière mise à Jour : JJ/MM/AAAA</p>
+        <input  class="modifier" type="submit" name="modifier" id="modifier" value="Modifier">
+        <input  class="supprimer" type="submit" name="supprimer" id="supprimer" value="Supprimer">
+    </div>
 </body>
+
 
 <footer class="bandebas">
 	<p class="coordonnees"><b>COORDONNÉES</b> <br>_________</br></p>
     <p class="info"><b>Mail : </b> info@sensair.com <br><br class="info"><b>Adresse :</b> 10 rue de Vanves, 92130 Issy-Les-Moulineaux </br> <br class="info"> <b>Téléphone :</b> +33 1 23 48 87 33</br></p>
 </footer>
-</html>
