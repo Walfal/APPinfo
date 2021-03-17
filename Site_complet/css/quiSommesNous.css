@@ -32,29 +32,33 @@
 }
 .img {
 	width: 40%;
-	border: 4px solid black;
 }
 .section1 {
-	background: linear-gradient(#3a738f, #5ea2c4), radial-gradient(at bottom, #5ea2c4, #3a738f);
+	background-color: white;
+	/* background: linear-gradient(#3a738f, #5ea2c4), radial-gradient(at bottom, #5ea2c4, #3a738f); */
 }
 
 .section2 {
-	background: linear-gradient(#5ea2c4, #3a738f), radial-gradient(at top, #5ea2c4, #3a738f);
+	background-color: #5ea2c4;
+	/* background: linear-gradient(#5ea2c4, #3a738f), radial-gradient(at top, #5ea2c4, #3a738f); */
 }
 
 .section3 {
 	flex-direction: column;
-	background: linear-gradient(#3a738f, #5ea2c4, #3a738f);
+	background: white;
+	/* background: linear-gradient(#3a738f, #5ea2c4, #3a738f); */
 }
 .txt3 {
-	color: white;
+	color: #3a738f;
 	font-size: xx-large;
 	text-decoration: underline;
 }
 .qualites {
+	background: red;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	margin: 0;
 }
 .qualite {
 	margin: 5%;
