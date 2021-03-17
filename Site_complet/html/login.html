@@ -44,7 +44,7 @@
 				<div class="container">
 					<form method="POST" class="form">
 						<div class="imageForm">
-							<img class="img" src="../images/logo.png" alt="" />
+							<img class="img" src="../images/icons/utilisateur.png" alt="" />
 						</div>
 						<div class="username">
 							<label>Username</label>

@@ -58,12 +58,17 @@ header nav .nav-list {
 
 .img {
 	margin-top: 10%;
+	width: 10%;
+	height: 10%;
+	margin-bottom: 2%;
+
+
 }
 
 .button {
 	margin-top: 1%;
 	background-color: #3a738f;
-	border-radius: 5%;
+	border-radius: 10%;
 	border-color: black;
 	margin-bottom: 5%;
 }
