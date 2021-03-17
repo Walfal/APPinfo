@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/vendors/bootstrap.css">
-        <link rel="stylesheet" href="css/vendors/styletest2.css">
+        <link rel="stylesheet" href="css/vendors/modifprofil.css">
         <link href="http://fonts.cdnfonts.com/css/gemina-2-3d" rel="stylesheet">
         <title>Document</title>
     </head>
@@ -44,24 +44,24 @@
     </div>
 
     <form>
-       	<div>
+       	<div class="principal">
     		<ul class="linedisplay">
 				<li><label for="nom*"> Nom* : </label> <br>
-	    		<input class="champ" name ="Nom" id="Nom" required></li>
+	    		<input class="champ" name ="Nom" id="Nom" required></li></input>
 	    		<li class="espacement"><label for ="Prenom"> Prénom* : </label><br>
-	    		<input class="champ" name ="Prénom" id="Prenom" required><br></li>
+	    		<input class="champ" name ="Prénom" id="Prenom" required><br></li></input>
 	    	</ul>
     		<ul class="linedisplay">
     			<li>
     				<label for ="adMail*"> Adresse Email* : </label><br>
-	    			<input class="champ" type="email" name ="Adresse Email" id="Adresse Email" required>
+	    			<input class="champ" type="email" name ="Adresse Email" id="Adresse Email" required></input>
 	    		</li>
 	    	</ul>		    	 		
     		<ul class="linedisplay">
     			<li><label for ="password*"> Mot de passe* : </label><br>
-	    		<input class="champ" type="password" name ="Adresse Email" id="Adresse Email" required></li>
+	    		<input class="champ" type="password" name ="Adresse Email" id="Adresse Email" required></input></li>
 	    		<li class="espacement"><label for ="adMail*"> Confirmation du mot de passe* : </label><br>
-	    			<input class="champ" type="password" name ="Adresse Email" id="Adresse Email" required></li>
+	    		<input class="champ" type="password" name ="Adresse Email" id="Adresse Email" required></input></li>
 	    	</ul>		    	 		
     		<ul class="linedisplay">
     			<li><label for="date"> Date de naissance* : </label><br>
@@ -70,11 +70,11 @@
     		</ul>
     		<ul class="linedisplay"> 
 				<li><label for="homme"> Homme </label>
-    			<input type = "radio" name="gender"></li>
+    			<input type = "radio" name="gender"></input></li>
     			<li class="espacement"><label for="femme"> Femme </label>
-    			<input type = "radio" name="gender"></li>
+    			<input type = "radio" name="gender"></input></li>
    				<li class="espacement"><label for="autre"> Autre </label>
-   				<input type = "radio" name="gender"></li>
+   				<input type = "radio" name="gender"></input></li>
     		</ul>
     		<ul class="linedisplay">
     			<li><Label> Pays : </Label><br>
@@ -314,10 +314,14 @@
 			<ul class="linedisplay">
     			<li>
     				<label for ="adMail*"> Numero de téléphone* : </label><br>
-	    			<input type="tel"class="champ">
+	    			<input type="tel"class="champ"></input>
 	    		</li>	
-	    	</ul>		    	 			
+	    	</ul>	    	 			
 		</div>
+		<div class="validate">
+	    	<input class="styleValidate" type="submit" value="Envoyer le formulaire">
+	    </div>	
+
 	</form>   
 </body>
 <section class="sections home text-center">

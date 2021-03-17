@@ -46,6 +46,10 @@ header nav .nav-list{
     
 
 }
+.principal{
+    margin-left: 32%;
+    margin-right: 20%;
+}
 
 .espacement{
     padding-left: 20px;
@@ -57,8 +61,23 @@ header nav .nav-list{
     border-radius: 5px;
     border-color: #5EA2C4;
 }
+
+.validate{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.styleValidate{
+    background-color: #5EA2C4;
+    border-radius: 5px;
+    border-color: #5EA2C4;
+    width: 20%;
+    font-weight: bold;
+
+}
+
 .home{
-	height: 100vh;
+	height: auto;
 	background-color: white;
 	background-size: cover;
 	background-position: center;
@@ -68,6 +87,7 @@ header nav .nav-list{
 .coordonnees{
     text-align: center;
     color: white;
+
 }
 
 .bandebas{
