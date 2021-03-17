@@ -140,7 +140,7 @@ nav .icon-burger .line {
     display: block;
 	width: 100%;
     height: 550px;
-    background:url("../../images/accueil/vue.png") no-repeat; 
+    background:url("../images/planes/vue.png") no-repeat; 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -237,15 +237,15 @@ nav .icon-burger .line {
 }
 
 #step-1{
-    background: url("../../images/accueil/baseline_face_black_18dp.png") no-repeat top center;
+    background: url("../images/icons/baseline_face_black_18dp.png") no-repeat top center;
 }
  
 #step-2{
-    background: url("../../images/accueil/baseline_face_black_18dp.png") no-repeat top center;
+    background: url("../images/icons/baseline_face_black_18dp.png") no-repeat top center;
 }
 
 #step-3{
-    background: url("../../images/accueil/baseline_face_black_18dp.png") no-repeat top center;
+    background: url("../images/icons/baseline_face_black_18dp.png") no-repeat top center;
 }
 
 
