@@ -1,3 +1,24 @@
+@import url("http://fonts.cdnfonts.com/css/gemina-2-3d");
+
+* {
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+}
+
+.wrapper {
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.clear {
+	clear: both;
+}
+
+/*    -----------------------------    BARRE DE NAVIGATION     ----------------------------------------          */
+
 nav {
 	position: fixed;
 	z-index: 10;
@@ -110,118 +131,96 @@ nav .icon-burger .line {
 	}
 }
 
-* {
-	margin: 0;
-	padding: 0;
-}
-
-.bandehaut {
-	margin-top: 2.5%;
-	background-color: #5ea2c4;
-	background-image: url("../images/divers//SAV.jpg");
-	background-size: contain;
-	background-position: right;
-	background-repeat: no-repeat;
-	height: 200px;
+/* --------------------------FOOTER -------------------------------*/
+footer {
+	background-color: #3a738f;
+	flex-shrink: 0;
 	width: 100%;
-	font-family: Arial;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.contenu-footer {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	font-size: 20px;
+}
+
+.bloc {
+	width: 33%;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.logo {
+	width: 150px;
+}
+
+.coor {
+	padding-top: 30px;
+	text-align: left;
+}
+
+.coor li {
+	margin-bottom: 15px;
+	list-style: none;
+}
+
+.coor li a {
+	text-decoration: none;
+	text-transform: none;
 	color: white;
 }
 
-hatml,
-body {
-	margin: 0;
-	padding: 0;
+.res {
+	text-align: center;
+}
+.res h4 {
+	color: white;
+	text-decoration: underline white 2px;
+	margin-bottom: 20px;
 }
 
-.titrePage {
-	padding-top: 2%;
-	padding-left: 10%;
-	margin-top: 0%;
-	border-top: 0%;
-	font-size: 250%;
+.facebook {
+	width: 30px;
+}
+.google {
+	width: 40px;
+}
+.linkedin {
+	width: 40px;
 }
 
-.sousTitre {
-	padding-left: 20%;
-	margin-top: 0%;
-	border-top: 0%;
-	font-size: 200%;
-	padding-top: 2%;
-}
-
-.consigne {
-	color: #3a738f;
-	padding-top: 5%;
-	padding-bottom: 2%;
-}
-
-.formulaire {
-	position: float;
-	font-size: 175%;
-	float: center;
+.liens {
+	margin-top: 40px;
 	text-align: center;
 }
 
-.boite {
-	padding: 14px 40px;
-	margin: 10px;
-	width: 30%;
-	border-radius: 10px;
-	border-style: outset;
+.liens li {
+	margin-bottom: 25px;
+	list-style: none;
+	display: inline-block;
+	margin-left: 15px;
 }
 
-.boiteMessage {
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 14px 40px;
-	margin: 10px;
-	height: 150px;
-	width: 30%;
-	border-radius: 10px;
-	border-style: outset;
-}
-
-.boiteEnvoyer {
-	background: #3a738f;
+.liens li a {
+	text-decoration: none;
+	text-transform: none;
 	color: white;
-	border-style: none;
-	height: 30px;
-	width: 5%;
-	border-radius: 10px;
-	font: 15px arial, sans-serif;
-	margin-bottom: 1%%;
 }
-.bandebas {
-	background-color: #5ea2c4;
-	background-image: url("../../images/map.png");
-	background-size: contain;
-	background-position: left;
-	background-repeat: no-repeat;
 
+.liens li a:hover {
+	border-bottom: 1px solid #97a5aa;
+	color: #97a5aa;
+	transition: all 0.3s ease 0s;
+}
+
+#coyright {
 	color: white;
-	position: relative;
-	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
-	height: 350px;
-	padding-left: 20%;
-}
-
-.champs {
-	padding-bottom: 2%;
-	text-align: right;
-}
-
-.bandebas img {
-	position: absolute;
-	left: 0;
-}
-
-.coordonnees {
-	font-size: 20px;
-	padding-top: 5%;
-}
-
-.info {
-	font-size: 20px;
-	padding-top: 2%;
+	margin-top: 10px;
 }

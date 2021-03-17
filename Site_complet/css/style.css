@@ -121,7 +121,7 @@ header nav .nav-list .list a:hover {
 
 .home {
 	height: 100vh;
-	background-image: url("../../images/home/plane.png");
+	background-image: url("../images/planes/plane.png");
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -231,20 +231,18 @@ header nav .nav-list .list a:hover {
 	margin-bottom: 20px;
 }
 
-.imageForm{
+.imageForm {
 	margin-top: 100px;
 	margin: center;
 }
 
-
-.form{
+.form {
 	background-color: #fff;
 	width: 500px;
 	height: 500px;
 	border: #000;
 	border-radius: 01em;
 	margin-left: 60%;
-	
 }
 
 ul {
