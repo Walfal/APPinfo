@@ -1,0 +1,71 @@
+.modif{
+    color: black;
+    background-color: #5EA2C4;
+    margin-bottom: 70px;
+    padding: 30px;
+    padding-top: 50px;
+    font-size: 30%;
+    display: flex-inline;
+}    
+
+.imgProfil{
+    height: 70px;
+    width: 70px;
+}
+.title{
+    font-size: 30px;
+}
+
+
+.linedisplay{
+    display: flex;
+    list-style:none;
+    padding-bottom: 5%;   
+    color: #5EA2C4;
+    font-weight: bold;
+    
+    
+
+}
+.principal{
+    margin-left: 32%;
+    margin-right: 20%;
+}
+
+.espacement{
+    padding-left: 50px;
+
+}
+
+.champ{
+    width:300px;
+    height: 70%;
+    border-radius: 20px;
+    border-color: #5EA2C4;
+    padding-left: 7px;
+}
+.separation{
+    text-align: center;
+    color : #5EA2C4;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.validate{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.styleValidate{
+    background-color: #5EA2C4;
+    border-radius: 5px;
+    border-color: #5EA2C4;
+    width: 20%;
+    font-weight: bold;
+
+}
+.lastTestPosition{
+    padding: 30px;
+    color: red;
+}
+
