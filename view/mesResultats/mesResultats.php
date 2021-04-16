@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Login</title>
-		<link href="../css/test.css" rel="stylesheet" />
+		<title>mes Résultats</title>
 		<link href="../css/headerFooter.css" rel="stylesheet" />
+		<link href="../css/mesResultats.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
@@ -25,7 +25,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="#"
+						<a href="login.html"
 							><img class="bi bi-globe" src="../images/icons/account.svg" style="width: 25px"
 						/></a>
 					</li>
@@ -38,40 +38,35 @@
 			</nav>
 		</div>
 	</header>
+
+	<!-- -------------------------------------------------------------- MAIN ---------------------------------------------------------------------------------- -->
 	<body>
-		<section class="sections home text-center">
-			<div class="box">
-				<div class="container">
-					<form method="POST" class="form">
-						<div class="imageForm">
-							<img class="img" src="../images/logo.png" alt="" />
-						</div>
-						<div class="username">
-							<label>Username</label>
-						</div>
-						<div class="textArea">
-							<input type="text" />
-						</div>
-						<div class="mail">
-							<label>Email</label>
-						</div>
-						<div class="textArea">
-							<input type="text" />
-						</div>
-						<div class="password">
-							<label>Password</label>
-						</div>
-						<div class="textArea">
-							<input type="password" />
-						</div>
-						<div>
-							<button class="button" type="submit">Connect</button>
-						</div>
-					</form>
+		<div class="title">
+			<h1>Mes résultats</h1>
+			<img src="../images/icons/result.svg" alt="fiche de résultats" class="result-img" />
+		</div>
+		<div>
+			<div class="results">
+				<div class="result">
+					<div class="date">
+						<img src="../images/icons/calendarWhite.svg" alt="calendrier" class="calendar" />
+						<h2>date</h2>
+					</div>
+					<place>
+						<centre>
+							<img src="../images/icons/home.svg" alt="maison" class="home" />
+							<h2>Centre de Lorem</h2>
+						</centre>
+						<button class="getResults">
+							Consulter<br />
+							mes résultats
+						</button>
+					</place>
 				</div>
 			</div>
-		</section>
+		</div>
 	</body>
+	<!-- ----------------------------------------------------------- FOOTER ---------------------------------------------------------------------------------- -->
 
 	<footer>
 		<div class="contenu-footer">

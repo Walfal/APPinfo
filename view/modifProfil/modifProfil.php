@@ -40,11 +40,11 @@
 		</div>
 	</header>
 	<body>
-    <div class="modif">
-    	<img class="imgProfil" src="../images/icons/perm_identity-24px.svg">
-    	<h1 class = "title">
+    <div class="title">
+    	<p class="textSize">
     	Modifier mon profil
-    	</h1> 
+    	<img class="imgProfil" src="../images/icons/perm_identity-24px.svg">
+    	<p> 
     </div>
 
     <form>
@@ -329,13 +329,12 @@
 </body>
 <div class = "separation">
 		<label> _______________________________________________________________________________________________________________ </label>
-	</div>	
-<section>
-	<h1 class = "title">
-		Dernier(s) test(s) passé(s)
-	</h1>	
-	
-</section>
+</div>	
+<div class="title">
+	<p class ="textSize">
+    Dernier(s) test(s) passé(s)
+	</p>
+</div>
 
 		<!-- ----------------------------------------------------------- FOOTER ---------------------------------------------------------------------------------- -->
 

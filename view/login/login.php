@@ -2,9 +2,9 @@
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Services</title>
+		<title>Login</title>
+		<link href="../css/login.css" rel="stylesheet" />
 		<link href="../css/headerFooter.css" rel="stylesheet" />
-		<link href="../css/services.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
@@ -25,7 +25,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="#"
+						<a href="login.html"
 							><img class="bi bi-globe" src="../images/icons/account.svg" style="width: 25px"
 						/></a>
 					</li>
@@ -38,86 +38,41 @@
 			</nav>
 		</div>
 	</header>
-
 	<body>
 		<section class="sections home text-center">
-			<section class="intro">
-				<h1>SENS'AIR</h1>
-				<p>jfedpdjdjf ddllsjjdlsjf ud fjsidh</p>
-			</section>
-			<div class="citation">
-				<q
-					>Lorem ipsum dolor sit amet, consectetur <br />
-					elit. Vestibulum varius.</q
-				>
-			</div>
-
-			<section class="nosservices">
-				<h4>Nos services</h4>
-				<div class="services">
-					<div class="ligneune">
-						<div class="service">
-							<img class="verifier" src="../images/icons/v_image.png" />
-							<h6>
-								Test de reconnaissance<br />
-								de tonalité
-							</h6>
-							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
-							</p>
+			<div class="box">
+				<div class="container">
+					<form method="POST" class="form">
+						<div class="imageForm">
+							<img class="img" src="../images/logo.png" alt="" />
 						</div>
-						<div class="service">
-							<img class="verifier" src="../images/icons/v_image.png" />
-							<h6>
-								Mesurer la fréquence <br />
-								cardiaque
-							</h6>
-							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
-							</p>
+						<div class="username">
+							<label>Username</label>
 						</div>
-						<div class="service">
-							<img class="verifier" src="../images/icons/v_image.png" />
-							<h6>
-								Mesurer la température<br />
-								supericielle de la peau
-							</h6>
-							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
-							</p>
+						<div class="textArea">
+							<input type="text" />
 						</div>
-					</div>
-
-					<div class="sonlumiere">
-						<div class="service">
-							<img class="verifier" src="../images/icons/v_image.png" />
-							<h6>Temps de réaction à <br />un son inattendu</h6>
-							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
-							</p>
+						<div class="mail">
+							<label>Email</label>
 						</div>
-						<div class="service">
-							<img class="verifier" src="../images/icons/v_image.png" />
-							<h6>Temps de réction à <br />une lumière inattendue</h6>
-							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
-							</p>
+						<div class="textArea">
+							<input type="text" />
 						</div>
-					</div>
+						<div class="password">
+							<label>Password</label>
+						</div>
+						<div class="textArea">
+							<input type="password" />
+						</div>
+						<div>
+							<button class="button" type="submit">Connect</button>
+						</div>
+					</form>
 				</div>
-			</section>
+			</div>
 		</section>
 	</body>
+
 	<footer>
 		<div class="contenu-footer">
 			<div class="bloc logo">

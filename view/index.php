@@ -17,14 +17,16 @@
 					<li><a href="html/services.html">Services</a></li>
 					<li><a href="html/quiSommesNous.html">About Us</a></li>
 					<li><a href="html/contactezNous.html">Contact Us</a></li>
-					<li><a href="#">FAQ</a></li>
+					<li><a href="html/FAQ.php">FAQ</a></li>
 					<li>
 						<a href="#">
 							<img class="bi bi-globe" src="images/icons/language.svg" style="width: 25px" />
 						</a>
 					</li>
 					<li>
-						<a href="#"><img class="bi bi-globe" src="images/icons/account.svg" style="width: 25px" /></a>
+						<a href="html/login.html"
+							><img class="bi bi-globe" src="images/icons/account.svg" style="width: 25px"
+						/></a>
 					</li>
 				</ul>
 				<label for="nav-toggle" class="icon-burger">
@@ -175,4 +177,3 @@
 		</footer>
 	</body>
 </html>
-

@@ -2,9 +2,9 @@
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Contactez-nous</title>
+		<title>FAQ</title>
 		<link href="../css/headerFooter.css" rel="stylesheet" />
-		<link href="../css/contact.css" rel="stylesheet" />
+		<link href="../css/FAQ.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<header>
@@ -15,16 +15,16 @@
 				<ul class="links">
 					<li><a href="../">Home</a></li>
 					<li><a href="services.html">Services</a></li>
-					<li><a href="quiSommesNous.html">About Us</a></li>
+							<li><a href="quiSommesNous.html">About Us</a></li>
 					<li><a href="contactezNous.html">Contact Us</a></li>
-					<li><a href="#">FAQ</a></li>
+					<li><a href=".">FAQ</a></li>
 					<li>
 						<a href="#">
 							<img class="bi bi-globe" src="../images/icons/language.svg" style="width: 25px" />
 						</a>
 					</li>
 					<li>
-						<a href="#"
+						<a href="login.html"
 							><img class="bi bi-globe" src="../images/icons/account.svg" style="width: 25px"
 						/></a>
 					</li>
@@ -40,31 +40,17 @@
 
 	<body>
 		<div class="bandehaut">
-			<p class="titrePage" style="line-height: 100%"><b>Contactez-nous</b></p>
-			<p class="sousTitre"><i>Nous sommes là pour vous aider</i></p>
+			<div class="txt">
+			<p class="titrePage">UNE QUESTION ?</p>
+			<p class="sousTitre"><br>NOUS SOMMES LÀ POUR VOUS</p></div>
+			<img src="../images/icons/live-chat.svg"/>
 		</div>
-
-		<form class="formulaire">
-			<p class="consigne"><i> Envoyez-nous un message :</i></p>
-			<input class="boite" type="text" name="nomPrenom" id="nomPrenom" placeholder="Nom et Prénom*" />
-			<br />
-			<input class="boite" type="text" name="numerotel" id="numerotel" placeholder="Numéro de téléphone*" />
-			<br />
-			<input class="boite" type="text" name="email" id="email" placeholder="E-mail*" />
-			<br />
-			<textarea
-				class="boiteMessage"
-				type="textarea"
-				name="message"
-				id="message"
-				placeholder="Votre message*"
-				wrap="soft"
-			></textarea>
-			<br />
-			<input class="boiteEnvoyer" type="submit" name="Envoyer" id="Envoyer" value="Envoyer" />
-		</form>
-
-		<p class="champs">* Les champs doivent nécessairement être complétés</p>
+		<?php
+		$var = 1;
+		for ($i = 0; $i < 100; $i++) {
+			echo "- $var \n";
+		}
+		?></php>
 	</body>
 	<footer>
 		<div class="contenu-footer">
@@ -102,7 +88,7 @@
 						<li><a href="services.html">Services</a></li>
 						<li><a href="quiSommesNous.html">About Us</a></li>
 						<li><a href="contactezNous.html">Contact Us</a></li>
-						<li><a href="#">FAQ</a></li>
+						<li><a href=".">FAQ</a></li>
 					</ul>
 				</div>
 			</div>

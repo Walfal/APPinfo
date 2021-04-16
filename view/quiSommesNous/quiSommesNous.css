@@ -54,14 +54,13 @@
 	text-decoration: underline;
 }
 .qualites {
-	background: red;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	margin: 0;
 }
 .qualite {
 	margin: 5%;
+	margin-top: 2%;
 	width: 20%;
 	border: 1px #ddd solid;
 	border-radius: 30px;
