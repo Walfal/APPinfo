@@ -1,0 +1,18 @@
+.bandehaut {
+	margin-top: 50px;
+	background: #5ea2c4;
+	padding: 2%;
+	text-align: center;
+}
+
+.bandehaut .titrePage {
+	color: #fff;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.bandehaut .sousTitre {
+	color: #ccc;
+	font-size: 20px;
+	font-style: italic;
+}
