@@ -129,6 +129,18 @@ nav .icon-burger .line {
 	nav :checked ~ .icon-burger .line:nth-child(2) {
 		opacity: 0;
 	}
+
+	.contenu-footer{
+		flex-direction: column;
+	}
+
+	.coor li{
+		text-align: center;
+	}
+
+	.res{
+		padding-top: 10%;
+	}
 }
 
 /* --------------------------FOOTER -------------------------------*/

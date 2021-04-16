@@ -21,7 +21,7 @@
 /*milieu*/
 .intro{
     height: 180px;
-    background-image: url("../../images/planes/rafale2.jpg");
+    background-image: url("../images/planes/rafale2.jpg");
     background-size: cover;
 	background-position: center;
     color: white;
