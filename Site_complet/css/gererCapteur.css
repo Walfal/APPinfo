@@ -67,6 +67,47 @@ nav .icon-burger .line {
 	transition: all .3s ease-in-out;
 }
 
+nav ul{
+	list-style-type: none;
+}
+
+nav ul li{
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+nav ul ::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+.sous{
+	display: none;
+	background-color: #3a738f;
+	position: absolute;
+	width: 9%;
+}
+
+nav > ul li:hover .sous{
+	display: block;
+}
+
+.sous li{
+	float: none;
+	width: 100%;
+	text-align: center;
+}
+
+.sous a{
+	padding-top: 0%;
+	margin-top: 0%;
+	border-bottom: none;
+}
+
+
 @media screen and (max-width: 768px) {
 	nav .logo {
 		float: none;
@@ -128,7 +169,6 @@ nav .icon-burger .line {
 
 .titrePage {
 
-	font-family: Arial, Helvetica, sans-serif;
 	font-size: 50px;
 	margin-left: 5%;
 	color: white;
