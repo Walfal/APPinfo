@@ -1,10 +1,9 @@
-<<<<<<< HEAD:Site_complet/html/services.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Services</title>
-	<link href="../css/services.css" rel="stylesheet">
+	<link href="../services/services.css" rel="stylesheet">
     <link rel="icon" href="../images/logo/logo.png">
 </head>
 <body>
@@ -130,7 +129,6 @@
 
 </body>
 </html>
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -297,4 +295,3 @@
 
 </body>
 </html>
->>>>>>> Raph:view/resultatsCentre/resultatsCentre.php

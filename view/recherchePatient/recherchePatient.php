@@ -2,40 +2,14 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../css/recherchePatient.css">
+        <link rel="stylesheet" href="recherchePatient.css">
         <title>Document</title>
     </head>
 
-	<header>
-		<div class="wrapper">
-			<nav>
-				<input id="nav-toggle" type="checkbox" />
-				<a href="../"><img class="logo" src="../images/logo/sensair.png" alt="" /></a>
-				<ul class="links">
-					<li><a href="../">Home</a></li>
-					<li><a href="services.html">Services</a></li>
-					<li><a href="quiSommesNous.html">About Us</a></li>
-					<li><a href="contactezNous.html">Contact Us</a></li>
-					<li><a href="#">FAQ</a></li>
-					<li>
-						<a href="#">
-							<img class="bi bi-globe" src="../images/icons/language.svg" style="width: 25px" />
-						</a>
-					</li>
-					<li>
-						<a href="#"
-							><img class="bi bi-globe" src="../images/icons/account.svg" style="width: 25px"
-						/></a>
-					</li>
-				</ul>
-				<label for="nav-toggle" class="icon-burger">
-					<div class="line"></div>
-					<div class="line"></div>
-					<div class="line"></div>
-				</label>
-			</nav>
-		</div>
-	</header>
+
+	<?php require '../header/header.php'; ?>
+
+	
 
 
 	<body>
@@ -58,8 +32,6 @@
 		</div>
 	</body>
 
-	<footer class="bandebas">
-		<p class="coordonnees"><b>COORDONNÉES</b> <br>_________</br></p>
-		<p class="info"><b>Mail : </b> info@sensair.com <br><br class="info"><b>Adresse :</b> 10 rue de Vanves, 92130 Issy-Les-Moulineaux </br> <br class="info"> <b>Téléphone :</b> +33 1 23 48 87 33</br></p>
-	</footer>
-	
+
+<?php require '../footer/footer.php' ?>
+

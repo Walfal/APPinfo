@@ -1,45 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>mes Résultats</title>
-		<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
-		<link href="mesResultats.css" rel="stylesheet" />
-		<link rel="icon" href="../images/logo/logo.png" />
-	</head>
-	
-	<?php require '../header/header.php'; ?>
 
-	<!-- -------------------------------------------------------------- MAIN ---------------------------------------------------------------------------------- -->
-	<body>
-		<div class="title">
-			<h1>Mes résultats</h1>
-			<img src="../images/icons/result.svg" alt="fiche de résultats" class="result-img" />
-		</div>
-		<div>
-			<div class="results">
-				<div class="result">
-					<div class="date">
-						<img src="../images/icons/calendarWhite.svg" alt="calendrier" class="calendar" />
-						<h2>date</h2>
-					</div>
-					<place>
-						<centre>
-							<img src="../images/icons/home.svg" alt="maison" class="home" />
-							<h2>Centre de Lorem</h2>
-						</centre>
-						<button class="getResults">
-							Consulter<br />
-							mes résultats
-						</button>
-					</place>
-				</div>
-			</div>
-		</div>
-	</body>
-	<!-- ----------------------------------------------------------- FOOTER ---------------------------------------------------------------------------------- -->
+<link href="../footer/footer.css" rel="stylesheet" />
 
-	<footer>
+<footer>
 		<div class="contenu-footer">
 			<div class="bloc logo">
 				<a href="../"><img class="logo" src="../images/logo/logo.png" alt="" /></a>

@@ -4,8 +4,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>accueil administrateur</title>
-		<link href="../css/headerFooter.css" rel="stylesheet" />
-		<link href="../css/accueilAdmin.css" rel="stylesheet" />
+		<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
+		<link href="accueilAdmin.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
