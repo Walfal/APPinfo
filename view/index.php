@@ -6,6 +6,8 @@
 		<link href="headerFooter/headerFooter.css" rel="stylesheet" />
 		<link href="index.css" rel="stylesheet" />
 		<link rel="icon" href="images/logo/logo.png" />
+
+		<title> Page </title>
 	</head>
 	<header>
 		<div class="wrapper">
