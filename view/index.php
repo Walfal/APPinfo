@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Page d'accueil</title>
-		<link href="css/headerFooter.css" rel="stylesheet" />
-		<link href="css/accueil.css" rel="stylesheet" />
+		<link href="headerFooter/headerFooter.css" rel="stylesheet" />
+		<link href="index.css" rel="stylesheet" />
 		<link rel="icon" href="images/logo/logo.png" />
 	</head>
 	<header>
@@ -16,7 +16,7 @@
 					<li><a href=".">Home</a></li>
 					<li><a href="html/services.html">Services</a></li>
 					<li><a href="html/quiSommesNous.html">About Us</a></li>
-					<li><a href="html/contactezNous.html">Contact Us</a></li>
+					<li><a href="contactezNous/contactezNous.php">Contact Us</a></li>
 					<li><a href="html/FAQ.php">FAQ</a></li>
 					<li>
 						<a href="#">
