@@ -34,9 +34,9 @@
 				<div class="liens">
 					<ul>
 						<li><a href="../">Home</a></li>
-						<li><a href="services.html">Services</a></li>
-						<li><a href="quiSommesNous.html">About Us</a></li>
-						<li><a href="contactezNous.html">Contact Us</a></li>
+						<li><a href="services.php">Services</a></li>
+						<li><a href="quiSommesNous.php">About Us</a></li>
+						<li><a href="contactezNous.php">Contact Us</a></li>
 						<li><a href="#">FAQ</a></li>
 					</ul>
 				</div>

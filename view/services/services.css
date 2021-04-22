@@ -1,15 +1,11 @@
 /*milieu*/
 /*image avion*/
-*{
-	margin: 0;
-	padding: 0;
-}
 
 h1 {
 	font-size: 2.5rem;
 }
 .intro {
-	margin-top: 3%;
+	margin-top: 2%;
 	height: 180px;
 	background-image: url("../images/planes/rafale2.jpg");
 	background-size: cover;

@@ -15,10 +15,10 @@
 				<input id="nav-toggle" type="checkbox" />
 				<a href="."><img class="logo" src="images/logo/sensair.png" alt="" /></a>
 				<ul class="links">
-					<li><a href=".">Home</a></li>
+					<li><a href="accueilAdmin/accueilAdmin.php">Home</a></li>
 					<li><a href="html/services.html">Services</a></li>
-					<li><a href="html/quiSommesNous.html">About Us</a></li>
-					<li><a href="html/contactezNous.html">Contact Us</a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php">About Us</a></li>
+					<li><a href="html/contactezNous.php">Contact Us</a></li>
 					<li><a href="html/FAQ.php">FAQ</a></li>
 					<li>
 						<a href="#">

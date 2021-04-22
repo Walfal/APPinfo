@@ -1,6 +1,6 @@
 @import url("http://fonts.cdnfonts.com/css/gemina-2-3d");
 
-* {
+header, footer {
 	margin: 0px;
 	padding: 0px;
 	text-decoration: none;
