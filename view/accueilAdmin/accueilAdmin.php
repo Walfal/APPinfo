@@ -4,8 +4,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>accueil administrateur</title>
-		<link href="../css/headerFooter.css" rel="stylesheet" />
-		<link href="../css/accueilAdmin.css" rel="stylesheet" />
+		<link href="headerFooter.css" rel="stylesheet" />
+		<link href="accueilAdmin.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
@@ -64,7 +64,7 @@
             <div class="listBouttons">
                 <button class="action"><a href="#">Gestion tests/capteurs</a></button>
                 <div class="divider"></div>
-                <button class="action"><a href="#">Profil patients</a></button>
+                <button class="action"><a href="../../view/profilPatients/profilPatients.php">Profil patients</a></button>
                 <div class="divider"></div>
                 <button class="action"><a href="#">Planning</a></button>
                 <div class="divider"></div>

@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Page d'accueil</title>
-		<link href="css/headerFooter.css" rel="stylesheet" />
-		<link href="css/accueil.css" rel="stylesheet" />
-		<link rel="icon" href="images/logo/logo.png" />
+		<link href="view/headerFooter/headerFooter.css" rel="stylesheet" />
+		<link href="view/index.css" rel="stylesheet" />
+		<link rel="icon" href="view/images/logo/logo.png" />
 	</head>
 	<header>
 		<div class="wrapper">
