@@ -120,6 +120,12 @@ input[type=text]{
     color: white;
 }
 
+@media screen and (max-width: 520px){
+    .row h1{
+        font-size: 30px;
+    }
+}
+
 
 /* --------------------------TABLEAU -------------------------------*/
 .table{
