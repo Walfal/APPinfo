@@ -32,16 +32,20 @@ $DB = new connexionBDD;
 $BDD = $DB->connexion();
 
 
-function test(){
-	return 'test';
-}
-
-
-function recuperationMessage($BDD, $matriculeTest){
-	$req = $BDD->prepare("SELECT * FROM Message WHERE (matricule = $matriculeTest OR envoyeA = $matriculeTest) ORDER BY date");
+function recuperationMessage($BDD, $matricule, $envoieA){
+	$req = $BDD->prepare("SELECT * FROM Message WHERE ((matricule, envoyeA) = ($matricule, $envoieA) OR (matricule, envoyeA) = ($envoieA, $matricule)) ORDER BY date");
 	
 	// $req->execute(array('id' => $_SESSION['id']));
 	$req->execute();
 	$conv = $req->fetchAll();
 	return $conv;
+}
+
+
+function recuperationPersonne($BDD, $matricule){
+	$req = $BDD->prepare("SELECT * FROM Personne WHERE matricule = $matricule");
+	
+	$req->execute();
+	$personne = $req->fetch();
+	return $personne;
 }

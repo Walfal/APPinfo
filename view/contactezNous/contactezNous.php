@@ -2,22 +2,13 @@
 	include_once('../../model/connexionBDD.php');
 	//include_once('../../model/messagerie.php');
 	include('../../model/envoieDesDonnees.php');
-	
-	/*
-	$matriculeTest = 2*rand(0,1);
-	$envoieTest = 2 - $matriculeTest;
 
-	$req = $BDD->prepare("SELECT * FROM Message WHERE (matricule = $matriculeTest OR envoyeA = $matriculeTest) ORDER BY date");
-	
-	// $req->execute(array('id' => $_SESSION['id']));
-	$req->execute();
-	$conv = $req->fetchAll();
-	*/
+	$matriculeTest = rand(0,1);
+	$envoieA = ($matriculeTest == 0) ? 1 : 0;
 
-	$matriculeTest = 2*rand(0,1);
-	$envoieA = 2 - $matriculeTest;
+	$conv = recuperationMessage($BDD, $matriculeTest, $envoieA);
+	$client = recuperationPersonne($BDD, $envoieA);
 
-	$conv = recuperationMessage($BDD, $matriculeTest);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -58,10 +49,11 @@
 			</nav>
 		</div>
 	</header>
+	<?php if($matriculeTest != 0): ?>
 	<body>
 		<div class="bandehaut">
-			<p class="titrePage" style="line-height: 100%"><b>Contactez-nous</b></p>
-			<p class="sousTitre"><i>Nous sommes là pour vous aider</i></p>
+			<h1 class="titrePage" style="line-height: 100%">Contactez-nous</h1>
+			<i class="sousTitre">Nous sommes là pour vous aider</i>
 		</div>
 		
 		<div class="conversation"> 
@@ -89,6 +81,39 @@
 			<input class="boiteEnvoyer" type="submit" name="Envoyer" value="Envoyer" />
 		</form>
 	</body>
+	<?php else: ?>
+	<body>
+		<div class="bandehaut">
+			<h1 class="titrePage" style="line-height: 100%">Réponse à</h1>
+			<i class="sousTitre"><?= $client['prenom'] . ' ' . $client['nom']?></i>
+		</div>
+		
+		<div class="conversation"> 
+			<div class="conv" id="conv">
+				<?php foreach($conv as $singleMessage):
+				if($singleMessage['matricule'] == $matriculeTest): ?>
+					<p class="envoye">
+				<?php else:?>
+					<p class="recu">
+				<?php endif ?>
+				<?= nl2br($singleMessage['contenu']) ?></p>
+				<?php endforeach ?>
+				<div id="affMessage"></div>
+			</div>
+		</div>
+		<form class="formulaire" method="post" id="Envoyer">
+			<textarea
+				class="boiteMessage"
+				type="text"
+				name="message"
+				id="message"
+				placeholder="Votre message"
+			></textarea>
+			<br />
+			<input class="boiteEnvoyer" type="submit" name="Envoyer" value="Envoyer" />
+		</form>
+	</body>
+	<?php endif ?>
 	<footer>
 		<div class="contenu-footer">
 			<div class="bloc logo">
@@ -133,6 +158,15 @@
 		<p id="coyright">© 2021 Sens'air</p>
 	</footer>
 </html>
+
+
+
+
+
+
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	var conv = document.getElementById('conv')
@@ -156,8 +190,7 @@
 					dataType : 'html',
 					data : {message: message, envoieA : envoieA, id : id},
 					success : function(data){
-
-					console.log('id: ' + id + '   envoieA: ' + envoieA + '     message: ' + message)
+						console.log('id: ' + id + '   envoieA: ' + envoieA + '     message: ' + message)
 						$('#affMessage').append(data)
 					},
 					error : function(e, xhr, s){

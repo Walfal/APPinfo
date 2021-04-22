@@ -26,9 +26,7 @@ if(!empty($_POST)){
 		
 		$req->execute(array(date('Y-m-d H:i:s'), $message, $id, $envoieA));
 	}
-}
-
-
+}	
 ?>
 
 
