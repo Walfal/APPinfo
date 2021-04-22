@@ -3,6 +3,7 @@
 	//include_once('../../model/messagerie.php');
 	include('../../model/envoieDesDonnees.php');
 	
+	/*
 	$matriculeTest = 2*rand(0,1);
 	$envoieTest = 2 - $matriculeTest;
 
@@ -11,6 +12,12 @@
 	// $req->execute(array('id' => $_SESSION['id']));
 	$req->execute();
 	$conv = $req->fetchAll();
+	*/
+
+	$matriculeTest = 2*rand(0,1);
+	$envoieA = 2 - $matriculeTest;
+
+	$conv = recuperationMessage($BDD, $matriculeTest);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -137,8 +144,9 @@
 		$('#Envoyer').on("submit", function(e){
 			e.preventDefault()
 
-			var message
-			message = document.getElementById('message').value
+			var message  = document.getElementById('message').value
+			var id = <?= $matriculeTest ?>;
+			var envoieA = <?= $envoieA ?>;
 			
 			document.getElementById('message').value = ''
 			/* if(message != ''){ */
@@ -146,9 +154,10 @@
 					url : '../../model/envoyerMessage.php',
 					method : 'post',
 					dataType : 'html',
-					data : {message: message},
-
+					data : {message: message, envoieA : envoieA, id : id},
 					success : function(data){
+
+					console.log('id: ' + id + '   envoieA: ' + envoieA + '     message: ' + message)
 						$('#affMessage').append(data)
 					},
 					error : function(e, xhr, s){
@@ -167,8 +176,6 @@
 					}
 				})
 			/* } */
-
-
 		})
 	})
 </script>

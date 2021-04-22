@@ -1,52 +1,16 @@
-.bande {
-	background-color: #3a738f;
-	height: 5%;
-	overflow: auto;
-}
-header nav .nav-list {
-	display: flex;
-	justify-content: space-between;
-	list-style: none;
+.welcome {
+	padding: 100px;
+	overflow: hidden;
+	background: #5ea2c4;
 }
 
-.image {
-	height: 20%;
-	width: 20%;
-}
-
-.list a {
-	margin-top: 100px;
+.ecriture {
 	color: white;
+	position: relative;
+	float: left;
 }
 
-.list {
-	margin-top: 12px;
-}
-
-.coordonnees {
-	text-align: center;
-	color: white;
-	background-color: #5ea2c4;
-}
-
-.bandebas {
-	background-color: #5ea2c4;
-	padding-bottom: 0px;
-	text-align: center;
-	color: white;
-	overflow-y: hidden;
-}
-
-.textImage {
-	display: block;
-}
-
-.numero {
-	background-color: #5ea2c4;
-	margin-bottom: 0%;
-}
 .bienvenue {
-	color: #3a738f;
 	font-size: xx-large;
 	font-weight: bold;
 	margin-top: 5%;
@@ -54,14 +18,8 @@ header nav .nav-list {
 }
 
 .textBienvenue {
-	color: black;
 	margin-right: 50%;
 	margin-left: 5%;
-}
-
-.ecriture {
-	position: relative;
-	float: left;
 }
 
 .dateImage {
@@ -72,10 +30,11 @@ header nav .nav-list {
 }
 
 .listBouttons {
-	display: inline;
+	display: flex;
+	justify-content: space-around;
 	text-align: center;
 	margin-left: 20%;
-	margin-right: 50%;
+	margin-right: 20%;
 }
 
 .action {

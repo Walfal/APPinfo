@@ -30,3 +30,18 @@ class connexionBDD{
 }
 $DB = new connexionBDD;
 $BDD = $DB->connexion();
+
+
+function test(){
+	return 'test';
+}
+
+
+function recuperationMessage($BDD, $matriculeTest){
+	$req = $BDD->prepare("SELECT * FROM Message WHERE (matricule = $matriculeTest OR envoyeA = $matriculeTest) ORDER BY date");
+	
+	// $req->execute(array('id' => $_SESSION['id']));
+	$req->execute();
+	$conv = $req->fetchAll();
+	return $conv;
+}
