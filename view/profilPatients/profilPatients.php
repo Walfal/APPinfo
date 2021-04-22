@@ -93,19 +93,22 @@
                     <?php
                         require '../../model/modelProfilPatients/modelProfilPatients.php';
                         $db = Database::connect();
-                        $statement = $db->query('SELECT nom,prenom,num_ss,codePostal, id_Utilisateur FROM test.utilisateurs');
+                        $statement = $db->query('SELECT nom,prenom,num_ss,codePostal, id_Utilisateur, rol FROM test.utilisateurs');
                         while($valeur = $statement-> fetch()){
-                            echo '<tr>';
-                            echo '<td data-label="Nom :">' . $valeur['nom'] . '</td>';
-                            echo '<td data-label="Prénom :">' . $valeur['prenom'] . '</td>';
-                            echo '<td data-label="N° sécu :">' . $valeur['num_ss'] . '</td>';
-                            echo '<td data-label="Code Postale :">' . $valeur['codePostal'] . '</td>';
-                            echo '<td data-label="Actions :" width=300>';
-                            echo '<a href="../../view/profilPatients/voirProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Voir</a>';
-                            echo '<a href="../../view/profilPatients/modifierProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Modifier</a>';
-                            echo '<a href="../../view/profilPatients/supprimerProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Supprimer</a>';
-                            echo '</td>';
-                            echo '</tr>';
+                            if($valeur['rol']!=1){
+                                echo '<tr>';
+                                echo '<td data-label="Nom :">' . $valeur['nom'] . '</td>';
+                                echo '<td data-label="Prénom :">' . $valeur['prenom'] . '</td>';
+                                echo '<td data-label="N° sécu :">' . $valeur['num_ss'] . '</td>';
+                                echo '<td data-label="Code Postale :">' . $valeur['codePostal'] . '</td>';
+                                echo '<td data-label="Actions :" width=300>';
+                                echo '<a href="../../view/profilPatients/voirProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Voir</a>';
+                                echo '<a href="../../view/profilPatients/modifierProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Modifier</a>';
+                                echo '<a href="../../view/profilPatients/supprimerProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Supprimer</a>';
+                                echo '</td>';
+                                echo '</tr>';
+                            }
+                            
                         }
                         Database::disconnect();
                     ?>
