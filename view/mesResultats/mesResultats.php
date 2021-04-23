@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>mes Résultats</title>
-		<link href="../css/headerFooter.css" rel="stylesheet" />
-		<link href="../css/mesResultats.css" rel="stylesheet" />
+		<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
+		<link href="mesResultats.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
@@ -100,11 +100,10 @@
 				</div>
 				<div class="liens">
 					<ul>
-						<li><a href="../">Home</a></li>
-						<li><a href="services.html">Services</a></li>
-						<li><a href="quiSommesNous.html">About Us</a></li>
-						<li><a href="contactezNous.html">Contact Us</a></li>
-						<li><a href="#">FAQ</a></li>
+					<li><a href="../services/services.php">Services</a></li>
+					<li><a href="../quiSommesNous/quiSommesNous.php">About Us</a></li>
+					<li><a href="../contactezNous/contactezNous.php">Contact Us</a></li>
+					<li><a href="../faq/faq.php">FAQ</a></li>
 					</ul>
 				</div>
 			</div>
