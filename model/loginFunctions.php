@@ -8,34 +8,23 @@ function verifierMotDePasse($mail,$mdp,array $data,$result){
     
     if($result -> rowCount() > 0){
      //cas où le mot de passe n'est pas crypté   
-    if($mdp === $data[0]["mdp"]){
-        //debut de session
+        if($mdp === $data[0]["motDePasse"]){
+            //debut de session
+            session_start();
+            $_SESSION['mail'] = $data[0]["prenom"];
+            $erreur = null;
+            return $data[0]["matricule"];//recuperation du matricule
+        }
+        //cas ou le message est crypté
+        /*if(password_verify($mdp,$data[0]["motDePasse"])){
         
-        session_start();
+            //debut de session
+            session_start();
+            $_SESSION['mail'] =$data[0]["prenom"]; 
+            $erreur = null;
+            return $data[0]["matricule"];
         
-        $_SESSION['mail'] = $data[0]["prenom"];
-       
-        $bdd =null; //peut etre pas
-        $erreur = null;
-        
-        return $data[0]["matricule"];
-    }}
-    $erreur = 'Identifiants incorrects';
-        return $erreur;
-    //cas ou le message est crypté
-    /*if(password_verify($mdp,$data[0]["mdp"])){
-        
-        //debut de session
-        session_start();
-        $_SESSION['mail'] = $mail;
-        //redirection
-        header('Location: ../../accueilAdmin/accueilAdmin.php');
-
-        $bdd =null; //peut etre pas
-        $erreur = null;
-        return $erreur;
-        
-    }*/
+        }*/
     }
     
     $erreur = 'Identifiants incorrects';
@@ -51,7 +40,7 @@ function est_connecte():bool{
     }
     return !empty($_SESSION['mail']);
 }
-//si l'utilisateur n'est pas connecte le rediriger sur la page login a utilser lors de l'acces au compte
+//si l'utilisateur n'est pas connecte le rediriger sur la page login a utilser lors de l'acces au compte 
 function forcer_utilisateur_connecte(){
     if (!est_connecte()) {
         header('Location: ../login/login.php');
