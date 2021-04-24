@@ -3,11 +3,17 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Page d'accueil</title>
+<<<<<<< HEAD
 		<link href="headerFooter/headerFooter.css" rel="stylesheet" />
 		<link href="index.css" rel="stylesheet" />
 		<link rel="icon" href="images/logo/logo.png" />
 
 		<title> Page </title>
+=======
+		<link href="view/headerFooter/headerFooter.css" rel="stylesheet" />
+		<link href="view/index.css" rel="stylesheet" />
+		<link rel="icon" href="view/images/logo/logo.png" />
+>>>>>>> Alexia
 	</head>
 	<header>
 		<div class="wrapper">

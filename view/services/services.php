@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<title>Services</title>
 		<link href="services.css" rel="stylesheet" />
+		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
 	
@@ -91,4 +92,3 @@
 
 	<?php require '../footer/footer.php'; ?>
 </html>
->>>>>>> origin/Raph

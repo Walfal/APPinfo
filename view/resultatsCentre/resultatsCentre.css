@@ -135,134 +135,224 @@ nav .icon-burger .line {
 }
 
 
-/*milieu*/
-/*image avion*/
-h1 {
-    font-size: 2.5rem;
-    
-}
+/*--------------------------milieu---------------------------*/
+/*intro*/
+
 .intro{
-    height: 180px;
-    background-image: url("../images/planes/rafale2.jpg");
-    background-size: cover;
+	
+	margin-top: 50px;
+	height: 300px;
+}
+
+.fond{
+	background-image: url("../images/divers/salle_d_attente.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center;
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 5%;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(30px);
+	z-index: 1;
+	
+	height: 100%;
+	border: solid;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	
+}
+.introDiv{
+	
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	margin-right: auto;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	text-align: center;
+	display: flex;
+	z-index: 2;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(94,162,196,.8);
+	height: 200px;
+	width: 50%;
+	min-width: 400px;
+	
+
 }
 
-/*citation*/
-.citation{
-    background-color: #D4D8D9;
-    height: 100px;
-    color: #565757;
-    display: flex;
-    align-content: stretch;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    text-align: center;
+h1{
+	font-size: 40px;
+	color: white;
 }
 
-/*services*/
-.nosservices{
-    display: flex;
-    flex-direction: column;
-    height: 70%;
-    width: 70%;
-    align-items: center;
-    justify-content: space-around;
-    margin-left: auto;
-    margin-right: auto;
-    flex-wrap: wrap;
+.introDiv p {
+	color: white;
 }
 
-.nosservices h4 {
-    color: #565757;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-top: 5%;
+.centre u{
+	text-decoration: underline;
+}
+.imageEtoile{
+	width: 30px;
+	height: auto;
 }
 
-.nosservices h6{
-    color: #3A738F;
-     font-size: 1rem;
+.lieu{
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	min-width: 300px;
 }
 
-.nosservices p{
-    color: #565757;
+.lieu h2{
+	font-size: 25px;
+	color: #3a738f;
 }
 
-.services{
-    display: flex;
-    margin-top: 7%;
-    justify-content: space-between;
-    align-content: space-between;
-    flex-wrap: wrap; 
-    width: 100%;
-    margin-bottom: 7%;
+/*-----------milieu--------------------*/
+.milieu{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
 }
+.resume{
+	margin: 20px;
+	height: 150px;
+	width: 80%;
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
 
-.ligneune{
-    display: flex;
-    align-content: stretch;
-    width: 100%;
-    justify-content: space-between;
-    flex: wrap;
-    height: 30%;
-   
-}
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
 
-.sonlumiere{
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 7%;
-    justify-content: space-between;
-    /*width: 65%;*/
-    min-width: 60%;
-}
 
-/*image avec un v */
-.verifier{
-    width: 40px;
-    height: 40px;
-    margin-bottom: 10px;
-}
-
-.service:hover > .verifier{
-    animation: animation 1s;
+	justify-content: space-evenly;
+	-webkit-justify-content: space-evenly;
+    -ms-flex-pack: distribute;
     
+	align-items: center;
+	-webkit-align-items: center;
+    -ms-flex-align: center;
+
+	
+	
+
 }
 
-.service{
-    text-align: center;
+.case{
+	background-color: rgb(94,162,196);
+	height: 120px;
+	width: 160px;
+	color: white;
+	text-align: center;
+
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+
+	justify-content: space-evenly;
+	-webkit-justify-content: space-evenly;
+    -ms-flex-pack: distribute;
+
+	align-items: center;
+	-webkit-align-items: center;
+    -ms-flex-align: center;
+
+	align-content: space-around;
+	-ms-flex-align :inherit;
+	
+	
+	flex-direction: column;
+	-ms-flex-direction: column;
+
+	
+	
 }
 
-@keyframes animation{
-    0%{
-        transform: translateY(0px);
-    }
-    50%{
-        transform: translateY(-10px);
-    }
-    100%{
-        transform: translateY(0px);
-    }
+.case p{
+	font-size: 17px;
 }
 
+.cercle{
+	width: 50px;
+	height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+	.resume{
+		height: 300px;
+	}
+}
+/*--------------test-------------------*/
 
 
+.test{
+	margin: 20px;
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
 
+.test h3{
+	border-bottom: #97a5aa solid;
+	font-size: 20px;
+	color: rgb(94,162,196);
+	padding-bottom: 10px;
+	
+}
 
+.bar{
+	width: 70px;
+	height: 70px;
+}
 
+.resultat{
+	display: flex;
+	height: 300px;
+	flex-direction: column;
+	justify-content: space-around;
+	align-content: center;
+	align-items: center;
+}
 
+.detail{
+	background-color:rgba(151,165,170,.8);
+	/*border-radius: 10%;*/
+	margin-bottom: 20px;
+	width: 90%;
+	padding: 30px;
+	border-radius: 10px;
+	text-align: justify;
+}
 
+.retour{
+	cursor: pointer;
+	width: 100px;
+	height: 40px;
+	background-color: rgb(94,162,196);
+	outline: none;
+	border: none;
+	border-radius: 15px;
+	color: white;
+	left: 40%;
+	margin-bottom: 40px;
+	position: relative;
+	font-weight: bold;
+	
+}
+
+.retour:hover{
+	border: black solid;
+}
 
 /* --------------------------FOOTER -------------------------------*/
 footer{
@@ -357,6 +447,7 @@ footer{
     color: white;
     text-align: center;
     margin-top: 10px;
+<<<<<<< HEAD
 @import url('http://fonts.cdnfonts.com/css/gemina-2-3d');
 
 
@@ -806,4 +897,6 @@ footer{
     color: white;
     text-align: center;
     margin-top: 10px;
+=======
+>>>>>>> Alexia
 }

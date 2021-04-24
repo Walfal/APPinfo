@@ -2,7 +2,6 @@
 <html lang="fr">
 
 
-<?php require '../header/header.php'; ?>
 
 
     <head>
@@ -11,6 +10,7 @@
         <title>Gestion des capteurs</title>
     </head>
 
+<?php require '../header/header.php'; ?>
 <body>
     <div class = "hautPage">
 	    <p class = "titrePage"><b>Gestion des tests et des capteurs</b></p>
@@ -49,7 +49,6 @@
         <input  class="supprimer" type="submit" name="supprimer" id="supprimer" value="Supprimer">
     </div>
 </body>
-
 
 <footer>
 		<div class="contenu-footer">

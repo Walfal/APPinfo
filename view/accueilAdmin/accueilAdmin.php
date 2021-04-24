@@ -55,8 +55,19 @@
         </div>
     </section>
 
-    <!-- ----------------------------------------------------------- NOS ENGAGEMENTS---------------------------------------------------------------------------------- -->
-
+    <div class="contenu">
+        <nav class="bouttons">
+            <div class="listBouttons">
+                <button class="action"><a href="#">Gestion tests/capteurs</a></button>
+                <div class="divider"></div>
+                <button class="action"><a href="../../view/profilPatients/profilPatients.php">Profil patients</a></button>
+                <div class="divider"></div>
+                <button class="action"><a href="#">Planning</a></button>
+                <div class="divider"></div>
+                <button class="action"><a href="#">Modifier mon profil</a></button>
+                </div>
+        </nav>
+    </div>
  
         <div class="bouttons">
             <button class="boutton">Gestion tests/capteurs</button> 
