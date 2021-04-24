@@ -70,15 +70,14 @@ centre {
 	padding-inline: 3vh;
 }
 .resultat{
-	margin-left: 21%;
+	display: flex;
+	justify-content: space-evenly;
 	border-collapse: collapse;
 	min-width: 30%;
-	width:auto;
 	margin-bottom: 10%;
 	margin-top: 10%;
-	border: 2px black solid;
-	box-shadow: 0 5px 50px rgba(0,0,0,0.15);
-	border-radius: 50px;
+	
+	
 }
 
 tr{

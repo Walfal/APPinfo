@@ -47,10 +47,19 @@ function recuperationMessage($BDD, $matriculeTest){
 }
 
 function recuperationTest($BDD, $matriculeTest){
-	$req = $BDD->prepare("SELECT * FROM Test;");
+	$req = $BDD->prepare("SELECT * FROM Test WHERE (idPersonne = $matriculeTest);");
 	
 	// $req->execute(array('id' => $_SESSION['id']));
 	$req->execute();
 	$test = $req->fetchAll();
+	return $test;
+}
+
+function recuperationNom($BDD, $matricule){
+	$req = $BDD->prepare("SELECT nom FROM personne WHERE (matricule = $matricule);");
+	
+	// $req->execute(array('id' => $_SESSION['id']));
+	$req->execute();
+	$test = $req->fetch();
 	return $test;
 }
