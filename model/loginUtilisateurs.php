@@ -29,7 +29,7 @@ if(!empty($_POST['mail']) && !empty($_POST['mdp'])){
     $result = requeteLogin($bdd,$table,$mail,$mdp);
     $data = $result ->fetchAll();
     //verification du mot de passe
-    $verif = verifierMotDePasse($mail,$mdp,$data,$result);
+    $verif = verifierMotDePasse($mail,$mdp,$data,$result);//si cest bon le matricule est dedans
     
     
 }else{
@@ -38,7 +38,12 @@ if(!empty($_POST['mail']) && !empty($_POST['mdp'])){
 }
 //redirection sur la page accueil si on est dejà connecté
 if(est_connecte()){//faire la distinction ici entre l 'admin et l'utilisateur
-    header('Location: ../accueilAdmin/accueilAdmin.php');
+    if($verif != 0){//utilisateur
+        header('Location: ../accueilUtilisateur/accueilutilisateur.php');
+    }else{//admin
+        header('Location: ../accueilAdmin/accueilAdmin.php');
+    }
+    
     exit();
 }
 

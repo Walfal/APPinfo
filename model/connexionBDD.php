@@ -14,7 +14,7 @@ function connexionPDO(string $base,string $host,string $utilisateur,$pass){
 }
 
 function requeteLogin($bdd,$table,$mail,$mdp){
-    $requete = "SELECT * FROM $table where mail = '$mail'";
+    $requete = "SELECT * FROM $table where mail = '$mail' ";
     $result = $bdd->prepare($requete);
     $result->bindParam(":mail", $mail);
     $result -> execute();
