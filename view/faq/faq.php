@@ -56,7 +56,18 @@
         </div>
 
         <!-- ----------------------------------------------------------- FAQ ---------------------------------------------------------------------------------- -->
-		
+		<?php
+			require '../../model/modelFaq/modelFaq.php';
+
+			$db = Database::connect();
+			/*$valeur = Database::listeCategorie($db);
+			echo $valeur;
+			Database::disconnect();
+*/
+			Database::listeCategorie($db);
+
+		?>
+
 		<section class="ib-faq js-ib-faq">
 			<ul class="faq-categories">
 				<li><a href="#topic-1" class="faq-category">Topic 1<i class="mob"></i></a></li>
@@ -191,9 +202,11 @@
 				</ul>
 
 			</div>
-			<div class="faq-overlay" aria-hidden="true"></div>
+			
 		</section>
-		<script src="../js/faq.js"></script>
+		<div class="contact">
+			<p>Pour plus d'informations, contactez-nous, <a href="">cliquez ici</a></p>
+		</div>
     
     </body>
 
