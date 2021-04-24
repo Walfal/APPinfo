@@ -6,7 +6,8 @@
         <title>Document</title>
     </head>
 
-	<?php require '../header/header.php'; ?>
+	<?php require '../header/header.php'; 
+	require 'bootstrap.php'?>
 
 
 	<body>
