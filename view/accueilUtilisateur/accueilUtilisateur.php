@@ -7,7 +7,7 @@ require_once '../header/header.php';?>
 <div class="contenu">
     <div class="contenu1">
         <div class="bienvenue">
-            <h1>Bienvenue<?php echo $_SESSION['mail']?></h1>
+            <h1>Bienvenue <?php echo $_SESSION['mail']?></h1>
             <p>Lorem ipsum dolor sit amet,<br />
 				consectetur adipiscing elit.<br />
 				Maecenas at.
@@ -15,7 +15,10 @@ require_once '../header/header.php';?>
         </div>
         <div class="photo">
             <img src="../images/icons/user.png" class="photoProfil">
-            <div class="dateTime">Dernière connexion le :</div>
+           
+            <div>	<?php if(est_connecte()):?>
+           <a href="../logout/logout.php" ><button class="deconnexion">Se déconnecter</button> </a>
+            <?php endif ?></div>
         </div>
     </div>
     <div class="contenu2">
@@ -24,7 +27,7 @@ require_once '../header/header.php';?>
         <button class="case">
             <img src="../images/icons/dossier.png" class="image">
                 <p>
-                   Profil patients
+                   Mes résultats
                 </p>
         </button></a>
         <a href="../prendreRDV/prendreRDV.php">

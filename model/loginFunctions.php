@@ -11,14 +11,13 @@ function verifierMotDePasse($mail,$mdp,array $data,$result){
         //debut de session
         
         session_start();
-        $_SESSION['mail'] = $mail;
-        //redirection
-        //header('Location: ../../accueilAdmin/accueilAdmin.php');
-        header('Location: ../../services/services.php');
+        
+        $_SESSION['mail'] = $data[0]["prenom"];
+       
         $bdd =null; //peut etre pas
         $erreur = null;
         
-        return $erreur;
+        return $data[0]["matricule"];
     }}
     $erreur = 'Identifiants incorrects';
         return $erreur;
