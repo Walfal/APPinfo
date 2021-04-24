@@ -74,6 +74,12 @@ input[type=text]{
     background-color: #3a738f;
     color: white;
 }
+
+.aucun{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
 @media screen and (max-width: 865px){
     .filter{
         height: 270px;
