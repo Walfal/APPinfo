@@ -46,8 +46,6 @@
 }
 
 /* --------------------------FAQ -------------------------------*/
-
-
 ul{
     list-style: none;
 }
@@ -58,16 +56,23 @@ ul{
     margin-right: auto;
     margin-bottom: 50px;
     margin-top: 50px;
+    position: relative;
+    display: flex;
 }
+
 
 .ib-faq a{
     text-decoration: none;
 }
 .faq-categories{
     margin-top: 20px;
+    position: sticky;
+    align-self: flex-start;
+    flex-shrink: 0;
+    top: 25px;
+    width: 28%;
 }
 .faq-category{
-    position: relative;
     display: block;
     height: 50px;
     line-height: 50px;
@@ -104,46 +109,21 @@ li:first-child .faq-category{
 
 .faq-items{
     z-index: 1;
-    position:fixed;
-    height: 100%;
     background-color: white;
     width: 90%;
     top: 0%;
     right: 0%;
     padding: 0 1.25rem 1.2rem;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform: translateZ(0) translateX(100%);
-    transition: -wekbit-transform .3s;
-    transition: transform .3s;
-    transition: transform .3s,-wekbit-transform .3s;
-}
-
-@media(min-width: 768px){
-    .faq-items{
-        position: static;
-        height: auto;
-        width: auto;
-        -ms-flex-positive:1;
-        overflow: hidden;
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-        padding: 0 0 0 .75rem;
-        background: transparent;
-        z-index: 1;         /*Pour le mettre en dernière position*/
-    }    
-}
-
-.faq-items--slide-in{
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
+    position: static;
+    height: auto;
+    width: auto;
+    overflow: hidden;
 }
 
 .faq-group{
-    display: none;
+    /*display: none;*/
+    display: block;
+    padding-top: 1px;
 }
 
 .faq-title{
@@ -163,36 +143,27 @@ li:first-child .faq-category{
     margin: 1.25rem 0 .5rem;
     color: #565757;
     font-weight: 800;
+    font-weight: 700;
+    margin: 0%;
+    padding: .75rem 2rem .75rem 0rem;
+}
+.faq-question span{
+    font-size: 1.3rem;
+}
+.faq-group{
+    display: block;
+    padding-top: 1px;
 }
 
-@media(min-width:768px){
-    .faq-group{
-        display: block;
-        padding-top: 1px;
-    }
-
-    .faq-item{
-        background-color: white;
-        margin-bottom: .25rem;
-        box-shadow: 0 1px 2px rgba(0,0,0, .09);       /*pour faire l encadré de la question*/
-        transition: box-shadow .2s;       
-    }
-
-    .faq-item:hover{
-        box-shadow: 0 1px 2px #6b7d8e;
-    }
-    .faq-question{
-        font-weight: 700;
-        margin: 0%;
-        padding: .75rem 2rem .75rem 0rem;
-    }
-
-    .faq-question span{
-        font-size: 1.3rem;
-    }
+.faq-item{
+    background-color: white;
+    margin-bottom: .25rem;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0, .09);       /*pour faire l encadré de la question*/
 }
-
-
+.faq-item:hover{
+    box-shadow: 0 1px 2px #6b7d8e;
+}
 
 .faq-group .faq-item:last-of-type{      /*L'espace pour derniere question du topic*/
     margin-bottom: 3rem;                  
@@ -201,91 +172,16 @@ li:first-child .faq-category{
 .faq-response p {
     color: #6b7d8e;
 }
-
-@media(min-width:768px){
-    .faq-response{
-        display: none;         
-        padding: 0 2rem;
-        line-height: 1.5rem;
-        overflow: hidden;
-    }
-
-    .faq-response .text-block{
-        padding-bottom: 1.2rem;
-    }
-}
-
-.faq-response--visible{
-    display: block;
-}
-
-@media(min-width:768px){
-    html:not(.js) .faq-response{
-        display: block;
-    }
-}
-.faq-overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: hsla(213,7%,33%,.8);
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity .3s, visibility .3s;
-}
-@media(min-width:768px){
-    .faq-overlay{
-        display: none;
-    }
-}
-
-.faq-overlay--is-visible{
-    visibility: visible;
-    opacity: 1;
-}
-
-.text-block > *:first-child{
+.text-block {
     margin-top: .5rem;
-}
-
-.text-block > *:last-child{
     margin-bottom: .5rem;
 }
 
-.is-visible{
-    display: block;
-}
-
-.ib-faq{
-    box-shadow: 0 1px 2px rgba(0,0,0, .09), 0 1px 8px rgba(0,0,0, .05); /*Le contour tout autour*/
-}
-
-.ib-faq::before{
-    content: 'mobile';
-    display: none;
-}
 
 
 
-@media(min-width:768px){
-    .ib-faq{
-        position: relative;
-        box-shadow: none;
-        display: flex;
-    }
 
-    .ib-faq::before{
-        content: 'desktop';
-    }
-    .faq-categories{
-        position: sticky;
-        align-self: flex-start;
-        flex-shrink: 0;
-        top: 25px;
-        width: 28%;
-        box-shadow: 0 1px 2px rgba(0,0,0, .09), 0 1px 8px rgba(0,0,0, .05);
-    }
-    
-}
+
+
+
+
