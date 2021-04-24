@@ -1,7 +1,5 @@
 <?php
 	include_once('../../model/connexionBDD.php');
-	//include_once('../../model/messagerie.php');
-	include('../../model/envoieDesDonnees.php');
 
 	$matriculeTest = 0;
 
