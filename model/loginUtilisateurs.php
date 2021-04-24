@@ -33,7 +33,7 @@ if(!empty($_POST['mail']) && !empty($_POST['mdp'])){
     
     
 }else{
-    $verif = 'Veuillez entre des informations';
+    $verif = 'Entrez des informations';
 }
 }
 //redirection sur la page accueil si on est dejà connecté

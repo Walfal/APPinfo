@@ -5,9 +5,10 @@
 
 //verification du mot de passe
 function verifierMotDePasse($mail,$mdp,array $data,$result){
-    //cas où le mot de passe n'est pas crypté
+    
     if($result -> rowCount() > 0){
-    if($mdp === $data[0]["motDePasse"]){
+     //cas où le mot de passe n'est pas crypté   
+    if($mdp === $data[0]["mdp"]){
         //debut de session
         
         session_start();
@@ -19,11 +20,9 @@ function verifierMotDePasse($mail,$mdp,array $data,$result){
         $erreur = null;
         
         return $erreur;
-    }}
-    $erreur = 'Identifiants incorrects';
-        return $erreur;
+    }
     //cas ou le message est crypté
-    /*if(password_verify($mdp,$data[0]["motDePasse"])){
+    /*if(password_verify($mdp,$data[0]["mdp"])){
         
         //debut de session
         session_start();
@@ -35,12 +34,11 @@ function verifierMotDePasse($mail,$mdp,array $data,$result){
         $erreur = null;
         return $erreur;
         
-    }else{
-        //message d'erreur
-        //return erreurConnexion('Identifiants incorrects');
-        $erreur = 'Identifiants incorrects';
-        return $erreur;
     }*/
+    }
+    
+    $erreur = 'Identifiants incorrects';
+    return $erreur;
   
 }
 
