@@ -38,11 +38,6 @@ function recuperationMessages($BDD, $idConversation){
 	return $req->fetchAll();
 }
 
-function recuperationUneDonnee($BDD, $table, $where, $where2){
-	$req = $BDD->prepare("SELECT * FROM $table WHERE $where = $where2");
-	$req->execute();
-	return $req->fetch();
-}
 
 function recuperationConversationsAdmin($BDD){
 	$req = $BDD->prepare("SELECT * FROM Conversation ORDER BY idConversation");
@@ -50,26 +45,15 @@ function recuperationConversationsAdmin($BDD){
 	return $req->fetchAll();
 }
 
-
-
-
-
-
-/*--------------------------------Jad-------------------------------------------------------*/
-function recuperationMessage($BDD, $matriculeTest){
-	$req = $BDD->prepare("SELECT * FROM Message WHERE (matricule = $matriculeTest OR envoyeA = $matriculeTest) ORDER BY date");
-	$req->execute();
-	return $req->fetchAll();
-}
-
-function recuperationTest($BDD, $matriculeTest){
-	$req = $BDD->prepare("SELECT * FROM Test WHERE (idPersonne = $matriculeTest);");
-	$req->execute();
-	return $req->fetchAll();
-}
-
-function recuperationNom($BDD, $matricule){
-	$req = $BDD->prepare("SELECT nom FROM personne WHERE (matricule = $matricule);");
+function recuperationUneDonnee($BDD, $table, $where, $where2){
+	$req = $BDD->prepare("SELECT * FROM $table WHERE $where = $where2");
 	$req->execute();
 	return $req->fetch();
 }
+
+function recuperationDesDonnees($BDD, $table, $where, $where2){
+	$req = $BDD->prepare("SELECT * FROM $table WHERE $where = $where2");
+	$req->execute();
+	return $req->fetchAll();
+}
+
