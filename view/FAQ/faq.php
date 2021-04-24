@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
 		<title>FAQ</title>
-		<link href="../css/faq.css" rel="stylesheet" />
-        <link rel="stylesheet" href="../css/headerFooter.css">
+		<link href="../css/headerFooter.css" rel="stylesheet" />
+		<link href="../css/FAQ.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
-
-    <!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
 	<header>
 		<div class="wrapper">
 			<nav>
 				<input id="nav-toggle" type="checkbox" />
-				<a href="../accueil.html"><img class="logo" src="../images/logo/sensair.png" alt="" /></a>
+				<a href="../"><img class="logo" src="../images/logo/sensair.png" alt="" /></a>
 				<ul class="links">
-					<li><a href="../accueil.html">Home</a></li>
+					<li><a href="../">Home</a></li>
 					<li><a href="services.html">Services</a></li>
-					<li><a href="quiSommesNous.html">About Us</a></li>
+							<li><a href="quiSommesNous.html">About Us</a></li>
 					<li><a href="contactezNous.html">Contact Us</a></li>
-					<li><a href="faq.html">FAQ</a></li>
+					<li><a href=".">FAQ</a></li>
 					<li>
 						<a href="#">
 							<img class="bi bi-globe" src="../images/icons/language.svg" style="width: 25px" />
 						</a>
 					</li>
 					<li>
-						<a href="#"
+						<a href="login.html"
 							><img class="bi bi-globe" src="../images/icons/account.svg" style="width: 25px"
 						/></a>
 					</li>
@@ -40,169 +38,24 @@
 		</div>
 	</header>
 
-    <body>
-       
-        
-        <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
-
-        <div class="banniere">
-            <div class="content">
-                <h2>UNE QUESTION ?</h2>
-                <p>Nous sommes là pour vous aider</p>
-            </div>
-            <div class="image">
-                <img src="../images/icons/question.png" alt="">
-            </div>
-        </div>
-
-        <!-- ----------------------------------------------------------- FAQ ---------------------------------------------------------------------------------- -->
-		
-		<section class="ib-faq js-ib-faq">
-			<ul class="faq-categories">
-				<li><a href="topic-1" class="faq-category">Topic 1<i class="mob"></i></a></li>
-				<li><a href="topic-2" class="faq-category">Topic 2<i class="mob"></i></a></li>
-				<li><a href="topic-3" class="faq-category">Topic 3<i class="mob"></i></a></li>
-				<li><a href="topic-4" class="faq-category">Topic 4<i class="mob"></i></a></li>
-				<li><a href="topic-5" class="faq-category">Topic 5<i class="mob"></i></a></li>
-			</ul>
-
-			<div class="faq-items">
-				<ul id="topic-1" class="faq-group">
-					<li class="faq-title"><h2>Topic 1</h2></li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 1 - Question1</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 1 - Question2</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 1 - Question3</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-				</ul>
-
-				<ul id="topic-2" class="faq-group">
-					<li class="faq-title"><h2>Topic 2</h2></li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 2 - Question1</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 2 - Question2</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 2 - Question3</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-				</ul>
-
-				<ul id="topic-3" class="faq-group">
-					<li class="faq-title"><h2>Topic 3</h2></li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 3 - Question1</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 3 - Question2</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 3 - Question3</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-				</ul>
-
-				<ul id="topic-4" class="faq-group">
-					<li class="faq-title"><h2>Topic 4</h2></li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 4 - Question1</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 4 - Question2</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-
-					<li class="faq-item">
-						<a href="#0" class="faq-question"><span>Topic 4 - Question3</span></a>
-						<div class="faq-response">
-							<div class="text-block">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea eos quaerat vel eum cumque eius ipsum laboriosam quos! Tempora quas sequi delectus consectetur voluptates laboriosam perspiciatis voluptatem accusamus incidunt?</p>
-							</div>
-						</div>
-					</li>
-				</ul>
-
-			</div>
-			<div class="faq-overlay" aria-hidden="true"></div>
-		</section>
-		<script src="../js/faq.js"></script>
-    
-    </body>
-
-	<!-------------------------------------------FOOTER--------------------------------------------------------------->
-    <footer>
+	<body>
+		<div class="bandehaut">
+			<div class="txt">
+			<p class="titrePage">UNE QUESTION ?</p>
+			<p class="sousTitre"><br>NOUS SOMMES LÀ POUR VOUS</p></div>
+			<img src="../images/icons/live-chat.svg"/>
+		</div>
+		<?php
+		$var = 1;
+		for ($i = 0; $i < 100; $i++) {
+			echo "- $var \n";
+		}
+		?></php>
+	</body>
+	<footer>
 		<div class="contenu-footer">
 			<div class="bloc logo">
-				<a href="../accueil.html"><img class="logo" src="../images/logo/logo.png" alt="" /></a>
+				<a href="../"><img class="logo" src="../images/logo/logo.png" alt="" /></a>
 			</div>
 			<div class="bloc coordonnees">
 				<div class="coor">
@@ -231,16 +84,15 @@
 				</div>
 				<div class="liens">
 					<ul>
-						<li><a href="../accueil.html">Home</a></li>
+						<li><a href="../">Home</a></li>
 						<li><a href="services.html">Services</a></li>
 						<li><a href="quiSommesNous.html">About Us</a></li>
 						<li><a href="contactezNous.html">Contact Us</a></li>
-						<li><a href="faq.html">FAQ</a></li>
+						<li><a href=".">FAQ</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<p id="coyright">© 2021 Sens'air</p>
 	</footer>
-
-</html>    
+</html>

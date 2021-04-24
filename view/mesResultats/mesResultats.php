@@ -1,10 +1,22 @@
+<?php
+	include_once('../../model/connexionBDD.php');
+	include('../../model/envoieTest.php');
+	$matriculeTest = 1;
+	$envoieA = 2 - $matriculeTest;
+	$matricule = 1;
+
+	$test = recuperationTest($BDD, $matriculeTest);
+	$nom = recuperationNom($BDD, $matricule);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<title>mes Résultats</title>
-		<link href="../css/headerFooter.css" rel="stylesheet" />
-		<link href="../css/mesResultats.css" rel="stylesheet" />
+		<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
+		<link href="mesResultats.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
@@ -50,7 +62,7 @@
 				<div class="result">
 					<div class="date">
 						<img src="../images/icons/calendarWhite.svg" alt="calendrier" class="calendar" />
-						<h2>date</h2>
+						<h2>Date</h2>
 					</div>
 					<place>
 						<centre>
@@ -61,10 +73,33 @@
 							Consulter<br />
 							mes résultats
 						</button>
+						
 					</place>
 				</div>
 			</div>
 		</div>
+		<table class="resultat">
+			<tr>
+				<th>Type de Test</th>
+				<th>Résultat</th>
+				<th>Date</th>
+				<!--<th>Date</th>-->
+				<th>Nom</th>
+			<!--	<th>nom</th>-->
+			<!--	<th>IdCapteur</th>-->
+			</tr>
+			<?php foreach($test as $row): ?>
+				<tr>
+				<!--<td><?= $row['idTest'];?></td>-->
+				<td><?= $row['type'];?></td>
+				<td><?= $row['resultat'];?></td>
+				<td><?= $row['date'];?></td>
+				<!--<td><?= $row['trame'];?></td>-->
+				<td><?= $nom['nom'];?></td>
+				<!--<td><?= $row['idCapteur'];?></td>-->
+				</tr>
+			<?php endforeach ?>
+		</table>
 	</body>
 	<!-- ----------------------------------------------------------- FOOTER ---------------------------------------------------------------------------------- -->
 

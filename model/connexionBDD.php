@@ -49,3 +49,27 @@ function recuperationConversationsAdmin($BDD){
 	$req->execute();
 	return $req->fetchAll();
 }
+
+
+
+
+
+
+/*--------------------------------Jad-------------------------------------------------------*/
+function recuperationMessage($BDD, $matriculeTest){
+	$req = $BDD->prepare("SELECT * FROM Message WHERE (matricule = $matriculeTest OR envoyeA = $matriculeTest) ORDER BY date");
+	$req->execute();
+	return $req->fetchAll();
+}
+
+function recuperationTest($BDD, $matriculeTest){
+	$req = $BDD->prepare("SELECT * FROM Test WHERE (idPersonne = $matriculeTest);");
+	$req->execute();
+	return $req->fetchAll();
+}
+
+function recuperationNom($BDD, $matricule){
+	$req = $BDD->prepare("SELECT nom FROM personne WHERE (matricule = $matricule);");
+	$req->execute();
+	return $req->fetch();
+}

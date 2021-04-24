@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8" />
 		<title>accueil administrateur</title>
@@ -39,40 +38,37 @@
 			</nav>
 		</div>
 	</header>
-    <body>
+	<body>
 
-    <div class="welcome">
-        <div class="textImage">
-            <div class="ecriture">
-                <p class="bienvenue">Bienvenue amigo! </p>
-                <p class="textBienvenue">
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum finibus sapien ut lacinia. Integer vulputate varius dolor, in pellentesque.
-                    </br>
-                </p>
+    <!-- ------------------------------------------------------------ PRESENTATION---------------------------------------------------------------------------------- -->
+
+    <section id="presentation">
+        <div class="wrapper">
+            <div class="intro">
+                <h2>Bienvenue amigo!</h2>
+                <p class="textBienvenue">Et Epigonus quidem amictu tenus philosophus, ut apparuit, prece frustra temptata, sulcatis lateribus mortisque metu admoto turpi confessione cogitatorum socium.</p>
             </div>
-            <img href="../images/icons/user.png" style="width: 50px"/>
-            <div class="dateImage">
-               
+            <div id="imageDate">
+                <img id="user" src="../images/icons/user.png" alt=""></img>
+                <p id="date">Dernière connexion le 10/02/2021</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="contenu">
+    <!-- ----------------------------------------------------------- NOS ENGAGEMENTS---------------------------------------------------------------------------------- -->
+
+ 
         <div class="bouttons">
-            <div class="listBouttons">
-                <button class="action"><a href="#">Gestion tests/capteurs</a></button>
-                <div class="divider"></div>
-                <button class="action"><a href="#">Profil patients</a></button>
-                <div class="divider"></div>
-                <button class="action"><a href="#">Planning</a></button>
-                <div class="divider"></div>
-                <button class="action"><a href="#">Modifier mon profil</a></button>
-            </div>
+            <button class="boutton">Gestion tests/capteurs</button> 
+            <div class="divider"></div>
+            <button class="boutton" type="submit">profil patients</button>
+            <div class="divider"></div>
+            <button class="boutton" type="">Planning</button>
+            <div class="divider"></div>
+            <button class="boutton" type="submit">Modifier mon profil</button>
         </div>
-    </div>
-</body>
 
+    <!-- ----------------------------------------------------------- FOOTER ---------------------------------------------------------------------------------- -->
 <footer>
 		<div class="contenu-footer">
 			<div class="bloc logo">
@@ -96,24 +92,24 @@
 				</div>
 			</div>
 
-			<div class="bloc reseaux">
-				<div class="res">
-					<h4>SUIVEZ-NOUS</h4>
-					<a href="#"><img class="facebook" src="../images/icons/facebook.png" alt="" /></a>
-					<a href="#"><img class="google" src="../images/icons/google.png" alt="" /></a>
-					<a href="#"><img class="linkedin" src="../images/icons/linkedin.png" alt="" /></a>
-				</div>
-				<div class="liens">
-					<ul>
-						<li><a href="../">Home</a></li>
-						<li><a href="services.html">Services</a></li>
-						<li><a href="quiSommesNous.html">About Us</a></li>
-						<li><a href="contactezNous.html">Contact Us</a></li>
-						<li><a href="#">FAQ</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<p id="coyright">© 2021 Sens'air</p>
-	</footer>
+        <div class="bloc reseaux">
+            <div class="res">
+                <h4>SUIVEZ-NOUS</h4>
+                <a href="#"><img class="facebook" src="../images/icons/facebook.png" alt="" /></a>
+                <a href="#"><img class="google" src="../images/icons/google.png" alt="" /></a>
+                <a href="#"><img class="linkedin" src="../images/icons/linkedin.png" alt="" /></a>
+            </div>
+            <div class="liens">
+                <ul>
+                    <li><a href="../">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="quiSommesNous.html">About Us</a></li>
+                    <li><a href="contactezNous.html">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p id="coyright">© 2021 Sens'air</p>
+</footer>
 </html>

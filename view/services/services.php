@@ -141,6 +141,7 @@
 				</div>
 			</div>
 
+
 			<div class="bloc reseaux">
 				<div class="res">
 					<h4>SUIVEZ-NOUS</h4>
@@ -162,3 +163,4 @@
 		<p id="coyright">© 2021 Sens'air</p>
 	</footer>
 </html>
+>>>>>>> origin/Raph
