@@ -1,149 +1,19 @@
-<<<<<<< HEAD
-*{
-    margin:0;
-    padding:0;
+nav {
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	right: 0;
+	top: 0;
+	font-family: "Montserrat", sans-serif;
+	height: 50px;
+	background-color: #3a738f;
 }
 
-
-
-.bandehaut{
-    margin-top: 2.5%;
-    background-color: #5EA2C4;
-    background-image: url("../../images/divers/SAV.jpg") ;
-    background-size: contain;
-    background-position: right;
-    background-repeat: no-repeat;
-    height: 200px;
-    width: 100%;
-    font-family:  Arial;
-    color: white;
-    
-}
-
-*{
-    margin:0;
-    padding:0;
-  }
-
-.titrePage {
-    padding-top: 2%;
-    padding-left: 10%;
-    margin-top: 0%;
-    border-top: 0%;  
-    font-size: 250%;
-    
-}
-
-.sousTitre {
-    padding-left: 20%;
-    margin-top: 0%;
-    border-top: 0%;
-    font-size: 200%;
-    padding-top: 2%;
-}
-
-
-.consigne{
-    color: #3A738f;
-    padding-top: 5%;
-    padding-bottom: 2%;
-}
-
-.formulaire {
-    position: float;
-    font-size: 175%;
-    float: center;
-    text-align: center;
-    
-
-}
-
-.boite{
-   padding: 14px 40px;
-   margin: 10px;
-   width: 30%;
-   border-radius: 10px;
-   border-style: outset;
-}
-
-.boiteMessage{
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 14px 40px;
-    margin: 10px;
-    height: 150px;
-    width: 30%;
-    border-radius: 10px;
-    border-style: outset;
-}
-
-
-.boiteEnvoyer {
-    background: #3A738f;
-    color: white;
-    border-style: none;
-    height: 30px;;
-    width: 5%;
-    border-radius: 10px;
-    font:  15px arial, sans-serif;
-   margin-bottom: 1%;
-}
-.bandebas {
-    background-color: #5EA2C4;
-    background-image: url("../images/divers/map.png");
-    background-size: contain;
-    background-position: left;
-    background-repeat: no-repeat;
-  
-    color: white;
-    position:relative;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    height: 350px;
-    padding-left: 20%;
-    
-}
-
-.champs {
-    padding-bottom: 2%;
-    text-align: right;
-}
-
-.bandebas img {
-    position: absolute;
-    left : 0;
-}
-
-
-.coordonnees{
-    font-size: 20px;
-    padding-top: 5%;
-}
-
-.info{
-    font-size: 20px;
-    padding-top: 2%;
-}
-
-
-
-=======
-nav{
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    right: 0;
-    top: 0;
-    font-family: 'Montserrat', sans-serif;
-    height: 50px;
-    background-color: #3a738f;
-}
-
-nav .logo{
-    float: left;
+nav .logo {
+	float: left;
 	width: 250px;
 	display: flex;
 	align-items: center;
-	
 }
 
 nav .links {
@@ -169,9 +39,9 @@ nav .links a {
 	text-decoration: none;
 }
 
-.links li a:hover{
-    color:#97a5aa;
-    transition: all 0.3s ease 0s;
+.links li a:hover {
+	color: #97a5aa;
+	transition: all 0.3s ease 0s;
 }
 
 #nav-toggle {
@@ -193,7 +63,7 @@ nav .icon-burger .line {
 	background-color: #fff;
 	margin: 5px;
 	border-radius: 3px;
-	transition: all .3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
@@ -201,7 +71,7 @@ nav .icon-burger .line {
 		float: none;
 		width: none;
 		margin-right: auto;
-        margin-left: auto;
+		margin-left: auto;
 	}
 	nav .links {
 		float: none;
@@ -215,10 +85,10 @@ nav .icon-burger .line {
 		height: auto;
 		flex-direction: column;
 		justify-content: space-evenly;
-		background-color: rgba(0,0,0,.8);
+		background-color: rgba(0, 0, 0, 0.8);
 		overflow: hidden;
 		box-sizing: border-box;
-		transition: all .5s ease-in-out;
+		transition: all 0.5s ease-in-out;
 	}
 	nav .links a {
 		font-size: 20px;
@@ -229,7 +99,7 @@ nav .icon-burger .line {
 	nav .icon-burger {
 		display: block;
 	}
-    nav :checked ~ .icon-burger .line:nth-child(1) {
+	nav :checked ~ .icon-burger .line:nth-child(1) {
 		transform: translateY(8px) rotate(225deg);
 	}
 	nav :checked ~ .icon-burger .line:nth-child(3) {
@@ -240,35 +110,34 @@ nav .icon-burger .line {
 	}
 }
 
->>>>>>> Alexia
-*{
-    margin:0;
-    padding:0;
+* {
+	margin: 0;
+	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-.hautPage{
+.hautPage {
 	display: flex;
 	align-items: center;
-	background-color: #5EA2C4;
+	background-color: #5ea2c4;
 	margin-top: 50px;
 	margin-top: 50px;
 	padding-top: 2%;
 	padding-bottom: 2%;
 }
 
-.titrePage{
+.titrePage {
 	font-size: 50px;
 	margin-left: 5%;
 	color: white;
 }
 
-.imgCalendrier{
+.imgCalendrier {
 	margin-left: 2%;
 	height: 90px;
 }
 
-.recherche{
+.recherche {
 	position: absolute;
 	top: 35%;
 	left: 12.5%;
@@ -277,18 +146,17 @@ nav .icon-burger .line {
 	border-width: 1px;
 	border-style: solid;
 	width: 75%;
-	background-color:#D3D3D3;
-	
+	background-color: #d3d3d3;
 }
 
-.indication{
+.indication {
 	padding-top: 4%;
 	padding-bottom: 4%;
 	color: white;
 	font-size: 30px;
 }
 
-.nomCentre{
+.nomCentre {
 	margin-left: 10%;
 	margin-right: 2%;
 	margin-bottom: 2%;
@@ -297,21 +165,15 @@ nav .icon-burger .line {
 	padding-top: 2%;
 	padding-bottom: 2%;
 	padding-right: 2%;
-
 }
 
-<<<<<<< HEAD
-
-
-=======
-.ou{
+.ou {
 	color: white;
 	font-size: 20px;
 	margin-right: 2%;
-	margin-bottom: 2%
+	margin-bottom: 2%;
 }
->>>>>>> Alexia
-.typeTest{
+.typeTest {
 	margin-right: 2%;
 	margin-bottom: 2%;
 	width: 17%;
@@ -321,14 +183,11 @@ nav .icon-burger .line {
 	padding-right: 2%;
 }
 
-<<<<<<< HEAD
-
-=======
-.localisation{
+.localisation {
 	margin-bottom: 2%;
 	margin-right: 0.25%;
 }
-.adresse{
+.adresse {
 	margin-right: 2%;
 	margin-bottom: 2%;
 	width: 15%;
@@ -338,46 +197,39 @@ nav .icon-burger .line {
 	padding-right: 2%;
 }
 
-.valider{
-	background: #3A738f;
-    color: white;
-    border-style: none;
-    height: 30px;
-    width: 10%;
-    border-radius: 20px;
-    font-size:  15px;
+.valider {
+	background: #3a738f;
+	color: white;
+	border-style: none;
+	height: 30px;
+	width: 10%;
+	border-radius: 20px;
+	font-size: 15px;
 	margin-bottom: 2%;
 }
->>>>>>> Alexia
 
-.aRemplir{
+.aRemplir {
 	display: flex;
 	align-items: center;
 }
 
-<<<<<<< HEAD
-=======
-
-
-
 .bandebas {
-    background-color: #5EA2C4;
-    color: white;
-    text-align: center;
-    height: 350px;
-    position: absolute;
+	background-color: #5ea2c4;
+	color: white;
+	text-align: center;
+	height: 350px;
+	position: absolute;
 	top: 80%;
-	left:0%;
+	left: 0%;
 	right: 0%;
 }
 
-.coordonnees{
-    font-size: 20px;
-    padding-top: 3%;
+.coordonnees {
+	font-size: 20px;
+	padding-top: 3%;
 }
 
-.info{
-    font-size: 20px;
-    padding-top: 2%;
+.info {
+	font-size: 20px;
+	padding-top: 2%;
 }
->>>>>>> Alexia
