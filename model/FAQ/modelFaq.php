@@ -1,15 +1,15 @@
 <?php
 
     class Database{
-        private static $Host = "localhost";
-        private static $Name ="APPinfo";
-        private static $User = "root";
-        private static $UserPassword ="";
+        private static $dbHost = "localhost";
+        private static $dbName ="test";
+        private static $dbUser = "root";
+        private static $dbUserPassword ="";
         private static $connection = null;
 
         public static function connect(){
             try{
-                self::$connection = new PDO("mysql:host" . self::$Host . "dbname=" . self::$Name,self::$User,self::$UserPassword);
+                self::$connection = new PDO("mysql:host" . self::$dbHost . "dbname=" . self::$dbName,self::$dbUser,self::$dbUserPassword);
             }
             catch(PDOException $e){
                 die($e->getMessage());
@@ -21,8 +21,8 @@
             self::$connection = null;
         }
 
-        public static function listeCategorie($BDD){
-            $statement=$BDD->prepare('SELECT categorie FROM test.faq');
+        public static function listeCategorie($db){
+            $statement=$db->prepare('SELECT categorie FROM test.faq');
             $statement->execute();
             $resultat = $statement->fetchAll(PDO::FETCH_ASSOC);
             $liste = array_unique($resultat);

@@ -1,33 +1,32 @@
-
-*{
-    margin:0;
-    padding:0;
+* {
+	margin: 0;
+	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-.hautPage{
+.hautPage {
 	display: flex;
 	align-items: center;
-	background-color: #5EA2C4;
+	background-color: #5ea2c4;
 	margin-top: 50px;
 	margin-top: 50px;
 	padding-top: 2%;
 	padding-bottom: 2%;
 }
 
-.titrePage{
+.titrePage {
 	font-size: 50px;
 	margin-left: 5%;
 	color: white;
 }
 
-.imgRecherche{
+.imgRecherche {
 	margin-left: 2%;
 	height: 90px;
 }
 
-.recherche{
-	position: absolute;
+.recherche {
+	margin: 10% 12%;
 	top: 35%;
 	left: 12.5%;
 	text-align: center;
@@ -35,18 +34,17 @@
 	border-width: 1px;
 	border-style: solid;
 	width: 75%;
-	background-color:#D3D3D3;
-	
+	background-color: #d3d3d3;
 }
 
-.indication{
+.indication {
 	padding-top: 4%;
 	padding-bottom: 4%;
 	color: white;
 	font-size: 40px;
 }
 
-.nomPrenom{
+.nomPrenom {
 	margin-left: 10%;
 	margin-right: 2%;
 	margin-bottom: 2%;
@@ -55,16 +53,15 @@
 	padding-top: 2%;
 	padding-bottom: 2%;
 	padding-right: 2%;
-
 }
 
-.ou{
+.ou {
 	color: white;
 	font-size: 20px;
 	margin-right: 2%;
-	margin-bottom: 2%
+	margin-bottom: 2%;
 }
-.numPatient{
+.numPatient {
 	margin-right: 2%;
 	margin-bottom: 2%;
 	width: 15%;
@@ -74,11 +71,11 @@
 	padding-right: 2%;
 }
 
-.localisation{
+.localisation {
 	margin-bottom: 2%;
 	margin-right: 0.25%;
 }
-.adresse{
+.adresse {
 	margin-right: 2%;
 	margin-bottom: 2%;
 	width: 15%;
@@ -88,42 +85,18 @@
 	padding-right: 2%;
 }
 
-.valider{
-	background: #3A738f;
-    color: white;
-    border-style: none;
-    height: 30px;
-    width: 10%;
-    border-radius: 20px;
-    font-size:  15px;
+.valider {
+	background: #3a738f;
+	color: white;
+	border-style: none;
+	height: 30px;
+	width: 10%;
+	border-radius: 20px;
+	font-size: 15px;
 	margin-bottom: 2%;
 }
 
-.aRemplir{
+.aRemplir {
 	display: flex;
 	align-items: center;
-}
-
-
-
-
-.bandebas {
-    background-color: #5EA2C4;
-    color: white;
-    text-align: center;
-    height: 350px;
-    position: absolute;
-	top: 80%;
-	left:0%;
-	right: 0%;
-}
-
-.coordonnees{
-    font-size: 20px;
-    padding-top: 3%;
-}
-
-.info{
-    font-size: 20px;
-    padding-top: 2%;
 }

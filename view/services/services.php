@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Services</title>
-		<link href="services.css" rel="stylesheet" />
-		<link rel="icon" href="../images/logo/logo.png" />
-	</head>
-	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
-	
-	<?php require '../header/header.php'; ?>
+<?php 
+$title = 'Services';
+require_once '../header/header.php';?>
 
-	<body>
+		<link href="services.css" rel="stylesheet" />
 		<section class="sections home text-center">
 			<section class="intro">
 				<h1>SENS'AIR</h1>
@@ -88,7 +80,4 @@
 				</div>
 			</section>
 		</section>
-	</body>
-
-	<?php require '../footer/footer.php'; ?>
-</html>
+<?php require_once '../footer/footer.php'; ?>

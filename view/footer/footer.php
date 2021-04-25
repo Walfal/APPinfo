@@ -1,7 +1,6 @@
-
-<link href="../footer/footer.css" rel="stylesheet" />
-
-<footer>
+		</body>
+	<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
+	<footer>
 		<div class="contenu-footer">
 			<div class="bloc logo">
 				<a href="../"><img class="logo" src="../images/logo/logo.png" alt="" /></a>
@@ -33,11 +32,11 @@
 				</div>
 				<div class="liens">
 					<ul>
-						<li><a href="../">Home</a></li>
-						<li><a href="services.html">Services</a></li>
-						<li><a href="quiSommesNous.html">About Us</a></li>
-						<li><a href="contactezNous.html">Contact Us</a></li>
-						<li><a href="#">FAQ</a></li>
+					<li><a href="../">Home</a></li>
+					<li><a href="../services/services.php">Services</a></li>
+					<li><a href="../quiSommesNous/quiSommesNous.php">About Us</a></li>
+					<li><a href="../contactezNous/contactezNous.php">Contact Us</a></li>
+					<li><a href="../faq/faq.php">FAQ</a></li>
 					</ul>
 				</div>
 			</div>
