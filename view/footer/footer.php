@@ -41,6 +41,6 @@
 				</div>
 			</div>
 		</div>
-		<p id="coyright">© 2021 Sens'air</p>
+		<p id="copyright">© 2021 Sens'air</p>
 	</footer>
 </html>

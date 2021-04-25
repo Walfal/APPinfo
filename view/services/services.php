@@ -15,69 +15,68 @@ require_once '../header/header.php';?>
 				>
 			</div>
 
-			<section class="nosservices">
-				<h4>Nos services</h4>
-				<div class="services">
-					<div class="ligneune">
-						<div class="service">
-							<img class="verifier" src="../images/icons/v_image.png" />
-							<h6>
-								Test de reconnaissance<br />
-								de tonalité
-							</h6>
-							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
-							</p>
-						</div>
-						<div class="service">
-							<img class="verifier" src="../images/icons/v_image.png" />
-							<h6>
-								Mesurer la fréquence <br />
-								cardiaque
-							</h6>
-							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
-							</p>
-						</div>
-						<div class="service">
-							<img class="verifier" src="../images/icons/v_image.png" />
-							<h6>
-								Mesurer la température<br />
-								supericielle de la peau
-							</h6>
-							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
-							</p>
-						</div>
+		<section class="nosservices">
+			<h4>Nos services</h4>
+			<div class="services">
+				<div class="ligneune">
+					<div class="service">
+						<img class="verifier" src="../images/icons/v_image.png" />
+						<h6>
+							Test de reconnaissance<br />
+							de tonalité
+						</h6>
+						<p>
+							Lorem ipsum dolor sit amet,<br />
+							consectetur adipiscing elit.<br />
+							Maecenas at.
+						</p>
 					</div>
-
-					<div class="sonlumiere">
-						<div class="service">
-							<img class="verifier" src="../images/icons/v_image.png" />
-							<h6>Temps de réaction à <br />un son inattendu</h6>
-							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
-							</p>
-						</div>
-						<div class="service">
-							<img class="verifier" src="../images/icons/v_image.png" />
-							<h6>Temps de réction à <br />une lumière inattendue</h6>
-							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
-							</p>
-						</div>
+					<div class="service">
+						<img class="verifier" src="../images/icons/v_image.png" />
+						<h6>
+							Mesurer la fréquence <br />
+							cardiaque
+						</h6>
+						<p>
+							Lorem ipsum dolor sit amet,<br />
+							consectetur adipiscing elit.<br />
+							Maecenas at.
+						</p>
+					</div>
+					<div class="service">
+						<img class="verifier" src="../images/icons/v_image.png" />
+						<h6>
+							Mesurer la température<br />
+							supericielle de la peau
+						</h6>
+						<p>
+							Lorem ipsum dolor sit amet,<br />
+							consectetur adipiscing elit.<br />
+							Maecenas at.
+						</p>
 					</div>
 				</div>
-			</section>
+
+				<div class="sonlumiere">
+					<div class="service">
+						<img class="verifier" src="../images/icons/v_image.png" />
+						<h6>Temps de réaction à <br />un son inattendu</h6>
+						<p>
+							Lorem ipsum dolor sit amet,<br />
+							consectetur adipiscing elit.<br />
+							Maecenas at.
+						</p>
+					</div>
+					<div class="service">
+						<img class="verifier" src="../images/icons/v_image.png" />
+						<h6>Temps de réction à <br />une lumière inattendue</h6>
+						<p>
+							Lorem ipsum dolor sit amet,<br />
+							consectetur adipiscing elit.<br />
+							Maecenas at.
+						</p>
+					</div>
+				</div>
+			</div>
 		</section>
 <?php require_once '../footer/footer.php'; ?>

@@ -132,15 +132,6 @@ nav .icon-burger .line {
 	}
 }
 
-
-
-
-  
-
-
-
-  
-
 /* --------------------------FOOTER -------------------------------*/
 footer {
 	background-color: #3a738f;
@@ -229,7 +220,7 @@ footer {
 	transition: all 0.3s ease 0s;
 }
 
-#coyright {
+#copyright {
 	color: white;
 	text-align: center;
 	margin-top: 10px;

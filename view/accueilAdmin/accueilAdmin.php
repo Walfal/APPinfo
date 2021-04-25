@@ -6,8 +6,6 @@ forcer_utilisateur_connecte(); //pour pouvoir accéder à cette page il faut êt
 //require_once '../../model/loginUtilisateurs.php';
 require_once '../header/header.php';
 
-
-
 ?>
 <link href="accueilAdmin.css" rel="stylesheet" />
 <div class="contenu">
@@ -60,6 +58,5 @@ require_once '../header/header.php';
         </button></a>
     </div>
 </div>
-
 
 <?php require '../footer/footer.php'; ?>

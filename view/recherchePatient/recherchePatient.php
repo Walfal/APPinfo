@@ -22,5 +22,3 @@ require_once '../header/header.php';?>
 		</div>
 
 <?php require '../footer/footer.php' ?>
-</html>
-

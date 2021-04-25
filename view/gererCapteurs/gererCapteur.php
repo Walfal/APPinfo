@@ -2,8 +2,12 @@
 <html lang="fr">
 
 
+<<<<<<< HEAD:view/gererCapteurs/gererCapteurs.php
 
 
+=======
+<?php require '../header/header.php'; ?>
+>>>>>>> francois:view/gererCapteurs/gererCapteur.php
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="gererCapteur.css">
@@ -49,6 +53,7 @@
         <input  class="supprimer" type="submit" name="supprimer" id="supprimer" value="Supprimer">
     </div>
 </body>
+<<<<<<< HEAD:view/gererCapteurs/gererCapteurs.php
 
 <footer>
 		<div class="contenu-footer">
@@ -93,4 +98,7 @@
 		</div>
 		<p id="coyright">© 2021 Sens'air</p>
 	</footer>
+=======
+<?php require '../footer/footer.php'; ?>
+>>>>>>> francois:view/gererCapteurs/gererCapteur.php
 </html>
