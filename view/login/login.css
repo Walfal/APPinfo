@@ -10,12 +10,11 @@
 	text-align: center;
 	padding-top: 7%;
 	margin-top: 10px;
-	
 }
 
 .form {
 	margin: 0 auto;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 	max-width: 100%;
 	min-height: 470px;
 	border-radius: 5px;
@@ -26,7 +25,6 @@
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-
 }
 
 .imageForm {
@@ -41,20 +39,17 @@
 	height: auto;
 }
 
-
-.contenu{
+.contenu {
 	margin-top: 0;
 	height: 250px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	
-	
 }
 .textArea {
 	margin: 1%;
 }
-.erreur{
+.erreur {
 	width: 200px;
 	height: 20px;
 	border-radius: 5px;
@@ -66,22 +61,21 @@
 	margin: 8px 0;
 	text-align: start;
 }
-input{
+input {
 	width: 200px;
 	height: 30px;
 	border-radius: 5px;
 	outline: none;
 	border: none;
-	
+
 	background-color: #eee;
-	
+
 	padding: 12px 15px;
 	margin: 8px 0;
-	
 }
 
-.button{
-	background-color: rgb(94,162,196);
+.button {
+	background-color: rgb(94, 162, 196);
 	border-radius: 20px;
 	width: 150px;
 	height: 35px;
@@ -91,7 +85,6 @@ input{
 	color: white;
 }
 
-.button:hover{
+.button:hover {
 	border: solid #565757;
 }
-

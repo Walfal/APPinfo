@@ -4,19 +4,20 @@
 
 
 //verification du mot de passe
-function verifierMotDePasse($mail,$mdp,array $data,$result){
+function verifierMotDePasse($mail,$password,array $data,$result){
     
     if($result -> rowCount() > 0){
-     //cas où le mot de passe n'est pas crypté   
-        if($mdp === $data[0]["motDePasse"]){
+        //cas où le mot de passe n'est pas crypté   
+        if($password === $data[0]["mot de passe"]){
             //debut de session
             session_start();
-            $_SESSION['mail'] = $data[0]["prenom"];
+            $_SESSION['mail'] = $data[0]["mail"];
+            $_SESSION['matricule'] = $data[0]["matricule"];
             $erreur = null;
             return $data[0]["matricule"];//recuperation du matricule
         }
         //cas ou le message est crypté
-        /*if(password_verify($mdp,$data[0]["motDePasse"])){
+        /*if(password_verify($password,$data[0]["motDePasse"])){
         
             //debut de session
             session_start();
@@ -43,7 +44,7 @@ function est_connecte():bool{
 //si l'utilisateur n'est pas connecte le rediriger sur la page login a utilser lors de l'acces au compte 
 function forcer_utilisateur_connecte(){
     if (!est_connecte()) {
-        header('Location: ../login/login.php');
+        //header('Location: ../../../../view/login/login.php');
         exit();
     }
 }

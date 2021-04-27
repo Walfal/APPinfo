@@ -1,13 +1,64 @@
-<?php 
-$title='Accueil';
-require_once 'header/header.php';?>
-	<link href="index.css" rel="stylesheet" />
-	<!-- -------------------------------------------------------------- BANNIERE---------------------------------------------------------------------------------- -->
+<?php session_start(); ?>
 
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Page d'accueil</title>
+		<link href="headerFooter/headerFooter.css" rel="stylesheet" />
+		<link href="index.css" rel="stylesheet" />
+		<link rel="icon" href="images/logo/logo.png" />
+
+		<title> Page </title>
+	</head>
+	<header>
+		<div class="wrapper">
+			<nav>
+				<input id="nav-toggle" type="checkbox" />
+				<a href="."><img class="logo" src="images/logo/sensair.png" alt="" /></a>
+				<ul class="links">
+					<li><a href=".">Accueil</a></li>
+					<li><a href="services/services.php">Nos services</a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php">Qui sommes nous</a></li>
+					<li><a href="contactezNous/contactezNous.php">Contactez nous</a></li>
+					<li><a href="FAQ/FAQ.php">FAQ</a></li>
+					<li>
+						<a href="#">
+							<img class="bi bi-globe" src="images/icons/language.svg" style="width: 25px" />
+						</a>
+						<ul class="sous">
+							<li><a href="#">Français</a></li>
+							<li><a href="#">English</a></li>
+							<li><a href="#">Espanol</a></li>
+							<li><a href="#">Deutch</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="login/login.php"
+							><img class="bi bi-globe" src="images/icons/account.svg" style="width: 25px"
+						/></a>
+					</li>
+				</ul>
+				<label for="nav-toggle" class="icon-burger">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</label>
+			</nav>
+		</div>
+	</header>
+	<!-- -------------------------------------------------------------- BANNIERE---------------------------------------------------------------------------------- -->
+	<body>
 	
 		<section id="main-image">
 			<h2>WELCOME TO <br /><strong>SENS'AIR</strong></h2>
-			<a href="login/login.php" class="button-1">Se connecter</a>
+			<a href="login/login.php" class="button-1">
+			<?php if(isset($_SESSION['matricule'])): ?>
+				Accéder à mon compte
+			<?php else: ?>			
+				Se connecter
+			<?php endif; ?>
+			</a>
 		</section>
 
 		<!-- ------------------------------------------------------------ PRESENTATION---------------------------------------------------------------------------------- -->
@@ -75,7 +126,7 @@ require_once 'header/header.php';?>
 						obiecta fidentius negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse,
 						non iudicium clamans.
 					</p>
-					<a href="#" class="button-2">Plus d'infos</a>
+					<a href="#" class="button-2">Plus d'informations</a>
 				</div>
 			</div>
 		</section>
@@ -91,7 +142,54 @@ require_once 'header/header.php';?>
 					nec vidisset quicquam nec audisset penitus expers forensium rerum; Eusebius vero obiecta fidentius
 					negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse, non iudicium clamans.
 				</p>
-				<a href="contactezNous/contactezNous.php" class="button-3">Contact</a>
+				<a href="contactezNous/contactezNous.php" class="button-3">Contactez nous</a>
 			</div>
 		</section>
-		<?php require_once 'footer/footer.php'; ?>
+		</body>
+
+
+	<link href="headerFooter/headerFooter.css" rel="stylesheet" />
+	<footer>
+		<div class="contenu-footer">
+			<div class="bloc logo">
+				<a href="."><img class="logo" src="images/logo/logo.png" alt="" /></a>
+			</div>
+			<div class="bloc coordonnees">
+				<div class="coor">
+					<li>
+						<a href="mailto:info@sensair.com" class="mail">info@sensair.com</a>
+					</li>
+					<li>
+						<a href="tel:+33123488733" class="tel">+33 1 23 48 87 33</a>
+					</li>
+					<li>
+						<a
+							href="https://www.google.fr/maps/place/10+Rue+de+Vanves,+92170+Issy-les-Moulineaux/@48.824529,2.2776649,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6707980bd3947:0xd54fb6c5e1933333!8m2!3d48.824529!4d2.2798536"
+							class="adresse"
+							>10 rue de Vanves, 92130 Issy-les-Moulineaux</a
+						>
+					</li>
+				</div>
+			</div>
+
+			<div class="bloc reseaux">
+				<div class="res">
+					<h4>SUIVEZ-NOUS</h4>
+					<a href="#"><img class="facebook" src="images/icons/facebook.png" alt="" /></a>
+					<a href="#"><img class="google" src="images/icons/google.png" alt="" /></a>
+					<a href="#"><img class="linkedin" src="images/icons/linkedin.png" alt="" /></a>
+				</div>
+				<div class="liens">
+					<ul>
+					<li><a href=".">Accueil</a></li>
+					<li><a href="services/services.php">Nos services</a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php">Qui sommes nous</a></li>
+					<li><a href="contactezNous/contactezNous.php">Contactez nous</a></li>
+					<li><a href="FAQ/FAQ.php">FAQ</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<p id="copyright">© 2021 Sens'air</p>
+	</footer>
+</html>

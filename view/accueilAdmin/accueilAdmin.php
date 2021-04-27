@@ -1,12 +1,9 @@
 <?php 
-$title = 'Accueil';
-require_once '../../model/loginFunctions.php';
-forcer_utilisateur_connecte(); //pour pouvoir accéder à cette page il faut être connecté sinon on est redirigé sur la page de connexion
+$title = 'Compte';
+require_once '../headerFooter/header.php';
+require_once '../../model/Login/loginFunctions.php';
 
 //require_once '../../model/loginUtilisateurs.php';
-require_once '../header/header.php';
-
-
 
 ?>
 <link href="accueilAdmin.css" rel="stylesheet" />
@@ -59,15 +56,6 @@ require_once '../header/header.php';
                 </p>
         </button></a>
     </div>
-    
-
 </div>
 
-
-
-
-
-
-
-
-<?php require '../footer/footer.php'; ?>
+<?php require '../headerFooter/footer.php'; ?>
