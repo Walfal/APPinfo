@@ -1,5 +1,5 @@
 <?php $title = 'Résultats';
-require_once '../header/header.php';
+require_once '../headerFooter/header.php';
 ?>
 	<section class="sections home text-center">
 		<section class="intro" >
@@ -46,4 +46,4 @@ require_once '../header/header.php';
 			</div>
            
 	    </section>
-<?php require_once '../footer/footer.php' ?>
+<?php require_once '../headerFooter/footer.php' ?>

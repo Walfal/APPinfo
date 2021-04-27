@@ -6,7 +6,7 @@
         <title>Ajouter un RDV</title>
     </head>
 
-	<?php require '../header/header.php'; 
+	<?php require '../headerFooter/header.php'; 
 	require 'bootstrap.php';
 	require 'EventGS.php';
 	require 'events.php';
@@ -61,7 +61,7 @@
 
 
 
-<?php require '../footer/footer.php' ?>
+<?php require '../headerFooter/footer.php' ?>
 
 	<!-- <footer class="bandebas">
 		<p class="coordonnees"><b>COORDONNÉES</b> <br>_________</br></p>

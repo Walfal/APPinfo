@@ -1,6 +1,6 @@
 <?php 
 $title = 'prendre un rendez-vous';
-require '../header/header.php'; ?>
+require '../headerFooter/header.php'; ?>
 
 		<div class = "hautPage">
 			<p class="titrePage"><b>Prendre rendez-vous</b></p>
@@ -20,5 +20,5 @@ require '../header/header.php'; ?>
 			</form>
 		</div>
 
-<?php require_once('../footer/footer.php');
+<?php require_once '../headerFooter/footer.php';
 	

@@ -1,6 +1,6 @@
 <?php
 
-include_once('../model/connexionBDD.php');
+require_once '../../model/BDD/connexionBDD.php';
 
 $messageTest = date('Y-m-d H:i:s');
 $rand = rand(1, 5);

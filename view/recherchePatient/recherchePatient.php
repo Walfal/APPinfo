@@ -1,6 +1,6 @@
 <?php 
-$title = 'accueil administrateur';
-require_once '../header/header.php';?>
+$title = 'Compte administrateur';
+require_once '../headerFooter/header.php';?>
 <link href="recherchePatient.css" rel="stylesheet" />
 
 		<div class = "hautPage">
@@ -21,4 +21,4 @@ require_once '../header/header.php';?>
 		</form>
 		</div>
 
-<?php require '../footer/footer.php' ?>
+<?php require '../headerFooter/footer.php' ?>

@@ -79,7 +79,7 @@ class Month{
 	 */
 
 	public function withinMonth (\DateTime $date) : bool {
-		return $this->getStartingDay()->format('Y-m')=== $date->format('Y-m');
+		return $this->getStartingDay()->format('Y-m') === $date->format('Y-m');
 	}
 
 	/**

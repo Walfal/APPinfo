@@ -32,11 +32,11 @@
 				</div>
 				<div class="liens">
 					<ul>
-					<li><a href="../">Home</a></li>
-					<li><a href="../services/services.php">Services</a></li>
-					<li><a href="../quiSommesNous/quiSommesNous.php">About Us</a></li>
-					<li><a href="../contactezNous/contactezNous.php">Contact Us</a></li>
-					<li><a href="../faq/faq.php">FAQ</a></li>
+					<li><a href="../">Accueil</a></li>
+					<li><a href="../services/services.php">Nos services</a></li>
+					<li><a href="../quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
+					<li><a href="../contactezNous/contactezNous.php">Nous contacter</a></li>
+					<li><a href="../FAQ/FAQ.php">FAQ</a></li>
 					</ul>
 				</div>
 			</div>

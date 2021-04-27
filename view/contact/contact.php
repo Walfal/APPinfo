@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="contact.css">
         <title>Document</title>
     </head>
-<?php require '../header/header.php'; ?>	
+<?php require '../headerFooter/header.php'; ?>	
 
 <body>
 	
@@ -32,5 +32,5 @@
 		<p class="champs">* Les champs doivent nécessairement être complétés </p>
 	
 </body>
-<?php require '../footer/footer.php'; ?>
+<?php require '../headerFooter/footer.php'; ?>
 </html>    

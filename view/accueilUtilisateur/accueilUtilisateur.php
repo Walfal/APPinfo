@@ -1,9 +1,13 @@
 <?php 
-$title = 'Accueil';
-require_once '../../model/loginFunctions.php';
+$title = 'Votre compte';
+require_once '../headerFooter/header.php';
+
+require_once '../../model/Login/loginFunctions.php';
 forcer_utilisateur_connecte(); //pour pouvoir accéder à cette page il faut être connecté sinon on est redirigé sur la page de connexion
-require_once '../header/header.php';?>
+?>
+
 <link href="accueilUtilisateur.css" rel="stylesheet" />
+
 <div class="contenu">
     <div class="contenu1">
         <div class="bienvenue">
@@ -45,15 +49,6 @@ require_once '../header/header.php';?>
                 </p>
         </button></a>
     </div>
-    
-
 </div>
 
-
-
-
-
-
-
-
-<?php require '../footer/footer.php'; ?>
+<?php require '../headerFooter/footer.php'; ?>

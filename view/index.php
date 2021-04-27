@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -15,18 +17,24 @@
 				<input id="nav-toggle" type="checkbox" />
 				<a href="."><img class="logo" src="images/logo/sensair.png" alt="" /></a>
 				<ul class="links">
-					<li><a href="accueilAdmin/accueilAdmin.php">Home</a></li>
-					<li><a href="html/services.html">Services</a></li>
-					<li><a href="quiSommesNous/quiSommesNous.php">About Us</a></li>
-					<li><a href="html/contactezNous.php">Contact Us</a></li>
-					<li><a href="html/FAQ.php">FAQ</a></li>
+					<li><a href=".">Accueil</a></li>
+					<li><a href="services/services.php">Nos services</a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php">Qui sommes nous</a></li>
+					<li><a href="contactezNous/contactezNous.php">Contactez nous</a></li>
+					<li><a href="FAQ/FAQ.php">FAQ</a></li>
 					<li>
 						<a href="#">
 							<img class="bi bi-globe" src="images/icons/language.svg" style="width: 25px" />
 						</a>
+						<ul class="sous">
+							<li><a href="#">Français</a></li>
+							<li><a href="#">English</a></li>
+							<li><a href="#">Espanol</a></li>
+							<li><a href="#">Deutch</a></li>
+						</ul>
 					</li>
 					<li>
-						<a href="html/login.html"
+						<a href="login/login.php"
 							><img class="bi bi-globe" src="images/icons/account.svg" style="width: 25px"
 						/></a>
 					</li>
@@ -44,7 +52,13 @@
 	
 		<section id="main-image">
 			<h2>WELCOME TO <br /><strong>SENS'AIR</strong></h2>
-			<a href="login/login.php" class="button-1">Se connecter</a>
+			<a href="login/login.php" class="button-1">
+			<?php if(isset($_SESSION['matricule'])): ?>
+				Accéder à mon compte
+			<?php else: ?>			
+				Se connecter
+			<?php endif; ?>
+			</a>
 		</section>
 
 		<!-- ------------------------------------------------------------ PRESENTATION---------------------------------------------------------------------------------- -->
@@ -112,7 +126,7 @@
 						obiecta fidentius negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse,
 						non iudicium clamans.
 					</p>
-					<a href="#" class="button-2">Plus d'infos</a>
+					<a href="#" class="button-2">Plus d'informations</a>
 				</div>
 			</div>
 		</section>
@@ -128,13 +142,13 @@
 					nec vidisset quicquam nec audisset penitus expers forensium rerum; Eusebius vero obiecta fidentius
 					negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse, non iudicium clamans.
 				</p>
-				<a href="contactezNous/contactezNous.php" class="button-3">Contact</a>
+				<a href="contactezNous/contactezNous.php" class="button-3">Contactez nous</a>
 			</div>
 		</section>
 		</body>
 
 
-	<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
+	<link href="headerFooter/headerFooter.css" rel="stylesheet" />
 	<footer>
 		<div class="contenu-footer">
 			<div class="bloc logo">
@@ -167,11 +181,11 @@
 				</div>
 				<div class="liens">
 					<ul>
-					<li><a href=".">Home</a></li>
-					<li><a href="services/services.php">Services</a></li>
-					<li><a href="quiSommesNous/quiSommesNous.php">About Us</a></li>
-					<li><a href="contactezNous/contactezNous.php">Contact Us</a></li>
-					<li><a href="faq/faq.php">FAQ</a></li>
+					<li><a href=".">Accueil</a></li>
+					<li><a href="services/services.php">Nos services</a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php">Qui sommes nous</a></li>
+					<li><a href="contactezNous/contactezNous.php">Contactez nous</a></li>
+					<li><a href="FAQ/FAQ.php">FAQ</a></li>
 					</ul>
 				</div>
 			</div>

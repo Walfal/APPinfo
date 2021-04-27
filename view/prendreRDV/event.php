@@ -1,25 +1,15 @@
 
 
-
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="infoRDV.css">
-        <title>Information RDV</title>
-    </head>
-
-<br>
-
 <?php
 
-
-
 require 'Events.php';
-require '../header/header.php';
 require '../prendreRDV/bootstrap.php';
+
+$title = 'Information RDV';
+require '../headerFooter/header.php';
 ?>
 
+<link rel="stylesheet" href="infoRDV.css">
 <br>
 
 <?php 
@@ -50,4 +40,4 @@ $event = $events->find($_GET['id']);
 </ul>
 
 
-<?php require '../footer/footer.php' ?>
+<?php require '../headerFooter/footer.php' ?>

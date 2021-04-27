@@ -1,6 +1,6 @@
 <?php 
 $title='Qui sommes-nous ?';
-require_once '../header/header.php';?>
+require_once '../headerFooter/header.php';?>
 <link href="quiSommesNous.css" rel="stylesheet" />
 
 <div class="mainPage">
@@ -58,4 +58,4 @@ require_once '../header/header.php';?>
 		</div>
 	</div>
 </div>
-<?php require_once '../footer/footer.php'; ?> 
+<?php require_once '../headerFooter/footer.php'; ?> 

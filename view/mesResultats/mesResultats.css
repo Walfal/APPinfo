@@ -69,29 +69,27 @@ centre {
 	padding: 1vh;
 	padding-inline: 3vh;
 }
-.resultat{
+.resultat {
 	display: flex;
 	justify-content: space-evenly;
 	border-collapse: collapse;
 	min-width: 30%;
 	margin-bottom: 10%;
 	margin-top: 10%;
-	
-	
 }
 
-tr{
+tr {
 	background-color: #5ea2c4;
 	color: white;
 	text-align: center;
 }
 
-th{
+th {
 	padding: 15px 20px;
 	border: 1px solid black;
 }
 
-td{
+td {
 	padding: 15px 20px;
 	border: 1px solid black;
 }
