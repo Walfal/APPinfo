@@ -2,17 +2,15 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
-require '../../model/modelProfilPatients/modelProfilPatients.php';
+require '../../model/BDD/connexionBDD.php';
 
 if(!empty($_GET['id'])){
 	$idUtilisateur = checkInput($_GET['id']);
 }
 
-$db = Database::connect();
-$statement = $db->prepare('SELECT * FROM test.utilisateurs WHERE id_Utilisateur =?');
+$statement = $BDD->prepare('SELECT * FROM test.utilisateurs WHERE id_Utilisateur =?');
 $statement->execute(array($idUtilisateur));
 $valeur = $statement->fetch();
-Database::disconnect();
 
 //pour vérifier donnée qui vient de l'extérieur
 function checkInput($data){

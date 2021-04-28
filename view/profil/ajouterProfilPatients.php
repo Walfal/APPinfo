@@ -2,23 +2,23 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
-require '../../model/modelProfilPatients/modelProfilPatients.php';
+require '../../model/BDD/BDD.php';
 $nomError = $prenomError = $num_ssError = $codePostalError = $mailError = $motDePasseError =
-$nom = $prenom = $sexe= $num_ss= $adresse=$codePostal= $telephone = $mail =$poids=$taille=$age=$motDePasse=$rol="";
+$nom = $prenom = $sexe= $num_ss= $adresse=$codePostal= $telephone = $mail = $poids = $taille = $age = $motDePasse = $role = "";
 if(!empty($_POST)){
-    $nom  = checkInput($_POST['nom']);
-    $prenom  = checkInput($_POST['prenom']);
-    $sexe  = checkInput($_POST['sexe']);
-    $num_ss  = checkInput($_POST['num_ss']);
-    $adresse  = checkInput($_POST['adresse']);
-    $codePostal  = checkInput($_POST['codePostal']);
-    $telephone  = checkInput($_POST['telephone']);
-    $mail  = checkInput($_POST['mail']);
-    $poids  = checkInput($_POST['poids']);
-    $taille  = checkInput($_POST['taille']);
-    $age  = checkInput($_POST['age']);
-    $motDePasse  = checkInput($_POST['motDePasse']);
-    $rol  = checkInput($_POST['rol']);
+    $nom = checkInput($_POST['nom']);
+    $prenom = checkInput($_POST['prenom']);
+    $sexe = checkInput($_POST['sexe']);
+    $num_ss = checkInput($_POST['num_ss']);
+    $adresse = checkInput($_POST['adresse']);
+    $codePostal = checkInput($_POST['codePostal']);
+    $telephone = checkInput($_POST['telephone']);
+    $mail = checkInput($_POST['mail']);
+    $poids = checkInput($_POST['poids']);
+    $taille = checkInput($_POST['taille']);
+    $age = checkInput($_POST['age']);
+    $motDePasse = checkInput($_POST['motDePasse']);
+    $role = checkInput($_POST['role']);
     $isSuccess = true;
 
     if(empty($nom)){
@@ -46,11 +46,8 @@ if(!empty($_POST)){
         $isSuccess = false;
     }
     if($isSuccess){
-        $db = Database::connect();
-        $statement = $db->prepare("INSERT INTO test.utilisateurs (nom,prenom,sexe,num_ss,adresse,
-        codePostal,telephone,mail,poids,taille,age,motDePasse,rol) values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-        $statement ->execute(array($nom,$prenom,$sexe,$num_ss,$adresse,$codePostal,$telephone,$mail,$poids,$taille,$age,$motDePasse, $rol));
-        Database::disconnect();
+        $statement = $BDD -> prepare("INSERT INTO Personne (nom, prenom, sexe, 'numero de securite social', adresse, adresse (code postal), telephone, mail, poids, taille, age, 'mot de passe', role) values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $statement -> execute(array($nom, $prenom, $sexe, $num_ss, $adresse, $codePostal, $telephone, $mail, $poids, $taille, $age, $motDePasse, $role));
         header("location: ../../view/profil/profilPatients.php");
     }
 }

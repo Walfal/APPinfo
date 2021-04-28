@@ -52,9 +52,8 @@ require_once '../headerFooter/header.php';
         <tbody>
 
             <?php
-                require '../../model/modelProfilPatients/modelProfilPatients.php';
-                $db = Database::connect();
-                $statement = $db->query('SELECT nom,prenom,num_ss,codePostal, id_Utilisateur, rol FROM test.utilisateurs');
+                require '../../model/BDD/connexionBDD.php';
+                $statement = $BDD -> query('SELECT nom,prenom,num_ss,codePostal, id_Utilisateur, rol FROM test.utilisateurs');
                 if(isset($_GET['nomPatient']) AND !empty($_GET['nomPatient']) OR isset($_GET['prenomPatient']) AND !empty($_GET['prenomPatient']) OR isset($_GET['codePostal']) AND !empty($_GET['codePostal'])){
                     $nomPatient = htmlspecialchars($_GET['nomPatient']);
                     $prenomPatient = htmlspecialchars($_GET['prenomPatient']);
@@ -100,7 +99,6 @@ require_once '../headerFooter/header.php';
                     }
                     
                 }
-                Database::disconnect();
             ?>
         
         </tbody>

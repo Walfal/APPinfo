@@ -102,15 +102,10 @@ if($_SESSION['matricule'] == 0):
                     Prendre RDV
                 </p>
         </button></a>
-        <a href="../profil/modifProfil.php">
-        <button class="case">
-            <img src="../images/icons/dossier.png" class="image">
-                <p>
-                   Modifier mon profil
-                </p>
-        </button></a>
     </div>
 </div>
 
-<?php endif;
-require '../headerFooter/footer.php'; ?>
+<?php endif ?>
+
+<br><br><br><br><br>
+<?php require '../headerFooter/footer.php'; ?>

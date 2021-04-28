@@ -2,17 +2,15 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
-require '../../model/modelProfilPatients/modelProfilPatients.php';
+require '../../model/BDD/connexionBDD.php';
 
 if(!empty($_GET['id'])){
     $id = checkInput($_GET['id']);
 }
 if(!empty($_POST)){
     $id = checkInput($_POST['id']);
-    $db = Database::connect();
-    $statement = $db->prepare("DELETE FROM test.utilisateurs WHERE id_Utilisateur =?");
-    $statement->execute(array($id));
-    Database::disconnect();
+    $statement = $BDD -> prepare("DELETE FROM test.utilisateurs WHERE id_Utilisateur =?");
+    $statement -> execute(array($id));
     header("location: ../../view/profil/profilPatients.php");
 }
 

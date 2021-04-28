@@ -1,13 +1,13 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    list-style: none;
+* {
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	list-style: none;
 }
 
-.contenu{
+.contenu {
 	height: 500px;
 	margin-top: 80px;
 	display: flex;
@@ -15,19 +15,15 @@
 	justify-content: space-around;
 	align-items: center;
 	align-content: stretch;
-	
-
 }
 
 @media screen and (max-width: 768px) {
-	.contenu{
+	.contenu {
 		height: 800px;
 	}
-
 }
 
-
-.contenu1{
+.contenu1 {
 	flex-wrap: wrap;
 	width: 80%;
 	display: flex;
@@ -36,10 +32,10 @@
 	margin-bottom: 10px;
 }
 
-.bienvenue h1{
+.bienvenue h1 {
 	margin-bottom: 25px;
 }
-.bienvenue p{
+.bienvenue p {
 	font-size: 20px;
 }
 h1 {
@@ -48,8 +44,8 @@ h1 {
 	font-weight: bold;
 }
 
-.deconnexion{
-	background-color: rgb(94,162,196);
+.deconnexion {
+	background-color: rgb(94, 162, 196);
 	border-radius: 5px;
 	width: 150px;
 	height: 50px;
@@ -59,44 +55,39 @@ h1 {
 	color: white;
 }
 
-.deconnexion:hover{
+.deconnexion:hover {
 	border: solid #565757;
 }
 
-.photoProfil{
+.photoProfil {
 	width: 150px;
 	height: auto;
 }
 
-.contenu2{
+.contenu2 {
 	width: 65%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	flex-wrap: wrap;
 }
 
-.case{
+.case {
 	cursor: pointer;
 	width: 150px;
 	height: 120px;
-	background-color: rgb(94,162,196);
+	background-color: rgb(94, 162, 196);
 	outline: none;
 	border: none;
 	border-radius: 15px;
 	color: white;
 	margin-bottom: 40px;
-	
-	
 }
 
-.case:hover{
+.case:hover {
 	border: solid #565757;
 }
 
-
-
-
-.image{
+.image {
 	width: 50px;
 	height: 50px;
 	margin-bottom: 5px;

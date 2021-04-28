@@ -1,8 +1,7 @@
 <?php
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
-
-require '../../model/modelProfilPatients/modelProfilPatients.php';
+require_once '../../model/BDD/connexionBDD.php';
 
 if(!empty($_GET['id'])){
     $id = checkInput($_GET['id']);
@@ -54,19 +53,17 @@ if(!empty($_POST)){
         $isSuccess = false;
     }
     if($isSuccess){
-        $db = Database::connect();
-        $statement = $db->prepare('UPDATE test.utilisateurs SET nom=?, prenom=?, sexe=?, num_ss=?, adresse=?, codePostal=?, telephone=?, mail=?, poids=?, taille=?, age=?, motDePasse=?, rol=? WHERE id_Utilisateur =?');
-        $statement ->execute(array($nom,$prenom,$sexe,$num_ss,$adresse,$codePostal,$telephone,$mail,$poids,$taille,$age,$motDePasse, $rol, $id));
-        Database::disconnect();
+        $statement = $BDD -> prepare('UPDATE test.utilisateurs SET nom=?, prenom=?, sexe=?, num_ss=?, adresse=?, codePostal=?, telephone=?, mail=?, poids=?, taille=?, age=?, motDePasse=?, rol=? WHERE id_Utilisateur =?');
+        $statement -> execute(array($nom,$prenom,$sexe,$num_ss,$adresse,$codePostal,$telephone,$mail,$poids,$taille,$age,$motDePasse, $rol, $id));
         header("location: ../../view/profil/profilPatients.php");
     }
 }
 //pour récupérer ce qui est écrit sur le formulaire
 else{
-    $db = Database::connect();
-    $statement = $db->prepare("SELECT * FROM test.utilisateurs WHERE id_Utilisateur=?");
-    $statement->execute(array($id));
-    $valeur = $statement->fetch();
+    
+    $statement = $BDD -> prepare("SELECT * FROM test.utilisateurs WHERE id_Utilisateur=?");
+    $statement -> execute(array($id));
+    $valeur = $statement -> fetch();
     $nom = $valeur['nom'];
     $prenom = $valeur['prenom'];
     $sexe = $valeur['sexe'];
@@ -80,7 +77,6 @@ else{
     $age = $valeur['age'];
     $motDePasse = $valeur['motDePasse'];
     $rol = $valeur['rol'];
-    Database::disconnect();
 }
 
 function checkInput($data){
