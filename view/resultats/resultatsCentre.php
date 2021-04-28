@@ -1,49 +1,95 @@
 <?php $title = 'Résultats';
 require_once '../headerFooter/header.php';
 ?>
+<link href="../resultats/resultatsCentre.css" rel="stylesheet"/>
+
+
+    <!-- ------------------------------------------------------------ PRESENTATION---------------------------------------------------------------------------------- -->
+
 	<section class="sections home text-center">
-		<section class="intro" >
-			<h1>SENS'AIR</h1>
-			<p>jfedpdjdjf ddllsjjdlsjf ud fjsidh</p>
-		</section>
-		<div class="citation" >
-			<q >Lorem ipsum dolor sit amet, consectetur <br> elit. Vestibulum varius.</q>
-		</div>
-		
-		<section class="nosservices">
-			<h4>Nos services</h4>
-			<div class="services">
-				<div class="ligneune">
-					<div class="service"> 
-						<img class="verifier" src="../images/planes/v_image.png">
-						<h6>Test de reconnaissance<br> de tonalité</h6>
-						<p>Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.<br> Maecenas at.</p>
-					</div>
-					<div class="service"> 
-						<img class="verifier" src="../images/planes/v_image.png">
-						<h6>Mesurer la fréquence <br> cardiaque</h6>
-						<p>Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.<br> Maecenas at.</p>
-					</div>
-					<div class="service"> 
-						<img class="verifier" src="../images/planes/v_image.png">
-						<h6>Mesurer la température<br> supericielle de la peau</h6>
-						<p>Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.<br> Maecenas at.</p>
-					</div>
-				</div>
-				
-				<div class="sonlumiere">
-					<div class="service"> 
-						<img class="verifier" src="../images/planes/v_image.png">
-						<h6>Temps de réaction à  <br>un son inattendu</h6>
-						<p>Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.<br> Maecenas at.</p>
-					</div>
-					<div class="service"> 
-						<img class="verifier" src="../images/planes/v_image.png">
-						<h6>Temps de réction à <br>une lumière inattendue</h6>
-						<p>Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.<br> Maecenas at.</p>
-					</div>
-				</div>
-			</div>
+		<section class="intro">
+            <div class="fond"></div>
+            <div class="introDiv">
+                <h1>Centre de Lorem</h1>
+                <p>Centre de tests psychotechniques</p>
+                <div id="etoile">
+                    <img class="imageEtoile" src="../images/icons/etoile.png">
+                    <img class="imageEtoile" src="../images/icons/etoile.png">
+                    <img class="imageEtoile" src="../images/icons/etoile.png">
+                    <img class="imageEtoile" src="../images/icons/etoile.png">
+                </div>
+                <div class="lieu">
+                    <div class="centre">
+                        <h2>Paris</h2>
+                        <p>Adresse du centre <br> <u>01 22 34 45 22</u></p>
+                    </div>
+                    <div class="centre">
+                        <h2>Lyon</h2>
+                        <p>Adresse du centre <br> <u>04 56 71 23 44</u></p>
+                    </div>
+                </div>
+            </div>
+                
            
-	    </section>
+        </section>
+        <section class="milieu">
+            <section class="resume">
+                <div class="case">
+                    <p>Nom du patient</p>
+                </div>
+                <div class="case">
+                    <p>Mercredi 10 février </br> 2020</p>
+                </div>
+                <div class="case">
+                    <p>Nom de </br>l'examinateur</p>
+                </div>
+                <div class="case">
+                    <p>Nombre de </br>tests passés</p>
+                </div>
+                <div class="case">
+                    <p>Score total %</p>
+                    <img class="cercle" src="../images/icons/diagramme_cercle.png">
+                </div>
+            </section>
+            <section class="test">
+                <div>
+                    <h3>Nom du test</h3>
+                    <div class="resultat">
+                        <!--<img  class="bar" src="../images/icons/bar_diagramme-2.png">-->
+                        
+                        <figcaption>Résultat</figcaption>  
+                    </div>
+                    
+                    <div class="detail">
+                        <h6>Détail des résultats</h6>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Curabitur sagittis sollicitudin metus, quis scelerisque tortor rutrum vel.
+                             Pellentesque cursus nisl sed elit egestas ullamcorper. 
+                            Aliquam id lorem laoreet, molestie leo sit amet, consequat nibh. 
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3>Nom du test</h3>
+                    <div class="resultat">
+                        <img  class="bar" src="../images/icons/bar_diagramme-2.png">
+                        <figcaption>Résultat</figcaption>
+                    </div>
+                    
+                    <div class="detail">
+                        <h6>Détail des résultats</h6>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Curabitur sagittis sollicitudin metus, quis scelerisque tortor rutrum vel.
+                             Pellentesque cursus nisl sed elit egestas ullamcorper. 
+                            Aliquam id lorem laoreet, molestie leo sit amet, consequat nibh. 
+                        </p>
+                    </div>
+                </div>
+                
+            </section><button class="retour">Retour</button>
+        </section>
+           
+	</section>
 <?php require_once '../headerFooter/footer.php' ?>

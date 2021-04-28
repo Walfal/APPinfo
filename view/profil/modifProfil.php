@@ -2,39 +2,52 @@
 $title='Modier mon profil';
 require_once '../headerFooter/header.php';
 
+if($_SESSION['matricule'] > 0):
+    header('Location: ../login/login.php');
+endif;
+
 require_once '../../model/Profil/modifProfil.php';
+require_once '../../model/BDD/connexionBDD.php';
+$personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_SESSION['matricule']);
+
 ?>
 <link href="modifProfil.css" rel="stylesheet" />
 
-<div class="title">
-	<p class="textSize">
-	Modifier mon profil
-	<img class="imgProfil" src="../images/icons/perm_identity-24px.svg">
-	</p> 
+<div class="banniere">
+	<div class="content">
+		<h2>Modifier mon profil</h2> 
+	</div>
+	<div class="image">
+		<img class="imgProfil" src="../images/icons/perm_identity-24px.svg">
+	</div>
 </div>
 
 <form>
 	<div class="principal">
 		<div class="linedisplay">
-			<li><label for="nom"> Nom* : </label> <br>
-			<input class="champ" name ="Nom" id="Nom" required></li></input>
-			<li class="espacement"><label for ="Prenom"> Prénom* : </label><br>
-			<input class="champ" name ="Prénom" id="Prenom" required><br></li></input>
+			<li><label for="nom"> Nom: </label> <br>
+			<input class="champ" name ="Nom" id="Nom" placeholder=<?= $personne['nom'] ?>></li></input>
+			<li class="espacement"><label for ="Prenom"> Prénom: </label><br>
+			<input class="champ" name ="Prénom" id="Prenom" placeholder=<?= $personne['prenom'] ?>><br></li></input>
 		</div>
 		<div class="linedisplay">
 			<li>
 				<label for ="mail"> Adresse Email* : </label><br>
-				<input class="champ" type="email" name ="mail" id="mail" required></input>
+				<input class="champ" type="email" name ="mail" id="mail" placeholder=<?= $personne['mail'] ?>></input>
 			</li>
 		</div>		    	 		
 		<div class="linedisplay">
-			<li><label for ="password"> Mot de passe* : </label><br>
+			<li><label for ="password"> Mot de passe actuel: </label><br>
 			<input class="champ" type="password" name ="password" id="password" required></input></li>
-			<li class="espacement"><label for ="password2"> Confirmation du mot de passe* : </label><br>
-			<input class="champ" type="password" name ="password2" id="password2" required></input></li>
 		</div>
 		<div class="linedisplay">
-			<li><label for="date"> Date de naissance* : </label><br>
+			<li><label for ="password"> Nouveau mot de passe: </label><br>
+			<input class="champ" type="password" name ="password" id="password"></input></li>
+			<li class="espacement"><label for ="password2"> Confirmation du mot de passe: </label><br>
+			<input class="champ" type="password" name ="password2" id="password2"></input></li>
+		</div>
+		<div class="linedisplay">
+			<li><label for="date"> Date de naissance: </label><br>
 			<input class="champ" type="date"></input></li>
 			
 		</div>
@@ -283,8 +296,8 @@ require_once '../../model/Profil/modifProfil.php';
 		</div>
 		<div class="linedisplay">
 			<li>
-				<label for ="tel"> Numero de téléphone* : </label><br>
-				<input type="tel" name="tel" class="champ"></input>
+				<label for ="tel"> Numero de téléphone: </label><br>
+				<input type="tel" name="tel" class="champ" placeholder=<?= $personne['telephone'] ?>></input>
 			</li>	
 		</div>	    	 			
 	</div>

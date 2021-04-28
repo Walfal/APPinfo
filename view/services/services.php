@@ -9,53 +9,49 @@ require_once '../../model/Login/loginFunctions.php';
 <section class="sections home text-center">
 	<section class="intro">
 		<h1>SENS'AIR</h1>
-		<p>jfedpdjdjf ddllsjjdlsjf ud fjsidh</p>
+		<p>Service psychotechnique de l'air</p>
 	</section>
 	<div class="citation">
-		<q
-			>Lorem ipsum dolor sit amet, consectetur <br />
-			elit. Vestibulum varius.</q
-		>
+		<q>Le moteur est le cœur d'un avion mais le pilote est son âme.</q>
+		<p><br><br>Walter Alexandre Raleigh</p>
 	</div>
 
 <section class="nosservices">
-	<h4>Nos services</h4>
+	<h2>Nos services</h2>
 	<div class="services">
 		<div class="ligneune">
 			<div class="service">
 				<img class="verifier" src="../images/icons/v_image.png" />
-				<h6>
-					Test de reconnaissance<br />
+				<h4>
+					Test de reconnaissance<br>
 					de tonalité
-				</h6>
+				</h4>
 				<p>
-					Lorem ipsum dolor sit amet,<br />
-					consectetur adipiscing elit.<br />
-					Maecenas at.
+					Le test vérifie les aptitudes<br>
+					du patient à reconnaître<br>
+					un signal sonore.
 				</p>
 			</div>
 			<div class="service">
 				<img class="verifier" src="../images/icons/v_image.png" />
-				<h6>
-					Mesurer la fréquence <br />
+				<h4>
+					Mesurer la fréquence <br>
 					cardiaque
-				</h6>
+				</h4>
 				<p>
-					Lorem ipsum dolor sit amet,<br />
-					consectetur adipiscing elit.<br />
-					Maecenas at.
+					Test de la fréquence cardiaque<br>
+					du patient.
 				</p>
 			</div>
 			<div class="service">
 				<img class="verifier" src="../images/icons/v_image.png" />
-				<h6>
-					Mesurer la température<br />
+				<h4>
+					Mesurer la température<br>
 					supericielle de la peau
-				</h6>
+				</h4>
 				<p>
-					Lorem ipsum dolor sit amet,<br />
-					consectetur adipiscing elit.<br />
-					Maecenas at.
+					Le capteur mesure la température<br>
+					superficielle de la peau.
 				</p>
 			</div>
 		</div>
@@ -63,20 +59,26 @@ require_once '../../model/Login/loginFunctions.php';
 		<div class="sonlumiere">
 			<div class="service">
 				<img class="verifier" src="../images/icons/v_image.png" />
-				<h6>Temps de réaction à <br />un son inattendu</h6>
+				<h4>Temps de réaction à<br>
+					un son inattendu
+				</h4>
 				<p>
-					Lorem ipsum dolor sit amet,<br />
-					consectetur adipiscing elit.<br />
-					Maecenas at.
+					À l'audition d'un son,<br>
+					le patient doit appuyer<br>
+					sur un bouton et<br>
+					le temps de réaction<br>
+					est mesuré par le capteur.
 				</p>
 			</div>
 			<div class="service">
 				<img class="verifier" src="../images/icons/v_image.png" />
-				<h6>Temps de réction à <br />une lumière inattendue</h6>
+				<h4>Temps de réction à <br>
+					une lumière inattendue
+				</h4>
 				<p>
-					Lorem ipsum dolor sit amet,<br />
-					consectetur adipiscing elit.<br />
-					Maecenas at.
+					Lorsqu'une lumière s'allume,<br>
+					l'utilisateur doit appuyer sur un bouton,<br>
+					le capteur mesurera le temps de réaction.
 				</p>
 			</div>
 		</div>

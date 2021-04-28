@@ -9,8 +9,6 @@ function verifierMotDePasse($mail,$password,array $data,$result){
     if($result -> rowCount() > 0){
         //cas où le mot de passe n'est pas crypté   
         if($password === $data[0]["mot de passe"]){
-            //debut de session
-            session_start();
             $_SESSION['mail'] = $data[0]["mail"];
             $_SESSION['matricule'] = $data[0]["matricule"];
             $erreur = null;

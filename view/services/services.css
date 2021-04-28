@@ -72,15 +72,17 @@ h1 {
 	justify-content: space-around;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 }
 
-.nosservices h4 {
+.nosservices h2 {
 	color: #565757;
 	margin-top: 5%;
 }
 
-.nosservices h6 {
+.nosservices h4 {
 	color: #3a738f;
+	margin-bottom: 5%;
 }
 
 .nosservices p {
@@ -92,8 +94,7 @@ h1 {
 	justify-content: space-between;
 	align-content: space-between;
 	flex-wrap: wrap;
-	margin-top: 7%;
-
+	margin-block: 7%;
 	width: 100%;
 }
 

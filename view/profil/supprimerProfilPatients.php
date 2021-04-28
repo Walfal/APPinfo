@@ -9,7 +9,7 @@ if(!empty($_GET['id'])){
 }
 if(!empty($_POST)){
     $id = checkInput($_POST['id']);
-    $statement = $BDD -> prepare("DELETE FROM test.utilisateurs WHERE id_Utilisateur =?");
+    $statement = $BDD -> prepare("DELETE FROM Personne WHERE matricule =?");
     $statement -> execute(array($id));
     header("location: ../../view/profil/profilPatients.php");
 }
@@ -21,6 +21,7 @@ function checkInput($data){
     return $data;
 }
 ?>
+<link href="supprimerProfilPatients.css" rel="stylesheet" />
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">

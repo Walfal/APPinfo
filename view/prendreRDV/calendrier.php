@@ -61,5 +61,5 @@ $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
 
 	<a href="ajouterRDV.php" class = "calendar_button">+</a>
 
-<br><br><br><br>
+<br><br>
 <?php require '../headerFooter/footer.php' ?>

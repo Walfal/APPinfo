@@ -65,12 +65,11 @@
 
 		<section id="presentation">
 			<div class="wrapper">
-				<h2>Non sermo in qui fabellas</h2>
+				<h2>VOS TESTS PSYCHOTECHNIQUES</h2>
 				<p>
-					Et Epigonus quidem amictu tenus philosophus, ut apparuit, prece frustra temptata, sulcatis lateribus
-					mortisque metu admoto turpi confessione cogitatorum socium, quae nulla erant, fuisse firmavit cum
-					nec vidisset quicquam nec audisset penitus expers forensium rerum; Eusebius vero obiecta fidentius
-					negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse, non iudicium clamans.
+					Avec les serivces de sens'air,
+					nous vous proposons une gestion simple et ergonomique des rendez-vous et des résultats
+					avec du materiel de pointe pour maximiser la condition physique de vos pilotes.
 				</p>
 			</div>
 		</section>
@@ -85,22 +84,19 @@
 					<li id="step-1">
 						<h4>Planifier</h4>
 						<p>
-							Inimicitias quis si si consiliorum Quid semper amicus petenda factorum atque mihi publicae
-							censuerim sicut.
+							Un fonctionnement en rendez-vous, permettant une bonne gestion des capteurs.
 						</p>
 					</li>
 					<li id="step-2">
 						<h4>Organiser</h4>
 						<p>
-							Inimicitias quis si si consiliorum Quid semper amicus petenda factorum atque mihi publicae
-							censuerim sicut.
+							Une organisation exemplaire pour permettre un suivi des tests psychotechniques des unités.
 						</p>
 					</li>
 					<li id="step-3">
 						<h4>Voyager</h4>
 						<p>
-							Inimicitias quis si si consiliorum Quid semper amicus petenda factorum atque mihi publicae
-							censuerim sicut.
+							Prenez les commandes de manière sereine grâce à un suivi complet de votre condition physique.
 						</p>
 					</li>
 					<div class="clear"></div>
@@ -118,13 +114,11 @@
 						src="https://www.usinenouvelle.com/mediatheque/9/3/3/000710339_896x598_c.jpg"
 						alt="avion"
 					/>
-					<h4>Non sermo in qui fabellas</h4>
+					<h4>Maximiser le potentiel de vos pilotes</h4>
 					<p>
-						Et Epigonus quidem amictu tenus philosophus, ut apparuit, prece frustra temptata, sulcatis
-						lateribus mortisque metu admoto turpi confessione cogitatorum socium, quae nulla erant, fuisse
-						firmavit cum nec vidisset quicquam nec audisset penitus expers forensium rerum; Eusebius vero
-						obiecta fidentius negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse,
-						non iudicium clamans.
+						En mettant en place un suivi profond et complet pour chaque pilote,<br>
+						nous vous donnons l'opportunité de maintenir vos exigences sur les pilotes<br>
+						afin de veiller à ce qu'ils règnent sur les cieux.
 					</p>
 					<a href="#" class="button-2">Plus d'informations</a>
 				</div>
@@ -137,10 +131,9 @@
 			<div class="wrapper">
 				<h2>Contactez-nous</h2>
 				<p>
-					Et Epigonus quidem amictu tenus philosophus, ut apparuit, prece frustra temptata, sulcatis lateribus
-					mortisque metu admoto turpi confessione cogitatorum socium, quae nulla erant, fuisse firmavit cum
-					nec vidisset quicquam nec audisset penitus expers forensium rerum; Eusebius vero obiecta fidentius
-					negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse, non iudicium clamans.
+					Nos équipes travaillent en permanence pour maintenir la qualité du service,<br>
+					ils sont disponibles et vous pouvez nous contacter en cas de besoin.<br>
+					Nous serons ravis de répondre à vos questions et de vous fournir de l'aide en cas de besoin.
 				</p>
 				<a href="messagerie/contactezNous.php" class="button-3">Contactez nous</a>
 			</div>

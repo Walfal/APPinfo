@@ -2,6 +2,10 @@
 $title = 'Mes résultats';
 require_once '../headerFooter/header.php';
 
+if(!isset($_SESSION['matricule'])):
+    header('Location: ../login/login.php');
+endif;
+
 require_once '../../model/BDD/connexionBDD.php';
 $matriculeTest = $_SESSION['matricule'];
 $matricule = $matriculeTest;
@@ -38,26 +42,35 @@ $nom = recuperationUneDonnee($BDD,"Personne", "matricule", $matricule);
 	</div>
 </div>
 <table class="resultat">
-	<tr>
-		<th>Id Test</th>
-		<th>Type de Test</th>
-		<th>Résultat</th>
-		<th>Date</th>
-		<th>Trame</th>
-		<th>Nom du patient</th>
-		<th>IdCapteur</th>
-	</tr>
-	<?php foreach($test as $row): ?>
+	<thead>
 		<tr>
-		<td><?= $row['idTest'];?></td>
-		<td><?= $row['type'];?></td>
-		<td><?= $row['resultat'];?></td>
-		<td><?= $row['date'];?></td>
-		<td><?= $row['trame'];?></td>
-		<td><?= $nom['nom'];?></td>
-		<td><?= $row['idCapteur'];?></td>
+			<th>Id Test</th>
+			<th>Type de Test</th>
+			<th>Résultat</th>
+			<th>Date</th>
+			<th>Trame</th>
+			<th>Nom du patient</th>
+			<th>IdCapteur</th>
 		</tr>
-	<?php endforeach ?>
+	</thead>
+	<tbody>
+		<?php foreach($test as $row): ?>
+
+			<tr>
+			<td><?= $row['idTest'];?></td>
+			<td><?= $row['type'];?></td>
+			<td><?= $row['resultat'];?></td>
+			<td><?php
+			setlocale(LC_TIME, 'fr_FR.utf-8','fra'); 
+			$date = new DateTime($row['date']);
+			echo (strftime("%A %e %B %Y %k:%M", date_timestamp_get($date)));
+			//echo ->format('l j F Y, H:i');?></td>
+			<td><?= $row['trame'];?></td>
+			<td><?= $nom['nom'];?></td>
+			<td><?= $row['idCapteur'];?></td>
+			</tr>
+		<?php endforeach ?>
+	</tbody>
 </table>
 
 <?php require_once '../headerFooter/footer.php'; ?>

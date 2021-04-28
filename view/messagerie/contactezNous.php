@@ -121,9 +121,9 @@
 					$message = recuperationMessages($BDD, $conversation['idConversation']);
 					$client = recuperationUneDonnee($BDD, "Personne", "matricule", $message[0]['matricule']);
 					?>
-					<li><a href="./contactezNous.php?client=<?=$conversation['idConversation']; ?>">
-					<?='Une question de: ' . $client['prenom'] . ' ' . $client['nom'] . ': ' .  $conversation['titre'] ?>
-				</a></li>
+					<li><a href="./contactezNous.php?client=<?= $conversation['idConversation'] ?>">
+					<?= $client['prenom'] . ' ' . $client['nom'] . '<br><em>' .  $conversation['titre'] . '</em>' ?>
+					</a></li>
 				<?php endforeach ?>
 			</ul>
 		</div>
@@ -131,6 +131,7 @@
 	<?php endif;
 	require_once '../headerFooter/footer.php';
 	?>
+<div class="fin"></div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

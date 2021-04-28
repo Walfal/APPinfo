@@ -36,8 +36,5 @@ $client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule
 	<li>Type :	<?= $event['type'] ?></li>
 
 </ul>
-<br><br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
 
 <?php require '../headerFooter/footer.php' ?>

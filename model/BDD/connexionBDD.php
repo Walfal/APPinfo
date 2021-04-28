@@ -40,20 +40,20 @@ $BDD = $DB->connexion();
 
 
 function recuperationUneDonnee($BDD, $table, $where, $where2){
-	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = $where2");
-	$req -> execute();
+	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = ?");
+	$req -> execute(array($where2));
 	return $req -> fetch();
 }
 
 function recuperationDesDonnees($BDD, $table, $where, $where2){
-	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = $where2");
-	$req -> execute();
+	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = ?");
+	$req -> execute(array($where2));
 	return $req -> fetchAll();
 }
 
 function recuperationMessages($BDD, $idConversation){
-	$req = $BDD->prepare("SELECT * FROM Message WHERE idConversation = $idConversation ORDER BY date");
-	$req -> execute();
+	$req = $BDD->prepare("SELECT * FROM Message WHERE idConversation = ? ORDER BY date");
+	$req -> execute(array($idConversation));
 	return $req->fetchAll();
 }
 

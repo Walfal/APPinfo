@@ -41,7 +41,7 @@ session_start();
 						</ul>
 					</li>
 					<li>
-						<a href="../login/login.php">  <!--lorsque l'on clique on doit être connecté sinon on est redirigé sur la page de login-->
+						<a href="../login/login.php">
                         <img class="bi bi-globe" src="../images/icons/account.svg" style="width: 25px"
 						/></a>
 					</li>

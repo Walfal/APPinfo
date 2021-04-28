@@ -2,6 +2,9 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 ?>
+
+<link href="profilPatients.css" rel="stylesheet" />
+
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
@@ -44,6 +47,7 @@ require_once '../headerFooter/header.php';
             <tr>
                 <th >Nom</th>
                 <th>Prénom</th>
+                <th>Mail</th>
                 <th>N° sécu</th>
                 <th>Code postal</th>
                 <th>Actions</th>
@@ -53,45 +57,47 @@ require_once '../headerFooter/header.php';
 
             <?php
                 require '../../model/BDD/connexionBDD.php';
-                $statement = $BDD -> query('SELECT nom,prenom,num_ss,codePostal, id_Utilisateur, rol FROM test.utilisateurs');
-                if(isset($_GET['nomPatient']) AND !empty($_GET['nomPatient']) OR isset($_GET['prenomPatient']) AND !empty($_GET['prenomPatient']) OR isset($_GET['codePostal']) AND !empty($_GET['codePostal'])){
+                if(isset($_GET['nomPatient']) && !empty($_GET['nomPatient']) || isset($_GET['prenomPatient']) && !empty($_GET['prenomPatient']) || isset($_GET['codePostal']) && !empty($_GET['codePostal'])){
                     $nomPatient = htmlspecialchars($_GET['nomPatient']);
                     $prenomPatient = htmlspecialchars($_GET['prenomPatient']);
                     $codePostal = htmlspecialchars($_GET['codePostal']);
-                    $allusers = $db->query("SELECT nom,prenom,num_ss,codePostal, id_Utilisateur, rol FROM test.utilisateurs WHERE nom ='$nomPatient' OR prenom = '$prenomPatient' OR codePostal='$codePostal' ");
-                    if($allusers->rowCount() > 0){
-                        while($user = $allusers->fetch()){
-                            if($user['rol']!=1){
+                    $personnes = $BDD -> query("SELECT * FROM Personne WHERE nom = '$nomPatient' OR prenom = '$prenomPatient' OR 'adresse (code postal)' = '$codePostal'");
+                    if($personnes -> rowCount() > 0){
+                        while($personne = $personnes -> fetch()){
+                            if($personne['matricule'] != 0){
                                 echo '<tr>';
-                                echo '<td data-label="Nom :">' . $user['nom'] . '</td>';
-                                echo '<td data-label="Prénom :">' . $user['prenom'] . '</td>';
-                                echo '<td data-label="N° sécu :">' . $user['num_ss'] . '</td>';
-                                echo '<td data-label="Code Postale :">' . $user['codePostal'] . '</td>';
+                                echo '<td data-label="Nom :">' . $personne['nom'] . '</td>';
+                                echo '<td data-label="Prénom :">' . $personne['prenom'] . '</td>';
+                                echo '<td data-label="Mail :">' . $personne['mail'] . '</td>';
+                                echo '<td data-label="N° sécu :">' . $personne['numero de securite social'] . '</td>';
+                                echo '<td data-label="Code Postale :">' . $personne['adresse (code postal)'] . '</td>';
                                 echo '<td data-label="Actions :" width=300>';
-                                echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Voir</a>';
-                                echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Modifier</a>';
-                                echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Supprimer</a>';
+                                echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $personne['matricule'] . '" >Voir</a>';
+                                echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $personne['matricule'] . '" >Modifier</a>';
+                                echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $personne['matricule'] . '" >Supprimer</a>';
                                 echo '</td>';
                                 echo '</tr>';
                             }
                         }
                     }
-                    else{
+                    else {
                         echo '<p class="aucun">Aucun utilisateur trouvé</p>';
                     }
                 }
                 else{
-                    while($valeur = $statement-> fetch()){
-                        if($valeur['rol']!=1){
+                    $personnes = recuperationDesDonnees($BDD, 'Personne', 1, 1);
+                    foreach($personnes as $personne){
+                        if($personne['matricule'] != 0){
                             echo '<tr>';
-                            echo '<td data-label="Nom :">' . $valeur['nom'] . '</td>';
-                            echo '<td data-label="Prénom :">' . $valeur['prenom'] . '</td>';
-                            echo '<td data-label="N° sécu :">' . $valeur['num_ss'] . '</td>';
-                            echo '<td data-label="Code Postale :">' . $valeur['codePostal'] . '</td>';
+                            echo '<td data-label="Nom :">' . $personne['nom'] . '</td>';
+                            echo '<td data-label="Prénom :">' . $personne['prenom'] . '</td>';
+                            echo '<td data-label="Mail :">' . $personne['mail'] . '</td>';
+                            echo '<td data-label="N° sécu :">' . $personne['numero de securite social'] . '</td>';
+                            echo '<td data-label="Code Postale :">' . $personne['adresse (code postal)'] . '</td>';
                             echo '<td data-label="Actions :" width=300>';
-                            echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Voir</a>';
-                            echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Modifier</a>';
-                            echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Supprimer</a>';
+                            echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $personne['matricule'] . '" >Voir</a>';
+                            echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $personne['matricule'] . '" >Modifier</a>';
+                            echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $personne['matricule'] . '" >Supprimer</a>';
                             echo '</td>';
                             echo '</tr>';
                         }
@@ -103,9 +109,6 @@ require_once '../headerFooter/header.php';
         
         </tbody>
     </table>
-</div>   
-<div class="retour">
-    <a href="../../view/">Retour à la page d'accueil</a>
 </div>
 
 <?php require_once '../headerFooter/footer.php';?>
