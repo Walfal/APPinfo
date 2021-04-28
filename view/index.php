@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Page d'accueil</title>
-		<link href="css/headerFooter.css" rel="stylesheet" />
-		<link href="css/accueil.css" rel="stylesheet" />
+		<link href="headerFooter/headerFooter.css" rel="stylesheet" />
+		<link href="index.css" rel="stylesheet" />
 		<link rel="icon" href="images/logo/logo.png" />
 	</head>
 	<header>
@@ -13,11 +13,11 @@
 				<input id="nav-toggle" type="checkbox" />
 				<a href="."><img class="logo" src="images/logo/sensair.png" alt="" /></a>
 				<ul class="links">
-					<li><a href=".">Home</a></li>
-					<li><a href="html/services.html">Services</a></li>
-					<li><a href="html/quiSommesNous.html">About Us</a></li>
-					<li><a href="html/contactezNous.html">Contact Us</a></li>
-					<li><a href="html/FAQ.php">FAQ</a></li>
+					<li><a href=".">Accueil</a></li>
+					<li><a href="../services/services.php">Services</a></li>
+					<li><a href="../quiSommesNous/quiSommesNous.php">à propos</a></li>
+					<li><a href="../contactezNous/contactezNous.php">Contactez-nous</a></li>
+					<li><a href="../FAQ/FAQ.php">FAQ</a></li>
 					<li>
 						<a href="#">
 							<img class="bi bi-globe" src="images/icons/language.svg" style="width: 25px" />
@@ -41,7 +41,7 @@
 
 	<body>
 		<section id="main-image">
-			<h2>WELCOME TO <br /><strong>SENS'AIR</strong></h2>
+			<h2>BIENVENUE CHEZ<br /><strong>SENS'AIR</strong></h2>
 			<a href="#" class="button-1">Se connecter</a>
 		</section>
 
@@ -49,12 +49,9 @@
 
 		<section id="presentation">
 			<div class="wrapper">
-				<h2>Non sermo in qui fabellas</h2>
+				<h2>VOS TEST PSYCHOTECHNIQUES</h2>
 				<p>
-					Et Epigonus quidem amictu tenus philosophus, ut apparuit, prece frustra temptata, sulcatis lateribus
-					mortisque metu admoto turpi confessione cogitatorum socium, quae nulla erant, fuisse firmavit cum
-					nec vidisset quicquam nec audisset penitus expers forensium rerum; Eusebius vero obiecta fidentius
-					negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse, non iudicium clamans.
+					Avec les services de sens'air, nous vous proposons une gestion simple et érgonomique des rendez-vous et des résultats pour l'intégralité de vos effectifs. Des tests réalisés avec du materiel de pointe pour maximiser la condition physique de vos pilote.  
 				</p>
 			</div>
 		</section>
@@ -69,22 +66,19 @@
 					<li id="step-1">
 						<h4>Planifier</h4>
 						<p>
-							Inimicitias quis si si consiliorum Quid semper amicus petenda factorum atque mihi publicae
-							censuerim sicut.
+							Un fonctionnement en rendez-vous, permettant une bonne gestion des capteurs.
 						</p>
 					</li>
 					<li id="step-2">
 						<h4>Organiser</h4>
 						<p>
-							Inimicitias quis si si consiliorum Quid semper amicus petenda factorum atque mihi publicae
-							censuerim sicut.
+							Une organisation exemplaire pour permettre un suivi des tests pychotechniques des unités.
 						</p>
 					</li>
 					<li id="step-3">
 						<h4>Voyager</h4>
 						<p>
-							Inimicitias quis si si consiliorum Quid semper amicus petenda factorum atque mihi publicae
-							censuerim sicut.
+							Prenez les commandes de manière sereine grâce à un suivi complet de votre condition physique.
 						</p>
 					</li>
 					<div class="clear"></div>
@@ -102,13 +96,9 @@
 						src="https://www.usinenouvelle.com/mediatheque/9/3/3/000710339_896x598_c.jpg"
 						alt="avion"
 					/>
-					<h4>Non sermo in qui fabellas</h4>
+					<h4>Maximiser le potentiel de vos pilotes</h4>
 					<p>
-						Et Epigonus quidem amictu tenus philosophus, ut apparuit, prece frustra temptata, sulcatis
-						lateribus mortisque metu admoto turpi confessione cogitatorum socium, quae nulla erant, fuisse
-						firmavit cum nec vidisset quicquam nec audisset penitus expers forensium rerum; Eusebius vero
-						obiecta fidentius negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse,
-						non iudicium clamans.
+						En mettant en place un suivi profond et complet pour chaque pilote, nous vous donnons l'opportunité de maintenir vos exigences sur les pilotes afin de veiller à ce qu'ils régnent sur les cieux.
 					</p>
 					<a href="#" class="button-2">Plus d'infos</a>
 				</div>
@@ -121,10 +111,7 @@
 			<div class="wrapper">
 				<h2>Contactez-nous</h2>
 				<p>
-					Et Epigonus quidem amictu tenus philosophus, ut apparuit, prece frustra temptata, sulcatis lateribus
-					mortisque metu admoto turpi confessione cogitatorum socium, quae nulla erant, fuisse firmavit cum
-					nec vidisset quicquam nec audisset penitus expers forensium rerum; Eusebius vero obiecta fidentius
-					negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse, non iudicium clamans.
+					Nos équipes travaillent en permanence pour maintenir la qualité du service, ils sont disponible et vous pouvez nous contacter en cas de besoin, Nous serons ravi de répondre à vos questions et de vous fournir de l'aide en cas de besoin.
 				</p>
 				<a href="html/contactezNous.html" class="button-3">Contact</a>
 			</div>
@@ -164,10 +151,10 @@
 					</div>
 					<div class="liens">
 						<ul>
-							<li><a href=".">Home</a></li>
+							<li><a href=".">Accueil</a></li>
 							<li><a href="html/services.html">Services</a></li>
-							<li><a href="html/quiSommesNous.html">About Us</a></li>
-							<li><a href="html/contactezNous.html">Contact Us</a></li>
+							<li><a href="html/quiSommesNous.html">à propos</a></li>
+							<li><a href="html/contactezNous.html">Contactez-nous</a></li>
 							<li><a href="#">FAQ</a></li>
 						</ul>
 					</div>

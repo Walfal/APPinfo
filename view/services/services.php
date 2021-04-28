@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Services</title>
-		<link href="../css/headerFooter.css" rel="stylesheet" />
-		<link href="../css/services.css" rel="stylesheet" />
+		<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
+		<link href="services.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
@@ -14,10 +14,10 @@
 				<input id="nav-toggle" type="checkbox" />
 				<a href="../"><img class="logo" src="../images/logo/sensair.png" alt="" /></a>
 				<ul class="links">
-					<li><a href="../">Home</a></li>
-					<li><a href="services.html">Services</a></li>
-					<li><a href="quiSommesNous.html">About Us</a></li>
-					<li><a href="contactezNous.html">Contact Us</a></li>
+					<li><a href="../">Accueil</a></li>
+					<li><a href="services.php">Services</a></li>
+					<li><a href="../quiSommesNous/quiSommesNous.php">à propos</a></li>
+					<li><a href="../contactezNous/contactezNous.php">Contactez nous</a></li>
 					<li><a href="#">FAQ</a></li>
 					<li>
 						<a href="#">
@@ -46,10 +46,8 @@
 				<p>jfedpdjdjf ddllsjjdlsjf ud fjsidh</p>
 			</section>
 			<div class="citation">
-				<q
-					>Lorem ipsum dolor sit amet, consectetur <br />
-					elit. Vestibulum varius.</q
-				>
+				<q>Le moteur est le coeur d'un avion mais le pilote est son âme.</q>
+				<p>Walter Alexandre Raleigh</p>
 			</div>
 
 			<section class="nosservices">
@@ -63,9 +61,9 @@
 								de tonalité
 							</h6>
 							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
+								Le test verifie les aptitudes<br />
+								du patient à reconnaître<br />
+								un signal sonore.
 							</p>
 						</div>
 						<div class="service">
@@ -75,9 +73,8 @@
 								cardiaque
 							</h6>
 							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
+								Test de la fréquence cardiaque<br />
+								du patient<br />
 							</p>
 						</div>
 						<div class="service">
@@ -87,9 +84,8 @@
 								supericielle de la peau
 							</h6>
 							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
+								Le capteur mesure la température<br />
+								superficielle de la peau<br />
 							</p>
 						</div>
 					</div>
@@ -99,18 +95,20 @@
 							<img class="verifier" src="../images/icons/v_image.png" />
 							<h6>Temps de réaction à <br />un son inattendu</h6>
 							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
+								À l'audition d'un son,<br />
+								l'utilisateur doit appuyer<br />
+								sur un boutton et<br />
+								le temps de réaction<br />
+								est mesuré par le capteur.
 							</p>
 						</div>
 						<div class="service">
 							<img class="verifier" src="../images/icons/v_image.png" />
-							<h6>Temps de réction à <br />une lumière inattendue</h6>
+							<h6>Temps de réaction à <br />une lumière inattendue</h6>
 							<p>
-								Lorem ipsum dolor sit amet,<br />
-								consectetur adipiscing elit.<br />
-								Maecenas at.
+								Lorsqu'une lumière s'allume,<br />
+								l'utilisateur doit appuyer sur un boutton,<br />
+								le capteur mesurera le temps de réaction.
 							</p>
 						</div>
 					</div>
@@ -151,10 +149,10 @@
 				</div>
 				<div class="liens">
 					<ul>
-						<li><a href="../">Home</a></li>
-						<li><a href="services.html">Services</a></li>
-						<li><a href="quiSommesNous.html">About Us</a></li>
-						<li><a href="contactezNous.html">Contact Us</a></li>
+						<li><a href="../">Accueil</a></li>
+						<li><a href="services.php">Services</a></li>
+						<li><a href="../quiSommesNous/quiSommesNous.php">à propos</a></li>
+						<li><a href="../contactezNous/contactezNous.php">Contactez nous</a></li>
 						<li><a href="#">FAQ</a></li>
 					</ul>
 				</div>
@@ -163,4 +161,4 @@
 		<p id="coyright">© 2021 Sens'air</p>
 	</footer>
 </html>
->>>>>>> origin/Raph
+

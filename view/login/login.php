@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Login</title>
-		<link href="../css/login.css" rel="stylesheet" />
-		<link href="../css/headerFooter.css" rel="stylesheet" />
+		<link href="login.css" rel="stylesheet" />
+		<link href="../headerFooter.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->

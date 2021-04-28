@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>FAQ</title>
-		<link href="../css/headerFooter.css" rel="stylesheet" />
-		<link href="../css/FAQ.css" rel="stylesheet" />
+		<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
+		<link href="FAQ.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<header>
@@ -13,10 +13,10 @@
 				<input id="nav-toggle" type="checkbox" />
 				<a href="../"><img class="logo" src="../images/logo/sensair.png" alt="" /></a>
 				<ul class="links">
-					<li><a href="../">Home</a></li>
-					<li><a href="services.html">Services</a></li>
-							<li><a href="quiSommesNous.html">About Us</a></li>
-					<li><a href="contactezNous.html">Contact Us</a></li>
+					<li><a href="../">Accueil</a></li>
+					<li><a href="../services/services.php">Services</a></li>
+							<li><a href="../quiSommesNous/quiSommesNous.php">à propos</a></li>
+					<li><a href="../contactezNous/contactezNous.php">Contactez nous</a></li>
 					<li><a href=".">FAQ</a></li>
 					<li>
 						<a href="#">
@@ -24,7 +24,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="login.html"
+						<a href="../login/login.php"
 							><img class="bi bi-globe" src="../images/icons/account.svg" style="width: 25px"
 						/></a>
 					</li>
@@ -50,7 +50,11 @@
 		for ($i = 0; $i < 100; $i++) {
 			echo "- $var \n";
 		}
+	
 		?></php>
+			<p class="text">
+				Dans la FAQ, vous trouverez la réponse aux questions les plus fréquente. S'il vous manque une information, n'hésitez pas à nous contacter par mail, par téléphone ou sur la page dédié à cet effet. Nous nous ferons un plaisir à répondre à vos question.
+			</p>
 	</body>
 	<footer>
 		<div class="contenu-footer">
@@ -84,10 +88,10 @@
 				</div>
 				<div class="liens">
 					<ul>
-						<li><a href="../">Home</a></li>
+						<li><a href="../">Accueil</a></li>
 						<li><a href="services.html">Services</a></li>
-						<li><a href="quiSommesNous.html">About Us</a></li>
-						<li><a href="contactezNous.html">Contact Us</a></li>
+						<li><a href="quiSommesNous.html">à propos</a></li>
+						<li><a href="contactezNous.html">Contactez nous</a></li>
 						<li><a href=".">FAQ</a></li>
 					</ul>
 				</div>

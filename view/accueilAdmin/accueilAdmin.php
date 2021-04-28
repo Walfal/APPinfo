@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>accueil administrateur</title>
-		<link href="../css/headerFooter.css" rel="stylesheet" />
-		<link href="../css/accueilAdmin.css" rel="stylesheet" />
+		<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
+		<link href="accueilAdmin.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
@@ -40,7 +40,6 @@
 	</header>
 
 <body>
->>>>>>> origin/Raph
 
 
     <!-- ------------------------------------------------------------ PRESENTATION---------------------------------------------------------------------------------- -->
@@ -49,7 +48,7 @@
         <div class="wrapper">
             <div class="intro">
                 <h2>Bienvenue amigo!</h2>
-                <p class="textBienvenue">Et Epigonus quidem amictu tenus philosophus, ut apparuit, prece frustra temptata, sulcatis lateribus mortisque metu admoto turpi confessione cogitatorum socium.</p>
+                <p class="textBienvenue">Bienvenue sur votre page de gestion, vous pouvez gérer l'intégralité des tâches depuis votre espace </p>
             </div>
             <div id="imageDate">
                 <img id="user" src="../images/icons/user.png" alt=""></img>
@@ -116,4 +115,3 @@
     <p id="coyright">© 2021 Sens'air</p>
 </footer>
 </html>
->>>>>>> origin/Raph
