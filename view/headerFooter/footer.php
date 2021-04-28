@@ -1,5 +1,5 @@
 		</body>
-	<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
+	<link href="headerFooter.css" rel="stylesheet" />
 	<footer>
 		<div class="contenu-footer">
 			<div class="bloc logo">

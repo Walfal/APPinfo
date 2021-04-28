@@ -19,8 +19,8 @@
 				<ul class="links">
 					<li><a href=".">Accueil</a></li>
 					<li><a href="services/services.php">Nos services</a></li>
-					<li><a href="quiSommesNous/quiSommesNous.php">Qui sommes nous</a></li>
-					<li><a href="contactezNous/contactezNous.php">Contactez nous</a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
+					<li><a href="contactezNous/contactezNous.php">Nous contacter</a></li>
 					<li><a href="FAQ/FAQ.php">FAQ</a></li>
 					<li>
 						<a href="#">

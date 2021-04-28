@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
 }
 //redirection sur la page compte si on est dejà connecté
 if(est_connecte()){//faire la distinction ici entre l 'admin et l'utilisateur
-    header('Location: ../../view/compte/compte.php');
+    header('Location: ../compte/compte.php');
     exit();
 }
 

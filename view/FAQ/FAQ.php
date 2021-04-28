@@ -7,14 +7,14 @@ require_once '../headerFooter/header.php';?>
 		<h2>UNE QUESTION ?</h2>
 		<p>Nous sommes là pour vous aider</p>
 	</div>
-	<div class="image">
-		<img src="../images/icons/question.png" alt="">
-	</div>
+	<!--<div class="image">
+		<img src="../view/images/icons/question.png" alt="">
+	</div>-->
 </div>
 
 <!-- ----------------------------------------------------------- FAQ ---------------------------------------------------------------------------------- -->
 <?php
-	require '../../model/modelFaq/modelFaq.php';
+	require '../../model/FAQ/modelFaq.php';
 
 	$db = Database::connect();
 	/*$valeur = Database::listeCategorie($db);
@@ -166,6 +166,6 @@ require_once '../headerFooter/header.php';?>
 	<p>Pour plus d'informations, contactez-nous, <a href="">cliquez ici</a></p>
 </div>
 
-<script src="../js/faq.js"></script>
+<!--<script src="../js/faq.js"></script>-->
 
  <?php require_once '../headerFooter/footer.php'; ?>   

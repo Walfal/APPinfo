@@ -27,7 +27,7 @@
 ?>
 
 <div class="bandehaut">
-	<h1 class="titrePage" style="line-height: 100%">Contactez-nous</h1>
+	<div><h1 class="titrePage" style="line-height: 100%">Contactez-nous</h1>
 	<i class="sousTitre">Nous sommes là pour vous aider</i>
 </div>
 
@@ -114,7 +114,7 @@
 
 	<div class="bandehaut">
 		<h1 class="titrePage">Choississez le client</h1>
-		<i class="sousTitre">à qui vous voulez répondre</i>
+		<i class="sousTitre">À qui vous voulez répondre ?</i>
 	</div>
 
 	<div class="conversation"> 
@@ -124,7 +124,7 @@
 				$client = recuperationUneDonnee($BDD, "Personne", "matricule", $message[0]['matricule']);
 				?>
 				<li><a href="./contactezNous.php?client=<?=$conversation['idConversation']; ?>">
-				<?='Une question de: ' . $client['prenom'] . ' ' . $client['nom'] . ': ' .  $conversation['titre'] ?>
+				<?= $client['prenom'] . ' ' . $client['nom'] . '<br /><em>' .  $conversation['titre'] .'</em>' ?>
 			</a></li>
 			<?php endforeach ?>
 		</ul>

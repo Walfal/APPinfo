@@ -4,6 +4,7 @@
 	$matriculeTest = 1;
 	$matriculeTest = $_SESSION['matricule'];
 	require_once '../../model/BDD/connexionBDD.php';
+	
 ?>
 
 <link href="../contactezNous/contactezNous.css" rel="stylesheet" />
