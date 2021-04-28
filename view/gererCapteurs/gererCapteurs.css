@@ -30,43 +30,35 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-bottom: 5%;
 }
 
 .blocCapteur {
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 2%;
 }
 
 .capteur {
-	border-width: 1px;
-	border-color: black;
-	border-style: solid;
-	padding-left: 0%;
-	padding-right: 0%;
-	width: 30%;
-	left: 50%;
-}
-
-.capteur1 {
-	top: 32%;
-}
-
-.temperature {
-	height: 28%;
-	width: 14%;
+	border: solid 1px black;
 	border-radius: 15px;
-	top: 30%;
-	left: 25%;
-	border-style: solid;
-	border-width: 1px;
-	padding: 0.5%;
+	height: 40%;
+}
+
+.icon {
+	max-height: 200px;
+	width: auto;
+	border-radius: 15px;
+	border: solid 1px black;
+	padding: 10px;
+	margin: 5px;
 }
 
 .nomCapteur {
 	font-size: 23px;
 	color: #3a738f;
-	padding-top: 10%;
-	padding-left: 5%;
-	padding-right: 15%;
+	padding: 10% 15% 0 5%;
 }
 
 .miseJour {
@@ -74,75 +66,13 @@
 	padding-bottom: 8%;
 }
 
-.modifier {
-	background-color: #3a738f;
-	border-color: transparent;
-	color: white;
-	font-size: 15px;
-	border-radius: 20px;
-	padding-top: 0.3%;
-	padding-bottom: 0.3%;
-	padding-left: 3%;
-	padding-right: 3%;
-	margin-left: 30%;
-	margin-bottom: 10%;
-	margin-right: 15%;
-}
-
+.modifier,
 .supprimer {
 	background-color: #3a738f;
 	border-color: transparent;
 	color: white;
 	font-size: 15px;
 	border-radius: 20px;
-	padding-top: 0.3%;
-	padding-bottom: 0.3%;
-	padding-left: 3%;
-	padding-right: 3%;
-}
-
-.capteur2 {
-	top: 71%;
-}
-
-.tonalite {
-	height: 23;
-	width: 11%;
-	border-radius: 15px;
-	top: 70%;
-	left: 25%;
-	border-style: solid;
-	border-width: 1px;
-	padding: 2%;
-}
-
-.capteur3 {
-	top: 111%;
-}
-
-.frequenceCardiaque {
-	height: 27%;
-	width: 13%;
-	border-radius: 15px;
-	top: 109%;
-	left: 25%;
-	border-style: solid;
-	border-width: 1px;
-	padding: 1%;
-}
-
-.capteur4 {
-	top: 151%;
-	margin-bottom: 10%;
-}
-
-.tempsReaction {
-	height: 23%;
-	width: 12%;
-	border-radius: 15px;
-	top: 150%;
-	left: 25%;
-	border-style: solid;
-	border-width: 1px;
-	padding: 1.5%;
+	padding: 0.3% 3%;
+	margin: 0 7% 10% 7%;
 }
