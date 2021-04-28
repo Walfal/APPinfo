@@ -1,7 +1,11 @@
 <?php 
 $title = 'Gestion des capteurs';
-require '../headerFooter/header.php'; ?>
+require '../headerFooter/header.php'; 
 
+if($_SESSION['matricule'] != 0):
+    header('Location: ../login/login.php');
+endif;
+?>
 <link rel="stylesheet" href="gererCapteurs.css">
 
 <div class = "hautPage">

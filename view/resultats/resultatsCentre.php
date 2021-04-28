@@ -1,8 +1,11 @@
 <?php $title = 'Résultats';
 require_once '../headerFooter/header.php';
+
+if(!isset($_SESSION['matricule'])):
+    header('Location: ../login/login.php');
+endif;
 ?>
 <link href="../resultats/resultatsCentre.css" rel="stylesheet"/>
-
 
     <!-- ------------------------------------------------------------ PRESENTATION---------------------------------------------------------------------------------- -->
 

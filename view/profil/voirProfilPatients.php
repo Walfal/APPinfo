@@ -2,6 +2,10 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
+if($_SESSION['matricule'] != 0):
+    header('Location: ../login/login.php');
+endif;
+
 require '../../model/BDD/connexionBDD.php';
 
 if(!empty($_GET['id'])){

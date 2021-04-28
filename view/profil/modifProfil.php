@@ -2,7 +2,7 @@
 $title='Modier mon profil';
 require_once '../headerFooter/header.php';
 
-if($_SESSION['matricule'] > 0):
+if($_SESSION['matricule'] != 0):
     header('Location: ../login/login.php');
 endif;
 

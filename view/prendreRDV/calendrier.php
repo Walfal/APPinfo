@@ -1,13 +1,13 @@
 <?php $title = Calendrier;
 require_once '../headerFooter/header.php';
-?>
 
-<link rel="stylesheet" href="calendrier.css">
-
+if($_SESSION['matricule'] != 0):
+    header('Location: ../login/login.php');
+endif;
+?><link rel="stylesheet" href="calendrier.css">
 <br><br>
 <?php
 
-require_once '../../model/RDV/bootstrap.php';
 require_once '../../model/RDV/Month.php';
 require_once '../../model/RDV/events.php';
 require_once '../../model/BDD/connexionBDD.php';

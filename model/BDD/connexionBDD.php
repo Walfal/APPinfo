@@ -85,13 +85,6 @@ function envoieMessage(){
 	}
 }
 
-function requeteLogin($BDD,$table,$mail){
-    $result = $BDD->prepare("SELECT * FROM $table where mail = '$mail'");
-    $result -> bindParam(":mail", $mail);
-    $result -> execute();
-    return $result;
-}
-
 function query($BDD, $sql, $data = array()){
 	$req = $BDD -> prepare($sql);
 	$req -> execute($data);

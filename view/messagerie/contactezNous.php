@@ -1,28 +1,30 @@
 <?php
-	$title = 'Contactez Nous';
-	require_once '../headerFooter/header.php';
-	require_once '../../model/BDD/connexionBDD.php';
+$title = 'Contactez Nous';
+require_once '../headerFooter/header.php';
+require_once '../../model/BDD/connexionBDD.php';
 
-	?><link href="contactezNous.css" rel="stylesheet" /><?php
+?><link href="contactezNous.css" rel="stylesheet" /><?php
 
-	$matriculeTest = 2;
-	$matriculeTest = $_SESSION['matricule'];
 
-	$conv = recuperationUneDonnee($BDD,"Message", "matricule", $matriculeTest);
-	$idConversation = $conv['idConversation'];
-	$conv = recuperationUneDonnee($BDD, "Conversation", "idConversation", $idConversation);
 
-	$messages = recuperationMessages($BDD, $idConversation);
-	$client = recuperationUneDonnee($BDD, "Personne", "matricule", $matriculeTest);
-	
-	if(!isset($matriculeTest)):
-		header('Location: ../login/login.php');
+$matriculeTest = 2;
+$matriculeTest = $_SESSION['matricule'];
 
-	elseif($matriculeTest != 0):
-		if($idConversation == null): ?>
-			<meta http-equiv="refresh" content="0;url=contactezNous1.php">
-		<?php
-		else:
+$conv = recuperationUneDonnee($BDD,"Message", "matricule", $matriculeTest);
+$idConversation = $conv['idConversation'];
+$conv = recuperationUneDonnee($BDD, "Conversation", "idConversation", $idConversation);
+
+$messages = recuperationMessages($BDD, $idConversation);
+$client = recuperationUneDonnee($BDD, "Personne", "matricule", $matriculeTest);
+
+if(!isset($matriculeTest)):
+	header('Location: ../login/login.php');
+
+elseif($matriculeTest != 0):
+	if($idConversation == null): ?>
+		<meta http-equiv="refresh" content="0;url=contactezNous1.php">
+	<?php
+	else:
 ?>
 	<div class="bandehaut">
 		<h1 class="titrePage" style="line-height: 100%">Contactez-nous</h1>

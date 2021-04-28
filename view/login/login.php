@@ -21,7 +21,7 @@ require_once '../../model/Login/loginUtilisateurs.php';
 					<?php endif ?>
 					<p>Veuillez entrer vos identifiants:</p>
 					<div class="textArea">
-						<input type="text" name="mail" id="mail" placeholder="Email" />
+						<input type="text" name="mail" id="mail" placeholder="mail" />
 					</div>
 					<div class="textArea">
 						<input type="password" name="password" id="password" placeholder="Mot de passe"/>

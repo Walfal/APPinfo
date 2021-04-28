@@ -1,12 +1,11 @@
 <?php 
 $title = 'Ajouter un RDV';
 require '../headerFooter/header.php'; 
-require_once '../../model/RDV/bootstrap.php';
 require_once '../../model/BDD/connexionBDD.php';
-//require '../../model/RDV/EventGS.php';
-//require '../../model/RDV/events.php';
 
-// on peut faire les fonctions pour valider mais c'est long...
+if($_SESSION['matricule'] != 0):
+    header('Location: ../login/login.php');
+endif;
 
 if(!empty($_POST['fin'])){
 	extract($_POST);

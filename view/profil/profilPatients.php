@@ -1,6 +1,10 @@
 <?php
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
+
+if($_SESSION['matricule'] != 0):
+    header('Location: ../login/login.php');
+endif;
 ?>
 
 <link href="profilPatients.css" rel="stylesheet" />

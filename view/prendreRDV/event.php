@@ -3,9 +3,11 @@ $title = 'Information RDV';
 require '../headerFooter/header.php';
 
 require_once '../../model/RDV/events.php';
-require_once '../../model/RDV/bootstrap.php';
 require_once '../../model/BDD/connexionBDD.php';
 
+if($_SESSION['matricule'] != 0):
+    header('Location: ../login/login.php');
+endif;
 ?>
 
 <link rel="stylesheet" href="infoRDV.css">
