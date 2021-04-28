@@ -14,7 +14,7 @@ require_once '../headerFooter/header.php';?>
 
 <!-- ----------------------------------------------------------- FAQ ---------------------------------------------------------------------------------- -->
 <?php
-	require '../../model/modelFaq/modelFaq.php';
+	require '../../model/FAQ/modelFaq.php';
 
 	$db = Database::connect();
 	/*$valeur = Database::listeCategorie($db);

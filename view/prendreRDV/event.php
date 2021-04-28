@@ -1,23 +1,23 @@
-
-
 <?php
-
-require 'Events.php';
-require '../prendreRDV/bootstrap.php';
-
 $title = 'Information RDV';
 require '../headerFooter/header.php';
+
+require_once '../../model/RDV/events.php';
+require_once '../../model/RDV/bootstrap.php';
+require_once '../../model/BDD/connexionBDD.php';
+
 ?>
 
 <link rel="stylesheet" href="infoRDV.css">
-<br>
 
 <?php 
 $events = new Events();
-if (!isset($_GET['id'])){
+if (!isset($_GET['idRDV'])){
 	echo 'page introuvable';
 }
-$event = $events->find($_GET['id']);
+
+$event = $events -> find($BDD, $_GET['idRDV']);
+$client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
 ?>
 
 <div class="hautdePage">
@@ -25,19 +25,19 @@ $event = $events->find($_GET['id']);
 </div>
 
 <br>
-<h1>Patient : <?= $event['name']; ?> </h1>
-
+<h1 class="patient">Patient : <?= $client['prenom'] . ' ' . $client['nom'] ?> </h1>
 <br>
 
-<ul>
+<ul class="vueEvenement">
 
-	<li>Date : <?= (new DateTime($event['start']))->format('d/m/Y'); ?></li>
-	<li>Heure de démarage : <?= (new DateTime($event['start']))->format('H:i'); ?></li>
-	<li>Heure de fin : <?= (new DateTime($event['end']))->format('H:i'); ?></li>
-	<li>Description : <br>
-		<?= $event['description'] ?></li>
+	<li>Date : <?= (new DateTime($event['debut'])) -> format('d/m/Y'); ?></li>
+	<li>Heure de démarage : <?= (new DateTime($event['debut'])) -> format('H:i'); ?></li>
+	<li>Heure de fin : <?= (new DateTime($event['fin'])) -> format('H:i'); ?></li>
+	<li>Type :	<?= $event['type'] ?></li>
 
 </ul>
-
+<br><br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
 
 <?php require '../headerFooter/footer.php' ?>

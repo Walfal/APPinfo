@@ -14,7 +14,6 @@ $personne = recuperationUneDonnee($BDD, "Personne", "matricule", $_SESSION['matr
 if($_SESSION['matricule'] == 0):
 ?>
 
-
 <link href="compteAdmin.css" rel="stylesheet" />
 <div class="contenu">
     <div class="contenu1">
@@ -30,7 +29,7 @@ if($_SESSION['matricule'] == 0):
             <img src="../images/icons/user.png" class="photoProfil">
             <!--<div class="dateTime">Dernière connexion le : </div>-->
             <div>	<?php if(est_connecte()):?>
-           <a href="../logout/logout.php" ><button class="deconnexion">Se déconnecter</button> </a>
+           <a href="../login/logout.php" ><button class="deconnexion">Se déconnecter</button> </a>
             <?php endif ?></div>
         </div>
     </div>
@@ -50,14 +49,14 @@ if($_SESSION['matricule'] == 0):
                    Profil patients
                 </p>
         </button></a>
-        <a href="#">
+        <a href="../prendreRDV/calendrier.php">
         <button class="case">
             <img src="../images/icons/calendrier.png" class="image">
                 <p>
                     Planning
                 </p>
         </button></a>
-        <a href="../modifProfil/modifProfil.php">
+        <a href="../profil/modifProfil.php">
         <button class="case">
             <img src="../images/icons/dossier.png" class="image">
                 <p>
@@ -83,13 +82,13 @@ if($_SESSION['matricule'] == 0):
             <img src="../images/icons/user.png" class="photoProfil">
            
             <div>	<?php if(est_connecte()):?>
-           <a href="../logout/logout.php" ><button class="deconnexion">Se déconnecter</button> </a>
+           <a href="../login/logout.php" ><button class="deconnexion">Se déconnecter</button> </a>
             <?php endif ?></div>
         </div>
     </div>
     <div class="contenu2">
         
-        <a href="../mesResultats/mesResultats.php">
+        <a href="../resultats/mesResultats.php">
         <button class="case">
             <img src="../images/icons/dossier.png" class="image">
                 <p>
@@ -103,7 +102,7 @@ if($_SESSION['matricule'] == 0):
                     Prendre RDV
                 </p>
         </button></a>
-        <a href="../modifProfil/modifProfil.php">
+        <a href="../profil/modifProfil.php">
         <button class="case">
             <img src="../images/icons/dossier.png" class="image">
                 <p>

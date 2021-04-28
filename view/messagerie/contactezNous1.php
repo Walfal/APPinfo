@@ -6,7 +6,7 @@
 	require_once '../../model/BDD/connexionBDD.php';
 ?>
 
-<link href="../contactezNous/contactezNous.css" rel="stylesheet" />
+<link href="contactezNous.css" rel="stylesheet" />
 <div class="bandehaut">
 	<h1 class="titrePage" style="line-height: 100%">Contactez-nous</h1>
 	<i class="sousTitre">Nous sommes là pour vous aider</i>
@@ -28,7 +28,7 @@
 		placeholder="Votre message"
 	></textarea>
 	<br />
-	<input href="../contactezNous/contactezNous.php" class="boiteEnvoyer" type="submit" name="Envoyer" value="Envoyer" />
+	<input href="ontactezNous.php" class="boiteEnvoyer" type="submit" name="Envoyer" value="Envoyer" />
 </form>
 
 <?php require_once '../headerFooter/footer.php'; ?>
@@ -56,7 +56,7 @@
 					data : {titre: titre, message: message, id : id},
 					success : function(data){
 						$('#affMessage').append(data)
-						window.location.replace("../contactezNous/contactezNous.php");
+						window.location.replace("contactezNous.php");
 					},
 					error : function(e, xhr, s){
 						let error = e.responsJSON;

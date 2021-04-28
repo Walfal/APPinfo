@@ -20,7 +20,7 @@
 					<li><a href=".">Accueil</a></li>
 					<li><a href="services/services.php">Nos services</a></li>
 					<li><a href="quiSommesNous/quiSommesNous.php">Qui sommes nous</a></li>
-					<li><a href="contactezNous/contactezNous.php">Contactez nous</a></li>
+					<li><a href="messagerie/contactezNous.php">Contactez nous</a></li>
 					<li><a href="FAQ/FAQ.php">FAQ</a></li>
 					<li>
 						<a href="#">
@@ -142,7 +142,7 @@
 					nec vidisset quicquam nec audisset penitus expers forensium rerum; Eusebius vero obiecta fidentius
 					negans, suspensus in eodem gradu constantiae stetit latrocinium illud esse, non iudicium clamans.
 				</p>
-				<a href="contactezNous/contactezNous.php" class="button-3">Contactez nous</a>
+				<a href="messagerie/contactezNous.php" class="button-3">Contactez nous</a>
 			</div>
 		</section>
 		</body>
@@ -184,7 +184,7 @@
 					<li><a href=".">Accueil</a></li>
 					<li><a href="services/services.php">Nos services</a></li>
 					<li><a href="quiSommesNous/quiSommesNous.php">Qui sommes nous</a></li>
-					<li><a href="contactezNous/contactezNous.php">Contactez nous</a></li>
+					<li><a href="messagerie/contactezNous.php">Contactez nous</a></li>
 					<li><a href="FAQ/FAQ.php">FAQ</a></li>
 					</ul>
 				</div>

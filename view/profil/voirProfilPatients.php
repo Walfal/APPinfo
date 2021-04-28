@@ -91,7 +91,7 @@ function checkInput($data){
 					<input type="text" value=" <?php echo ''.$valeur['rol']; ?>" id=Role readonly="readonly">
 				</div>
 				<div class="retour">
-					<a href="../../view/profilPatients/profilPatients.php" class="retour">Retour</a>
+					<a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
 				</div>
 			</form>
 		</div>

@@ -1,5 +1,4 @@
 <?php
-
 class connexionBDD{
 	//BDD en ligne:
 	/*private $HOST = 'scriptis.fr';
@@ -36,31 +35,31 @@ class connexionBDD{
 	}
 
 }
-$DB = new connexionBDD;
+$DB = new connexionBDD();
 $BDD = $DB->connexion();
 
 
 function recuperationUneDonnee($BDD, $table, $where, $where2){
-	$req = $BDD->prepare("SELECT * FROM $table WHERE $where = $where2");
-	$req->execute();
-	return $req->fetch();
+	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = $where2");
+	$req -> execute();
+	return $req -> fetch();
 }
 
 function recuperationDesDonnees($BDD, $table, $where, $where2){
-	$req = $BDD->prepare("SELECT * FROM $table WHERE $where = $where2");
-	$req->execute();
-	return $req->fetchAll();
+	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = $where2");
+	$req -> execute();
+	return $req -> fetchAll();
 }
 
 function recuperationMessages($BDD, $idConversation){
 	$req = $BDD->prepare("SELECT * FROM Message WHERE idConversation = $idConversation ORDER BY date");
-	$req->execute();
+	$req -> execute();
 	return $req->fetchAll();
 }
 
 function recuperationConversationsAdmin($BDD){
 	$req = $BDD->prepare("SELECT * FROM Conversation ORDER BY idConversation");
-	$req->execute();
+	$req -> execute();
 	return $req->fetchAll();
 }
 
@@ -88,7 +87,18 @@ function envoieMessage(){
 
 function requeteLogin($BDD,$table,$mail){
     $result = $BDD->prepare("SELECT * FROM $table where mail = '$mail'");
-    $result->bindParam(":mail", $mail);
+    $result -> bindParam(":mail", $mail);
     $result -> execute();
     return $result;
+}
+
+function query($BDD, $sql, $data = array()){
+	$req = $BDD -> prepare($sql);
+	$req -> execute($data);
+	return $req;
+}
+
+function insert($BDD, $sql, $data = array()){
+	$req = $BDD -> prepare($sql);
+	$req -> execute($data);
 }

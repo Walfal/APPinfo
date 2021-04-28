@@ -3,8 +3,14 @@ $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
 require '../../model/modelProfilPatients/modelProfilPatients.php';
+
+if(!empty($_GET['id'])){
+    $id = checkInput($_GET['id']);
+}
+
 $nomError = $prenomError = $num_ssError = $codePostalError = $mailError = $motDePasseError =
 $nom = $prenom = $sexe= $num_ss= $adresse=$codePostal= $telephone = $mail =$poids=$taille=$age=$motDePasse=$rol="";
+
 if(!empty($_POST)){
     $nom  = checkInput($_POST['nom']);
     $prenom  = checkInput($_POST['prenom']);
@@ -20,6 +26,8 @@ if(!empty($_POST)){
     $motDePasse  = checkInput($_POST['motDePasse']);
     $rol  = checkInput($_POST['rol']);
     $isSuccess = true;
+    $id = checkInput($_POST['id']);
+    
 
     if(empty($nom)){
         $nomError = 'Ce champ ne peut pas être vide';
@@ -47,12 +55,32 @@ if(!empty($_POST)){
     }
     if($isSuccess){
         $db = Database::connect();
-        $statement = $db->prepare("INSERT INTO test.utilisateurs (nom,prenom,sexe,num_ss,adresse,
-        codePostal,telephone,mail,poids,taille,age,motDePasse,rol) values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-        $statement ->execute(array($nom,$prenom,$sexe,$num_ss,$adresse,$codePostal,$telephone,$mail,$poids,$taille,$age,$motDePasse, $rol));
+        $statement = $db->prepare('UPDATE test.utilisateurs SET nom=?, prenom=?, sexe=?, num_ss=?, adresse=?, codePostal=?, telephone=?, mail=?, poids=?, taille=?, age=?, motDePasse=?, rol=? WHERE id_Utilisateur =?');
+        $statement ->execute(array($nom,$prenom,$sexe,$num_ss,$adresse,$codePostal,$telephone,$mail,$poids,$taille,$age,$motDePasse, $rol, $id));
         Database::disconnect();
-        header("location: ../../view/profilPatients/profilPatients.php");
+        header("location: ../../view/profil/profilPatients.php");
     }
+}
+//pour récupérer ce qui est écrit sur le formulaire
+else{
+    $db = Database::connect();
+    $statement = $db->prepare("SELECT * FROM test.utilisateurs WHERE id_Utilisateur=?");
+    $statement->execute(array($id));
+    $valeur = $statement->fetch();
+    $nom = $valeur['nom'];
+    $prenom = $valeur['prenom'];
+    $sexe = $valeur['sexe'];
+    $num_ss = $valeur['num_ss'];
+    $adresse =$valeur['adresse'];
+    $codePostal = $valeur['codePostal'];
+    $telephone = $valeur['telephone'];
+    $mail = $valeur['mail'];
+    $poids = $valeur['poids'];
+    $taille = $valeur['taille'];
+    $age = $valeur['age'];
+    $motDePasse = $valeur['motDePasse'];
+    $rol = $valeur['rol'];
+    Database::disconnect();
 }
 
 function checkInput($data){
@@ -61,11 +89,12 @@ function checkInput($data){
     $data = htmlspecialchars($data);
     return $data;
 }
+
 ?>
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
-        <h2>Ajouter un utilisateur</h2> 
+        <h2>Modifier profil de <?php echo'' . $nom .' ' .$prenom; ?></h2> 
     </div>
     <div class="image">
         <img src="../images/icons/baseline_folder_white_24dp.png" alt="">
@@ -75,7 +104,8 @@ function checkInput($data){
 <!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
 
 <div class="contenu">
-    <form class="formulaire" action="../../view/profilPatients/ajouterProfilPatients.php" role="form" method="post" enctype="multipart/form-data">
+    <form class="formulaire" action="<?php echo '../../view/profil/modifierProfilPatients.php?id=' ?>" role="form" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?php echo $id; ?>"/>  
         <div class="form-group">
             <label for="Nom">Nom :</label>
             <input type="text"  id=Nom name="nom" value=" <?php echo $nom; ?>">
@@ -136,14 +166,15 @@ function checkInput($data){
         </div>
         <br>
         <div class="actions">
-            <div class="submit">
-                <button type="submit">+ Ajouter</button>
+            <div class="modify">
+                <button type="submit">Modifier</button>
             </div>
             <div class="retour">
-                <a href="../../view/profilPatients/profilPatients.php" class="retour">Retour</a>
+                <a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
             </div>
         </div>
     </form>
+    
 </div>
 
-<?php require_once '../headerFooter/footer.php';?>
+<?php require_once '../headerFooter/footer.php';

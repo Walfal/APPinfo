@@ -13,7 +13,7 @@ if(!empty($_POST)){
     $statement = $db->prepare("DELETE FROM test.utilisateurs WHERE id_Utilisateur =?");
     $statement->execute(array($id));
     Database::disconnect();
-    header("location: ../../view/profilPatients/profilPatients.php");
+    header("location: ../../view/profil/profilPatients.php");
 }
 
 function checkInput($data){
@@ -36,7 +36,7 @@ function checkInput($data){
 <!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
 
 <div class="contenu">
-    <form class="formulaire" action="../../view/profilPatients/supprimerProfilPatients.php" role="form" method="post">
+    <form class="formulaire" action="../../view/profil/supprimerProfilPatients.php" role="form" method="post">
     <input type="hidden" name="id" value="<?php echo $id; ?>"/>    
     <p class="alert">Etes-vous sur de vouloir supprimer ?</p>
     <div class="actions">
@@ -44,7 +44,7 @@ function checkInput($data){
                 <button type="submit" class="bouton">Oui</button>
             </div>
             <div class="retour">
-                <a href="../../view/profilPatients/profilPatients.php" class="retour">Non</a>
+                <a href="../../view/profil/profilPatients.php" class="retour">Non</a>
             </div>
         </div>
     </form>

@@ -37,7 +37,7 @@ require_once '../headerFooter/header.php';
 <!-- ----------------------------------------------------------- LISTE PROFILS ---------------------------------------------------------------------------------- -->
 <div class="container admin">
     <div class="row">
-        <h1>Liste des utilisateurs <a href="../../view/profilPatients/ajouterProfilPatients.php">+ Ajouter</a></h1>
+        <h1>Liste des utilisateurs <a href="../../view/profil/ajouterProfilPatients.php">+ Ajouter</a></h1>
     </div>
     <table class="table">
         <thead>
@@ -69,9 +69,9 @@ require_once '../headerFooter/header.php';
                                 echo '<td data-label="N° sécu :">' . $user['num_ss'] . '</td>';
                                 echo '<td data-label="Code Postale :">' . $user['codePostal'] . '</td>';
                                 echo '<td data-label="Actions :" width=300>';
-                                echo '<a href="../../view/profilPatients/voirProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Voir</a>';
-                                echo '<a href="../../view/profilPatients/modifierProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Modifier</a>';
-                                echo '<a href="../../view/profilPatients/supprimerProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Supprimer</a>';
+                                echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Voir</a>';
+                                echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Modifier</a>';
+                                echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Supprimer</a>';
                                 echo '</td>';
                                 echo '</tr>';
                             }
@@ -90,9 +90,9 @@ require_once '../headerFooter/header.php';
                             echo '<td data-label="N° sécu :">' . $valeur['num_ss'] . '</td>';
                             echo '<td data-label="Code Postale :">' . $valeur['codePostal'] . '</td>';
                             echo '<td data-label="Actions :" width=300>';
-                            echo '<a href="../../view/profilPatients/voirProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Voir</a>';
-                            echo '<a href="../../view/profilPatients/modifierProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Modifier</a>';
-                            echo '<a href="../../view/profilPatients/supprimerProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Supprimer</a>';
+                            echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Voir</a>';
+                            echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Modifier</a>';
+                            echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Supprimer</a>';
                             echo '</td>';
                             echo '</tr>';
                         }
