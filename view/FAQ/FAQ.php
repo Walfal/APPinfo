@@ -14,17 +14,17 @@ require_once '../headerFooter/header.php';?>
 
 <!-- ----------------------------------------------------------- FAQ ---------------------------------------------------------------------------------- -->
 <?php
-	require '../../model/FAQ/modelFaq.php';
+	//require '../../model/FAQ/modelFaq.php';
 	require_once '../../model/BDD/connexionBDD.php';
 
 ?>
 
 <section class="ib-faq js-ib-faq">
 	<ul class="faq-categories">
-		<li><a href="#topic-1" class="faq-category">Topic 1<i class="mob"></i></a></li>
-		<li><a href="#topic-2" class="faq-category">Topic 2<i class="mob"></i></a></li>
-		<li><a href="#topic-3" class="faq-category">Topic 3<i class="mob"></i></a></li>
-		<li><a href="#topic-4" class="faq-category">Topic 4<i class="mob"></i></a></li>
+		<li><a href="#topic-1" class="faq-category">Topic 1<!-- <i class="mob"> --></i></a></li>
+		<li><a href="#topic-2" class="faq-category">Topic 2<!-- <i class="mob"> --></i></a></li>
+		<li><a href="#topic-3" class="faq-category">Topic 3<!-- <i class="mob"> --></i></a></li>
+		<li><a href="#topic-4" class="faq-category">Topic 4<!-- <i class="mob"> --></i></a></li>
 	</ul>
 
 	<div class="faq-items">

@@ -1,0 +1,34 @@
+*{
+	padding:0;
+	margin: 0;
+}
+
+.titre{
+	background-color: #5ea2c4;
+}
+
+h1{
+	padding: 2%;
+	color: white;
+	font-size: 40px;
+}
+
+h2{
+	padding-left: 2%;
+}
+
+p{
+	padding-left: 2%;
+	text-indent: 40px;
+	text-align: justify;
+	margin-right: 2%;
+}
+
+.liste{
+	padding-left: 6%;
+	list-style-type: square;
+}
+
+p , li {
+	font-size: 18px;
+}
