@@ -1,8 +1,8 @@
 @import url("http://fonts.cdnfonts.com/css/gemina-2-3d");
 
 * {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	text-decoration: none;
 	font-family: "Montserrat", sans-serif;
 	font-size: 15px;
@@ -170,15 +170,6 @@ nav > ul li:hover .sous {
 	}
 }
 
-
-
-
-  
-
-
-
-  
-
 /* --------------------------FOOTER -------------------------------*/
 footer {
 	background-color: #3a738f;
@@ -271,4 +262,18 @@ footer {
 	color: white;
 	text-align: center;
 	margin-top: 10px;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin: 0 0 255px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
 }

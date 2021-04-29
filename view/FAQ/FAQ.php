@@ -15,13 +15,7 @@ require_once '../headerFooter/header.php';?>
 <!-- ----------------------------------------------------------- FAQ ---------------------------------------------------------------------------------- -->
 <?php
 	require '../../model/FAQ/modelFaq.php';
-
-	$db = Database::connect();
-	/*$valeur = Database::listeCategorie($db);
-	echo $valeur;
-	Database::disconnect();
-	*/
-	Database::listeCategorie($db);
+	require_once '../../model/BDD/connexionBDD.php';
 
 ?>
 

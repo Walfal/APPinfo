@@ -1,6 +1,11 @@
 <?php 
 $title = 'prendre un rendez-vous';
-require '../headerFooter/header.php'; ?>
+require '../headerFooter/header.php';
+
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] != 0):
+    header('Location: ../login/login.php');
+endif;
+?>
 
 		<div class = "hautPage">
 			<p class="titrePage"><b>Prendre rendez-vous</b></p>

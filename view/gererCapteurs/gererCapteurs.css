@@ -1,13 +1,12 @@
-
-*{
-    margin:0;
-    padding:0;
+* {
+	margin: 0;
+	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-.hautPage{
+.hautPage {
 	display: flex;
-	background-color : #5EA2C4;
+	background-color: #5ea2c4;
 	align-items: center;
 	margin-top: 50px;
 	padding-top: 2%;
@@ -15,11 +14,9 @@
 }
 
 .titrePage {
-
 	font-size: 50px;
 	margin-left: 5%;
 	color: white;
-
 }
 
 .imIcone {
@@ -29,246 +26,53 @@
 	opacity: 0.3;
 }
 
-.capteur1{
-	border-width:1px;
-	border-color:black;
-	border-style: solid;
-	padding-left: 0%;
-	padding-right: 0%;
-	width: 30%;
-	position: absolute;
-	top : 32%;
-	left: 50%;
-	
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 5%;
 }
 
-.temperature{
-	height: 28%;
-	width: 14%;
+.blocCapteur {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 2%;
+}
+
+.capteur {
+	border: solid 1px black;
 	border-radius: 15px;
-	position: absolute;
-	top: 30%;
-	left: 25%;
-	border-style: solid;
-	border-width: 1px;
-	padding: 0.5%;
+	height: 40%;
 }
 
-.nomCapteur{
+.icon {
+	max-height: 200px;
+	width: auto;
+	border-radius: 15px;
+	border: solid 1px black;
+	padding: 10px;
+	margin: 5px;
+}
+
+.nomCapteur {
 	font-size: 23px;
 	color: #3a738f;
-	padding-top: 10%;
-	padding-left: 5%;
-	padding-right: 15%;
+	padding: 10% 15% 0 5%;
 }
 
-.miseJour{
+.miseJour {
 	padding-left: 6%;
 	padding-bottom: 8%;
 }
 
-.modifier{
+.modifier,
+.supprimer {
 	background-color: #3a738f;
-	border-color:transparent;
+	border-color: transparent;
 	color: white;
 	font-size: 15px;
 	border-radius: 20px;
-	padding-top: 0.3%;
-	padding-bottom: 0.3%;
-	padding-left: 3%;
-	padding-right: 3%;
-	margin-left: 30%;
-	margin-bottom: 10%;
-	margin-right: 15%;
-}
-
-.supprimer{
-	background-color: #3a738f;
-	border-color:transparent;
-	color: white;
-	font-size: 15px;
-	border-radius: 20px;
-	padding-top: 0.3%;
-	padding-bottom: 0.3%;
-	padding-left:3%;
-	padding-right: 3%;
-}
-
-
-.capteur2{
-	border-width:1px;
-	border-color:black;
-	border-style: solid;
-	padding-left: 0%;
-	padding-right: 0%;
-	width: 30%;
-	position: absolute;
-	top : 71%;
-	left: 50%;
-}
-
-.tonalite{
-	height: 23;
-	width: 11%;
-	border-radius: 15px;
-	position: absolute;
-	top: 70%;
-	left: 25%;
-	border-style: solid;
-	border-width: 1px;
-	padding: 2%;
-}
-
-.capteur3{
-	border-width:1px;
-	border-color:black;
-	border-style: solid;
-	padding-left: 0%;
-	padding-right: 0%;
-	width: 30%;
-	position: absolute;
-	top : 111%;
-	left: 50%;
-}
-
-.frequenceCardiaque {
-	height: 27%;
-	width: 13%;
-	border-radius: 15px;
-	position: absolute;
-	top: 109%;
-	left: 25%;
-	border-style: solid;
-	border-width: 1px;
-	padding: 1%;
-}
-
-
-.capteur4{
-	border-width:1px;
-	border-color:black;
-	border-style: solid;
-	padding-left: 0%;
-	padding-right: 0%;
-	width: 30%;
-	position: absolute;
-	top : 151%;
-	left: 50%;
-	margin-bottom: 10%;
-}
-
-.tempsReaction{
-	height: 23%;
-	width: 12%;
-	border-radius: 15px;
-	position: absolute;
-	top: 150%;
-	left: 25%;
-	border-style: solid;
-	border-width: 1px;
-	padding: 1.5%;
-}
-
-
-footer {
-	background-color: #3a738f;
-	flex-shrink: 0;
-	width: 100%;
-	padding-top: 20px;
-	padding-bottom: 10px;
-}
-
-.contenu-footer {
-	width: 100%;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	font-size: 20px;
-}
-
-.bloc {
-	width: 33%;
-	text-align: center;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.logo {
-	width: 150px;
-}
-
-.coor {
-	padding-top: 30px;
-	text-align: left;
-}
-
-.coor li {
-	margin-bottom: 15px;
-	list-style: none;
-}
-
-.coor li a {
-	text-decoration: none;
-	text-transform: none;
-	color: white;
-}
-
-.res {
-	text-align: center;
-}
-.res h4 {
-	color: white;
-	text-decoration: underline white 2px;
-	margin-bottom: 20px;
-}
-
-.facebook {
-	width: 30px;
-}
-.google {
-	width: 40px;
-}
-.linkedin {
-	width: 40px;
-}
-
-.liens {
-	margin-top: 40px;
-	text-align: center;
-}
-
-.liens li {
-	margin-bottom: 25px;
-	list-style: none;
-	display: inline-block;
-	margin-left: 15px;
-}
-
-.liens li a {
-	text-decoration: none;
-	text-transform: none;
-	color: white;
-}
-
-.liens li a:hover {
-	border-bottom: 1px solid #97a5aa;
-	color: #97a5aa;
-	transition: all 0.3s ease 0s;
-}
-
-#coyright {
-	color: white;
-	text-align: center;
-	margin-top: 10px;
-}
-
-
-body, html{height:100%;}
-
-
-
-footer{
-	position: absolute;
-	margin-top: 80%; 
+	padding: 0.3% 3%;
+	margin: 0 7% 10% 7%;
 }

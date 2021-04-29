@@ -1,31 +1,25 @@
-*{
+* {
 	padding: 0;
 	margin: 0;
 }
 
-.hautdePage{
-	background-color: #5EA2C4;
+.hautdePage {
+	margin-top: 50px;
+	background-color: #5ea2c4;
 	font-size: 40px;
 	color: white;
 	align-items: center;
-	padding :2%;
+	padding: 2%;
 	padding-left: 5%;
-
 }
 
-h1{
+.patient {
 	margin-left: 2%;
-
 }
 
-ul{
+.vueEvenement {
 	margin-left: 8%;
-	line-height:30px;
+	line-height: 30px;
 	font-size: 20px;
 	list-style-type: square;
-}
-
-footer{
-	position: absolute;
-	bottom: 0;
 }
