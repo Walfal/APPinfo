@@ -2,7 +2,7 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
-if($_SESSION['matricule'] != 0):
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 99):
     header('Location: ../login/login.php');
 endif;
 ?>
@@ -49,6 +49,7 @@ endif;
     <table class="table">
         <thead>
             <tr>
+                <th >Matricule</th>
                 <th >Nom</th>
                 <th>Prénom</th>
                 <th>Mail</th>
@@ -68,8 +69,9 @@ endif;
                     $personnes = $BDD -> query("SELECT * FROM Personne WHERE nom = '$nomPatient' OR prenom = '$prenomPatient' OR 'adresse (code postal)' = '$codePostal'");
                     if($personnes -> rowCount() > 0){
                         while($personne = $personnes -> fetch()){
-                            if($personne['matricule'] != 0){
+                            if($personne['matricule'] < 19){
                                 echo '<tr>';
+                                echo '<td data-label="Matricule :">' . $personne['matricule'] . '</td>';
                                 echo '<td data-label="Nom :">' . $personne['nom'] . '</td>';
                                 echo '<td data-label="Prénom :">' . $personne['prenom'] . '</td>';
                                 echo '<td data-label="Mail :">' . $personne['mail'] . '</td>';
@@ -93,6 +95,7 @@ endif;
                     foreach($personnes as $personne){
                         if($personne['matricule'] != 0){
                             echo '<tr>';
+                            echo '<td data-label="Matricule :">' . $personne['matricule'] . '</td>';
                             echo '<td data-label="Nom :">' . $personne['nom'] . '</td>';
                             echo '<td data-label="Prénom :">' . $personne['prenom'] . '</td>';
                             echo '<td data-label="Mail :">' . $personne['mail'] . '</td>';

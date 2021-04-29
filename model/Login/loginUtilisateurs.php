@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
         $password = htmlentities($password);
         $password = htmlspecialchars($password);
 
-        $result = recuperationDesDonnees($BDD, 'Personne', 'mail', $mail);
+        $result = recuperationUneDonnee($BDD, 'Personne', 'mail', $mail);
         $verif = verifierMotDePasse($mail, $password, $result);//recuperation du matricule
         
     } else {

@@ -11,10 +11,12 @@ require_once '../../model/BDD/connexionBDD.php';
 
 $personne = recuperationUneDonnee($BDD, "Personne", "matricule", $_SESSION['matricule']);
 
+?><link href="compte.css" rel="stylesheet" /><?php
+
 if($_SESSION['matricule'] == 0):
 ?>
 
-<link href="compteAdmin.css" rel="stylesheet" />
+
 <div class="contenu">
     <div class="contenu1">
         <div class="bienvenue">
@@ -66,9 +68,46 @@ if($_SESSION['matricule'] == 0):
     </div>
 </div>
 
-<?php elseif($_SESSION['matricule'] > 0): ?>
+<?php elseif($_SESSION['matricule'] < 100):?>
 
-<link href="compteUtilisateur.css" rel="stylesheet" />
+<div class="contenu">
+    <div class="contenu1">
+        <div class="bienvenue">
+            <h1>Bienvenue <?= $personne['prenom'] . ' ' . $personne['nom'] ?></h1>
+            <p>Voici votre page de gestion,
+                vous pouvez gérer l'intégralité
+                des tâches depuis votre espace.
+            </p>
+        </div>
+        
+        <div class="photo">
+            <img src="../images/icons/user.png" class="photoProfil">
+            <!--<div class="dateTime">Dernière connexion le : </div>-->
+            <div>	<?php if(est_connecte()):?>
+           <a href="../login/logout.php" ><button class="deconnexion">Se déconnecter</button> </a>
+            <?php endif ?></div>
+        </div>
+    </div>
+    <div class="contenu2">
+        <a href="profilPatients.php">
+        <button class="case">
+            <img src="../images/icons/dossier.png" class="image">
+                <p>
+                   Profil patients
+                </p>
+        </button></a>
+        <a href="../profil/modifProfil.php">
+        <button class="case">
+            <img src="../images/icons/dossier.png" class="image">
+                <p>
+                   Modifier mon profil
+                </p>
+        </button></a>
+    </div>
+</div>
+
+<?php elseif($_SESSION['matricule'] > 100): ?>
+
 <div class="contenu">
     <div class="contenu1">
         <div class="bienvenue">

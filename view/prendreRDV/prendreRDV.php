@@ -2,7 +2,7 @@
 $title = 'prendre un rendez-vous';
 require '../headerFooter/header.php';
 
-if($_SESSION['matricule'] != 0):
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] != 0):
     header('Location: ../login/login.php');
 endif;
 ?>

@@ -1,7 +1,7 @@
 <?php $title = Calendrier;
 require_once '../headerFooter/header.php';
 
-if($_SESSION['matricule'] != 0):
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] != 0):
     header('Location: ../login/login.php');
 endif;
 ?><link rel="stylesheet" href="calendrier.css">

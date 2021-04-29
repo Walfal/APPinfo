@@ -2,21 +2,19 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
-if($_SESSION['matricule'] != 0):
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] != 0):
     header('Location: ../login/login.php');
 endif;
 
 require_once '../../model/BDD/connexionBDD.php';
-var_dump($_POST);
-$nom = $prenom = $sexe = $num_ss = $adresseRue = $adresseVille = $codePostal= $telephone = $mail = $poids = $taille = $dateDeNaissance = $motDePasse = $role = "";
+$matricule = $nom = $prenom = $sexe = $num_ss = $adresseRue = $adresseVille = $codePostal= $telephone = $mail = $poids = $taille = $dateDeNaissance = $motDePasse = $role = "";
 
+require_once '../../model/Profil/modiferProfilPatients.php';
 //pour récupérer ce qui est écrit sur le formulaire
 if(isset($_GET['id'])){
     $valeur = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_GET['id']);
     
-    /* $statement = $BDD -> prepare("SELECT * FROM Personne WHERE matricule =?");
-    $statement -> execute(array($_GET['id']));
-    $valeur = $statement -> fetch(); */
+    $matricule = $valeur['matricule'];
     $nom = $valeur['nom'];
     $prenom = $valeur['prenom'];
     $sexe = $valeur['sexe'];
@@ -34,7 +32,6 @@ if(isset($_GET['id'])){
     $medecin = $valeur['medecin'];
 }
 
-require_once '../../model/Profil/modiferProfilPatients.php';
 
 function checkInput($data){
     $data = trim($data);
@@ -42,7 +39,6 @@ function checkInput($data){
     $data = htmlspecialchars($data);
     return $data;
 }
-
 ?>
 
 <link href="modifierProfilPatients.css" rel="stylesheet" />
@@ -61,7 +57,11 @@ function checkInput($data){
 
 <div class="contenu">
     <form class="formulaire" action="<?php echo '../../view/profil/modifierProfilPatients.php?id=' ?>" role="form" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="matricule" value="<?php echo $_GET['id']; ?>"/>  
+        <input type="hidden"  id=Matricule name="matricule" value=" <?php echo $_GET['id']; ?>">
+        <div class="form-group">
+            <label for="Matricule2">Matricule :</label>
+            <input type="text"  id=Matricule2 name="matricule2" value=" <?php echo $_GET['id']; ?>">
+        </div>
         <div class="form-group">
             <label for="Nom">Nom :</label>
             <input type="text"  id=Nom name="nom" value=" <?php echo $nom; ?>">

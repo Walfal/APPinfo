@@ -2,15 +2,16 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
-if($_SESSION['matricule'] != 0):
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] != 0):
     header('Location: ../login/login.php');
 endif;
 
 require '../../model/BDD/connexionBDD.php';
 
-$nom = $prenom = $sexe = $num_ss = $adresseRue = $adresseVille = $codePostal= $telephone = $mail = $poids = $taille = $dateDeNaissance = $motDePasse = $role = "";
+$matricule = $nom = $prenom = $sexe = $num_ss = $adresseRue = $adresseVille = $codePostal= $telephone = $mail = $poids = $taille = $dateDeNaissance = $motDePasse = $role = "";
 
 if(!empty($_POST)) {
+    $matricule = checkInput($_POST['matricule']);
     $nom = checkInput($_POST['nom']);
     $prenom = checkInput($_POST['prenom']);
     $sexe = checkInput($_POST['sexe']);
@@ -28,8 +29,8 @@ if(!empty($_POST)) {
     $photo = 0;
     $medecin = checkInput($_POST['medecin']);
 
-    $statement = $BDD -> prepare("INSERT INTO Personne (nom, prenom, sexe, mail, `numero de securite social`, `adresse (numero et voie)`, `adresse (ville)`, `adresse (code postal)`, telephone, `poids (kg)`, `taille (cm)`, `date de naissance`, `mot de passe`,role, photo, medecin) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-    $statement -> execute(array($nom, $prenom, $sexe, $mail, $num_ss, $adresseRue, $adresseVille, $codePostal, $telephone, $poids, $taille, $dateDeNaissance, $motDePasse, $role, $photo, $medecin));
+    $statement = $BDD -> prepare("INSERT INTO Personne (matricule, nom, prenom, sexe, mail, `numero de securite social`, `adresse (numero et voie)`, `adresse (ville)`, `adresse (code postal)`, telephone, `poids (kg)`, `taille (cm)`, `date de naissance`, `mot de passe`,role, photo, medecin) values (?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    $statement -> execute(array($matricule, $nom, $prenom, $sexe, $mail, $num_ss, $adresseRue, $adresseVille, $codePostal, $telephone, $poids, $taille, $dateDeNaissance, $motDePasse, $role, $photo, $medecin));
     header("location: ../../view/profil/profilPatients.php");
 
 }
@@ -57,6 +58,10 @@ function checkInput($data){
 
 <div class="contenu">
     <form class="formulaire" action="../../view/profil/ajouterProfilPatients.php" role="form" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="Matricule">Matricule* :</label>
+            <input type="text"  id=matricule name="matricule" value="<?php echo $matricule; ?>" required>
+        </div>
         <div class="form-group">
             <label for="Nom">Nom* :</label>
             <input type="text"  id=Nom name="nom" value="<?php echo $nom; ?>" required>

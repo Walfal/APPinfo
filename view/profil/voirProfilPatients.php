@@ -2,7 +2,7 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
-if($_SESSION['matricule'] != 0):
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] != 0):
     header('Location: ../login/login.php');
 endif;
 
@@ -40,6 +40,10 @@ function checkInput($data){
        
 		<div class="contenu">
 			<form>
+				<div class="form-group">
+					<label for="Matricule">Matricule :</label>
+					<input type="text" value=" <?php echo ''.$valeur['matricule']; ?>" id=Matricule readonly="readonly">
+				</div>
 				<div class="form-group">
 					<label for="Nom">Nom :</label>
 					<input type="text" value=" <?php echo ''.$valeur['nom']; ?>" id=Nom readonly="readonly">
