@@ -4,7 +4,7 @@ require_once '../headerFooter/header.php';
 
 <link rel="stylesheet" href="calendrier.css">
 
-<br><br>
+
 <?php
 
 require_once '../../model/RDV/bootstrap.php';
@@ -58,6 +58,9 @@ $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
 	<?php endfor; ?>
 	</table>
 	<br>
+
+
+
 
 	<a href="ajouterRDV.php" class = "calendar_button">+</a>
 
