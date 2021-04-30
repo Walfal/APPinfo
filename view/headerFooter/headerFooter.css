@@ -5,7 +5,6 @@
 	padding: 0;
 	text-decoration: none;
 	font-family: "Montserrat", sans-serif;
-	font-size: 15px;
 }
 
 .wrapper {
@@ -185,7 +184,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-	font-size: 20px;
+	font-size: 15px;
 }
 
 .bloc {
@@ -270,11 +269,10 @@ html {
 }
 
 body {
-	margin: 0 0 255px;
+	margin: 0 0 250px;
 }
 
 footer {
 	position: absolute;
 	bottom: 0;
 }
-

@@ -1,7 +1,7 @@
 <?php $title = Calendrier;
 require_once '../headerFooter/header.php';
 
-if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] != 0):
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
 endif;
 ?><link rel="stylesheet" href="calendrier.css">
@@ -64,5 +64,5 @@ $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
 
 	<a href="ajouterRDV.php" class = "calendar_button">+</a>
 
-<br><br>
+<br><br><br><br>
 <?php require '../headerFooter/footer.php' ?>

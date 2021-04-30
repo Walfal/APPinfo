@@ -93,7 +93,7 @@ endif;
                 else{
                     $personnes = recuperationDesDonnees($BDD, 'Personne', 1, 1);
                     foreach($personnes as $personne){
-                        if($personne['matricule'] != 0){
+                        if($personne['matricule'] > 20){
                             echo '<tr>';
                             echo '<td data-label="Matricule :">' . $personne['matricule'] . '</td>';
                             echo '<td data-label="Nom :">' . $personne['nom'] . '</td>';

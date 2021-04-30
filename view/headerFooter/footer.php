@@ -1,5 +1,5 @@
-		</body>
-	<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
+</body>
+	<link href="headerFooter.css" rel="stylesheet" />
 	<footer>
 		<div class="contenu-footer">
 			<div class="bloc logo">
@@ -22,7 +22,6 @@
 					</li>
 				</div>
 			</div>
-
 			<div class="bloc reseaux">
 				<div class="res">
 					<h4>SUIVEZ-NOUS</h4>
@@ -35,9 +34,8 @@
 					<li><a href="../">Accueil</a></li>
 					<li><a href="../services/services.php">Nos services</a></li>
 					<li><a href="../quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
-					<li><a href="../messagerie/contactezNous.php">Nous contacter</a></li>
+					<li><a href="../contactezNous/contactezNous.php">Contactez nous</a></li>
 					<li><a href="../FAQ/FAQ.php">FAQ</a></li>
-					<li><a href="../headerFooter/CGU.php">Conditions d'utilisation</a></li>
 					</ul>
 				</div>
 			</div>

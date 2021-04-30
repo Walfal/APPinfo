@@ -27,7 +27,7 @@ session_start();
 				<li><a href="../">Accueil</a></li>
 					<li><a href="../services/services.php">Nos services</a></li>
 					<li><a href="../quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
-					<li><a href="../messagerie/contactezNous.php">Nous contacter</a></li>
+					<li><a href="../messagerie/contactezNous.php">Contactez nous</a></li>
 					<li><a href="../FAQ/FAQ.php">FAQ</a></li>
 					<li>
 						<a href="#">
@@ -41,7 +41,7 @@ session_start();
 						</ul>
 					</li>
 					<li>
-						<a href="../login/login.php">
+						<a href="../login/login.php">  <!--lorsque l'on clique on doit être connecté sinon on est redirigé sur la page de login-->
                         <img class="bi bi-globe" src="../images/icons/account.svg" style="width: 25px"
 						/></a>
 					</li>
