@@ -37,6 +37,10 @@
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+.calendar_event {
+	padding: 5px 10px;
+}
+
 .titre {
 	display: flex;
 	flex-direction: row;

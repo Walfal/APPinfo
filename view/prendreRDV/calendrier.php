@@ -16,7 +16,7 @@ require_once '../../model/BDD/connexionBDD.php';
 $events = new Events();
 $month = new  Month($_GET['month'] ?? null, $_GET['year'] ?? null); // ?? : prend la première valeur si elle est définie sinon elle prend la valeur null
 $debut = $month -> getStartingDay();
-$debut = $debut -> format('N') === '1' ? $debut : $month->getStartingDay()->modify('last monday');
+$debut = $debut -> format('N') === '1' ? $debut : $month -> getStartingDay() -> modify('last monday');
 $weeks = $month -> getWeeks();
 $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
 $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
@@ -49,7 +49,7 @@ $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
 					$client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
 					?>
 				<div class="calendar_event">
-					<?= (new DateTime ($event['debut']))->format('H:i') ?> - <a href="/view/prendreRDV/event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
+					<?= (new DateTime ($event['debut'])) -> format('H:i') ?> - <a href="/view/prendreRDV/event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
 				</div>
 				<?php endforeach ?>
 			</td>

@@ -13,7 +13,7 @@ if(!empty($_GET['id'])){
 }
 if(!empty($_POST)){
     $id = checkInput($_POST['id']);
-    $statement = $BDD -> prepare("DELETE FROM Personne WHERE matricule =?");
+    $statement = $BDD -> prepare("DELETE FROM Personne WHERE matricule = ?");
     $statement -> execute(array($id));
     header("location: ../../view/profil/profilPatients.php");
 }

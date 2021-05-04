@@ -39,7 +39,6 @@ if($_SESSION['matricule'] == 0):
         <a href="../gererCapteurs/gererCapteurs.php">
         <button class="case">
             <img src="../images/icons/dossier.png" class="image">
-
                 <p>
                     Gestion <br> tests/capteurs
                 </p>
@@ -126,18 +125,25 @@ if($_SESSION['matricule'] == 0):
     </div>
     <div class="contenu2">
         
-        <a href="../prendreRDV/calendrier.php">
+        <!-- <a href="../prendreRDV/calendrier.php">
             <button class="case">
                 <img src="../images/icons/calendrier.png" class="image">
                     <p>
                         Planning
                     </p>
-        </button></a>
+        </button></a> -->
         <a href="../resultats/mesResultats.php">
         <button class="case">
             <img src="../images/icons/dossier.png" class="image">
                 <p>
                    Mes résultats
+                </p>
+        </button></a>
+        <a href="../profil/modifProfil.php">
+        <button class="case">
+            <img src="../images/icons/dossier.png" class="image">
+                <p>
+                   Modifier mon profil
                 </p>
         </button></a>
     </div>

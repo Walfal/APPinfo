@@ -1,5 +1,4 @@
 </body>
-	<link href="headerFooter.css" rel="stylesheet" />
 	<footer>
 		<div class="contenu-footer">
 			<div class="bloc logo">
@@ -36,6 +35,7 @@
 					<li><a href="../quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
 					<li><a href="../contactezNous/contactezNous.php">Contactez nous</a></li>
 					<li><a href="../FAQ/FAQ.php">FAQ</a></li>
+					<li><a href="../headerFooter/CGU.php">Conditions d'utilisations</a></li>
 					</ul>
 				</div>
 			</div>

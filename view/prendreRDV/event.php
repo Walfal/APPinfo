@@ -40,7 +40,10 @@ $client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule
 	</tr>
 	<tr>
 		<td>Date</td>
-		<td><?= (new DateTime($event['debut'])) -> format('d/m/Y'); ?></td>
+		<td><?php
+			setlocale(LC_TIME, 'fr_FR.utf-8','fra'); 
+			$date = new DateTime($event['debut']);
+			echo (strftime("%A %e %B %Y", date_timestamp_get($date))); ?></td>
 	</tr>
 	<tr>
 		<td>Heure de démarage</td>

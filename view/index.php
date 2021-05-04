@@ -47,7 +47,6 @@
 			</nav>
 		</div>
 	</header>
-	<!-- -------------------------------------------------------------- BANNIERE---------------------------------------------------------------------------------- -->
 	<body>
 	
 		<section id="main-image">
@@ -61,13 +60,11 @@
 			</a>
 		</section>
 
-		<!-- ------------------------------------------------------------ PRESENTATION---------------------------------------------------------------------------------- -->
-
 		<section id="presentation">
 			<div class="wrapper">
 				<h2>VOS TESTS PSYCHOTECHNIQUES</h2>
 				<p>
-					Avec les serivces de sens'air,
+					Avec les services de Sens'air,
 					nous vous proposons une gestion simple et ergonomique des rendez-vous et des résultats
 					avec du materiel de pointe pour maximiser la condition physique de vos pilotes.
 				</p>
@@ -120,7 +117,7 @@
 						nous vous donnons l'opportunité de maintenir vos exigences sur les pilotes<br>
 						afin de veiller à ce qu'ils règnent sur les cieux.
 					</p>
-					<a href="#" class="button-2">Plus d'informations</a>
+					<a href="quiSommesNous/quiSommesNous.php" class="button-2">Plus d'informations</a>
 				</div>
 			</div>
 		</section>
@@ -176,6 +173,7 @@
 					<li><a href="quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
 					<li><a href="contactezNous/contactezNous.php">Contactez nous</a></li>
 					<li><a href="FAQ/FAQ.php">FAQ</a></li>
+					<li><a href="headerFooter/CGU.php">Conditions d'utilisations</a></li>
 					</ul>
 				</div>
 			</div>

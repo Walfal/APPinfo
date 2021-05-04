@@ -2,7 +2,7 @@
 $title='Modier mon profil';
 require_once '../headerFooter/header.php';
 
-if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
+if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
 
@@ -25,44 +25,23 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_SESSION['matr
 <form>
 	<div class="principal">
 		<div class="linedisplay">
-			<li><label for="nom"> Nom: </label> <br>
-			<input class="champ" name ="Nom" id="Nom" placeholder=<?= $personne['nom'] ?>></li></input>
-			<li class="espacement"><label for ="Prenom"> Prénom: </label><br>
-			<input class="champ" name ="Prénom" id="Prenom" placeholder=<?= $personne['prenom'] ?>><br></li></input>
-		</div>
-		<div class="linedisplay">
 			<li>
-				<label for ="mail"> Adresse Email* : </label><br>
-				<input class="champ" type="email" name ="mail" id="mail" placeholder=<?= $personne['mail'] ?>></input>
-			</li>
-		</div>		    	 		
-		<div class="linedisplay">
-			<li><label for ="password"> Mot de passe actuel: </label><br>
-			<input class="champ" type="password" name ="password" id="password" required></input></li>
+				<label for="nom"> Nom: </label> <br>
+			<input class="champ" name ="nom" id="Nom" placeholder=<?= $personne['nom'] ?>></input></li>
+			<li class="espacement">
+				<label for ="Prenom"> Prénom: </label><br>
+			<input class="champ" name ="prenom" id="prenom" placeholder=<?= $personne['prenom'] ?>><br></input></li>
 		</div>
 		<div class="linedisplay">
-			<li><label for ="password"> Nouveau mot de passe: </label><br>
-			<input class="champ" type="password" name ="password" id="password"></input></li>
-			<li class="espacement"><label for ="password2"> Confirmation du mot de passe: </label><br>
-			<input class="champ" type="password" name ="password2" id="password2"></input></li>
-		</div>
-		<div class="linedisplay">
-			<li><label for="date"> Date de naissance: </label><br>
-			<input class="champ" type="date"></input></li>
-			
-		</div>
-		<div class="linedisplay"> 
-			<li><label for="homme"> Homme </label>
-			<input type = "radio" name="gender"></input></li>
-			<li class="espacement"><label for="femme"> Femme </label>
-			<input type = "radio" name="gender"></input></li>
-			<li class="espacement"><label for="autre"> Autre </label>
-			<input type = "radio" name="gender"></input></li>
-		</div>
-		<div class="linedisplay">
-			<li><Label> Pays : </Label><br>
+			<li><Label> Genre : </Label><br>
+				<select name="sexe" class="champ">
+				<option value=0>Non précisé </option>
+				<option value=1>Homme </option>
+				<option value=2>Femme </option></select></li>
+			<li class="espacement">
+			<li><Label> Nationalité : </Label><br>
 				<select name="pays" class="champ">
-				<option value="France" selected="selected">France </option>
+				<option value="France">France </option>
 				<option value="Afghanistan">Afghanistan </option>
 				<option value="Afrique_Centrale">Afrique_Centrale </option>
 				<option value="Afrique_du_sud">Afrique_du_Sud </option>
@@ -296,10 +275,50 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_SESSION['matr
 		</div>
 		<div class="linedisplay">
 			<li>
+				<label for ="mail"> Adresse Email : </label><br>
+				<input class="champ" type="email" name ="mail" id="mail" placeholder=<?= $personne['mail'] ?>></input></li>
+			<li class="espacement">
 				<label for ="tel"> Numero de téléphone: </label><br>
-				<input type="tel" name="tel" class="champ" placeholder=<?= $personne['telephone'] ?>></input>
-			</li>	
-		</div>	    	 			
+				<input type="tel" name="tel" class="champ" placeholder=<?= '0' . $personne['telephone'] ?>></input></li>
+		</div>
+		<div class="linedisplay">
+			<li>
+				<label for="dateDeNaissance"> Date de naissance: </label> <br>
+			<input class="champ" name ="dateDeNaissance" id="dateDeNaissance" placeholder=<?= $personne['date de naissance'] ?>></input></li>
+			<li class="espacement">
+				<label for ="num_ss"> Numéro de sécurité social: </label><br>
+			<input class="champ" name ="num_ss" id="num_ss" placeholder=<?= $personne['numero de securite social'] ?>><br></input></li>
+		</div>
+		<div class="linedisplay">
+			<li>
+				<label for="adresse"> Adresse (numéro et voie): </label> <br>
+			<input class="champ" name ="adresse" id="adresse" placeholder=<?= $personne['adresse (numero et voie)'] ?>></input></li>
+		</div>
+		<div class="linedisplay">
+			<li><label for ="ville"> Ville : </label><br>
+			<input class="champ" name ="ville" id="ville" placeholder=<?= $personne['adresse (ville)'] ?>><br></input></li>
+			<li class="espacement"><label for="codePostal"> Code postal: </label> <br>
+			<input class="champ" name ="codePostal" id="codePostal" placeholder=<?= $personne['adresse (code postal)'] ?>></input></li>
+			<li class="espacement">
+		</div>
+		<div class="linedisplay">
+			<li>
+				<label for="poids"> Poids (en kg): </label> <br>
+			<input class="champ" name ="poids" id="poids" placeholder=<?= $personne['poids (kg)'] ?>></input></li>
+			<li class="espacement">
+				<label for ="taille"> Taille (en cm) : </label><br>
+			<input class="champ" name ="taille" id="taille" placeholder=<?= $personne['taille (cm)'] ?>><br></input></li>
+		</div>
+		<div class="linedisplay">
+			<li><label for ="password"> Mot de passe actuel* : </label><br>
+			<input class="champ" type="password" name ="password" id="password" required></input></li>
+		</div>
+		<div class="linedisplay">
+			<li><label for ="password2"> Nouveau mot de passe: </label><br>
+			<input class="champ" type="password" name ="password2" id="password2"></input></li>
+			<li class="espacement"><label for ="password2bis"> Confirmation du mot de passe: </label><br>
+			<input class="champ" type="password" name ="password2bis" id="password2bis"></input></li>
+		</div> 	 			
 	</div>
 	<div class="validate">
 		<input class="styleValidate" type="submit" value="Envoyer le formulaire">
