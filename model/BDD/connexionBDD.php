@@ -1,16 +1,16 @@
 <?php
 class connexionBDD{
 	//BDD en ligne:
-	/*private $HOST = 'scriptis.fr';
+	private $HOST = 'scriptis.fr';
 	private $NAME = 'raph';
 	private $USER = 'raph';
-	private $PASS = 'kErUxmg6XwkWRR';*/
+	private $PASS = 'kErUxmg6XwkWRR';
 
 	//BDD local:
-	private $HOST = 'localhost';
+	/* private $HOST = 'localhost';
 	private $NAME = 'APPinfo';
 	private $USER = 'root';
-	private $PASS = '';
+	private $PASS = ''; */
 
 	private $connexion;
 

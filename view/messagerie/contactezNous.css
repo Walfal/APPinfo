@@ -65,25 +65,29 @@
 	max-height: 300px;
 }
 
-/*changment*/
-.messages {
+/*changement*/
+.messages,
+.conversations {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 20px 10px;
 	height: auto;
-	min-height: 300px;
-	overflow: auto;
-	width: 56%;
 	min-width: 400px;
+	width: 56%;
 	display: flex;
 	flex-direction: column;
 	position: relative;
 	list-style: none;
 	text-decoration: none;
-	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-	border-radius: 15px;
 }
 
-.messages li {
+.messages {
+	overflow: auto;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	border-radius: 15px;
+	min-height: 300px;
+}
+
+.conversations li {
 	padding-top: 7px;
 	border-bottom: 1px solid #5fa2c4;
 	border-radius: 15px;
@@ -104,13 +108,13 @@
 	}
 }
 
-.messages li a,
-.messages li em {
+.conversations li a,
+.conversations li em {
 	padding-left: 40px;
 	color: black;
 }
 
-.messages li em {
+.conversations li em {
 	margin-top: 5px;
 	font-size: 12px;
 	text-transform: capitalize;
@@ -119,7 +123,7 @@
 	letter-spacing: normal;
 }
 
-.messages li:hover {
+.conversations li:hover {
 	opacity: 1;
 	background-color: #f9fbff;
 	background-image: none;
@@ -127,22 +131,22 @@
 	border-bottom: 2px solid #5fa2c4;
 }
 
-.messages :visited {
+.conversations :visited {
 	color: black;
 }
 
-.messages::-webkit-scrollbar {
+.conversations::-webkit-scrollbar {
 	width: 1em;
 	height: 30px;
 	z-index: 1;
 	scroll-behavior: inherit;
 }
-.messages::-webkit-scrollbar-track {
+.conversations::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 	border-radius: 5px;
 }
 
-.messages::-webkit-scrollbar-thumb {
+.conversations::-webkit-scrollbar-thumb {
 	border-radius: 5px;
 	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }

@@ -21,9 +21,9 @@ if(isset($_POST['matricule'])) {
     $medecin = checkInput($_POST['medecin']);
 
 
-    $statement = $BDD -> prepare("UPDATE Personne SET matricule=?, nom=?, prenom=?, sexe=?, mail=?, `numero de securite social`=?, `adresse (numero et voie)`=?, `adresse (ville)`=?, `adresse (code postal)`=?, telephone=?, `poids (kg)`=?, `taille (cm)`=?, `date de naissance`=?, `mot de passe`=?, role=?, photo=?, medecin=? WHERE matricule = ?");
+    $statement = $BDD -> prepare("UPDATE Personne SET matricule=?, nom=?, prenom=?, sexe=?, mail=?, `numero de securite social`=?, `adresse`=?, `ville`=?, `code postal`=?, telephone=?, poids=?, taille=?, `date de naissance`=?, `mot de passe`=?, role=?, photo=?, medecin=? WHERE matricule = ?");
     $statement -> execute(array($matricule2, $nom, $prenom, $sexe, $mail, $num_ss, $adresseRue, $adresseVille, $codePostal, $telephone, $poids, $taille, $dateDeNaissance, $motDePasse, $role, $photo, $medecin, $matricule));
-    //$statement = $BDD -> prepare("UPDATE Personne SET matricule=?, nom=?, prenom=?, sexe=?, mail=?, `numero de securite social`=?, `adresse (numero et voie)`=?, `adresse (ville)`=?, `adresse (code postal)`=?, telephone=?, `poids (kg)`=?, `taille (cm)`=?, `date de naissance`=?, `mot de passe`=?, role=?, photo=?, medecin=? WHERE matricule = ?");
+    //$statement = $BDD -> prepare("UPDATE Personne SET matricule=?, nom=?, prenom=?, sexe=?, mail=?, `numero de securite social`=?, adresse=?, `ville`=?, `code postal`=?, telephone=?, poids=?, taille=?, `date de naissance`=?, `mot de passe`=?, role=?, photo=?, medecin=? WHERE matricule = ?");
     //$statement -> execute(array($matricule, $nom, $prenom, $sexe, $mail, $num_ss, $adresseRue, $adresseVille, $codePostal, $telephone, $poids, $taille, $dateDeNaissance, $motDePasse, $role, $photo, $medecin, $matricule));
     header("location: ../../view/profil/profilPatients.php");
 

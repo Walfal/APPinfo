@@ -292,22 +292,22 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_SESSION['matr
 		<div class="linedisplay">
 			<li>
 				<label for="adresse"> Adresse (numéro et voie): </label> <br>
-			<input class="champ" name ="adresse" id="adresse" placeholder=<?= $personne['adresse (numero et voie)'] ?>></input></li>
+			<input class="champ" name ="adresse" id="adresse" placeholder=<?= $personne['adresse'] ?>></input></li>
 		</div>
 		<div class="linedisplay">
 			<li><label for ="ville"> Ville : </label><br>
-			<input class="champ" name ="ville" id="ville" placeholder=<?= $personne['adresse (ville)'] ?>><br></input></li>
+			<input class="champ" name ="ville" id="ville" placeholder=<?= $personne['ville'] ?>><br></input></li>
 			<li class="espacement"><label for="codePostal"> Code postal: </label> <br>
-			<input class="champ" name ="codePostal" id="codePostal" placeholder=<?= $personne['adresse (code postal)'] ?>></input></li>
+			<input class="champ" name ="codePostal" id="codePostal" placeholder=<?= $personne['code postal'] ?>></input></li>
 			<li class="espacement">
 		</div>
 		<div class="linedisplay">
 			<li>
 				<label for="poids"> Poids (en kg): </label> <br>
-			<input class="champ" name ="poids" id="poids" placeholder=<?= $personne['poids (kg)'] ?>></input></li>
+			<input class="champ" name ="poids" id="poids" placeholder=<?= $personne['poids'] ?>></input></li>
 			<li class="espacement">
 				<label for ="taille"> Taille (en cm) : </label><br>
-			<input class="champ" name ="taille" id="taille" placeholder=<?= $personne['taille (cm)'] ?>><br></input></li>
+			<input class="champ" name ="taille" id="taille" placeholder=<?= $personne['taille'] ?>><br></input></li>
 		</div>
 		<div class="linedisplay">
 			<li><label for ="password"> Mot de passe actuel* : </label><br>

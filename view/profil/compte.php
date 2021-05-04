@@ -105,7 +105,7 @@ if($_SESSION['matricule'] == 0):
     </div>
 </div>
 
-<?php elseif($_SESSION['matricule'] > 100): ?>
+<?php elseif($_SESSION['matricule'] >= 100): ?>
 
 <div class="contenu">
     <div class="contenu1">

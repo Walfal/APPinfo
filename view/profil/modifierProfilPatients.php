@@ -20,12 +20,12 @@ if(isset($_GET['id'])){
     $sexe = $valeur['sexe'];
     $mail = $valeur['mail'];
     $num_ss = $valeur['numero de securite social'];
-    $adresseRue = $valeur['adresse (numero et voie)'];
-    $adresseVille = $valeur['adresse (ville)'];
-    $codePostal = $valeur['adresse (code postal)'];
+    $adresseRue = $valeur['adresse'];
+    $adresseVille = $valeur['ville'];
+    $codePostal = $valeur['code postal'];
     $telephone = $valeur['telephone'];
-    $poids = $valeur['poids (kg)'];
-    $taille = $valeur['taille (cm)'];
+    $poids = $valeur['poids'];
+    $taille = $valeur['taille'];
     $dateDeNaissance = $valeur['date de naissance'];
     $motDePasse = $valeur['mot de passe'];
     $role = $valeur['role'];
@@ -87,7 +87,7 @@ function checkInput($data){
             <input type="text"  id=AdresseRue name="adresseRue" value=" <?php echo $adresseRue; ?>">
         </div>
         <div class="form-group">
-            <label for="AdresseVille">Adresse (ville) :</label>
+            <label for="AdresseVille">ville :</label>
             <input type="text"  id=AdresseVille name="adresseVille" value=" <?php echo $adresseVille; ?>">
         </div>
         <div class="form-group">

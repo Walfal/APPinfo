@@ -27,9 +27,9 @@ if(!empty($_POST)) {
     $motDePasse = checkInput($_POST['motDePasse']);
     $role = checkInput($_POST['role']);
     $photo = 0;
-    $medecin = checkInput($_POST['medecin']);
+    $medecin = (checkInput($_POST['medecin']) != 0) ? checkInput($_POST['medecin']) : 0;
 
-    $statement = $BDD -> prepare("INSERT INTO Personne (matricule, nom, prenom, sexe, mail, `numero de securite social`, `adresse (numero et voie)`, `adresse (ville)`, `adresse (code postal)`, telephone, `poids (kg)`, `taille (cm)`, `date de naissance`, `mot de passe`,role, photo, medecin) values (?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    $statement = $BDD -> prepare("INSERT INTO Personne (matricule, nom, prenom, sexe, mail, `numero de securite social`, adresse, ville, `code postal`, telephone, poids, taille, `date de naissance`, `mot de passe`,role, photo, medecin) values (?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
     $statement -> execute(array($matricule, $nom, $prenom, $sexe, $mail, $num_ss, $adresseRue, $adresseVille, $codePostal, $telephone, $poids, $taille, $dateDeNaissance, $motDePasse, $role, $photo, $medecin));
     header("location: ../../view/profil/profilPatients.php");
 
@@ -91,7 +91,7 @@ function checkInput($data){
             <input type="text"  id=Adresse name="adresseRue" value="<?php echo $adresseRue; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Adresse">Adresse (Ville)* :</label>
+            <label for="Adresse">ville* :</label>
             <input type="text"  id=Adresse name="adresseVille" value="<?php echo $adresseVille; ?>" required>
         </div>
         <div class="form-group">

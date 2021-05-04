@@ -61,24 +61,24 @@ function checkInput($data){
 				<p> <?= $personne['numero de securite social'] ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li > Poids (kg) : <br>
-				<p><?= $personne['poids (kg)'] ?></p></li>
+				<li > poids : <br>
+				<p><?= $personne['poids'] ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li>Taille (cm) : <br>
-				<p> <?= $personne['taille (cm)'] ?></p></li>
+				<li>taille : <br>
+				<p> <?= $personne['taille'] ?></p></li>
 			</div>
 			<div class="linedisplay">
 				<li> Adresse : <br>
-				<p><?= $personne['adresse (numero et voie)'] ?></p></li>	
+				<p><?= $personne['adresse'] ?></p></li>	
 			</div>
 			<div class="linedisplay">
 				<li > Ville : <br>
-				<p><?= $personne['adresse (ville)'] ?></p></li>
+				<p><?= $personne['ville'] ?></p></li>
 			</div>
 			<div class="linedisplay">
 				<li>Code postal : <br>
-				<p> <?= $personne['adresse (code postal)'] ?></p></li>
+				<p> <?= $personne['code postal'] ?></p></li>
 			</div>
 			<div class="linedisplay">
 				<li > Rôle : <br>
