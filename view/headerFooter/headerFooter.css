@@ -7,7 +7,14 @@
 	font-family: "Montserrat", sans-serif;
 	font-size: 15px;
 }
+html{
+	position: relative;
+	min-height: 100%;
+}
 
+body{
+	margin: 0 0 255px;
+}
 .wrapper {
 	margin: 0 auto;
 	padding: 0 10px;
@@ -138,6 +145,8 @@ footer {
 	width: 100%;
 	padding-top: 20px;
 	padding-bottom: 10px;
+	position: absolute;
+	bottom: 0;
 }
 
 .contenu-footer {
