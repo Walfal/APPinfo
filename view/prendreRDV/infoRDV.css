@@ -1,0 +1,43 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.hautdePage {
+	background-color: #5ea2c4;
+	font-size: 40px;
+	color: white;
+	align-items: center;
+	padding: 2%;
+	padding-left: 5%;
+}
+
+.patient {
+	padding: 1%;
+	padding-left: 6%;
+	background-color:  #565757;
+	color: white;
+}
+
+.vueEvenement {
+	margin-left: 8%;
+	line-height: 30px;
+	font-size: 20px;
+	list-style-type: square;
+}
+
+table{
+
+	margin: auto;
+	border-collapse:collapse;
+
+}
+
+td{
+	font-size: 22px;
+	width: 25% ;
+	padding: 2.5%;
+	border: solid;
+	border-width: 1px;
+	text-align :center;
+}

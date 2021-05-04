@@ -69,6 +69,7 @@ centre {
 	padding: 1vh;
 	padding-inline: 3vh;
 }
+<<<<<<< HEAD
 .resultat{
     border-collapse: collapse;
     margin: 35px auto;
@@ -106,3 +107,43 @@ th, td{
 .resultat tbody tr:last-of-type{
     border-bottom: 2px solid #4f99be;
 }
+=======
+.resultat {
+	border-collapse: collapse;
+	margin: 35px auto;
+	font-size: 0.9em;
+	min-width: 60%;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(41, 39, 39, 0.15);
+	text-align: center;
+}
+
+.resultat tr {
+	padding: 20px 15px;
+}
+
+.resultat thead tr {
+	background-color: #5ea2c4;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+}
+
+th,
+td {
+	padding: 20px 15px;
+}
+
+.resultat tbody tr {
+	border-bottom: 1px solid rgb(206, 199, 199);
+}
+
+.resultat tbody tr:nth-of-type(even) {
+	background-color: rgb(201, 195, 195);
+}
+
+.resultat tbody tr:last-of-type {
+	border-bottom: 2px solid #4f99be;
+}
+>>>>>>> Raph
