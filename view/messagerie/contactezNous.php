@@ -123,7 +123,7 @@ elseif($matriculeTest != 0):
 					$message = recuperationMessages($BDD, $conversation['idConversation']);
 					$client = recuperationUneDonnee($BDD, "Personne", "matricule", $message[0]['matricule']);
 					?>
-					<li><a href="./contactezNous.php?client=<?= $conversation['idConversation'] ?>">
+					<li><a href="contactezNous.php?client=<?= $conversation['idConversation'] ?>">
 					<?= $client['prenom'] . ' ' . $client['nom'] . '<br><em>' .  $conversation['titre'] . '</em>' ?>
 					</a></li>
 				<?php endforeach ?>

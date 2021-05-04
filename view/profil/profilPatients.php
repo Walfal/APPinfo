@@ -44,7 +44,7 @@ endif;
 <!-- ----------------------------------------------------------- LISTE PROFILS ---------------------------------------------------------------------------------- -->
 <div class="container admin">
     <div class="row">
-        <h1>Liste des utilisateurs <a href="../../view/profil/ajouterProfilPatients.php">+ Ajouter</a></h1>
+        <h1>Liste des utilisateurs <a href="ajouterProfilPatients.php">+ Ajouter</a></h1>
     </div>
     <table class="table">
         <thead>
@@ -102,9 +102,9 @@ endif;
                             echo '<td data-label="N° sécu :">' . $personne['numero de securite social'] . '</td>';
                             echo '<td data-label="Code Postale :">' . $personne['adresse (code postal)'] . '</td>';
                             echo '<td data-label="Actions :" width=300>';
-                            echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $personne['matricule'] . '" >Voir</a>';
-                            echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $personne['matricule'] . '" >Modifier</a>';
-                            echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $personne['matricule'] . '" >Supprimer</a>';
+                            echo '<a href="voirProfilPatients.php?id='  . $personne['matricule'] . '" >Voir</a>';
+                            echo '<a href="modifierProfilPatients.php?id='  . $personne['matricule'] . '" >Modifier</a>';
+                            echo '<a href="supprimerProfilPatients.php?id='  . $personne['matricule'] . '" >Supprimer</a>';
                             echo '</td>';
                             echo '</tr>';
                         }

@@ -21,9 +21,9 @@ class EventGS{
 		return $this->type;
 	}
 
-	public function getDate() : Date{
-		return new Date($this->date);
-	}
+	// public function getDate() : Date{
+	// 	return new Date($this->date);
+	// }
 
 	public function getDebut() : DateTime{
 		return new DateTime($this->debut);

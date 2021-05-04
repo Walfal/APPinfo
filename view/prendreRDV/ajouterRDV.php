@@ -46,5 +46,5 @@ exit;
 </form>
 </div>
 
-<?php require '../headerFooter/footer.php' ?>
+<?php //require '../headerFooter/footer.php' ?> 
 

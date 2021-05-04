@@ -14,7 +14,7 @@ require_once '../headerFooter/header.php';?>
 
 <!-- ----------------------------------------------------------- FAQ ---------------------------------------------------------------------------------- -->
 <?php
-	require '../../model/FAQ/modelFaq.php';
+	/*require '../../model/FAQ/modelFaq.php';*/
 	require_once '../../model/BDD/connexionBDD.php';
 
 ?>

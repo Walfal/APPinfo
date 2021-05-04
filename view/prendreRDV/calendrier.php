@@ -1,4 +1,4 @@
-<?php $title = Calendrier;
+<?php $title = 'Calendrier';
 require_once '../headerFooter/header.php';
 
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] != 0):
@@ -26,9 +26,9 @@ $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
 	<h1> <?php echo $month -> toString() ?> </h1>
 	<div class = fleche>
 		<button class = fleche>
-		<a class ="flecheG" href="/view/prendreRDV/calendrier.php?month=<?= $month -> previousMonth() -> month; ?>&year=<?= $month -> previousMonth() -> year;?> "> &lt;</a></button>
+		<a class ="flecheG" href="calendrier.php?month=<?= $month -> previousMonth() -> month; ?>&year=<?= $month -> previousMonth() -> year;?> "> &lt;</a></button>
 		<button class = fleche>
-		<a class ="flecheD" href="/view/prendreRDV/calendrier.php?month=<?= $month -> nextMonth() -> month; ?>&year=<?= $month -> nextMonth() -> year;?> ">&gt;</a></button>
+		<a class ="flecheD" href="calendrier.php?month=<?= $month -> nextMonth() -> month; ?>&year=<?= $month -> nextMonth() -> year;?> ">&gt;</a></button>
 	</div>
 </div>
 <br>
@@ -49,7 +49,7 @@ $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
 					$client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
 					?>
 				<div class="calendar_event">
-					<?= (new DateTime ($event['debut']))->format('H:i') ?> - <a href="/view/prendreRDV/event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
+					<?= (new DateTime ($event['debut']))->format('H:i') ?> - <a href="event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
 				</div>
 				<?php endforeach ?>
 			</td>

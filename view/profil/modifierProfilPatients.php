@@ -56,7 +56,7 @@ function checkInput($data){
 <!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
 
 <div class="contenu">
-    <form class="formulaire" action="<?php echo '../../view/profil/modifierProfilPatients.php?id=' ?>" role="form" method="post" enctype="multipart/form-data">
+    <form class="formulaire" action="<?php echo 'modifierProfilPatients.php?id=' ?>" role="form" method="post" enctype="multipart/form-data">
         <input type="hidden"  id=Matricule name="matricule" value=" <?php echo $_GET['id']; ?>">
         <div class="form-group">
             <label for="Matricule2">Matricule :</label>
@@ -132,7 +132,7 @@ function checkInput($data){
                 <button type="submit">Modifier</button>
             </div>
             <div class="retour">
-                <a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
+                <a href="profilPatients.php" class="retour">Retour</a>
             </div>
         </div>
     </form>

@@ -12,7 +12,7 @@ if(!empty($_GET['id'])){
 	$idUtilisateur = checkInput($_GET['id']);
 }
 
-$statement = $BDD->prepare('SELECT * FROM test.utilisateurs WHERE id_Utilisateur =?');
+$statement = $BDD->prepare('SELECT * FROM personne WHERE matricule =?');
 $statement->execute(array($idUtilisateur));
 $valeur = $statement->fetch();
 
@@ -25,7 +25,7 @@ function checkInput($data){
 }
 
 ?>
-
+<link href="voirProfilPatients.css" rel="stylesheet" />
         <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
         <div class="banniere">
             <div class="content">
@@ -58,15 +58,15 @@ function checkInput($data){
 				</div>
 				<div class="form-group">
 					<label for="Numss">Numéro de sécurité sociale :</label>
-					<input type="text" value=" <?php echo ''.$valeur['num_ss']; ?>" id=Numss readonly="readonly">
+					<input type="text" value=" <?php echo ''.$valeur['numero de securite social']; ?>" id=Numss readonly="readonly">
 				</div>
 				<div class="form-group">
 					<label for="Adresse">Adresse :</label>
-					<input type="text" value=" <?php echo ''.$valeur['adresse']; ?>" id=Adresse readonly="readonly">
+					<input type="text" value=" <?php echo ''.$valeur['adresse (ville)']. ''.$valeur['adresse (numero et voie)']; ?>" id=Adresse readonly="readonly">
 				</div>
 				<div class="form-group">
 					<label for="CodePostale">Code postal :</label>
-					<input type="text" value=" <?php echo ''.$valeur['codePostal']; ?>" id=CodePostal readonly="readonly">
+					<input type="text" value=" <?php echo ''.$valeur['adresse (code postal)']; ?>" id=CodePostal readonly="readonly">
 				</div>
 				<div class="form-group">
 					<label for="Telephone">Téléphone :</label>
@@ -78,26 +78,26 @@ function checkInput($data){
 				</div>
 				<div class="form-group">
 					<label for="Poids">Poids :</label>
-					<input type="text" value=" <?php echo ''.$valeur['poids']; ?>" id=Poids readonly="readonly">
+					<input type="text" value=" <?php echo ''.$valeur['poids (kg)']; ?>" id=Poids readonly="readonly">
 				</div>
 				<div class="form-group">
 					<label for="Taille">Taille :</label>
-					<input type="text" value=" <?php echo ''.$valeur['taille']; ?>" id=Taille readonly="readonly">
+					<input type="text" value=" <?php echo ''.$valeur['taille (cm)']; ?>" id=Taille readonly="readonly">
 				</div>
 				<div class="form-group">
-					<label for="Age">Age :</label>
-					<input type="text" value=" <?php echo ''.$valeur['age']; ?>" id=Age readonly="readonly">
+					<label for="Age">Date de naissance :</label>
+					<input type="text" value=" <?php echo ''.$valeur['date de naissance']; ?>" id=Age readonly="readonly">
 				</div>
 				<div class="form-group">
 					<label for="Motdepasse">Mot de passe :</label>
-					<input type="password" value=" <?php echo ''.$valeur['motDePasse']; ?>" id=Motdepasse readonly="readonly">
+					<input type="password" value=" <?php echo ''.$valeur['mot de passe']; ?>" id=Motdepasse readonly="readonly">
 				</div>
 				<div class="form-group">
 					<label for="Role">Rôle :</label>
-					<input type="text" value=" <?php echo ''.$valeur['rol']; ?>" id=Role readonly="readonly">
+					<input type="text" value=" <?php echo ''.$valeur['role']; ?>" id=Role readonly="readonly">
 				</div>
 				<div class="retour">
-					<a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
+					<a href="profilPatients.php" class="retour">Retour</a>
 				</div>
 			</form>
 		</div>

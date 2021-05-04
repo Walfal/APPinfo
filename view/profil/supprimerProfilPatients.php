@@ -15,7 +15,7 @@ if(!empty($_POST)){
     $id = checkInput($_POST['id']);
     $statement = $BDD -> prepare("DELETE FROM Personne WHERE matricule =?");
     $statement -> execute(array($id));
-    header("location: ../../view/profil/profilPatients.php");
+    header("location: profilPatients.php");
 }
 
 function checkInput($data){
@@ -39,7 +39,7 @@ function checkInput($data){
 <!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
 
 <div class="contenu">
-    <form class="formulaire" action="../../view/profil/supprimerProfilPatients.php" role="form" method="post">
+    <form class="formulaire" action="supprimerProfilPatients.php" role="form" method="post">
     <input type="hidden" name="id" value="<?php echo $id; ?>"/>    
     <p class="alert">Etes-vous sur de vouloir supprimer ?</p>
     <div class="actions">
@@ -47,7 +47,7 @@ function checkInput($data){
                 <button type="submit" class="bouton">Oui</button>
             </div>
             <div class="retour">
-                <a href="../../view/profil/profilPatients.php" class="retour">Non</a>
+                <a href="profilPatients.php" class="retour">Non</a>
             </div>
         </div>
     </form>

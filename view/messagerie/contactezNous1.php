@@ -29,7 +29,7 @@
 		placeholder="Votre message"
 	></textarea>
 	<br />
-	<input href="ontactezNous.php" class="boiteEnvoyer" type="submit" name="Envoyer" value="Envoyer" />
+	<input href="contactezNous.php" class="boiteEnvoyer" type="submit" name="Envoyer" value="Envoyer" />
 </form>
 
 <?php require_once '../headerFooter/footer.php'; ?>

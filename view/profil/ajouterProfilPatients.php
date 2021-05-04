@@ -31,7 +31,7 @@ if(!empty($_POST)) {
 
     $statement = $BDD -> prepare("INSERT INTO Personne (matricule, nom, prenom, sexe, mail, `numero de securite social`, `adresse (numero et voie)`, `adresse (ville)`, `adresse (code postal)`, telephone, `poids (kg)`, `taille (cm)`, `date de naissance`, `mot de passe`,role, photo, medecin) values (?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
     $statement -> execute(array($matricule, $nom, $prenom, $sexe, $mail, $num_ss, $adresseRue, $adresseVille, $codePostal, $telephone, $poids, $taille, $dateDeNaissance, $motDePasse, $role, $photo, $medecin));
-    header("location: ../../view/profil/profilPatients.php");
+    header("location: profilPatients.php");
 
 }
 
@@ -57,7 +57,7 @@ function checkInput($data){
 <!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
 
 <div class="contenu">
-    <form class="formulaire" action="../../view/profil/ajouterProfilPatients.php" role="form" method="post" enctype="multipart/form-data">
+    <form class="formulaire" action="ajouterProfilPatients.php" role="form" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="Matricule">Matricule* :</label>
             <input type="text"  id=matricule name="matricule" value="<?php echo $matricule; ?>" required>
@@ -132,7 +132,7 @@ function checkInput($data){
                 <button type="submit">+ Ajouter</button>
             </div>
             <div class="retour">
-                <a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
+                <a href="profilPatients.php" class="retour">Retour</a>
             </div>
         </div>
     </form>
