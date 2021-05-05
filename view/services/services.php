@@ -64,8 +64,8 @@ require_once '../../model/Login/loginFunctions.php';
 				</h4>
 				<p>
 					À l'audition d'un son,<br>
-					le patient doit appuyer<br>
-					sur un bouton et<br>
+					le patient doit appuyer
+					sur<br> un bouton et
 					le temps de réaction<br>
 					est mesuré par le capteur.
 				</p>
