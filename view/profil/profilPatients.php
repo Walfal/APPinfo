@@ -43,9 +43,15 @@ endif;
 
 <!-- ----------------------------------------------------------- LISTE PROFILS ---------------------------------------------------------------------------------- -->
 <div class="container admin">
+    
     <div class="row">
-        <h1>Liste des utilisateurs <a href="ajouterProfilPatients.php">+ Ajouter</a></h1>
+        <h1>Liste des utilisateurs
+            <?php if($_SESSION['matricule'] < 20): ?>
+                <a href="../../view/profil/ajouterProfilPatients.php">+ Ajouter</a>
+            <?php endif ?>
+        </h1>
     </div>
+    
     <table class="table">
         <thead>
             <tr>
@@ -66,21 +72,23 @@ endif;
                     $nomPatient = htmlspecialchars($_GET['nomPatient']);
                     $prenomPatient = htmlspecialchars($_GET['prenomPatient']);
                     $codePostal = htmlspecialchars($_GET['codePostal']);
-                    $personnes = $BDD -> query("SELECT * FROM Personne WHERE nom = '$nomPatient' OR prenom = '$prenomPatient' OR 'adresse (code postal)' = '$codePostal'");
+                    $personnes = $BDD -> query("SELECT * FROM Personne WHERE nom = '$nomPatient' OR prenom = '$prenomPatient' OR 'code postal' = '$codePostal'");
                     if($personnes -> rowCount() > 0){
                         while($personne = $personnes -> fetch()){
-                            if($personne['matricule'] < 19){
+                            if($personne['matricule'] > 20){
                                 echo '<tr>';
                                 echo '<td data-label="Matricule :">' . $personne['matricule'] . '</td>';
                                 echo '<td data-label="Nom :">' . $personne['nom'] . '</td>';
                                 echo '<td data-label="Prénom :">' . $personne['prenom'] . '</td>';
                                 echo '<td data-label="Mail :">' . $personne['mail'] . '</td>';
                                 echo '<td data-label="N° sécu :">' . $personne['numero de securite social'] . '</td>';
-                                echo '<td data-label="Code Postale :">' . $personne['adresse (code postal)'] . '</td>';
+                                echo '<td data-label="Code Postale :">' . $personne['code postal'] . '</td>';
                                 echo '<td data-label="Actions :" width=300>';
                                 echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $personne['matricule'] . '" >Voir</a>';
+                                if($_SESSION['matricule'] < 20):
                                 echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $personne['matricule'] . '" >Modifier</a>';
                                 echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $personne['matricule'] . '" >Supprimer</a>';
+                                endif;
                                 echo '</td>';
                                 echo '</tr>';
                             }
@@ -93,18 +101,20 @@ endif;
                 else{
                     $personnes = recuperationDesDonnees($BDD, 'Personne', 1, 1);
                     foreach($personnes as $personne){
-                        if($personne['matricule'] != 0){
+                        if($personne['matricule'] > 20){
                             echo '<tr>';
                             echo '<td data-label="Matricule :">' . $personne['matricule'] . '</td>';
                             echo '<td data-label="Nom :">' . $personne['nom'] . '</td>';
                             echo '<td data-label="Prénom :">' . $personne['prenom'] . '</td>';
                             echo '<td data-label="Mail :">' . $personne['mail'] . '</td>';
                             echo '<td data-label="N° sécu :">' . $personne['numero de securite social'] . '</td>';
-                            echo '<td data-label="Code Postale :">' . $personne['adresse (code postal)'] . '</td>';
+                            echo '<td data-label="Code Postale :">' . $personne['code postal'] . '</td>';
                             echo '<td data-label="Actions :" width=300>';
-                            echo '<a href="voirProfilPatients.php?id='  . $personne['matricule'] . '" >Voir</a>';
-                            echo '<a href="modifierProfilPatients.php?id='  . $personne['matricule'] . '" >Modifier</a>';
-                            echo '<a href="supprimerProfilPatients.php?id='  . $personne['matricule'] . '" >Supprimer</a>';
+                            echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $personne['matricule'] . '" >Voir</a>';
+                            if($_SESSION['matricule'] < 20):
+                            echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $personne['matricule'] . '" >Modifier</a>';
+                            echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $personne['matricule'] . '" >Supprimer</a>';
+                            endif;
                             echo '</td>';
                             echo '</tr>';
                         }

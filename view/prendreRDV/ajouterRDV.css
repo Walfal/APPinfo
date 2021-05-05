@@ -1,271 +1,85 @@
-*{
-    margin:0;
-    padding:0;
-}
-
-
-
-.bandehaut{
-    margin-top: 2.5%;
-    background-color: #5EA2C4;
-    background-image: url("../../images/divers/SAV.jpg") ;
-    background-size: contain;
-    background-position: right;
-    background-repeat: no-repeat;
-    height: 200px;
-    width: 100%;
-    font-family:  Arial;
-    color: white;
-    
-}
-
-
-.titrePage {
-    padding-top: 2%;
-    padding-left: 10%;
-    margin-top: 0%;
-    border-top: 0%;  
-    font-size: 250%;
-    
-}
-
-.sousTitre {
-    padding-left: 20%;
-    margin-top: 0%;
-    border-top: 0%;
-    font-size: 200%;
-    padding-top: 2%;
-}
-
-
-.consigne{
-    color: #3A738f;
-    padding-top: 5%;
-    padding-bottom: 2%;
-}
-
-.formulaire {
-    position: float;
-    font-size: 175%;
-    float: center;
-    text-align: center;
-    
-
-}
-
-.boite{
-   padding: 14px 40px;
-   margin: 10px;
-   width: 30%;
-   border-radius: 10px;
-   border-style: outset;
-}
-
-.boiteMessage{
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 14px 40px;
-    margin: 10px;
-    height: 150px;
-    width: 30%;
-    border-radius: 10px;
-    border-style: outset;
-}
-
-
-.boiteEnvoyer {
-    background: #3A738f;
-    color: white;
-    border-style: none;
-    height: 30px;;
-    width: 5%;
-    border-radius: 10px;
-    font:  15px arial, sans-serif;
-   margin-bottom: 1%;
-}
-.bandebas {
-    background-color: #5EA2C4;
-    background-image: url("../images/divers/map.png");
-    background-size: contain;
-    background-position: left;
-    background-repeat: no-repeat;
-  
-    color: white;
-    position:relative;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    height: 350px;
-    padding-left: 20%;
-    
-}
-
-.champs {
-    padding-bottom: 2%;
-    text-align: right;
-}
-
-.bandebas img {
-    position: absolute;
-    left : 0;
-}
-
-
-.coordonnees{
-    font-size: 20px;
-    padding-top: 5%;
-}
-
-.info{
-    font-size: 20px;
-    padding-top: 2%;
-}
-
-
-
-*{
-    margin:0;
-    padding:0;
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-.hautPage{
+.hautPage {
 	display: flex;
 	align-items: center;
-	background-color: #5EA2C4;
+	background-color: #5ea2c4;
 	margin-top: 50px;
 	margin-top: 50px;
 	padding-top: 2%;
 	padding-bottom: 2%;
+	width: 100%;
 }
 
-.titrePage{
+.titrePage {
+	padding-top: 2%;
+	padding-left: 10%;
+	margin-top: 0%;
+	border-top: 0%;
 	font-size: 50px;
 	margin-left: 0%;
 	color: white;
 }
 
-.imgCalendrier{
+.imgCalendrier {
 	margin-left: 2%;
 	height: 90px;
 }
 
-.recherche{
-	position: absolute;
-	top: 35%;
-	left: 12.5%;
+.recherche {
+	margin-top: 5%;
 	text-align: center;
-	border-color: transparent;
-	border-width: 1px;
-	border-style: solid;
 	width: 75%;
-	background-color:#D3D3D3;
-    
+	background-color: #d3d3d3;
+	padding: 2%;
 }
 
-
-input{
-	padding:2%;
-	margin-bottom: 2%;
-	margin-right: 3%;
-}
-	
-button{
-	background: #3A738f;
-    color: white;
-    border-style: none;
-    height: 30px;
-    width: 10%;
-    border-radius: 20px;
-    font-size:  15px;
-	margin-bottom: 2%;
+input {
+	padding: 2%;
+	margin: 1% 1.5%;
+	text-align: center;
 }
 
-.nom{
-	margin-left: 10%;
-
+button {
+	background: #3a738f;
+	color: white;
+	border-style: none;
+	margin-top: 2%;
+	height: 30px;
+	width: 150px;
+	border-radius: 20px;
+	font-size: 15px;
 }
 
-
-.indication{
-	padding-top: 4%;
+.indication {
 	padding-bottom: 4%;
 	color: white;
 	font-size: 30px;
 }
 
-.nomCentre{
-	margin-left: 10%;
-	margin-right: 2%;
-	margin-bottom: 2%;
-	width: 15%;
-	padding-left: 2%;
-	padding-top: 2%;
-	padding-bottom: 2%;
-	padding-right: 2%;
-
-}
-
-
-.typeTest{
-	margin-right: 2%;
-	margin-bottom: 2%;
-	width: 17%;
-	padding-left: 2%;
-	padding-top: 2%;
-	padding-bottom: 2%;
-	padding-right: 2%;
-}
-
-.localisation{
-	margin-bottom: 2%;
-	margin-right: 0.25%;
-}
-.adresse{
-	margin-right: 2%;
-	margin-bottom: 2%;
-	width: 15%;
-	padding-left: 2%;
-	padding-top: 2%;
-	padding-bottom: 2%;
-	padding-right: 2%;
-}
-
-.valider{
-	background: #3A738f;
-    color: white;
-    border-style: none;
-    height: 30px;
-    width: 10%;
-    border-radius: 20px;
-    font-size:  15px;
-	margin-bottom: 2%;
-}
-
-.aRemplir{
+.aRemplir {
+	width: 100%;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 }
 
+.aRemplir .info,
+.aRemplir .horaire {
+	width: 100%;
+}
 
+html {
+	position: relative;
+	min-height: 100%;
+}
 
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 0 250px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-footer{
+footer {
 	position: absolute;
 	bottom: 0;
 }

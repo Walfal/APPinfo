@@ -2,7 +2,7 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
-if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] != 0):
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
 endif;
 
@@ -13,7 +13,7 @@ if(!empty($_GET['id'])){
 }
 if(!empty($_POST)){
     $id = checkInput($_POST['id']);
-    $statement = $BDD -> prepare("DELETE FROM Personne WHERE matricule =?");
+    $statement = $BDD -> prepare("DELETE FROM Personne WHERE matricule = ?");
     $statement -> execute(array($id));
     header("location: profilPatients.php");
 }

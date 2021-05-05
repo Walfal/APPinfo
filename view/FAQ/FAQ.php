@@ -14,11 +14,26 @@ require_once '../headerFooter/header.php';?>
 
 <!-- ----------------------------------------------------------- FAQ ---------------------------------------------------------------------------------- -->
 <?php
+<<<<<<< HEAD
 	/*require '../../model/FAQ/modelFaq.php';*/
+=======
+	//require '../../model/modelFaq/modelFaq.php';
+>>>>>>> origin/Raph
 	require_once '../../model/BDD/connexionBDD.php';
+
+	/*
+	$db = Database::connect();
+	$valeur = Database::listeCategorie($db);
+	echo $valeur;
+	Database::disconnect();
+	Database::listeCategorie($db);
+	*/
 
 ?>
 
+<div class="contact">
+	<p>Pour plus d'informations, contactez-nous, <a href="../messagerie/contactezNous.php">cliquez ici</a></p>
+</div>
 <section class="ib-faq js-ib-faq">
 	<ul class="faq-categories">
 		<li><a href="#topic-1" class="faq-category">Topic 1<i class="mob"></i></a></li>
@@ -152,14 +167,16 @@ require_once '../headerFooter/header.php';?>
 			</li>
 		</ul>
 
-	</div>			
+	</div>
+	
 </section>
-	<div class="faq-overlay" aria-hidden="true"></div>
-</section>
+<<<<<<< HEAD
 <div class="contact">
 	<p>Pour plus d'informations, contactez-nous, <a href="">cliquez ici</a></p>
 </div>
 
 <!--<script src="../js/faq.js"></script>-->
+=======
+>>>>>>> origin/Raph
 
  <?php require_once '../headerFooter/footer.php'; ?>   

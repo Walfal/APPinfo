@@ -6,21 +6,19 @@ require_once '../../model/BDD/connexionBDD.php';
 ?><link href="contactezNous.css" rel="stylesheet" /><?php
 
 
+$matricule = $_SESSION['matricule'];
 
-$matriculeTest = 2;
-$matriculeTest = $_SESSION['matricule'];
-
-$conv = recuperationUneDonnee($BDD,"Message", "matricule", $matriculeTest);
-$idConversation = $conv['idConversation'];
+$conv = recuperationUneDonnee($BDD,"Message", "matricule", $matricule);
+$idConversation = ($conv['idConversation'] !== null) ? $conv['idConversation'] : null;
 $conv = recuperationUneDonnee($BDD, "Conversation", "idConversation", $idConversation);
 
 $messages = recuperationMessages($BDD, $idConversation);
-$client = recuperationUneDonnee($BDD, "Personne", "matricule", $matriculeTest);
+$client = recuperationUneDonnee($BDD, "Personne", "matricule", $matricule);
 
-if(!isset($matriculeTest)):
+if(!isset($matricule)):
 	header('Location: ../login/login.php');
 
-elseif($matriculeTest != 0):
+elseif($matricule > 19):
 	if($idConversation == null): ?>
 		<meta http-equiv="refresh" content="0;url=contactezNous1.php">
 	<?php
@@ -38,7 +36,7 @@ elseif($matriculeTest != 0):
 	<div class="conversation"> 
 		<div class="messages" id="messages">
 			<?php foreach($messages as $singleMessage):
-			if($singleMessage['matricule'] == $matriculeTest): ?>
+			if($singleMessage['matricule'] == $matricule): ?>
 				<p class="envoye">
 			<?php else:?>
 				<p class="recu">
@@ -84,7 +82,7 @@ elseif($matriculeTest != 0):
 				<?php
 				
 					foreach($messages as $singleMessage):
-						if($singleMessage['matricule'] == $matriculeTest): ?>
+						if($singleMessage['matricule'] == $matricule): ?>
 							<p class="envoye">
 						<?php else:?>
 							<p class="recu">
@@ -117,8 +115,8 @@ elseif($matriculeTest != 0):
 			<i class="sousTitre">à qui vous voulez répondre</i>
 		</div>
 
-		<div class="conversation"> 
-			<ul class="convAdmin messages" id="messages">
+		<div class="conversation">
+			<ul class="convAdmin conversations" id="messages">
 				<?php foreach($conversations as $conversation):
 					$message = recuperationMessages($BDD, $conversation['idConversation']);
 					$client = recuperationUneDonnee($BDD, "Personne", "matricule", $message[0]['matricule']);
@@ -149,7 +147,7 @@ elseif($matriculeTest != 0):
 
 			var message  = document.getElementById('message').value
 			var idConversation  = <?= $idConversation ?>;
-			var id = <?= $matriculeTest ?>;
+			var id = <?= $matricule ?>;
 			
 			document.getElementById('message').value = ''
 			/* if(message != '' && titre != ''){ */

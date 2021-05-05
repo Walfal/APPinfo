@@ -19,7 +19,7 @@
 				<ul class="links">
 					<li><a href=".">Accueil</a></li>
 					<li><a href="services/services.php">Nos services</a></li>
-					<li><a href="quiSommesNous/quiSommesNous.php">Qui sommes nous</a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
 					<li><a href="messagerie/contactezNous.php">Contactez nous</a></li>
 					<li><a href="FAQ/FAQ.php">FAQ</a></li>
 					<li>
@@ -47,7 +47,6 @@
 			</nav>
 		</div>
 	</header>
-	<!-- -------------------------------------------------------------- BANNIERE---------------------------------------------------------------------------------- -->
 	<body>
 	
 		<section id="main-image">
@@ -61,13 +60,11 @@
 			</a>
 		</section>
 
-		<!-- ------------------------------------------------------------ PRESENTATION---------------------------------------------------------------------------------- -->
-
 		<section id="presentation">
 			<div class="wrapper">
 				<h2>VOS TESTS PSYCHOTECHNIQUES</h2>
 				<p>
-					Avec les serivces de sens'air,
+					Avec les services de Sens'air,
 					nous vous proposons une gestion simple et ergonomique des rendez-vous et des résultats
 					avec du materiel de pointe pour maximiser la condition physique de vos pilotes.
 				</p>
@@ -120,7 +117,7 @@
 						nous vous donnons l'opportunité de maintenir vos exigences sur les pilotes<br>
 						afin de veiller à ce qu'ils règnent sur les cieux.
 					</p>
-					<a href="#" class="button-2">Plus d'informations</a>
+					<a href="quiSommesNous/quiSommesNous.php" class="button-2">Plus d'informations</a>
 				</div>
 			</div>
 		</section>
@@ -138,10 +135,8 @@
 				<a href="messagerie/contactezNous.php" class="button-3">Contactez nous</a>
 			</div>
 		</section>
-		</body>
+	</body>
 
-
-	<link href="headerFooter/headerFooter.css" rel="stylesheet" />
 	<footer>
 		<div class="contenu-footer">
 			<div class="bloc logo">
@@ -164,7 +159,6 @@
 					</li>
 				</div>
 			</div>
-
 			<div class="bloc reseaux">
 				<div class="res">
 					<h4>SUIVEZ-NOUS</h4>
@@ -176,9 +170,10 @@
 					<ul>
 					<li><a href=".">Accueil</a></li>
 					<li><a href="services/services.php">Nos services</a></li>
-					<li><a href="quiSommesNous/quiSommesNous.php">Qui sommes nous</a></li>
-					<li><a href="messagerie/contactezNous.php">Contactez nous</a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
+					<li><a href="contactezNous/contactezNous.php">Contactez nous</a></li>
 					<li><a href="FAQ/FAQ.php">FAQ</a></li>
+					<li><a href="headerFooter/CGU.php">Conditions d'utilisations</a></li>
 					</ul>
 				</div>
 			</div>

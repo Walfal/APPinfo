@@ -3,7 +3,7 @@ $title = 'Ajouter un RDV';
 require '../headerFooter/header.php'; 
 require_once '../../model/BDD/connexionBDD.php';
 
-if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] != 0):
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
 endif;
 
@@ -26,24 +26,28 @@ exit;
 </div>
 <div class="recherche">
 	<p class="indication"><b>Rentrez les informations suivantes pour prendre RDV :</b></p>
-<form class="aRemplir" method="post">
-	<input width="50px" class="nom" type="text" placeholder="Matricule" name="matricule" id="matricule" required
-	value="<?php if(isset($name)) {echo $matricule;} ?>"
-	>
-	<input type="date" id="date" name="date" required
-	value="<?php if(isset($date)) {echo $date;} ?>"
-	>
-	<input type="time" id="debut" placeholder="HH:MM" name="debut" required
-	value="<?php if(isset($debut)) {echo $debut;}?>"
-	>
-	<input type="time" id="fin" placeholder="HH:MM" name="fin" required
-	value="<?php if(isset($fin)) {echo $fin;} ?>"
-	>
-	<input type = "text" placeholder="Type de test" name="type" id="type" required
-	value="<?php if(isset($type)) {echo $type;} ?>"
-	></input>
-	<button>Ajouter le RDV</button>
-</form>
+	<form class="aRemplir" method="post">
+		<div class="info">
+			<input class="nom" type="text" placeholder="Matricule" name="matricule" id="matricule" required
+			value="<?php if(isset($name)) {echo $matricule;} ?>">
+			</input>
+			<input type = "text" placeholder="Type de test" name="type" id="type" required
+			value="<?php if(isset($type)) {echo $type;} ?>">
+			</input>
+		</div>
+		<div class="horaire">
+			<input type="date" id="date" name="date" required
+			value="<?php if(isset($date)) {echo $date;} ?>">
+			</input>
+			<input type="time" id="debut" placeholder="HH:MM" name="debut" required
+			value="<?php if(isset($debut)) {echo $debut;}?>">
+			</input>
+			<input type="time" id="fin" placeholder="HH:MM" name="fin" required
+			value="<?php if(isset($fin)) {echo $fin;} ?>">
+			</input>
+		</div>
+		<button>Ajouter le RDV</button>
+	</form>
 </div>
 
 <?php //require '../headerFooter/footer.php' ?> 

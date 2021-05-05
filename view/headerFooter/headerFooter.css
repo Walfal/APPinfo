@@ -5,7 +5,6 @@
 	padding: 0;
 	text-decoration: none;
 	font-family: "Montserrat", sans-serif;
-	font-size: 15px;
 }
 
 .wrapper {
@@ -226,7 +225,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-	font-size: 20px;
+	font-size: 15px;
 }
 
 .bloc {
@@ -262,7 +261,7 @@ footer {
 .res h4 {
 	color: white;
 	text-decoration: underline white 2px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .facebook {
@@ -276,12 +275,12 @@ footer {
 }
 
 .liens {
-	margin-top: 40px;
+	margin-top: 20px;
 	text-align: center;
 }
 
 .liens li {
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	list-style: none;
 	display: inline-block;
 	margin-left: 15px;
@@ -302,7 +301,6 @@ footer {
 #copyright {
 	color: white;
 	text-align: center;
-	margin-top: 10px;
 }
 
 html {
@@ -311,7 +309,7 @@ html {
 }
 
 body {
-	margin: 0 0 255px;
+	margin: 0 0 250px;
 }
 
 footer {

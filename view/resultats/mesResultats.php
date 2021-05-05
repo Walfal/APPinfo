@@ -44,20 +44,20 @@ $nom = recuperationUneDonnee($BDD,"Personne", "matricule", $matricule);
 <table class="resultat">
 	<thead>
 		<tr>
-			<th>Id Test</th>
+			<!-- <th>Id Test</th> -->
 			<th>Type de Test</th>
 			<th>Résultat</th>
 			<th>Date</th>
-			<th>Trame</th>
+			<!-- <th>Trame</th> -->
 			<th>Nom du patient</th>
-			<th>IdCapteur</th>
+			<!-- <th>IdCapteur</th> -->
 		</tr>
 	</thead>
 	<tbody>
 		<?php foreach($test as $row): ?>
 
 			<tr>
-			<td><?= $row['idTest'];?></td>
+			<!-- <td><?php //echo $row['idTest'];?></td> -->
 			<td><?= $row['type'];?></td>
 			<td><?= $row['resultat'];?></td>
 			<td><?php
@@ -65,9 +65,9 @@ $nom = recuperationUneDonnee($BDD,"Personne", "matricule", $matricule);
 			$date = new DateTime($row['date']);
 			echo (strftime("%A %e %B %Y %k:%M", date_timestamp_get($date)));
 			//echo ->format('l j F Y, H:i');?></td>
-			<td><?= $row['trame'];?></td>
+			<!-- <td><?php //echo $row['trame'];?></td> -->
 			<td><?= $nom['nom'];?></td>
-			<td><?= $row['idCapteur'];?></td>
+			<!-- <td><?php //echo $row['idCapteur'];?></td> -->
 			</tr>
 		<?php endforeach ?>
 	</tbody>

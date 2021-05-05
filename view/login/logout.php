@@ -6,4 +6,4 @@ if(isset($_SESSION['mail'])){
 if(isset($_SESSION['matricule'])){
 	unset($_SESSION['matricule']);
 }
-header('Location: ../index.php');
+header('Location: ../');

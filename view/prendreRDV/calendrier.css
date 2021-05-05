@@ -1,74 +1,86 @@
-.calendar{
+.calendar {
 	width: 100%;
 	height: calc(100vh - 128px);
 }
 
-.calendar td{
-	padding: 10px;
-	border : 1px;
+.calendar td {
+	padding: 0px;
+	border: 1px;
 	border-style: solid;
+
+	border-collapse: collapse;
 	border-color: black;
 	vertical-align: top;
 	width: 14.29%;
+	margin: 0%;
 	height: 15%;
-}	
-
-.calendar_weekday{
-	font-weight: bold;
-	color: black;
-	font-size: 1.2em;
 }
 
-.calendar_othermonth .calendar_day{
+.calendar_weekday {
+	font-weight: bold;
+	color: white;
+	font-size: 1.5em;
+	background-color: #565757;
+	text-align: center;
+	margin: 0%;
+	padding: 3%;
+}
+
+.calendar_othermonth .calendar_day {
 	opacity: 40%;
 }
 
-.calendar_day{
-	font-size: 1.3em;
+.calendar_day {
+	font-size: 1.4em;
+	padding-left: 3%;
+	padding-top: 3%;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.titre{
+.calendar_event {
+	padding: 5px 10px;
+}
+
+.titre {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	background-color: #5EA2C4;
+	background-color: #5ea2c4;
 	color: white;
 	font-size: 25px;
 }
 
-h1{
-	padding :2%;
+h1 {
+	padding: 2%;
 	padding-left: 5%;
 }
 
-.fleche{
+.fleche {
 	font-size: 1.2em;
-	background-color:  #5EA2C4;
+	background-color: #5ea2c4;
 	border-radius: 10px;
 	border-style: none;
 	text-decoration: none;
-
 }
 
-.flecheG{
+.flecheG {
 	text-decoration: none;
 	color: white;
 }
 
-.flecheD{
+.flecheD {
 	text-decoration: none;
 	color: white;
-	
 }
 
-.calendar_button{
+.calendar_button {
 	display: block;
 	text-align: center;
 	width: 55px;
 	height: 55px;
 	color: white;
-	background-color: #5EA2C4;
+	background-color: #5ea2c4;
 	font-style: 30px;
 	border-radius: 50%;
 	text-decoration: none;
@@ -77,4 +89,13 @@ h1{
 	font-size: 30px;
 	float: right;
 	margin-right: 1%;
+	transition: transform 0.3s;
+}
+
+.calendar_button:hover {
+	transform: scale(1.2);
+}
+
+table {
+	border-collapse: collapse;
 }

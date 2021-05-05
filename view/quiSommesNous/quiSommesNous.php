@@ -8,15 +8,15 @@ require_once '../headerFooter/header.php';?>
 		<div class="text">
 			<h1 class="titre">Qui Sommes-nous ?</h1>
 			<p class="txt">
-				<br />Sens'air est une entreprise de service créé en 2020 spécialisée dans la réalisation de tests psychotechniques.
+				<br />Sens'air est une entreprise de service créée en 2020 spécialisée dans la réalisation de tests psychotechniques.
 				Avec 60 salariés, sens'air met tout en œuvre pour garantir un suivi complet des conditions physiques des unités.
 				De plus, nos équipes travaillent afin de garantir la gestion, le stockage, et la protection des données sur notre plateforme web.
 			</p>
 		</div>
-		<img class="img" src="../images/divers/SAV.jpg" />
+		<img class="img" src="../images/divers/team target.jpeg" />
 	</div>
 	<div class="section section2">
-		<img class="img" src="../images/divers/SAV.jpg" />
+		<img class="img" src="../images/divers/Satisfaction.jpg" />
 		<div class="text">
 			<p class="txt">
 				Votre satisfaction est notre priorité, si vous avez des suggestions n'hésitez pas à nous contacter à travers nos différents canaux.

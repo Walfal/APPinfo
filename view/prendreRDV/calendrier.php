@@ -1,7 +1,7 @@
 <?php $title = 'Calendrier';
 require_once '../headerFooter/header.php';
 
-if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] != 0):
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
 endif;
 ?><link rel="stylesheet" href="calendrier.css">
@@ -16,7 +16,7 @@ require_once '../../model/BDD/connexionBDD.php';
 $events = new Events();
 $month = new  Month($_GET['month'] ?? null, $_GET['year'] ?? null); // ?? : prend la première valeur si elle est définie sinon elle prend la valeur null
 $debut = $month -> getStartingDay();
-$debut = $debut -> format('N') === '1' ? $debut : $month->getStartingDay()->modify('last monday');
+$debut = $debut -> format('N') === '1' ? $debut : $month -> getStartingDay() -> modify('last monday');
 $weeks = $month -> getWeeks();
 $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
 $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
@@ -49,7 +49,7 @@ $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
 					$client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
 					?>
 				<div class="calendar_event">
-					<?= (new DateTime ($event['debut']))->format('H:i') ?> - <a href="event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
+					<?= (new DateTime ($event['debut'])) -> format('H:i') ?> - <a href="/view/prendreRDV/event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
 				</div>
 				<?php endforeach ?>
 			</td>
@@ -59,7 +59,10 @@ $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
 	</table>
 	<br>
 
+
+
+
 	<a href="ajouterRDV.php" class = "calendar_button">+</a>
 
-<br><br>
+<br><br><br><br>
 <?php require '../headerFooter/footer.php' ?>
