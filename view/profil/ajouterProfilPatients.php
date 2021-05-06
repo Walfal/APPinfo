@@ -8,7 +8,7 @@ endif;
 
 require '../../model/BDD/connexionBDD.php';
 
-$matricule = $nom = $prenom = $sexe = $num_ss = $adresseRue = $adresseVille = $codePostal= $telephone = $mail = $poids = $taille = $dateDeNaissance = $motDePasse = $role = "";
+$matricule = $nom = $prenom = $sexe = $num_ss = $adresseRue = $adresseVille = $codePostal= $telephone = $mail = $poids = $taille = $dateDeNaissance = $password = $role = "";
 
 if(!empty($_POST)) {
     $matricule = checkInput($_POST['matricule']);
@@ -24,24 +24,16 @@ if(!empty($_POST)) {
     $poids = checkInput($_POST['poids']);
     $taille = checkInput($_POST['taille']);
     $dateDeNaissance = checkInput($_POST['dateDeNaissance']);
-    $motDePasse = checkInput($_POST['motDePasse']);
+    $password = checkInput($_POST['password']);
     $role = checkInput($_POST['role']);
     $photo = 0;
     $medecin = (checkInput($_POST['medecin']) != 0) ? checkInput($_POST['medecin']) : 0;
 
-    $statement = $BDD -> prepare("INSERT INTO Personne (matricule, nom, prenom, sexe, mail, `numero de securite social`, adresse, ville, `code postal`, telephone, poids, taille, `date de naissance`, `mot de passe`,role, photo, medecin) values (?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-    $statement -> execute(array($matricule, $nom, $prenom, $sexe, $mail, $num_ss, $adresseRue, $adresseVille, $codePostal, $telephone, $poids, $taille, $dateDeNaissance, $motDePasse, $role, $photo, $medecin));
+    $statement = $BDD -> prepare("INSERT INTO Personne (matricule, nom, prenom, sexe, mail, `numero de securite social`, adresse, ville, `code postal`, telephone, poids, taille, `date de naissance`, password, role, photo, medecin) values (?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    $statement -> execute(array($matricule, $nom, $prenom, $sexe, $mail, $num_ss, $adresseRue, $adresseVille, $codePostal, $telephone, $poids, $taille, $dateDeNaissance, $password, $role, $photo, $medecin));
     header("location: ../../view/profil/profilPatients.php");
 
-}
-
-function checkInput($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-?>
+}?>
 
 <link href="ajouterProfilPatients.css" rel="stylesheet" />
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
@@ -115,8 +107,8 @@ function checkInput($data){
             <input type="date" id=dateDeNaissance name="dateDeNaissance" value="<?php echo $dateDeNaissance; ?>" required>
         </div>
         <div class="form-group">
-            <label for="motDePasse">Mot de passe* :</label>
-            <input type="password" id=motdepasse name="motDePasse" value="<?php echo $motDePasse; ?>" required>
+            <label for="password">Mot de passe* :</label>
+            <input type="password" id=password name="password" value="<?php echo $password; ?>" required>
         </div>
         <div class="form-group">
             <label for="role">Rôle* :</label>

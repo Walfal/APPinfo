@@ -16,15 +16,7 @@ if(!empty($_POST)){
     $statement = $BDD -> prepare("DELETE FROM Personne WHERE matricule = ?");
     $statement -> execute(array($id));
     header("location: ../../view/profil/profilPatients.php");
-}
-
-function checkInput($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-?>
+}?>
 <link href="supprimerProfilPatients.css" rel="stylesheet" />
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">

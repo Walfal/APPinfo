@@ -64,21 +64,29 @@ label {
 .separation {
 	text-align: center;
 	color: #5ea2c4;
-	margin-top: 7%;
 	margin-bottom: 7%;
 }
 
-.validate {
-	text-align: center;
-	margin-top: 5%;
-	margin-bottom: 5%;
+.actions {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.styleValidate {
-	background-color: #5ea2c4;
-	border-radius: 5px;
-	padding: 10px;
+.modify button {
+	padding: 9px;
+	border-radius: 7px;
 	border: none;
-	border-color: #5ea2c4;
-	font-weight: bold;
+	text-transform: uppercase;
 	color: white;
+	background-color: rgb(224, 153, 46);
+}
+
+.retour a {
+	margin-left: 18%;
+	padding: 10px;
+	text-align: center;
+	border-radius: 7px;
+	background: #5ea2c4;
+	color: white;
+	text-transform: uppercase;
 }

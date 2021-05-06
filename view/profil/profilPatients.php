@@ -86,7 +86,7 @@ endif;
                                 echo '<td data-label="Actions :" width=300>';
                                 echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $personne['matricule'] . '" >Voir</a>';
                                 if($_SESSION['matricule'] < 20):
-                                echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $personne['matricule'] . '" >Modifier</a>';
+                                echo '<a href="../../view/profil/modifProfil.php?id='  . $personne['matricule'] . '" >Modifier</a>';
                                 echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $personne['matricule'] . '" >Supprimer</a>';
                                 endif;
                                 echo '</td>';
@@ -112,7 +112,7 @@ endif;
                             echo '<td data-label="Actions :" width=300>';
                             echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $personne['matricule'] . '" >Voir</a>';
                             if($_SESSION['matricule'] < 20):
-                            echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $personne['matricule'] . '" >Modifier</a>';
+                            echo '<a href="../../view/profil/modifProfil.php?id='  . $personne['matricule'] . '" >Modifier</a>';
                             echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $personne['matricule'] . '" >Supprimer</a>';
                             endif;
                             echo '</td>';

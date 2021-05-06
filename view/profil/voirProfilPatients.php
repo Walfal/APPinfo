@@ -13,15 +13,6 @@ if(!empty($_GET['id'])){
 }
 
 $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
-
-//pour vérifier donnée qui vient de l'extérieur
-function checkInput($data){
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
-}
-
 ?>
 <link href="voirProfilPatients.css" rel="stylesheet" />
 
@@ -99,7 +90,7 @@ function checkInput($data){
 			<label> _______________________________________________________________________________________________________________ </label>
 		</div>	
 		<div class = "bouttonCentrageModif">
-			<input class="styleValidate" type="button" value="Modifier mon profil">
+			<a class="styleValidate" href="modifProfil.php?id=<?= $_GET['id'] ?>">Modifier mon profil</a>
 		</div>		
 	</div>
 </div>	

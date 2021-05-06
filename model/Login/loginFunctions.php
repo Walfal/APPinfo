@@ -7,14 +7,14 @@
 function verifierMotDePasse($mail, $password, $result){
     if(sizeof($result) > 0){
         //cas où le mot de passe n'est pas crypté   
-        if($password === $result["mot de passe"]){
+        if($password === $result["password"]){
             $_SESSION['mail'] = $result["mail"];
             $_SESSION['matricule'] = $result["matricule"];
             $erreur = null;
             return $result["matricule"];//recuperation du matricule
         }
         //cas ou le message est crypté
-        /*if(password_verify($password,$result["mot de passe"])){
+        /*if(password_verify($password,$result["password"])){
         
             //debut de session
             session_start();

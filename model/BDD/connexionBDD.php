@@ -95,3 +95,11 @@ function insert($BDD, $sql, $data = array()){
 	$req = $BDD -> prepare($sql);
 	$req -> execute($data);
 }
+
+//pour vérifier donnée qui vient de l'extérieur
+function checkInput($data){
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
