@@ -1,14 +1,3 @@
-.hautPage {
-	display: flex;
-	align-items: center;
-	background-color: #5ea2c4;
-	margin-top: 50px;
-	margin-top: 50px;
-	padding-top: 2%;
-	padding-bottom: 2%;
-	width: 100%;
-}
-
 .titrePage {
 	padding-top: 2%;
 	padding-left: 10%;
@@ -18,68 +7,57 @@
 	margin-left: 0%;
 	color: white;
 }
-
 .imgCalendrier {
 	margin-left: 2%;
 	height: 90px;
 }
 
+.hautPage {
+	display: flex;
+	align-items: center;
+	background-color: #5ea2c4;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	width: 100%;
+}
+
 .recherche {
-	margin-top: 5%;
+	position: absolute;
+	top: 31%;
+	left: 7.5%;
 	text-align: center;
-	width: 75%;
+	border-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	width: 85%;
 	background-color: #d3d3d3;
-	padding: 2%;
 }
 
 input {
-	padding: 2%;
-	margin: 1% 1.5%;
-	text-align: center;
+	padding: 1.5%;
+	margin-bottom: 2%;
+	margin-right: 3%;
+}
+
+.test {
+	margin: 1%;
 }
 
 button {
 	background: #3a738f;
 	color: white;
 	border-style: none;
-	margin-top: 2%;
 	height: 30px;
-	width: 150px;
+	width: 10%;
 	border-radius: 20px;
 	font-size: 15px;
+	margin-bottom: 2%;
+	margin-right: 3%;
 }
 
 .indication {
-	padding-bottom: 4%;
+	padding-top: 4%;
+	padding-bottom: 2%;
 	color: white;
 	font-size: 30px;
-}
-
-.aRemplir {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.aRemplir .info,
-.aRemplir .horaire {
-	width: 100%;
-}
-
-html {
-	position: relative;
-	min-height: 100%;
-}
-
-body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 0 0 250px;
-}
-
-footer {
-	position: absolute;
-	bottom: 0;
 }
