@@ -18,15 +18,10 @@ if (!isset($_GET['idRDV'])){
 }
 
 $event = $events -> find($BDD, $_GET['idRDV']);
-
-
 $client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
 
-
 //Recuppération des tests à faire
-$heure = $event['debut'];
-$memeHeure = recuperationDesTests($BDD, "$heure");
-
+$typeTests = query($BDD, "SELECT nom FROM Capteur NATURAL JOIN Test WHERE idRDV = ?", array($event['idRDV']));
 ?>
 
 <br><br>
@@ -65,24 +60,10 @@ $memeHeure = recuperationDesTests($BDD, "$heure");
 		<td>Test(s) à faire :</td>
 		<td>
 		<?php 
-			foreach($memeHeure as $memeTest){
-		
-				if ($memeTest['test'] == 0){
-					echo "Fréquence cardiaque  <br>";}
-				if ($memeTest['test'] == 1){
-					echo "Temps de réaction à une lumière <br>";
-				}
-				if ($memeTest['test'] == 2){
-					echo "Temps de réaction à un son  <br>";
-				}
-				if ($memeTest['test'] == 3){
-					echo "Température corporelle  <br>";
-				}
-				if ($memeTest['test'] == 4){
-					echo "Reconnaissance de tonalitée  <br>";
-				}
+			foreach($typeTests as $typeTest){
+				echo $typeTest['nom'] . '<br>';
 			}
-				?></td>
+		?></td>
 	</tr>
 </table>
 

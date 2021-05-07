@@ -1,4 +1,4 @@
-<?php $title = Calendrier;
+<?php $title = 'Calendrier';
 require_once '../headerFooter/header.php';
 
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):

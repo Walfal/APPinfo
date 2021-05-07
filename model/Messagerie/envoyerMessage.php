@@ -26,7 +26,7 @@ if(!empty($_POST)){
 		$req -> execute(array($titre));
 
 
-		$req = $BDD->prepare("SELECT idConversation FROM Conversation ORDER BY idConversation DESC");
+		$req = $BDD -> prepare("SELECT idConversation FROM Conversation ORDER BY idConversation DESC");
 		$req -> execute();
 		$idConversation = $req -> fetch();
 		$idConversation = $idConversation['idConversation'];
