@@ -44,12 +44,16 @@ $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
 				<?php if( $i === 0) : ?> 	<!-- pour afficher les jours en haut -->
 					<div class="calendar_weekday"><?= $day; ?></div>
 				<?php endif ?>
-				<div class="calendar_day"><?= $date->format('d'); ?></div>
-				<?php foreach($eventsForDay as $event) :
+				<!--mettre en valeur le jour  -->
+				<div class="calendar_day <?php 
+				if($date->format('Y-m-d') === date('Y-m-d')){echo 'active';}
+				?> " ><?= $date->format('d'); ?></div>
+				<?php foreach($eventsForDay as $key=>$event) :
 					$client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
 					?>
 				<div class="calendar_event">
-					<?= (new DateTime ($event['debut'])) -> format('H:i') ?> - <a href="/view/prendreRDV/event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
+					<?= (new DateTime ($event['debut'])) -> format('H:i') ?> - <a class = "essai" href="event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
+
 				</div>
 				<?php endforeach ?>
 			</td>

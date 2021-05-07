@@ -88,3 +88,10 @@ input {
 .button:hover {
 	border: solid #565757;
 }
+
+@media all and (max-device-width: 480px){
+    .home {
+        height: 800px;
+		margin-bottom: 0%;
+    }
+}

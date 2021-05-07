@@ -71,6 +71,13 @@ label{
         display: flex;
     }
 }
+
+@media all and (max-device-width: 480px){
+    .contenu {
+        width: 400px;
+        display: flex;
+    }
+}
 .actions{
     display: flex;
     align-items: center;

@@ -144,3 +144,24 @@ h1 {
 		padding-bottom: 30%;
 	}
 }
+
+@media all and (max-device-width:480px){
+	.nosservices{
+		width: 400px;
+	}
+
+	.ligneune{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 500px;
+	}
+
+	.sonlumiere{
+		display: flex;
+		flex-direction: column;
+		height: 450px;
+		justify-content: space-around;
+		padding-bottom: 30%;
+	}
+}

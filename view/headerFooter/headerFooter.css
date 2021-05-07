@@ -210,6 +210,96 @@ nav > ul li:hover .sous {
 	}
 }
 
+@media all and (max-device-width:480px){
+	body {
+		margin: 0 0 0;
+	}
+	nav .logo {
+		float: none;
+		width: none;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 50px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(0, 0, 0, 0.8);
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all 0.5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(8px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-8px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+
+	
+	.sous {
+		display: none;
+		background: none;
+		
+	}
+	
+	nav  ul li:hover .sous {
+		display: list-item;
+		z-index:99999;
+		position: absolute;
+		transform: translate(140px,-105px);
+		height: 120px;
+		width: 90px;
+		text-align: center;
+	}
+	
+	nav  ul li:hover .sous li{ /*mettre sur le côté*/
+		float:none;
+		background-color: #3a738f;
+		width: 100px;
+		text-align: center; /*centrer le texte*/
+		color: white;
+		height: 40px;
+	}
+	
+	.sous a {
+		padding-top: 0;
+		margin-top: 0;
+		margin-left: auto;
+		margin-right: auto;
+		border-bottom: none;
+		color: white;
+		font-size: 10px;
+		transform: translate(0,-7px);  
+	}
+
+	.sous a:visited{
+		color: white;
+	}
+}
+
+
+
 /* --------------------------FOOTER -------------------------------*/
 footer {
 	background-color: #3a738f;
@@ -316,3 +406,14 @@ footer {
 	position: absolute;
 	bottom: 0;
 }
+
+/* @media all and (max-device-width:480px){
+	body {
+		margin: 0;
+	}
+
+	html {
+		position: relative;
+		min-height: 100px;
+	}
+} */

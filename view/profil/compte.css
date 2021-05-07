@@ -105,4 +105,34 @@ h1 {
 	.photo{
 		margin-top: 20px;
 	}
+
+	
+}
+
+@media all and (max-device-width: 480px) {
+	.contenu {
+		height: 800px;
+	}
+
+	.contenu1{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 300px;
+	}
+
+	.photo{
+		margin-top: 20px;
+	}
+
+	.contenu2 {
+		width: 100px;
+		margin-top: 30px;
+	}
+
+	.case{
+		width: 500px;
+		margin-top: 30px;
+	}
 }
