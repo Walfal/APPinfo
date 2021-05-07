@@ -51,6 +51,15 @@ function recuperationDesDonnees($BDD, $table, $where, $where2){
 	return $req -> fetchAll();
 }
 
+function recuperationDesTests($BDD, $where2){
+	$req = $BDD -> prepare("SELECT test FROM prisederdv WHERE debut = '$where2'");
+	var_dump($req);
+	$req -> execute();
+	return $req -> fetchAll();
+}
+
+
+
 function recuperationMessages($BDD, $idConversation){
 	$req = $BDD->prepare("SELECT * FROM Message WHERE idConversation = $idConversation ORDER BY date");
 	$req -> execute();

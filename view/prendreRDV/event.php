@@ -7,7 +7,6 @@ require_once '../../model/RDV/bootstrap.php';
 require_once '../../model/BDD/connexionBDD.php';
 
 ?>
-
 <link rel="stylesheet" href="infoRDV.css">
 
 <?php 
@@ -17,8 +16,17 @@ if (!isset($_GET['idRDV'])){
 }
 
 $event = $events -> find($BDD, $_GET['idRDV']);
+
+
 $client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
+
+
+//Recuppération des tests à faire
+$heure = $event['debut'];
+$memeHeure = recuperationDesTests($BDD, "$heure");
+
 ?>
+
 <br><br>
 <div class="hautdePage">
 <p><b>Information sur le RDV </b></p>
@@ -49,8 +57,27 @@ $client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule
 		<td><?= (new DateTime($event['fin'])) -> format('H:i'); ?></td>
 	</tr>
 	<tr>
-		<td>Test à faire</td>
-		<td><?= $event['type'] ?></td>
+		<td>Test(s) à faire :</td>
+		<td>
+		<?php 
+			foreach($memeHeure as $memeTest){
+		
+				if ($memeTest['test'] == 0){
+					echo "Fréquence cardiaque  <br>";}
+				if ($memeTest['test'] == 1){
+					echo "Temps de réaction à une lumière <br>";
+				}
+				if ($memeTest['test'] == 2){
+					echo "Temps de réaction à un son  <br>";
+				}
+				if ($memeTest['test'] == 3){
+					echo "Température corporelle  <br>";
+				}
+				if ($memeTest['test'] == 4){
+					echo "Reconnaissance de tonalitée  <br>";
+				}
+			}
+				?></td>
 	</tr>
 </table>
 

@@ -49,6 +49,7 @@ $events = $events -> getEventsBetweenByDay($BDD, $debut, $fin );
 					$client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
 					?>
 				<div class="calendar_event">
+					<?php //$table[]?>
 					<?= (new DateTime ($event['debut']))->format('H:i') ?> - <a href="/view/prendreRDV/event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
 				</div>
 				<?php endforeach ?>
