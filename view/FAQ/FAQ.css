@@ -123,7 +123,8 @@ li:first-child .faq-category {
 }
 
 .faq-title {
-	margin: 1.25rem 0;
+	margin-top: 4rem;
+	margin-bottom: 10px;
 }
 
 .faq-title h2 {
