@@ -188,3 +188,33 @@ li:first-child .faq-category {
 	padding: 10px;
 	border-radius: 4px;
 }
+
+ #supprimer{
+	background-color: red;
+	padding: 10px;
+	border-radius: 4px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+#modifier{
+	background-color: rgb(224, 153, 46);
+	padding: 10px;
+	border-radius: 4px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.boutonFAQ{
+	display: flex;
+	justify-content: space-between;
+	width: 25%;
+}
