@@ -41,15 +41,19 @@
 					<div class="text-block">
 						<p>'.$reponse.'</p>
 					</div>
-				</div>'?><?php if($_SESSION['matricule'] == 0): ?>
-                <?php 
-                supprimerQuestion($BDD,$id);
-                echo'<div class="boutonFAQ"><a href="../FAQ/modifierFAQ.php?id='. $id. '"><button type="submit" id="modifier" name="modifier'.$id.'">Modifier</button></a>
-                <form method="post">
-                    <button type="submit" id="supprimer" name="supprimer'.$id.'">Supprimer</button>
-                </form></div>';?>
-                <?php endif ?>
-                <?php echo '</li>';
+				</div>'; 
+                if(isset($_SESSION['matricule'])){
+                    if($_SESSION['matricule'] == 0){
+                    supprimerQuestion($BDD,$id);
+                    echo'<div class="boutonFAQ"><a href="../FAQ/modifierFAQ.php?id='. $id. '"><button type="submit" id="modifier" name="modifier'.$id.'">Modifier</button></a>
+                    <form method="post">
+                        <button type="submit" id="supprimer" name="supprimer'.$id.'">Supprimer</button>
+                    </form></div>';
+                    } 
+                }
+                 
+
+               echo '</li>';
                
             }
 
@@ -73,7 +77,7 @@
         if(isset($_POST["supprimer".$id.""])){
             $req = $BDD->prepare("DELETE FROM faq WHERE idFAQ = $id ");
             $req -> execute();
-            header('Location: ../FAQ/FAQ.php');
+            header('Refresh: ../FAQ/FAQ.php');
         }
         
     }
