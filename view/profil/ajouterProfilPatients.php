@@ -24,7 +24,7 @@ if(!empty($_POST)) {
     $poids = checkInput($_POST['poids']);
     $taille = checkInput($_POST['taille']);
     $dateDeNaissance = checkInput($_POST['dateDeNaissance']);
-    $password = checkInput($_POST['password']);
+    $password = password_hash(checkInput($_POST['password']), PASSWORD_DEFAULT);
     $role = checkInput($_POST['role']);
     $photo = 0;
     $medecin = (checkInput($_POST['medecin']) != 0) ? checkInput($_POST['medecin']) : 0;
