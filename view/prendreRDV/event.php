@@ -5,7 +5,7 @@ require '../headerFooter/header.php';
 require_once '../../model/RDV/events.php';
 require_once '../../model/BDD/connexionBDD.php';
 
-if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
+if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
 ?>

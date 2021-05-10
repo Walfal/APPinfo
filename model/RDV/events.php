@@ -25,7 +25,7 @@ class Events {
 	}
 
 	public function getEventsBetweenPers($BDD, \DateTime $debut, \DateTime $fin, $matricule): array {
-		$sql = "SELECT * FROM PriseDeRDV WHERE matricule = $matricule AND debut BETWEEN '{$debut -> format('Y-m-d 00:00:00')}' AND '{$fin -> format('Y-m-d 23:59:59')}'  GROUP BY debut ";
+		$sql = "SELECT * FROM PriseRDV WHERE matricule = $matricule AND debut BETWEEN '{$debut -> format('Y-m-d 00:00:00')}' AND '{$fin -> format('Y-m-d 23:59:59')}'";
 		$req = query($BDD, $sql);
 		return $req -> fetchAll();
 	}

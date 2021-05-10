@@ -1,7 +1,7 @@
 <?php $title = 'Calendrier';
 require_once '../headerFooter/header.php';
 
-if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
+if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
 ?><link rel="stylesheet" href="calendrier.css">
@@ -19,12 +19,12 @@ $debut = $month -> getStartingDay();
 $debut = $debut -> format('N') === '1' ? $debut : $month -> getStartingDay() -> modify('last monday');
 $weeks = $month -> getWeeks();
 $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
-	//if($_SESSION['matricule'] < 20){
+	if($_SESSION['matricule'] < 20){
 	$events = $events -> getEventsBetweenByDay($BDD, $debut, $fin);
-	//}
-	//else {
-	//	$events = $events -> getEventsBetweenByDayPers($BDD, $debut, $fin, $_SESSION['matricule']);
-	//}
+	}
+	else {
+		$events = $events -> getEventsBetweenByDayPers($BDD, $debut, $fin, $_SESSION['matricule']);
+	}
 ?>
 
 <div class="titre">
@@ -54,11 +54,7 @@ $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
 					$client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
 					?>
 				<div class="calendar_event">
-<<<<<<< HEAD
 					<?= (new DateTime ($event['debut'])) -> format('H:i') ?> - <a href="/view/prendreRDV/event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
-=======
-					<?= (new DateTime ($event['debut']))->format('H:i') ?> - <a href="/view/prendreRDV/event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
->>>>>>> Mathieu
 				</div>
 				<?php endforeach ?>
 			</td>

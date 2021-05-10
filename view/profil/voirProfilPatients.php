@@ -2,7 +2,7 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
-if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 99):
+if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
 
