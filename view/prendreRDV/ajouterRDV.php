@@ -12,7 +12,7 @@ if(!empty($_POST['fin'])){
 	foreach($_POST['test'] as $test){
 		$debuts =  DateTime::createFromFormat('Y-m-d H:i', $date . ' ' . $debut)->format('Y-m-d H:i:s');
 		$fins =  DateTime::createFromFormat('Y-m-d H:i', $date . ' ' . $fin)->format('Y-m-d H:i:s');
-		insert($BDD, "INSERT INTO PriseDeRDV (matricule, debut, fin, test) VALUES(?,?,?,?)", array($matricule, $debuts, $fins, $test));
+		insert($BDD, "INSERT INTO PriseDeRDV (matricule, debut, fin, idTest) VALUES(?,?,?,?)", array($matricule, $debuts, $fins, $test));
 	}
 
 

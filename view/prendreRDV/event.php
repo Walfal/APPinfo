@@ -62,18 +62,18 @@ $memeHeure = recuperationDesTests($BDD, "$heure");
 		<?php 
 			foreach($memeHeure as $memeTest){
 		
-				if ($memeTest['test'] == 0){
+				if ($memeTest['idTest'] == 0){
 					echo "Fréquence cardiaque  <br>";}
-				if ($memeTest['test'] == 1){
+				if ($memeTest['idTest'] == 1){
 					echo "Temps de réaction à une lumière <br>";
 				}
-				if ($memeTest['test'] == 2){
+				if ($memeTest['idTest'] == 2){
 					echo "Temps de réaction à un son  <br>";
 				}
-				if ($memeTest['test'] == 3){
+				if ($memeTest['idTest'] == 3){
 					echo "Température corporelle  <br>";
 				}
-				if ($memeTest['test'] == 4){
+				if ($memeTest['idTest'] == 4){
 					echo "Reconnaissance de tonalitée  <br>";
 				}
 			}

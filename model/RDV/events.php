@@ -24,6 +24,28 @@ class Events {
 		return $days;
 	}
 
+	public function getEventsBetweenPers($BDD, \DateTime $debut, \DateTime $fin, $matricule): array {
+		$sql = "SELECT * FROM PriseDeRDV WHERE matricule = $matricule AND debut BETWEEN '{$debut -> format('Y-m-d 00:00:00')}' AND '{$fin -> format('Y-m-d 23:59:59')}'  GROUP BY debut ";
+		$req = query($BDD, $sql);
+		return $req -> fetchAll();
+	}
+
+	public function getEventsBetweenByDayPers($BDD, \DateTime $debut, \DateTime $fin, $matricule): array {
+
+		$events = $this -> getEventsBetweenPers($BDD, $debut, $fin, $matricule);
+		$days= [];
+		foreach($events as $event){
+			$date = explode(' ', $event['debut'])[0];
+			if (!isset($days[$date])){
+				$days[$date] = [$event];
+			} else {
+				$days[$date][] = $event;
+			}
+		}
+		return $days;
+	}
+
+
 	//recup un événement
 	public function find($BDD, int $idRDV):array {
 		//require_once '../../model/BDD/connexionBDD.php';
@@ -32,3 +54,4 @@ class Events {
 		return $statement -> fetch();
 	}
 }
+

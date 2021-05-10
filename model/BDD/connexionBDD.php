@@ -52,8 +52,7 @@ function recuperationDesDonnees($BDD, $table, $where, $where2){
 }
 
 function recuperationDesTests($BDD, $where2){
-	$req = $BDD -> prepare("SELECT test FROM prisederdv WHERE debut = '$where2'");
-	var_dump($req);
+	$req = $BDD -> prepare("SELECT idTest FROM prisederdv WHERE debut = '$where2'");
 	$req -> execute();
 	return $req -> fetchAll();
 }

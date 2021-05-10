@@ -1,5 +1,4 @@
-<br><br>
-<?php $title = "Calendrier";
+<?php $title = Calendrier;
 require_once '../headerFooter/header.php';
 ?>
 
@@ -20,12 +19,7 @@ $debut = $month -> getStartingDay();
 $debut = $debut -> format('N') === '1' ? $debut : $month->getStartingDay()->modify('last monday');
 $weeks = $month -> getWeeks();
 $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
-	//if($_SESSION['matricule'] < 20){
-	$events = $events -> getEventsBetweenByDay($BDD, $debut, $fin);
-	//}
-	//else {
-	//	$events = $events -> getEventsBetweenByDayPers($BDD, $debut, $fin, $_SESSION['matricule']);
-	//}
+$events = $events -> getEventsBetweenByDayPers($BDD, $debut, $fin, $_SESSION['matricule']);
 ?>
 
 <div class="titre">
@@ -64,11 +58,5 @@ $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
 	<?php endfor; ?>
 	</table>
 	<br>
-
-
-
-
-	<a href="ajouterRDV.php" class = "calendar_button">+</a>
-
-<br><br><br><br>
+	
 <?php require '../headerFooter/footer.php' ?>
