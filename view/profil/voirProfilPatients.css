@@ -1,0 +1,102 @@
+.title {
+	color: white;
+	background-color: #5ea2c4;
+	margin-bottom: -3%;
+	padding: 30px;
+	padding-top: 50px;
+	font-size: 25%;
+	display: flex-inline;
+}
+
+.imgProfil {
+	height: 70px;
+	width: 70px;
+	float: left;
+	margin-top: -13px;
+}
+
+.linedisplay {
+	display: flex;
+	font-size: 150%;
+	list-style: none;
+	padding-bottom: 12%;
+	color: #5ea2c4;
+	font-weight: bold;
+}
+
+.linedisplay p {
+	color: black;
+	font-weight: normal;
+}
+.principal {
+	margin-left: 30%;
+	margin-right: 20%;
+}
+.right {
+	float: right;
+}
+.left {
+	float: left;
+}
+
+.espacement {
+	padding-left: 50px;
+}
+
+.champ {
+	width: 300px;
+	height: 70%;
+	border-radius: 20px;
+	border-color: #5ea2c4;
+	padding-left: 7px;
+}
+.separation {
+	color: #5ea2c4;
+	margin-top: 15%;
+	margin-bottom: 8%;
+	margin-left: -6.6%;
+}
+.validate {
+	text-align: center;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+.styleValidate,
+.buttonResultat {
+	font-weight: bold;
+	font-size: large;
+	padding: 8px;
+	margin-left: 20px;
+	border-radius: 4px;
+	background-color: #3a738f;
+	color: white;
+}
+.bouttonCentrageModif {
+	padding-bottom: 10%;
+	padding-top: -20%;
+	margin-left: 27.5%;
+}
+.textSize {
+	padding-top: 1.5%;
+	font-size: 1000%;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+	color: black;
+}
+.textSizeNomCentre {
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+	font-size: 150%;
+	padding: 3%;
+	margin-top: 3%;
+}
+.dernierTest {
+	display: flex;
+	text-align: center;
+	list-style: none;
+	padding: 5%;
+}
+
+.buttonResultat {
+	margin-top: 40%;
+}

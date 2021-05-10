@@ -1,0 +1,78 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.hautPage {
+	display: flex;
+	background-color: #5ea2c4;
+	align-items: center;
+	margin-top: 50px;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.titrePage {
+	font-size: 50px;
+	margin-left: 5%;
+	color: white;
+}
+
+.imIcone {
+	margin-left: 2%;
+	height: 90px;
+	overflow: hidden;
+	opacity: 0.3;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 5%;
+}
+
+.blocCapteur {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 2%;
+}
+
+.capteur {
+	border: solid 1px black;
+	border-radius: 15px;
+	height: 40%;
+}
+
+.icon {
+	height: 200px;
+	width: 200px;
+	border-radius: 15px;
+	border: solid 1px black;
+	padding: 10px;
+	margin: 5px;
+}
+
+.nomCapteur {
+	font-size: 23px;
+	color: #3a738f;
+	padding: 10% 15% 0 5%;
+}
+
+.miseJour {
+	padding-left: 6%;
+	padding-bottom: 8%;
+}
+
+.modifier,
+.supprimer {
+	background-color: #3a738f;
+	border-color: transparent;
+	color: white;
+	font-size: 15px;
+	border-radius: 20px;
+	padding: 0.3% 3%;
+	margin: 0 7% 10% 7%;
+}

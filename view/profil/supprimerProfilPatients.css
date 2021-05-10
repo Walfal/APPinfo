@@ -1,0 +1,69 @@
+/* --------------------------BANNIERE -------------------------------*/
+.banniere{
+    background-color: #5ea2c4;
+    margin-top: 50px;
+    width: 100%;
+    height: 150px;
+    top: 50px;
+    display:flex;
+    justify-content: center;
+    z-index: 2;
+    
+}
+.content{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.banniere h2{
+    color: white;
+    font-size: 40px;
+    
+}
+
+.image{
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.contenu{
+    width: 600px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenu form{
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0,0,0,.3);
+    padding: 20px;
+    margin-bottom: 72px;
+}
+
+
+.actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bouton{
+    color: white;
+    background: tomato;
+    text-transform: uppercase;
+    border: none;
+    padding: 9px;
+    border-radius: 7px;
+}
+
+.retour a{
+    margin-left: 18%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+    background: #5ea2c4;
+    color: white;
+    text-transform: uppercase;
+}

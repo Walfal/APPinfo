@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -84,32 +85,54 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</body>
-	<!-- ----------------------------------------------------------- FOOTER ---------------------------------------------------------------------------------- -->
+=======
+<?php 
+$title='Qui sommes-nous ?';
+require_once '../headerFooter/header.php';?>
+<link href="quiSommesNous.css" rel="stylesheet" />
 
-	<footer>
-		<div class="contenu-footer">
-			<div class="bloc logo">
-				<a href="../"><img class="logo" src="../images/logo/logo.png" alt="" /></a>
+<div class="mainPage">
+	<div class="section section1">
+		<div class="text">
+			<h1 class="titre">Qui Sommes-nous ?</h1>
+			<p class="txt">
+				<br />Sens'air est une entreprise de service créée en 2020 spécialisée dans la réalisation de tests psychotechniques.
+				Avec 60 salariés, sens'air met tout en œuvre pour garantir un suivi complet des conditions physiques des unités.
+				De plus, nos équipes travaillent afin de garantir la gestion, le stockage, et la protection des données sur notre plateforme web.
+			</p>
+>>>>>>> Raph
+		</div>
+		<img class="img" src="../images/divers/team target.jpeg" />
+	</div>
+	<div class="section section2">
+		<img class="img" src="../images/divers/Satisfaction.jpg" />
+		<div class="text">
+			<p class="txt">
+				Votre satisfaction est notre priorité, si vous avez des suggestions n'hésitez pas à nous contacter à travers nos différents canaux.
+				Nous sommes ouvert à vos suggestions dans le but de vous proposer un service adapté.
+			</p>
+		</div>
+	</div>
+	<!-------------------------------------------------------QUALITÉS-------------------------------------------------------------------------------->
+
+	<div class="section section3">
+		<h3 class="txt3">Nos qualités:</h3>
+		<div class="qualites">
+			<div class="qualite">
+				<img src="../images/icons/face.svg" style="width: 50px" />
+				<p>
+					<br />Le professionnalisme est une des valeurs clé de sens'air,
+					nous gérons vos données avec rigueur afin d'assurer leurs protections.<br />
+				</p>
 			</div>
-			<div class="bloc coordonnees">
-				<div class="coor">
-					<li>
-						<a href="mailto:info@sensair.com" class="mail">info@sensair.com</a>
-					</li>
-					<li>
-						<a href="tel:+33123488733" class="tel">+33 1 23 48 87 33</a>
-					</li>
-					<li>
-						<a
-							href="https://www.google.fr/maps/place/10+Rue+de+Vanves,+92170+Issy-les-Moulineaux/@48.824529,2.2776649,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6707980bd3947:0xd54fb6c5e1933333!8m2!3d48.824529!4d2.2798536"
-							class="adresse"
-							>10 rue de Vanves, 92130 Issy-les-Moulineaux</a
-						>
-					</li>
-				</div>
+			<div class="qualite">
+				<img src="../images/icons/face.svg" style="width: 50px" />
+				<p>
+					<br />La ponctualité est très importante,
+					nos équipes s'assurent de la mise en ligne des tests dans des délais très courts.<br />
+				</p>
 			</div>
+<<<<<<< HEAD
 
 			<div class="bloc reseaux">
 				<div class="res">
@@ -127,8 +150,16 @@
 						<li><a href="#">FAQ</a></li>
 					</ul>
 				</div>
+=======
+			<div class="qualite">
+				<img src="../images/icons/face.svg" style="width: 50px" />
+				<p>
+					<br />Nos équipes restent à votre écoute afin de pouvoir
+					 détecter et <palli></palli>er le moindre dysfonctionnement le plus vite possible.<br />
+				</p>
+>>>>>>> Raph
 			</div>
 		</div>
-		<p id="coyright">© 2021 Sens'air</p>
-	</footer>
-</html>
+	</div>
+</div>
+<?php require_once '../headerFooter/footer.php'; ?> 

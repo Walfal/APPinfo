@@ -1,0 +1,63 @@
+.titrePage {
+	padding-top: 2%;
+	padding-left: 10%;
+	margin-top: 0%;
+	border-top: 0%;
+	font-size: 50px;
+	margin-left: 0%;
+	color: white;
+}
+.imgCalendrier {
+	margin-left: 2%;
+	height: 90px;
+}
+
+.hautPage {
+	display: flex;
+	align-items: center;
+	background-color: #5ea2c4;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	width: 100%;
+}
+
+.recherche {
+	position: absolute;
+	top: 31%;
+	left: 7.5%;
+	text-align: center;
+	border-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	width: 85%;
+	background-color: #d3d3d3;
+}
+
+input {
+	padding: 1.5%;
+	margin-bottom: 2%;
+	margin-right: 3%;
+}
+
+.Test {
+	margin: 1%;
+}
+
+button {
+	background: #3a738f;
+	color: white;
+	border-style: none;
+	height: 30px;
+	width: 10%;
+	border-radius: 20px;
+	font-size: 15px;
+	margin-bottom: 2%;
+	margin-right: 3%;
+}
+
+.indication {
+	padding-top: 4%;
+	padding-bottom: 2%;
+	color: white;
+	font-size: 30px;
+}

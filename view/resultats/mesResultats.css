@@ -1,0 +1,109 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	margin-top: 50px;
+}
+.title {
+	background: #5ea2c4;
+	display: flex;
+}
+.title h1 {
+	font-size: 50px;
+	color: white;
+	margin: 50px;
+}
+.result-img {
+	width: 100px;
+}
+.results {
+	margin-top: 5vh;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+}
+.result {
+	background: #5ea2c4;
+	color: white;
+	border-radius: 50px;
+	width: 40%;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	margin-bottom: 4vh;
+}
+.date {
+	display: flex;
+}
+.calendar {
+	width: 20px;
+}
+h2 {
+	font-size: large;
+	display: flex;
+	align-items: center;
+	padding: 3vh;
+}
+place {
+	margin: 0;
+	width: 100%;
+	border: 1px white solid;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	padding-bottom: 4vh;
+}
+centre {
+	display: flex;
+}
+.home {
+	width: 40px;
+}
+.getResults {
+	background: white;
+	border-radius: 50px;
+	border: none;
+	padding: 1vh;
+	padding-inline: 3vh;
+}
+.resultat {
+	border-collapse: collapse;
+	margin: 35px auto;
+	font-size: 0.9em;
+	min-width: 60%;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(41, 39, 39, 0.15);
+	text-align: center;
+}
+
+.resultat tr {
+	padding: 20px 15px;
+}
+
+.resultat thead tr {
+	background-color: #5ea2c4;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+}
+
+th,
+td {
+	padding: 20px 15px;
+}
+
+.resultat tbody tr {
+	border-bottom: 1px solid rgb(206, 199, 199);
+}
+
+.resultat tbody tr:nth-of-type(even) {
+	background-color: rgb(201, 195, 195);
+}
+
+.resultat tbody tr:last-of-type {
+	border-bottom: 2px solid #4f99be;
+}
