@@ -33,6 +33,8 @@ require_once '../headerFooter/header.php';?>
 	<?php if(isset($_SESSION['matricule'])){
 		if($_SESSION['matricule'] == 0){
 			echo '<p>Pour ajouter des questions et réponses <a href="gererFAQ.php">cliquez ici</a></p>';
+		}else{
+			echo '<p>Pour plus d\'informations, contactez-nous, <a href="../messagerie/contactezNous.php">cliquez ici</a></p>';
 		}
 	}else{
 		echo '<p>Pour plus d\'informations, contactez-nous, <a href="../messagerie/contactezNous.php">cliquez ici</a></p>';
