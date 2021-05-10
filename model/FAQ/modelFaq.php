@@ -6,9 +6,8 @@
     }
 
     function recuperationQuestionRep($BDD,$theme){
-        $req = $BDD->prepare("SELECT idFAQ, question, reponse FROM FAQ WHERE theme = '$theme'");
-        $req -> execute();
-        return $req->fetchAll();
+        $req = query($BDD, "SELECT idFAQ, question, reponse FROM FAQ WHERE theme = ?", array($theme));
+        return $req -> fetchAll();
     }
 
     function afficherTopic($BDD){
