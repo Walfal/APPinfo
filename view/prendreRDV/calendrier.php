@@ -31,9 +31,9 @@ $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
 	<h1> <?php echo $month -> toString() ?> </h1>
 	<div class = fleche>
 		<button class = fleche>
-		<a class ="flecheG" href="/view/prendreRDV/calendrier.php?month=<?= $month -> previousMonth() -> month; ?>&year=<?= $month -> previousMonth() -> year;?> "> &lt;</a></button>
+		<a class ="flecheG" href="calendrier.php?month=<?= $month -> previousMonth() -> month; ?>&year=<?= $month -> previousMonth() -> year;?> "> &lt;</a></button>
 		<button class = fleche>
-		<a class ="flecheD" href="/view/prendreRDV/calendrier.php?month=<?= $month -> nextMonth() -> month; ?>&year=<?= $month -> nextMonth() -> year;?> ">&gt;</a></button>
+		<a class ="flecheD" href="calendrier.php?month=<?= $month -> nextMonth() -> month; ?>&year=<?= $month -> nextMonth() -> year;?> ">&gt;</a></button>
 	</div>
 </div>
 <br>
@@ -49,12 +49,16 @@ $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
 				<?php if( $i === 0) : ?> 	<!-- pour afficher les jours en haut -->
 					<div class="calendar_weekday"><?= $day; ?></div>
 				<?php endif ?>
-				<div class="calendar_day"><?= $date->format('d'); ?></div>
-				<?php foreach($eventsForDay as $event) :
+				<!--mettre en valeur le jour  -->
+				<div class="calendar_day <?php 
+				if($date->format('Y-m-d') === date('Y-m-d')){echo 'active';}
+				?> " ><?= $date->format('d'); ?></div>
+				<?php foreach($eventsForDay as $key=>$event) :
 					$client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
 					?>
 				<div class="calendar_event">
-					<?= (new DateTime ($event['debut'])) -> format('H:i') ?> - <a href="/view/prendreRDV/event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
+					<?= (new DateTime ($event['debut'])) -> format('H:i') ?> - <a class = "essai" href="event.php?idRDV=<?=  $event['idRDV'];?>"><?= $client['prenom'] . ' ' . $client['nom'] ?> </a>
+
 				</div>
 				<?php endforeach ?>
 			</td>

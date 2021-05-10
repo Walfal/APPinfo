@@ -123,7 +123,8 @@ li:first-child .faq-category {
 }
 
 .faq-title {
-	margin: 1.25rem 0;
+	margin-top: 4rem;
+	margin-bottom: 10px;
 }
 
 .faq-title h2 {
@@ -173,6 +174,10 @@ li:first-child .faq-category {
 	margin-bottom: 0.5rem;
 }
 
+.is-visible{
+	display: none;
+}
+
 .contact p {
 	margin-top: 40px;
 	text-align: center;
@@ -187,4 +192,34 @@ li:first-child .faq-category {
 	background-color: #5ea2c4;
 	padding: 10px;
 	border-radius: 4px;
+}
+
+ #supprimer{
+	background-color: red;
+	padding: 10px;
+	border-radius: 4px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+#modifier{
+	background-color: rgb(224, 153, 46);
+	padding: 10px;
+	border-radius: 4px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.boutonFAQ{
+	display: flex;
+	justify-content: space-between;
+	width: 25%;
 }

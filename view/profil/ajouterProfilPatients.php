@@ -49,7 +49,7 @@ if(!empty($_POST)) {
 <!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
 
 <div class="contenu">
-    <form class="formulaire" action="../../view/profil/ajouterProfilPatients.php" role="form" method="post" enctype="multipart/form-data">
+    <form class="formulaire" action="ajouterProfilPatients.php" role="form" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="Matricule">Matricule* :</label>
             <input type="text"  id=matricule name="matricule" value="<?php echo $matricule; ?>" required>
@@ -124,7 +124,7 @@ if(!empty($_POST)) {
                 <button type="submit">+ Ajouter</button>
             </div>
             <div class="retour">
-                <a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
+                <a href="profilPatients.php" class="retour">Retour</a>
             </div>
         </div>
     </form>

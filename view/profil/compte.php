@@ -57,7 +57,7 @@ if($_SESSION['matricule'] == 0):
                     Planning
                 </p>
         </button></a>
-        <a href="../profil/modifProfil.php">
+        <a href="modifProfil.php">
         <button class="case">
             <img src="../images/icons/dossier.png" class="image">
                 <p>
@@ -95,7 +95,7 @@ if($_SESSION['matricule'] == 0):
                    Profil patients
                 </p>
         </button></a>
-        <a href="../profil/modifProfil.php">
+        <a href="modifProfil.php">
         <button class="case">
             <img src="../images/icons/dossier.png" class="image">
                 <p>

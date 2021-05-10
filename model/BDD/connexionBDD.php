@@ -10,7 +10,7 @@ class connexionBDD{
 	/* private $HOST = 'localhost';
 	private $NAME = 'APPinfo';
 	private $USER = 'root';
-	private $PASS = ''; */
+	private $PASS = ''; */ 
 
 	private $connexion;
 

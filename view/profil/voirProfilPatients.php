@@ -40,12 +40,12 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 				<li>Date de naissance : <br>
 				<p> <?php
 			setlocale(LC_TIME, 'fr_FR.utf-8','fra'); 
-			$date = new DateTime(personne['date de naissance']);
+			$date = new DateTime($personne['date de naissance']);
 			echo (strftime("%A %e %B %Y", date_timestamp_get($date))); ?></p></li>
 			</div>
 			<div class="linedisplay"> 
 				<li> Genre : </label> <br>
-				<p><?= ($personne['sexe'] == 0) ? 'No précisé' : ($personne['sexe'] == 1) ? 'Homme' : 'Femme' ?></p></li>
+				<p><?= ($personne['sexe'] == 0) ? 'Non précisé' : ($personne['sexe'] == 1) ? 'Homme' : 'Femme' ?></p></li>
 			</div>
 			<div class="linedisplay">
 				<li>Numéro de sécurité social : <br>

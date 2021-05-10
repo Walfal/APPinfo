@@ -66,7 +66,11 @@ endif?>
 </form>
 </div>
 
+<<<<<<< HEAD
 
 
 <?php require '../headerFooter/footer.php' ?>
+=======
+<?php //require '../headerFooter/footer.php' ?> 
+>>>>>>> Marie
 
