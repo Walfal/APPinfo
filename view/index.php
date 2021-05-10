@@ -24,7 +24,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="html/login.html"
+						<a href="../login/login.php"
 							><img class="bi bi-globe" src="images/icons/account.svg" style="width: 25px"
 						/></a>
 					</li>

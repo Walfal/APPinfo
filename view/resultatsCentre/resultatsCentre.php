@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="windows-1252">
 	<title>Mes résultats - Centre sélectioné</title>
 	<link href="resultatsCentre.css" rel="stylesheet">
     <link href="../headerFooter/headerFooter.css" rel="stylesheet" />
     <link rel="icon" href="../images/logo/logo.png">
 </head>
+<?php
 
-<?
-    include('../../controller/graphResultats.php')
-    include('../../model/connexionBDD.php');
-    include('../../model/envoieTest.php');
-
+require_once('../../model/connexionBDD.php');
+require_once('../../model/envoieTest.php');
 ?>
 <body>
     
@@ -25,7 +23,7 @@
                 <ul class="links">
                     <li><a href="#">Accueil</a> </li>
                     <li><a href="#">Services</a></li>
-                    <li><a href="#">à propos</a></li>
+                    <li><a href="#">àpropos</a></li>
                     <li><a href="#">Contactez nous</a></li>
                     <li><a href="#">FAQ</a></li>
                     <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
@@ -95,9 +93,7 @@
                 <div>
                     <h3>Nom du test</h3>
                     <div class="resultat">
-                        <!--<img  class="bar" src="../images/icons/bar_diagramme-2.png">-->
-                        
-                        <figcaption>Résultat</figcaption>  
+                        <img src="../../controller/graphResultats.php"/>
                     </div>
                     
                     <div class="detail">

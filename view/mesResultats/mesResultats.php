@@ -4,7 +4,6 @@
 	$matriculeTest = 1;
 	$envoieA = 2 - $matriculeTest;
 	$matricule = 1;
-
 	$test = recuperationTest($BDD, $matriculeTest);
 	$nom = recuperationNom($BDD, $matricule);
 ?>
@@ -27,9 +26,9 @@
 				<a href="../"><img class="logo" src="../images/logo/sensair.png" alt="" /></a>
 				<ul class="links">
 					<li><a href="../">Home</a></li>
-					<li><a href="services.html">Services</a></li>
-					<li><a href="quiSommesNous.html">About Us</a></li>
-					<li><a href="contactezNous.html">Contact Us</a></li>
+					<li><a href="../services/services.php">Services</a></li>
+					<li><a href="../quiSommesNous/quiSommesNous.php">About Us</a></li>
+					<li><a href="../contactezNous/contactezNous.php">Contact Us</a></li>
 					<li><a href="#">FAQ</a></li>
 					<li>
 						<a href="#">
@@ -37,7 +36,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="login.html"
+						<a href="../login/login.php"
 							><img class="bi bi-globe" src="../images/icons/account.svg" style="width: 25px"
 						/></a>
 					</li>

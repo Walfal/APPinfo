@@ -126,10 +126,10 @@ class Image {
         }
 
         $this->img = @imagecreatetruecolor($aWidth, $aHeight);
-        if( $this->img < 1 ) {
-            JpGraphError::RaiseL(25126);
+        //if( $this->img < 1 ) {
+          //  JpGraphError::RaiseL(25126);
             //die("Can't create truecolor image. Check that you really have GD2 library installed.");
-        }
+        //}
         $this->SetAlphaBlending();
 
         if( $this->iInterlace ) {
