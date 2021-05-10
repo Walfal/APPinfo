@@ -1,7 +1,10 @@
+
 <?php 
 $title = 'Compte administrateur';
-require_once '../headerFooter/header.php';?>
+//require_once '../headerFooter/header.php';
+require_once '../../model/BDD/connexionBDD.php';?>
 <link href="recherchePatient.css" rel="stylesheet" />
+<script> src="js/jquery.typeahead.min.js"</script>
 
 		<div class = "hautPage">
 			<p class="titrePage"><b>Profils patients</b></p>
@@ -13,6 +16,15 @@ require_once '../headerFooter/header.php';?>
 			<p class="indication"><b>Trouvez votre patient en trois clics !</b></p>
 		<form class="aRemplir">
 			<input type="text" class="nomPrenom" name="nomPrenom" placeholder="Nom et Prénom du patient">
+
+			<script src='rechercheNom.js'>
+			<?php $requete = recuperationToutesDonnees($BDD, $colonne, $table);
+			var_dump($requete);?>
+			//$(".nomPrenom").typeahead(); JSON({
+			//	name : 'nom'
+				//local : 
+		//	});
+			</script>
 			<p class="ou"><b>OU</b></p>
 			<input type="text" class="numPatient" name="numPatient" placeholder="N° du patient">
 			<img class = "localisation" src="../images/icons/localisation.svg" alt="">

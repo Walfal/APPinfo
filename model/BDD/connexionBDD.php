@@ -39,6 +39,13 @@ $DB = new connexionBDD();
 $BDD = $DB->connexion();
 
 
+function recuperationToutesDonnees($BDD, $table){
+	$req = $BDD -> prepare("SELECT * FROM $table");
+	$req -> execute();
+	return $req -> fetchAll();
+}
+
+
 function recuperationUneDonnee($BDD, $table, $where, $where2){
 	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = $where2");
 	$req -> execute();
