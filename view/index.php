@@ -50,7 +50,7 @@
 	<body>
 	
 		<section id="main-image">
-			<h2>WELCOME TO <br /><strong>SENS'AIR</strong></h2>
+			<h2>BIENVENUE CHEZ <br /><strong>SENS'AIR</strong></h2>
 			<a href="login/login.php" class="button-1">
 			<?php if(isset($_SESSION['matricule'])): ?>
 				Accéder à mon compte
