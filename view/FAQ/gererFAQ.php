@@ -60,7 +60,15 @@ if(isset($_POST['submit'])){
     <form class="formulaire"  role="form" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="theme">Theme :</label>
-            <input type="text"  id="theme" name="theme">
+            <input type="text"  id="theme" name="theme" list="themes">
+            <datalist id="themes">
+                <?php 
+                    $statement =  recuperationTheme($BDD);
+                    foreach($statement as $valeur){
+                        echo '<option value="'.$valeur['theme'].'"></option>';
+                    }
+                ?>
+            </datalist>
         </div>
         <div class="form-group">
             <label for="question">Question :</label>

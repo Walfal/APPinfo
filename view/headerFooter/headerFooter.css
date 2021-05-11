@@ -416,4 +416,10 @@ footer {
 		position: relative;
 		min-height: 100px;
 	}
-} */
+}  */
+
+@media screen and (max-width:780px){
+	body{
+		margin-bottom: 400px;
+	}
+}
