@@ -2,6 +2,10 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
+    header('Location: ../login/login.php');
+endif;
+
 require '../../model/BDD/connexionBDD.php';
 
 if(!empty($_GET['id'])){
@@ -9,18 +13,11 @@ if(!empty($_GET['id'])){
 }
 if(!empty($_POST)){
     $id = checkInput($_POST['id']);
-    $statement = $BDD -> prepare("DELETE FROM test.utilisateurs WHERE id_Utilisateur =?");
+    $statement = $BDD -> prepare("DELETE FROM Personne WHERE matricule = ?");
     $statement -> execute(array($id));
-    header("location: ../../view/profil/profilPatients.php");
-}
-
-function checkInput($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-?>
+    header("location: profilPatients.php");
+}?>
+<link href="supprimerProfilPatients.css" rel="stylesheet" />
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
@@ -34,7 +31,7 @@ function checkInput($data){
 <!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
 
 <div class="contenu">
-    <form class="formulaire" action="../../view/profil/supprimerProfilPatients.php" role="form" method="post">
+    <form class="formulaire" action="supprimerProfilPatients.php" role="form" method="post">
     <input type="hidden" name="id" value="<?php echo $id; ?>"/>    
     <p class="alert">Etes-vous sur de vouloir supprimer ?</p>
     <div class="actions">
@@ -42,7 +39,7 @@ function checkInput($data){
                 <button type="submit" class="bouton">Oui</button>
             </div>
             <div class="retour">
-                <a href="../../view/profil/profilPatients.php" class="retour">Non</a>
+                <a href="profilPatients.php" class="retour">Non</a>
             </div>
         </div>
     </form>

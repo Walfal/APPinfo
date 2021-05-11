@@ -1,28 +1,27 @@
 <?php
-	$title = 'Contactez Nous';
-	require_once '../headerFooter/header.php';
-	require_once '../../model/BDD/connexionBDD.php';
+$title = 'Contactez Nous';
+require_once '../headerFooter/header.php';
+require_once '../../model/BDD/connexionBDD.php';
 
-	?><link href="contactezNous.css" rel="stylesheet" /><?php
+?><link href="contactezNous.css" rel="stylesheet" /><?php
 
-	$matriculeTest = 2;
-	$matriculeTest = $_SESSION['matricule'];
+$matricule = $_SESSION['matricule'];
 
-	$conv = recuperationUneDonnee($BDD,"Message", "matricule", $matriculeTest);
-	$idConversation = $conv['idConversation'];
-	$conv = recuperationUneDonnee($BDD, "Conversation", "idConversation", $idConversation);
+$conv = recuperationUneDonnee($BDD,"Message", "matricule", $matricule);
+$idConversation = ($conv['idConversation'] !== null) ? $conv['idConversation'] : null;
+$conv = recuperationUneDonnee($BDD, "Conversation", "idConversation", $idConversation);
 
-	$messages = recuperationMessages($BDD, $idConversation);
-	$client = recuperationUneDonnee($BDD, "Personne", "matricule", $matriculeTest);
-	
-	if(!isset($matriculeTest)):
-		header('Location: ../login/login.php');
+$messages = recuperationMessages($BDD, $idConversation);
+$client = recuperationUneDonnee($BDD, "Personne", "matricule", $matricule);
 
-	elseif($matriculeTest != 0):
-		if($idConversation == null): ?>
-			<meta http-equiv="refresh" content="0;url=contactezNous1.php">
-		<?php
-		else:
+if(!isset($matricule)):
+	header('Location: ../login/login.php');
+
+elseif($matricule > 19):
+	if($idConversation == null): ?>
+		<meta http-equiv="refresh" content="0;url=contactezNous1.php">
+	<?php
+	else:
 ?>
 	<div class="bandehaut">
 		<h1 class="titrePage" style="line-height: 100%">Contactez-nous</h1>
@@ -36,7 +35,7 @@
 	<div class="conversation"> 
 		<div class="messages" id="messages">
 			<?php foreach($messages as $singleMessage):
-			if($singleMessage['matricule'] == $matriculeTest): ?>
+			if($singleMessage['matricule'] == $matricule): ?>
 				<p class="envoye">
 			<?php else:?>
 				<p class="recu">
@@ -82,7 +81,7 @@
 				<?php
 				
 					foreach($messages as $singleMessage):
-						if($singleMessage['matricule'] == $matriculeTest): ?>
+						if($singleMessage['matricule'] == $matricule): ?>
 							<p class="envoye">
 						<?php else:?>
 							<p class="recu">
@@ -115,15 +114,15 @@
 			<i class="sousTitre">à qui vous voulez répondre</i>
 		</div>
 
-		<div class="conversation"> 
-			<ul class="convAdmin messages" id="messages">
+		<div class="conversation">
+			<ul class="convAdmin conversations" id="messages">
 				<?php foreach($conversations as $conversation):
 					$message = recuperationMessages($BDD, $conversation['idConversation']);
 					$client = recuperationUneDonnee($BDD, "Personne", "matricule", $message[0]['matricule']);
 					?>
-					<li><a href="./contactezNous.php?client=<?=$conversation['idConversation']; ?>">
-					<?='Une question de: ' . $client['prenom'] . ' ' . $client['nom'] . ': ' .  $conversation['titre'] ?>
-				</a></li>
+					<li><a href="contactezNous.php?client=<?= $conversation['idConversation'] ?>">
+					<?= $client['prenom'] . ' ' . $client['nom'] . '<br><em>' .  $conversation['titre'] . '</em>' ?>
+					</a></li>
 				<?php endforeach ?>
 			</ul>
 		</div>
@@ -131,6 +130,7 @@
 	<?php endif;
 	require_once '../headerFooter/footer.php';
 	?>
+<div class="fin"></div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -146,15 +146,19 @@
 
 			var message  = document.getElementById('message').value
 			var idConversation  = <?= $idConversation ?>;
-			var id = <?= $matriculeTest ?>;
+			var id = <?= $matricule ?>;
 			
 			document.getElementById('message').value = ''
-			/* if(message != '' && titre != ''){ */
+			if(message != '' && titre != ''){
 				$.ajax({
 					url : '../../model/Messagerie/envoyerMessage.php',
 					method : 'post',
 					dataType : 'html',
-					data : {idConversation: idConversation, message: message, id : id},
+					data : {
+						idConversation: idConversation,
+						message: message,
+						id : id
+					},
 					success : function(data){
 						$('#affMessage').append(data)
 					},
@@ -173,7 +177,7 @@
 						}
 					}
 				})
-			/* } */
+			}
 		})
 	})
 </script>

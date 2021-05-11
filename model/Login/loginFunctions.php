@@ -4,28 +4,27 @@
 
 
 //verification du mot de passe
-function verifierMotDePasse($mail,$password,array $data,$result){
-    
-    if($result -> rowCount() > 0){
+function verifierMotDePasse($mail, $password, $result){
+    if(sizeof($result) > 0){
         //cas où le mot de passe n'est pas crypté   
-        if($password === $data[0]["mot de passe"]){
-            //debut de session
-            session_start();
-            $_SESSION['mail'] = $data[0]["mail"];
-            $_SESSION['matricule'] = $data[0]["matricule"];
+        /*if($password === $result["password"]){
+            $_SESSION['mail'] = $result["mail"];
+            $_SESSION['matricule'] = $result["matricule"];
             $erreur = null;
-            return $data[0]["matricule"];//recuperation du matricule
+            return $result["matricule"];//recuperation du matricule
         }
+        */
         //cas ou le message est crypté
-        /*if(password_verify($password,$data[0]["motDePasse"])){
+        $hash = $result["password"];
+        if(password_verify($password, $hash)){
         
             //debut de session
-            session_start();
-            $_SESSION['mail'] =$data[0]["prenom"]; 
+            $_SESSION['mail'] = $result["mail"];
+            $_SESSION['matricule'] = $result["matricule"];
             $erreur = null;
-            return $data[0]["matricule"];
+            return $result["matricule"];//recuperation du matricule
         
-        }*/
+        }
     }
     
     $erreur = 'Identifiants incorrects';
@@ -39,7 +38,7 @@ function est_connecte():bool{
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    return !empty($_SESSION['mail']);
+    return isset($_SESSION['mail']);
 }
 //si l'utilisateur n'est pas connecte le rediriger sur la page login a utilser lors de l'acces au compte 
 function forcer_utilisateur_connecte(){

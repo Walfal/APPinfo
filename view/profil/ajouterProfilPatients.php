@@ -2,63 +2,40 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
-require '../../model/BDD/BDD.php';
-$nomError = $prenomError = $num_ssError = $codePostalError = $mailError = $motDePasseError =
-$nom = $prenom = $sexe= $num_ss= $adresse=$codePostal= $telephone = $mail = $poids = $taille = $age = $motDePasse = $role = "";
-if(!empty($_POST)){
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
+    header('Location: ../login/login.php');
+endif;
+
+require '../../model/BDD/connexionBDD.php';
+
+$matricule = $nom = $prenom = $sexe = $num_ss = $adresseRue = $adresseVille = $codePostal= $telephone = $mail = $poids = $taille = $dateDeNaissance = $password = $role = "";
+
+if(!empty($_POST)) {
+    $matricule = checkInput($_POST['matricule']);
     $nom = checkInput($_POST['nom']);
     $prenom = checkInput($_POST['prenom']);
     $sexe = checkInput($_POST['sexe']);
+    $mail = checkInput($_POST['mail']);
     $num_ss = checkInput($_POST['num_ss']);
-    $adresse = checkInput($_POST['adresse']);
+    $adresseRue = checkInput($_POST['adresseRue']);
+    $adresseVille = checkInput($_POST['adresseVille']);
     $codePostal = checkInput($_POST['codePostal']);
     $telephone = checkInput($_POST['telephone']);
-    $mail = checkInput($_POST['mail']);
     $poids = checkInput($_POST['poids']);
     $taille = checkInput($_POST['taille']);
-    $age = checkInput($_POST['age']);
-    $motDePasse = checkInput($_POST['motDePasse']);
+    $dateDeNaissance = checkInput($_POST['dateDeNaissance']);
+    $password = password_hash(checkInput($_POST['password']), PASSWORD_DEFAULT);
     $role = checkInput($_POST['role']);
-    $isSuccess = true;
+    $photo = 0;
+    $medecin = (checkInput($_POST['medecin']) != 0) ? checkInput($_POST['medecin']) : 0;
 
-    if(empty($nom)){
-        $nomError = 'Ce champ ne peut pas être vide';
-        $isSuccess = false;
-    }
-    if(empty($prenom)){
-        $prenomError = 'Ce champ ne peut pas être vide';
-        $isSuccess = false;
-    }
-    if(empty($mail)){
-        $mailError = 'Ce champ ne peut pas être vide';
-        $isSuccess = false;
-    }
-    if(empty($motDePasse)){
-        $motDePasseError = 'Ce champ ne peut pas être vide';
-        $isSuccess = false;
-    }
-    if(empty($num_ss)){
-        $num_ssError = 'Ce champ ne peut pas être vide';
-        $isSuccess = false;
-    }
-    if(empty($codePostal)){
-        $codePostalError = 'Ce champ ne peut pas être vide'; 
-        $isSuccess = false;
-    }
-    if($isSuccess){
-        $statement = $BDD -> prepare("INSERT INTO Personne (nom, prenom, sexe, 'numero de securite social', adresse, adresse (code postal), telephone, mail, poids, taille, age, 'mot de passe', role) values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
-        $statement -> execute(array($nom, $prenom, $sexe, $num_ss, $adresse, $codePostal, $telephone, $mail, $poids, $taille, $age, $motDePasse, $role));
-        header("location: ../../view/profil/profilPatients.php");
-    }
-}
+    $statement = $BDD -> prepare("INSERT INTO Personne (matricule, nom, prenom, sexe, mail, `numero de securite social`, adresse, ville, `code postal`, telephone, poids, taille, `date de naissance`, password, role, photo, medecin) values (?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    $statement -> execute(array($matricule, $nom, $prenom, $sexe, $mail, $num_ss, $adresseRue, $adresseVille, $codePostal, $telephone, $poids, $taille, $dateDeNaissance, $password, $role, $photo, $medecin));
+    header("location: ../../view/profil/profilPatients.php");
 
-function checkInput($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-?>
+}?>
+
+<link href="ajouterProfilPatients.css" rel="stylesheet" />
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
@@ -72,64 +49,74 @@ function checkInput($data){
 <!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
 
 <div class="contenu">
-    <form class="formulaire" action="../../view/profil/ajouterProfilPatients.php" role="form" method="post" enctype="multipart/form-data">
+    <form class="formulaire" action="ajouterProfilPatients.php" role="form" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="Nom">Nom :</label>
-            <input type="text"  id=Nom name="nom" value=" <?php echo $nom; ?>">
-            <span class="help-inline"><?php echo $nomError; ?></span>
+            <label for="Matricule">Matricule* :</label>
+            <input type="text"  id=matricule name="matricule" value="<?php echo $matricule; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Prenom">Prénom :</label>
-            <input type="text" id=Prenom name="prenom" value=" <?php echo $prenom; ?>" >
-            <span class="help-inline"><?php echo $prenomError; ?></span>
+            <label for="Nom">Nom* :</label>
+            <input type="text"  id=Nom name="nom" value="<?php echo $nom; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Sexe">Sexe :</label>
-            <input type="text" id=Sexe name="sexe" value=" <?php echo $sexe; ?>">
+            <label for="Prenom">Prénom* :</label>
+            <input type="text" id=Prenom name="prenom" value="<?php echo $prenom; ?>" required>
+        </div>
+		<div class="form-group">
+			<Label> Sexe : </Label>
+				<select name="sexe" class="champ">
+				<option value="0" selected="selected"> - </option>
+				<option value="1"> Homme </option>
+				<option value="2"> Femme </option>
+				</select>
+		</div><br>
+        <div class="form-group">
+            <label for="Mail">Mail* :</label>
+            <input type="email" id=Mail name="mail" value="<?php echo $mail; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Numss">Numéro de sécurité sociale :</label>
-            <input type="text" id=Numss name="num_ss" value="<?php echo $num_ss; ?>">
-            <span class="help-inline"><?php echo $num_ssError; ?></span>
+            <label for="Numss">Numéro de sécurité social* :</label>
+            <input type="text" id=Numss name="num_ss" value="<?php echo $num_ss; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Adresse">Adresse :</label>
-            <input type="text"  id=Adresse name="adresse" value=" <?php echo $adresse; ?>">
+            <label for="Adresse">Adresse (numéro et voie)* :</label>
+            <input type="text"  id=Adresse name="adresseRue" value="<?php echo $adresseRue; ?>" required>
         </div>
         <div class="form-group">
-            <label for="CodePostale">Code postal :</label>
-            <input type="text" id=CodePostal name="codePostal" value=" <?php echo $codePostal; ?>">
-            <span class="help-inline"><?php echo $codePostalError; ?></span>
+            <label for="Adresse">ville* :</label>
+            <input type="text"  id=Adresse name="adresseVille" value="<?php echo $adresseVille; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Telephone">Téléphone :</label>
-            <input type="tel" id=Telephone name="telephone" value=" <?php echo $telephone; ?>">
+            <label for="CodePostale">Code postal* :</label>
+            <input type="text" id=CodePostal name="codePostal" value="<?php echo $codePostal; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Mail">Mail :</label>
-            <input type="email" id=Mail name="mail" value=" <?php echo $mail; ?>">
-            <span class="help-inline"><?php echo $mailError; ?></span>
+            <label for="Telephone">Téléphone* :</label>
+            <input type="tel" id=Telephone name="telephone" value="<?php echo $telephone; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Poids">Poids :</label>
-            <input type="text" id=Poids name="poids" value=" <?php echo $poids; ?>">
+            <label for="Poids">Poids* :</label>
+            <input type="number" id=Poids name="poids" value="<?php echo $poids; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Taille">Taille :</label>
-            <input type="text" id=Taille name="taille" value=" <?php echo $taille; ?>">
+            <label for="Taille">Taille* :</label>
+            <input type="number" id=Taille name="taille" value="<?php echo $taille; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Age">Age :</label>
-            <input type="text" id=Age name="age" value=" <?php echo $age; ?>">
+            <label for="dateDeNaissance">Date de naissance* :</label>
+            <input type="date" id=dateDeNaissance name="dateDeNaissance" value="<?php echo $dateDeNaissance; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Motdepasse">Mot de passe :</label>
-            <input type="password" id=Motdepasse name="motDePasse" value="<?php echo $motDePasse; ?>">
-            <span class="help-inline"><?php echo $motDePasseError; ?></span>
+            <label for="password">Mot de passe* :</label>
+            <input type="password" id=password name="password" value="<?php echo $password; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Role">Rôle :</label>
-            <input type="text" id=Role name="rol" value=" <?php echo $rol; ?>">
+            <label for="role">Rôle* :</label>
+            <input type="text" id=role name="role" value="<?php echo $role; ?>" required>
+        </div>
+        <div class="form-group">
+            <label for="medecin">Medecin* :</label>
+            <input type="number" id=medecin name="medecin" value="<?php echo $medecin; ?>" required>
         </div>
         <br>
         <div class="actions">
@@ -137,7 +124,7 @@ function checkInput($data){
                 <button type="submit">+ Ajouter</button>
             </div>
             <div class="retour">
-                <a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
+                <a href="profilPatients.php" class="retour">Retour</a>
             </div>
         </div>
     </form>

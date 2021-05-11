@@ -8,24 +8,19 @@ require_once '../headerFooter/header.php';?>
 		<div class="text">
 			<h1 class="titre">Qui Sommes-nous ?</h1>
 			<p class="txt">
-				<br />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, corrupti soluta aliquid
-				quas excepturi inventore doloremque fuga dicta iure maxime, sit doloribus voluptatum, tenetur
-				expedita facilis suscipit maiores quo necessitatibus? Illum, temporibus. Iure facere blanditiis
-				molestias, laboriosam voluptatem alias! Distinctio dignissimos maxime deleniti accusamus non
-				fuga sunt asperiores, inventore minus.
+				<br />Sens'air est une entreprise de service créée en 2020 spécialisée dans la réalisation de tests psychotechniques.
+				Avec 60 salariés, sens'air met tout en œuvre pour garantir un suivi complet des conditions physiques des unités.
+				De plus, nos équipes travaillent afin de garantir la gestion, le stockage, et la protection des données sur notre plateforme web.
 			</p>
 		</div>
-		<img class="img" src="../images/divers/SAV.jpg" />
+		<img class="img" src="../images/divers/team target.jpeg" />
 	</div>
 	<div class="section section2">
-		<img class="img" src="../images/divers/SAV.jpg" />
+		<img class="img" src="../images/divers/Satisfaction.jpg" />
 		<div class="text">
 			<p class="txt">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, corrupti soluta aliquid quas
-				excepturi inventore doloremque fuga dicta iure maxime, sit doloribus voluptatum, tenetur
-				expedita facilis suscipit maiores quo necessitatibus? Illum, temporibus. Iure facere blanditiis
-				molestias, laboriosam voluptatem alias! Distinctio dignissimos maxime deleniti accusamus non
-				fuga sunt asperiores, inventore minus.
+				Votre satisfaction est notre priorité, si vous avez des suggestions n'hésitez pas à nous contacter à travers nos différents canaux.
+				Nous sommes ouvert à vos suggestions dans le but de vous proposer un service adapté.
 			</p>
 		</div>
 	</div>
@@ -37,22 +32,22 @@ require_once '../headerFooter/header.php';?>
 			<div class="qualite">
 				<img src="../images/icons/face.svg" style="width: 50px" />
 				<p>
-					<br />Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quasi molestiae corrupti
-					quam officiis eaque libero obcaecati soluta id? Exercitationem?<br />
+					<br />Le professionnalisme est une des valeurs clé de sens'air,
+					nous gérons vos données avec rigueur afin d'assurer leurs protections.<br />
 				</p>
 			</div>
 			<div class="qualite">
 				<img src="../images/icons/face.svg" style="width: 50px" />
 				<p>
-					<br />Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quasi molestiae corrupti
-					quam officiis eaque libero obcaecati soluta id? Exercitationem?<br />
+					<br />La ponctualité est très importante,
+					nos équipes s'assurent de la mise en ligne des tests dans des délais très courts.<br />
 				</p>
 			</div>
 			<div class="qualite">
 				<img src="../images/icons/face.svg" style="width: 50px" />
 				<p>
-					<br />Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quasi molestiae corrupti
-					quam officiis eaque libero obcaecati soluta id? Exercitationem?<br />
+					<br />Nos équipes restent à votre écoute afin de pouvoir
+					 détecter et <palli></palli>er le moindre dysfonctionnement le plus vite possible.<br />
 				</p>
 			</div>
 		</div>

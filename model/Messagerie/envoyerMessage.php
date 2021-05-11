@@ -22,13 +22,13 @@ if(!empty($_POST)){
 	}
 
 	if(!empty($titre)):
-		$req = $BDD->prepare("INSERT INTO Conversation (titre) VALUES (?)");
-		$req->execute(array($titre));
+		$req = $BDD -> prepare("INSERT INTO Conversation (titre) VALUES (?)");
+		$req -> execute(array($titre));
 
 
-		$req = $BDD->prepare("SELECT idConversation FROM Conversation ORDER BY idConversation DESC");
-		$req->execute();
-		$idConversation = $req->fetch();
+		$req = $BDD -> prepare("SELECT idConversation FROM Conversation ORDER BY idConversation DESC");
+		$req -> execute();
+		$idConversation = $req -> fetch();
 		$idConversation = $idConversation['idConversation'];
 	endif;
 

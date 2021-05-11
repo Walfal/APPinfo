@@ -2,96 +2,110 @@
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
 
+if(!isset($_SESSION['matricule'])):
+    header('Location: ../login/login.php');
+endif;
+
 require '../../model/BDD/connexionBDD.php';
 
 if(!empty($_GET['id'])){
-	$idUtilisateur = checkInput($_GET['id']);
+	$matricule = checkInput($_GET['id']);
 }
 
-$statement = $BDD->prepare('SELECT * FROM test.utilisateurs WHERE id_Utilisateur =?');
-$statement->execute(array($idUtilisateur));
-$valeur = $statement->fetch();
-
-//pour vérifier donnée qui vient de l'extérieur
-function checkInput($data){
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
-}
-
+$personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 ?>
+<link href="voirProfilPatients.css" rel="stylesheet" />
 
-        <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
-        <div class="banniere">
-            <div class="content">
-                <h2>Profil de <?php echo'' . $valeur['nom'] .' ' .$valeur['prenom']; ?> </h2> 
-            </div>
-            <div class="image">
-                <img src="../images/icons/baseline_folder_white_24dp.png" alt="">
-            </div>
-        </div>
-		
-		<!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
-       
-		<div class="contenu">
-			<form>
-				<div class="form-group">
-					<label for="Nom">Nom :</label>
-					<input type="text" value=" <?php echo ''.$valeur['nom']; ?>" id=Nom readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="Prenom">Prénom :</label>
-					<input type="text" value=" <?php echo ''.$valeur['prenom']; ?>" id=Prenom readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="Sexe">Sexe :</label>
-					<input type="text" value=" <?php echo ''.$valeur['sexe']; ?>" id=Sexe readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="Numss">Numéro de sécurité sociale :</label>
-					<input type="text" value=" <?php echo ''.$valeur['num_ss']; ?>" id=Numss readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="Adresse">Adresse :</label>
-					<input type="text" value=" <?php echo ''.$valeur['adresse']; ?>" id=Adresse readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="CodePostale">Code postal :</label>
-					<input type="text" value=" <?php echo ''.$valeur['codePostal']; ?>" id=CodePostal readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="Telephone">Téléphone :</label>
-					<input type="tel" value=" <?php echo ''.$valeur['telephone']; ?>" id=Telephone readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="Mail">Mail :</label>
-					<input type="email" value=" <?php echo ''.$valeur['mail']; ?>" id=Mail readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="Poids">Poids :</label>
-					<input type="text" value=" <?php echo ''.$valeur['poids']; ?>" id=Poids readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="Taille">Taille :</label>
-					<input type="text" value=" <?php echo ''.$valeur['taille']; ?>" id=Taille readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="Age">Age :</label>
-					<input type="text" value=" <?php echo ''.$valeur['age']; ?>" id=Age readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="Motdepasse">Mot de passe :</label>
-					<input type="password" value=" <?php echo ''.$valeur['motDePasse']; ?>" id=Motdepasse readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="Role">Rôle :</label>
-					<input type="text" value=" <?php echo ''.$valeur['rol']; ?>" id=Role readonly="readonly">
-				</div>
-				<div class="retour">
-					<a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
-				</div>
-			</form>
+<div class="title">
+	<p class="textSize">
+	<?= $personne['nom'] . ' ' . $personne['prenom'] ?>
+	<img class="imgProfil" src="../images/icons/perm_identity-24px.svg">
+	<p> 
+</div>
+	<div class="principal">
+		<div class="left">	
+			<div class="linedisplay">
+				<li > Matricule : <br>
+				<p><?= $personne['matricule'] ?></p></li>
+			</div>
+			<div class="linedisplay">
+				<li > Adresse mail : <br>
+				<p><?= $personne['mail'] ?></p></li>
+			</div>
+			<div class="linedisplay">
+				<li> Numéro de téléphone: <br>
+				<p><?= '0' . $personne['telephone'] ?></p></li>
+			</div>
+			<div class="linedisplay">
+				<li>Date de naissance : <br>
+				<p> <?php
+			setlocale(LC_TIME, 'fr_FR.utf-8','fra'); 
+			$date = new DateTime($personne['date de naissance']);
+			echo (strftime("%A %e %B %Y", date_timestamp_get($date))); ?></p></li>
+			</div>
+			<div class="linedisplay"> 
+				<li> Genre : </label> <br>
+				<p><?= ($personne['sexe'] == 0) ? 'Non précisé' : ($personne['sexe'] == 1) ? 'Homme' : 'Femme' ?></p></li>
+			</div>
+			<div class="linedisplay">
+				<li>Numéro de sécurité social : <br>
+				<p> <?= $personne['numero de securite social'] ?></p></li>
+			</div>
+			<div class="linedisplay">
+				<li > poids : <br>
+				<p><?= $personne['poids'] ?></p></li>
+			</div>
+			<div class="linedisplay">
+				<li>taille : <br>
+				<p> <?= $personne['taille'] ?></p></li>
+			</div>
+			<div class="linedisplay">
+				<li> Adresse : <br>
+				<p><?= $personne['adresse'] ?></p></li>	
+			</div>
+			<div class="linedisplay">
+				<li > Ville : <br>
+				<p><?= $personne['ville'] ?></p></li>
+			</div>
+			<div class="linedisplay">
+				<li>Code postal : <br>
+				<p> <?= $personne['code postal'] ?></p></li>
+			</div>
+			<div class="linedisplay">
+				<li > Rôle : <br>
+				<p><?= $personne['role'] ?></p></li>
+			</div>
+			<div class="linedisplay">
+				<li > Médecin : <br>
+				<p><?php
+				$medecin = recuperationUneDonnee($BDD, 'Personne', 'matricule', $personne['medecin']);
+				echo $medecin['nom'] . ' ' . $medecin['prenom'] . ' (matricule: ' . $personne['medecin'] . ')';
+				?></p></li>
+			</div>
 		</div>
+		<div class="right">
+			<img src="../images/icons/user.png/>"  alt="image profil"/>
+		</div>
+		<div class = "separation">
+			<label> _______________________________________________________________________________________________________________ </label>
+		</div>	
+		<div class = "bouttonCentrageModif">
+			<a class="styleValidate" href="modifProfil.php?id=<?= $_GET['id'] ?>">Modifier mon profil</a>
+		</div>		
+	</div>
+</div>	
+<div class="title">
+	<p class ="textSize">
+	Dernier(s) test(s) passé(s)
+	</p>
+</div> 
+<div class="dernierTest">
+	<p class = "textSizeNomCentre">
+		À notre dame de Lorette :
+	<form action="../mesResultats/mesResultats.php">
+	<input type="SUBMIT" input class="buttonResultat" value="Accéder aux résultats"></form>
+	</p>
+	
+</div>
 
 <?php require_once '../headerFooter/footer.php';?>

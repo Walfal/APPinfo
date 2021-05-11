@@ -3,9 +3,11 @@ $title = 'Information RDV';
 require '../headerFooter/header.php';
 
 require_once '../../model/RDV/events.php';
-require_once '../../model/RDV/bootstrap.php';
 require_once '../../model/BDD/connexionBDD.php';
 
+if(!isset($_SESSION['matricule'])):
+    header('Location: ../login/login.php');
+endif;
 ?>
 <link rel="stylesheet" href="infoRDV.css">
 
@@ -16,15 +18,10 @@ if (!isset($_GET['idRDV'])){
 }
 
 $event = $events -> find($BDD, $_GET['idRDV']);
-
-
 $client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
 
-
 //Recuppération des tests à faire
-$heure = $event['debut'];
-$memeHeure = recuperationDesTests($BDD, "$heure");
-
+$typeTests = query($BDD, "SELECT nom FROM Capteur NATURAL JOIN Test WHERE idRDV = ?", array($event['idRDV']));
 ?>
 
 <br><br>
@@ -42,11 +39,14 @@ $memeHeure = recuperationDesTests($BDD, "$heure");
 <table>
 	<tr>
 		<td>Fiche complète du patient </td>
-		<td><a href="../profil/voirProfilPatients.php" class="profil"><?= $client['prenom'] . ' ' . $client['nom'] ?></a></td>
+		<td><a href="../profil/voirProfilPatients.php?id=<?= $client['matricule']?>" class="profil"><?= $client['prenom'] . ' ' . $client['nom'] ?></a></td>
 	</tr>
 	<tr>
 		<td>Date</td>
-		<td><?= (new DateTime($event['debut'])) -> format('d/m/Y'); ?></td>
+		<td><?php
+			setlocale(LC_TIME, 'fr_FR.utf-8','fra'); 
+			$date = new DateTime($event['debut']);
+			echo (strftime("%A %e %B %Y", date_timestamp_get($date))); ?></td>
 	</tr>
 	<tr>
 		<td>Heure de démarage</td>
@@ -60,31 +60,15 @@ $memeHeure = recuperationDesTests($BDD, "$heure");
 		<td>Test(s) à faire :</td>
 		<td>
 		<?php 
-			foreach($memeHeure as $memeTest){
-		
-				if ($memeTest['idTest'] == 0){
-					echo "Fréquence cardiaque  <br>";}
-				if ($memeTest['idTest'] == 1){
-					echo "Temps de réaction à une lumière <br>";
-				}
-				if ($memeTest['idTest'] == 2){
-					echo "Temps de réaction à un son  <br>";
-				}
-				if ($memeTest['idTest'] == 3){
-					echo "Température corporelle  <br>";
-				}
-				if ($memeTest['idTest'] == 4){
-					echo "Reconnaissance de tonalitée  <br>";
-				}
+			foreach($typeTests as $typeTest){
+				echo $typeTest['nom'] . '<br>';
 			}
-				?></td>
+		?></td>
 	</tr>
 </table>
 
 
 
 <br><br><br><br>
-
-
 
 <?php require '../headerFooter/footer.php' ?>

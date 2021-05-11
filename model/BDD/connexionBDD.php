@@ -1,16 +1,16 @@
 <?php
 class connexionBDD{
 	//BDD en ligne:
-	/*private $HOST = 'scriptis.fr';
+	private $HOST = 'scriptis.fr';
 	private $NAME = 'raph';
 	private $USER = 'raph';
-	private $PASS = 'kErUxmg6XwkWRR';*/
+	private $PASS = 'kErUxmg6XwkWRR';
 
 	//BDD local:
-	private $HOST = 'localhost';
+	/* private $HOST = 'localhost';
 	private $NAME = 'APPinfo';
 	private $USER = 'root';
-	private $PASS = '';
+	private $PASS = ''; */ 
 
 	private $connexion;
 
@@ -47,28 +47,26 @@ function recuperationToutesDonnees($BDD, $table){
 
 
 function recuperationUneDonnee($BDD, $table, $where, $where2){
-	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = $where2");
-	$req -> execute();
+	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = ?");
+	$req -> execute(array($where2));
 	return $req -> fetch();
 }
 
 function recuperationDesDonnees($BDD, $table, $where, $where2){
-	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = $where2");
-	$req -> execute();
+	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = ?");
+	$req -> execute(array($where2));
 	return $req -> fetchAll();
 }
 
 function recuperationDesTests($BDD, $where2){
-	$req = $BDD -> prepare("SELECT idTest FROM prisederdv WHERE debut = '$where2'");
+	$req = $BDD -> prepare("SELECT test FROM PriseRDV WHERE debut = '$where2'");
 	$req -> execute();
 	return $req -> fetchAll();
 }
 
-
-
 function recuperationMessages($BDD, $idConversation){
-	$req = $BDD->prepare("SELECT * FROM Message WHERE idConversation = $idConversation ORDER BY date");
-	$req -> execute();
+	$req = $BDD->prepare("SELECT * FROM Message WHERE idConversation = ? ORDER BY date");
+	$req -> execute(array($idConversation));
 	return $req->fetchAll();
 }
 
@@ -100,13 +98,6 @@ function envoieMessage(){
 	}
 }
 
-function requeteLogin($BDD,$table,$mail){
-    $result = $BDD->prepare("SELECT * FROM $table where mail = '$mail'");
-    $result -> bindParam(":mail", $mail);
-    $result -> execute();
-    return $result;
-}
-
 function query($BDD, $sql, $data = array()){
 	$req = $BDD -> prepare($sql);
 	$req -> execute($data);
@@ -116,4 +107,13 @@ function query($BDD, $sql, $data = array()){
 function insert($BDD, $sql, $data = array()){
 	$req = $BDD -> prepare($sql);
 	$req -> execute($data);
+}
+
+//pour vérifier donnée qui vient de l'extérieur
+function checkInput($data){
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	$data = htmlentities($data);
+	return $data;
 }

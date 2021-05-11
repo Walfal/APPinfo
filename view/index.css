@@ -135,7 +135,7 @@
 }
 
 .button-2 {
-	width: 9%;
+	width: 200px; /*changement ici*/
 	display: block;
 	margin: 0 auto;
 	background: #3a738f;
@@ -182,7 +182,7 @@
 }
 
 .button-3 {
-	width: 8%;
+	width: 150px; /*changement ici */
 	display: block;
 	margin: 0 auto;
 	background: #3a738f;

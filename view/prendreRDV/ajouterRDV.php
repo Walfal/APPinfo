@@ -1,25 +1,31 @@
 <?php 
 $title = 'Ajouter un RDV';
 require '../headerFooter/header.php'; 
-require_once '../../model/RDV/bootstrap.php';
 require_once '../../model/BDD/connexionBDD.php';
-//require '../../model/RDV/EventGS.php';
-//require '../../model/RDV/events.php';
 
-// on peut faire les fonctions pour valider mais c'est long...
-if(!empty($_POST['fin'])){
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
+    header('Location: ../login/login.php');
+endif;
+
+if(!empty($_POST['fin'])):
 	extract($_POST);
-	foreach($_POST['test'] as $test){
+	if(count($_POST['test']) > 0):
+
 		$debuts =  DateTime::createFromFormat('Y-m-d H:i', $date . ' ' . $debut)->format('Y-m-d H:i:s');
 		$fins =  DateTime::createFromFormat('Y-m-d H:i', $date . ' ' . $fin)->format('Y-m-d H:i:s');
-		insert($BDD, "INSERT INTO PriseDeRDV (matricule, debut, fin, idTest) VALUES(?,?,?,?)", array($matricule, $debuts, $fins, $test));
-	}
+		insert($BDD, "INSERT INTO PriseRDV (matricule, debut, fin) VALUES(?,?,?)", array($matricule, $debuts, $fins));
+		
+		$req = query($BDD, "SELECT idRDV FROM PriseRDV ORDER BY idRDV DESC");
+		$idRDV = $req -> fetch();
+		$idRDV = $idRDV['idRDV'];
 
-
-header('Location: calendrier.php');
-exit;
-}
-?>
+		foreach($_POST['test'] as $test){
+			insert($BDD, "INSERT INTO Test (idCapteur, idRDV) VALUES(?,?)", array($test, $idRDV));
+		}
+		header('Location: calendrier.php');
+		exit;
+	endif;
+endif?>
 
 <br><br>
 <link rel="stylesheet" href="ajouterRDV.css">
@@ -47,11 +53,11 @@ exit;
 	<br>
 	<span class="indication"><b>Sélectionnez les tests à effectuer :</b></span>
 	<br><br>
-	<input class="test" type="checkbox" name ="test[]" value="0">Fréquence Cardiaque</input>
-	<input class="test" type="checkbox" name ="test[]" value="1">Temps de réaction à une lumière</input>
-	<input class="test" type="checkbox" name ="test[]" value="2">Temps de réaction à un son</input>
-	<input class="test" type="checkbox" name ="test[]" value="3">Température corporelle</input>
-	<input class="test" type="checkbox" name ="test[]" value="4">Reconnaissance de tonalitée	</input>
+	<label><input class="Test" type="checkbox" name ="test[]" value="0">Fréquence Cardiaque</input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="1">Temps de réaction à une lumière</input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="2">Temps de réaction à un son</input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="3">Température corporelle</input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="4">Reconnaissance de tonalité</input></label>
 
 
 <br>
@@ -59,8 +65,6 @@ exit;
 	<button>Ajouter le RDV</button>
 </form>
 </div>
-
-
 
 <?php require '../headerFooter/footer.php' ?>
 

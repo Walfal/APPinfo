@@ -6,12 +6,7 @@ session_start();
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
-		<title><?php 
-            if (isset($title)) {
-                echo $title;
-            } else {	
-                echo 'Sensair';
-        }  ?></title>
+		<title><?= (isset($title)) ? $title : "Sens'air" ?></title>
 		<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
@@ -24,10 +19,10 @@ session_start();
 				<ul class="navbar-nar">
         		</ul>
 				<ul class="links">
-				<li><a href="../">Accueil</a></li>
+					<li><a href="../">Accueil</a></li>
 					<li><a href="../services/services.php">Nos services</a></li>
 					<li><a href="../quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
-					<li><a href="../messagerie/contactezNous.php">Nous contacter</a></li>
+					<li><a href="../messagerie/contactezNous.php">Contactez nous</a></li>
 					<li><a href="../FAQ/FAQ.php">FAQ</a></li>
 					<li>
 						<a href="#">
@@ -41,7 +36,7 @@ session_start();
 						</ul>
 					</li>
 					<li>
-						<a href="../login/login.php">  <!--lorsque l'on clique on doit être connecté sinon on est redirigé sur la page de login-->
+						<a href="../login/login.php">
                         <img class="bi bi-globe" src="../images/icons/account.svg" style="width: 25px"
 						/></a>
 					</li>

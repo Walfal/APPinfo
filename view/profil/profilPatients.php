@@ -1,7 +1,15 @@
 <?php
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
+require_once '../../model/BDD/connexionBDD.php';
+
+if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 99):
+    header('Location: ../login/login.php');
+endif;
 ?>
+
+<link href="profilPatients.css" rel="stylesheet" />
+
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
@@ -15,17 +23,17 @@ require_once '../headerFooter/header.php';
 <!-- ----------------------------------------------------------- FILTER ---------------------------------------------------------------------------------- -->
 
 <div class="filter">
-    <form class="aRemplir" method="GET">
+    <form class="aRemplir" method="post">
         <div class="champ">
-            <input type="text" class="nom" name="nomPatient" placeholder="Nom du patient">
+            <input type="text" id="nom" class="nom" name="nomPatient" placeholder="Nom du patient">
         </div>
         <div class="champ">
             <label for="" class="ou">OU</label>
-            <input type="text" class="prenom" name="prenomPatient" placeholder="Prénom du patient">
+            <input type="text" id="prenom" class="prenom" name="prenomPatient" placeholder="Prénom du patient">
         </div>
         <div class="champ">
             <label for="" class="ou">OU</label>
-            <input type="text" class="adresse" name="codePostal" placeholder="Code postal">
+            <input type="text" id="codePostal" class="adresse" name="codePostal" placeholder="Code postal">
         </div>
         <div class="champ">
             <input type="submit" class="valider" name="valider" value="Valider >">
@@ -36,76 +44,133 @@ require_once '../headerFooter/header.php';
 
 <!-- ----------------------------------------------------------- LISTE PROFILS ---------------------------------------------------------------------------------- -->
 <div class="container admin">
+    
     <div class="row">
-        <h1>Liste des utilisateurs <a href="../../view/profil/ajouterProfilPatients.php">+ Ajouter</a></h1>
+        <h1>Liste des utilisateurs
+            <?php if($_SESSION['matricule'] < 20): ?>
+                <a href="../../view/profil/ajouterProfilPatients.php">+ Ajouter</a>
+            <?php endif ?>
+        </h1>
     </div>
+    
     <table class="table">
         <thead>
             <tr>
-                <th >Nom</th>
+                <th>Matricule</th>
+                <th>Nom</th>
                 <th>Prénom</th>
+                <th>Mail</th>
                 <th>N° sécu</th>
                 <th>Code postal</th>
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody>
-
-            <?php
-                require '../../model/BDD/connexionBDD.php';
-                $statement = $BDD -> query('SELECT nom,prenom,num_ss,codePostal, id_Utilisateur, rol FROM test.utilisateurs');
-                if(isset($_GET['nomPatient']) AND !empty($_GET['nomPatient']) OR isset($_GET['prenomPatient']) AND !empty($_GET['prenomPatient']) OR isset($_GET['codePostal']) AND !empty($_GET['codePostal'])){
-                    $nomPatient = htmlspecialchars($_GET['nomPatient']);
-                    $prenomPatient = htmlspecialchars($_GET['prenomPatient']);
-                    $codePostal = htmlspecialchars($_GET['codePostal']);
-                    $allusers = $db->query("SELECT nom,prenom,num_ss,codePostal, id_Utilisateur, rol FROM test.utilisateurs WHERE nom ='$nomPatient' OR prenom = '$prenomPatient' OR codePostal='$codePostal' ");
-                    if($allusers->rowCount() > 0){
-                        while($user = $allusers->fetch()){
-                            if($user['rol']!=1){
-                                echo '<tr>';
-                                echo '<td data-label="Nom :">' . $user['nom'] . '</td>';
-                                echo '<td data-label="Prénom :">' . $user['prenom'] . '</td>';
-                                echo '<td data-label="N° sécu :">' . $user['num_ss'] . '</td>';
-                                echo '<td data-label="Code Postale :">' . $user['codePostal'] . '</td>';
-                                echo '<td data-label="Actions :" width=300>';
-                                echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Voir</a>';
-                                echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Modifier</a>';
-                                echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $user['id_Utilisateur'] . '" >Supprimer</a>';
-                                echo '</td>';
-                                echo '</tr>';
-                            }
-                        }
-                    }
-                    else{
-                        echo '<p class="aucun">Aucun utilisateur trouvé</p>';
-                    }
-                }
-                else{
-                    while($valeur = $statement-> fetch()){
-                        if($valeur['rol']!=1){
-                            echo '<tr>';
-                            echo '<td data-label="Nom :">' . $valeur['nom'] . '</td>';
-                            echo '<td data-label="Prénom :">' . $valeur['prenom'] . '</td>';
-                            echo '<td data-label="N° sécu :">' . $valeur['num_ss'] . '</td>';
-                            echo '<td data-label="Code Postale :">' . $valeur['codePostal'] . '</td>';
-                            echo '<td data-label="Actions :" width=300>';
-                            echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Voir</a>';
-                            echo '<a href="../../view/profil/modifierProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Modifier</a>';
-                            echo '<a href="../../view/profil/supprimerProfilPatients.php?id='  . $valeur['id_Utilisateur'] . '" >Supprimer</a>';
-                            echo '</td>';
-                            echo '</tr>';
-                        }
-                    
-                    }
-                    
-                }
-            ?>
-        
+        <tbody id="recherche">
         </tbody>
     </table>
-</div>   
-<div class="retour">
-    <a href="../../view/">Retour à la page d'accueil</a>
 </div>
 
 <?php require_once '../headerFooter/footer.php';?>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function (){
+		envoieAjax();
+		$("#nom").keyup(function(){
+			envoieAjax();
+		})
+		$("#prenom").keyup(function(){
+			envoieAjax();
+		})
+		$("#codePostal").keyup(function(){
+			envoieAjax();
+		})
+	})
+
+    function envoieAjax(){
+        var nom = $("#nom").val();
+        var prenom = $("#prenom").val();
+        var codePostal = $("#codePostal").val();
+        $.ajax({
+            url: '../../model/Profil/profilPatients.php',
+            method:'post',
+            dataType: 'html',
+            data: {
+                search: 1,
+                nom: nom,
+                prenom: prenom,
+                codePostal: codePostal
+            },
+            success: function(data){
+                $('#recherche').html(data);
+            },
+            
+            error : function(e, xhr, s){
+                let error = e.responsJSON;
+                if(e.status == 403 && typeof error !== 'undefined'){
+                    alert('Erreur 403')
+                }else if(e.status == 404){
+                    alert('Erreur 404')
+                }else if(e.status == 403){
+                    alert('Erreur 403')
+                }else if(e.status == 401){
+                    alert('Erreur 401')
+                }else{
+                    alert('Erreur Ajax')
+                }
+            }
+        })
+    }
+
+    function table(personnes, SessionMatricule){
+        var retour = '';
+        if(personnes.length > 0){
+            personnes.forEach(personne => {
+                if(personne['matricule'] > 19){
+                    retour += '<tr>';
+                    retour += '<td data-label="Matricule :">'    + personne['matricule']                 + '</td>';
+                    retour += '<td data-label="Nom :">'          + personne['nom']                       + '</td>';
+                    retour += '<td data-label="Prénom :">'       + personne['prenom']                    + '</td>';
+                    retour += '<td data-label="Mail :">'         + personne['mail']                      + '</td>';
+                    retour += '<td data-label="N° sécu :">'      + personne['numero de securite social'] + '</td>';
+                    retour += '<td data-label="Code Postale :">' + personne['code postal']               + '</td>';
+                    retour += '<td data-label="Actions :" width=300>';
+                    retour += '<a href="../../view/profil/voirProfilPatients.php?id=' + personne['matricule'] + '" >Voir</a>';
+                    if(SessionMatricule < 20){
+                        retour += '<a href="../../view/profil/modifProfil.php?id='             + personne['matricule'] + '" >Modifier</a>';
+                        retour += '<a href="../../view/profil/supprimerProfilPatients.php?id=' + personne['matricule'] + '" >Supprimer</a>';
+                    }
+                    retour += '</td>';
+                    retour += '</tr>';
+                }
+            })
+        }else{
+            retour = '<p class="aucun">Aucun utilisateur trouvé</p>';
+        }
+        return retour;
+    }
+</script>
+
+
+
+
+
+
+
+<?php/*
+console.log(nom);
+console.log(<?//php var_dump($_POST['nom']) ?>);
+<?php echo '';
+    $nomPatient =  (isset($_POST['nom'])) ? $_POST['nom'] : '1';
+    $personnes = query($BDD, "SELECT * FROM Personne WHERE nom LIKE ?", ['%'.$nomPatient.'%']);
+    $personnes = $personnes -> fetchAll(); 
+?>
+var personnes = <?php json_encode($personnes) ?>;
+var sessionMatricule = <?php $_SESSION['matricule'] ?>;
+console.log('nomPatient: ' + <?= $nomPatient ?>);
+$('#recherche').html(table(personnes, sessionMatricule));*/
