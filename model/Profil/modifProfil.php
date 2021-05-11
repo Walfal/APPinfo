@@ -23,9 +23,9 @@ if(isset($_POST['nom'])) {
     $poids        = !empty($_POST['poids'])      ? checkInput($_POST['poids'])      : $personne['poids'];
     $taille       = !empty($_POST['taille'])     ? checkInput($_POST['taille'])     : $personne['taille'];
     $naissance    = !empty($_POST['naissance'])  ? checkInput($_POST['naissance'])  : $personne['date de naissance'];
-    $password     = !empty($_POST['password'])   ? checkInput($_POST['password'])   : $personne['password'];
     $role         = !empty($_POST['role'])       ? checkInput($_POST['role'])       : $personne['role'];
     $medecin      = !empty($_POST['medecin'])    ? checkInput($_POST['medecin'])    : $personne['medecin'];
+    $password     = !empty($_POST['password'])   ? password_hash(checkInput($_POST['password']), PASSWORD_DEFAULT)   : $personne['password'];
     $photo        = 0;
 
     if(!empty(checkInput($_POST['password2'])) && checkInput($_POST['password2']) === checkInput($_POST['password2bis'])):

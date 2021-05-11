@@ -9,14 +9,9 @@ $verif=null;
 if(isset($_POST['submit'])){
     
     if(isset($_POST['mail']) && isset($_POST['password'])){
-        $mail = $_POST['mail'];
-        $mail= strip_tags($mail);
-        $mail = htmlentities($mail);
-        $mail = htmlspecialchars($mail);
-
-        $password = strip_tags($_POST['password']);
-        $password = htmlentities($password);
-        $password = htmlspecialchars($password);
+        $mail= checkInput($_POST['mail']);
+        $password = checkInput($_POST['password']);
+        $hash = password_hash($password, PASSWORD_DEFAULT);
 
         $result = recuperationUneDonnee($BDD, 'Personne', 'mail', $mail);
         $verif = verifierMotDePasse($mail, $password, $result);//recuperation du matricule
