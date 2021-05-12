@@ -35,10 +35,6 @@ endif;
             <label for="" class="ou">OU</label>
             <input type="text" id="codePostal" class="adresse" name="codePostal" placeholder="Code postal">
         </div>
-        <div class="champ">
-            <input type="submit" class="valider" name="valider" value="Valider >">
-        </div>
-
     </form>
 </div>
 
@@ -155,22 +151,3 @@ endif;
         return retour;
     }
 </script>
-
-
-
-
-
-
-
-<?php/*
-console.log(nom);
-console.log(<?//php var_dump($_POST['nom']) ?>);
-<?php echo '';
-    $nomPatient =  (isset($_POST['nom'])) ? $_POST['nom'] : '1';
-    $personnes = query($BDD, "SELECT * FROM Personne WHERE nom LIKE ?", ['%'.$nomPatient.'%']);
-    $personnes = $personnes -> fetchAll(); 
-?>
-var personnes = <?php json_encode($personnes) ?>;
-var sessionMatricule = <?php $_SESSION['matricule'] ?>;
-console.log('nomPatient: ' + <?= $nomPatient ?>);
-$('#recherche').html(table(personnes, sessionMatricule));*/

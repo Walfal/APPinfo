@@ -10,8 +10,9 @@ require_once '../../model/BDD/connexionBDD.php';
 $matriculeTest = $_SESSION['matricule'];
 $matricule = $matriculeTest;
 
-$test = recuperationDesDonnees($BDD, "Test", "matricule", $matriculeTest);
-$nom = recuperationUneDonnee($BDD,"Personne", "matricule", $matricule);
+$rdvs = recuperationDesDonnees($BDD, "PriseRDV", "matricule", $_SESSION['matricule']);
+//$tests = recuperationDesDonnees($BDD, "Test", );
+$nom = recuperationUneDonnee($BDD,"Personne", "matricule", $_SESSION['matricule']);
 ?>
 
 <link href="mesResultats.css" rel="stylesheet"/>
@@ -44,32 +45,31 @@ $nom = recuperationUneDonnee($BDD,"Personne", "matricule", $matricule);
 <table class="resultat">
 	<thead>
 		<tr>
-			<!-- <th>Id Test</th> -->
 			<th>Type de Test</th>
 			<th>Résultat</th>
 			<th>Date</th>
 			<!-- <th>Trame</th> -->
 			<th>Nom du patient</th>
-			<!-- <th>IdCapteur</th> -->
 		</tr>
 	</thead>
 	<tbody>
-		<?php foreach($test as $row): ?>
-
-			<tr>
-			<!-- <td><?php //echo $row['idTest'];?></td> -->
-			<td><?= $row['type'];?></td>
-			<td><?= $row['resultat'];?></td>
-			<td><?php
-			setlocale(LC_TIME, 'fr_FR.utf-8','fra'); 
-			$date = new DateTime($row['date']);
-			echo (strftime("%A %e %B %Y %k:%M", date_timestamp_get($date)));
-			//echo ->format('l j F Y, H:i');?></td>
-			<!-- <td><?php //echo $row['trame'];?></td> -->
-			<td><?= $nom['nom'];?></td>
-			<!-- <td><?php //echo $row['idCapteur'];?></td> -->
-			</tr>
-		<?php endforeach ?>
+		<?php foreach($rdvs as $rdv):
+				$tests = recuperationDesDonnees($BDD, "Test NATURAL JOIN Capteur", "idRDV", $rdv['idRDV']);
+				foreach($tests as $test): 
+				?>
+					<tr>
+					<td><?= $test['nom'];?></td>
+					<td><?= $test['resultat'];?></td>
+					<td><?php
+					setlocale(LC_TIME, 'fr_FR.utf-8','fra'); 
+					$date = new DateTime($rdv['debut']);
+					echo (strftime("%A %e %B %Y %k:%M", date_timestamp_get($date)));
+					?></td>
+					<!-- <td><?php //echo $test['trame'];?></td> -->
+					<td><?= $nom['nom'];?></td>
+					</tr>
+				<?php endforeach;
+			endforeach; ?>
 	</tbody>
 </table>
 

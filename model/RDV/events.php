@@ -2,7 +2,7 @@
 class Events {
 
 	// trouver les évenements entre deux dates
-	public function getEventsBetween($BDD, \DateTime $debut, \DateTime $fin): array {
+	public function getEventsBetween($BDD, DateTime $debut, DateTime $fin): array {
 		$sql = "SELECT * FROM PriseRDV WHERE debut BETWEEN '{$debut -> format('Y-m-d 00:00:00')}' AND '{$fin -> format('Y-m-d 23:59:59')}'";
 		$req = query($BDD, $sql);
 		return $req -> fetchAll();
