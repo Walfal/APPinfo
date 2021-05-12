@@ -53,11 +53,11 @@ endif?>
 	<br>
 	<span class="indication"><b>Sélectionnez les tests à effectuer :</b></span>
 	<br><br>
-	<label><input class="Test" type="checkbox" name ="test[]" value="0">Fréquence Cardiaque</input></label>
-	<label><input class="Test" type="checkbox" name ="test[]" value="1">Temps de réaction à une lumière</input></label>
-	<label><input class="Test" type="checkbox" name ="test[]" value="2">Temps de réaction à un son</input></label>
-	<label><input class="Test" type="checkbox" name ="test[]" value="3">Température corporelle</input></label>
-	<label><input class="Test" type="checkbox" name ="test[]" value="4">Reconnaissance de tonalité</input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="0" checked>Fréquence Cardiaque</input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="1" checked>Temps de réaction à une lumière</input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="2" checked>Temps de réaction à un son</input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="3" checked>Température corporelle</input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="4" checked>Reconnaissance de tonalité</input></label>
 
 
 <br>
