@@ -5,7 +5,6 @@ require_once '../../model/BDD/connexionBDD.php';
 
 ?><link href="contactezNous.css" rel="stylesheet" /><?php
 
-
 $matricule = $_SESSION['matricule'];
 
 $conv = recuperationUneDonnee($BDD,"Message", "matricule", $matricule);
@@ -150,12 +149,16 @@ elseif($matricule > 19):
 			var id = <?= $matricule ?>;
 			
 			document.getElementById('message').value = ''
-			/* if(message != '' && titre != ''){ */
+			if(message != '' && titre != ''){
 				$.ajax({
 					url : '../../model/Messagerie/envoyerMessage.php',
 					method : 'post',
 					dataType : 'html',
-					data : {idConversation: idConversation, message: message, id : id},
+					data : {
+						idConversation: idConversation,
+						message: message,
+						id : id
+					},
 					success : function(data){
 						$('#affMessage').append(data)
 					},
@@ -174,7 +177,7 @@ elseif($matricule > 19):
 						}
 					}
 				})
-			/* } */
+			}
 		})
 	})
 </script>

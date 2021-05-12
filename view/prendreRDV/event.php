@@ -5,11 +5,10 @@ require '../headerFooter/header.php';
 require_once '../../model/RDV/events.php';
 require_once '../../model/BDD/connexionBDD.php';
 
-if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
+if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
 ?>
-
 <link rel="stylesheet" href="infoRDV.css">
 
 <?php 
@@ -20,7 +19,11 @@ if (!isset($_GET['idRDV'])){
 
 $event = $events -> find($BDD, $_GET['idRDV']);
 $client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule']);
+
+//Recuppération des tests à faire
+$typeTests = query($BDD, "SELECT nom FROM Capteur NATURAL JOIN Test WHERE idRDV = ?", array($event['idRDV']));
 ?>
+
 <br><br>
 <div class="hautdePage">
 <p><b>Information sur le RDV </b></p>
@@ -54,8 +57,13 @@ $client = recuperationUneDonnee($BDD, 'Personne', 'matricule', $event['matricule
 		<td><?= (new DateTime($event['fin'])) -> format('H:i'); ?></td>
 	</tr>
 	<tr>
-		<td>Test à faire</td>
-		<td><?= $event['type'] ?></td>
+		<td>Test(s) à faire :</td>
+		<td>
+		<?php 
+			foreach($typeTests as $typeTest){
+				echo $typeTest['nom'] . '<br>';
+			}
+		?></td>
 	</tr>
 </table>
 

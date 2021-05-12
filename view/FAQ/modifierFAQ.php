@@ -9,27 +9,11 @@ endif;
 require_once '../../model/BDD/connexionBDD.php';
 require_once '../../model/FAQ/modelFaq.php';
 
-
-
-
-
-
-
-function checkInput($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-
 if(isset($_GET['id'])){
-    $valeur = recuperationUneDonnee($BDD,'faq','idFAQ',$_GET['id']);
+    $valeur = recuperationUneDonnee($BDD,'FAQ', 'idFAQ', $_GET['id']);
     $themePasModif = $valeur['theme'];
     $questionPasModif = $valeur['question'];
-    $reponsePasModif = $valeur['reponse']; 
-
-    
+    $reponsePasModif = $valeur['reponse'];     
 }
 
 

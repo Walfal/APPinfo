@@ -9,19 +9,6 @@ endif;
 require_once '../../model/BDD/connexionBDD.php';
 require_once '../../model/FAQ/modelFaq.php';
 
-
-
-
-
-
-
-function checkInput($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
 if(isset($_POST['submit'])){
     if(!empty($_POST['question']) && !empty($_POST['reponse']) && !empty($_POST['theme'])){
         $question = checkInput($_POST['question']);

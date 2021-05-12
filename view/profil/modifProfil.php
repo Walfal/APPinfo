@@ -6,11 +6,15 @@ if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
 
-require_once '../../model/Profil/modifProfil.php';
 require_once '../../model/BDD/connexionBDD.php';
-$personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_SESSION['matricule']);
+
+$matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
+
+$personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
+require_once '../../model/Profil/modifProfil.php';
 
 ?>
+
 <link href="modifProfil.css" rel="stylesheet" />
 
 <div class="banniere">
@@ -22,7 +26,7 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_SESSION['matr
 	</div>
 </div>
 
-<form>
+<form method="post">
 	<div class="principal">
 		<div class="linedisplay">
 			<li>
@@ -35,9 +39,9 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_SESSION['matr
 		<div class="linedisplay">
 			<li><Label> Genre : </Label><br>
 				<select name="sexe" class="champ">
-				<option value=0>Non précisé </option>
-				<option value=1>Homme </option>
-				<option value=2>Femme </option></select></li>
+				<option value=0 <?php if($personne['sexe'] == 0){ echo 'selected="selected"';} ?>>Non précisé </option>
+				<option value=1 <?php if($personne['sexe'] == 1){ echo 'selected="selected"';} ?>>Homme </option>
+				<option value=2 <?php if($personne['sexe'] == 2){ echo 'selected="selected"';} ?>>Femme </option></select></li>
 			<li class="espacement">
 			<li><Label> Nationalité : </Label><br>
 				<select name="pays" class="champ">
@@ -283,8 +287,8 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_SESSION['matr
 		</div>
 		<div class="linedisplay">
 			<li>
-				<label for="dateDeNaissance"> Date de naissance: </label> <br>
-			<input class="champ" name ="dateDeNaissance" id="dateDeNaissance" placeholder=<?= $personne['date de naissance'] ?>></input></li>
+				<label for="naissance"> Date de naissance: </label> <br>
+			<input class="champ" name ="naissance" id="naissance" placeholder=<?= $personne['date de naissance'] ?>></input></li>
 			<li class="espacement">
 				<label for ="num_ss"> Numéro de sécurité social: </label><br>
 			<input class="champ" name ="num_ss" id="num_ss" placeholder=<?= $personne['numero de securite social'] ?>><br></input></li>
@@ -309,21 +313,32 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_SESSION['matr
 				<label for ="taille"> Taille (en cm) : </label><br>
 			<input class="champ" name ="taille" id="taille" placeholder=<?= $personne['taille'] ?>><br></input></li>
 		</div>
+		<?php if($_SESSION['matricule'] > 19  || !isset($_GET['id'])): ?>
 		<div class="linedisplay">
 			<li><label for ="password"> Mot de passe actuel* : </label><br>
 			<input class="champ" type="password" name ="password" id="password" required></input></li>
 		</div>
+		<?php endif; ?>
 		<div class="linedisplay">
 			<li><label for ="password2"> Nouveau mot de passe: </label><br>
 			<input class="champ" type="password" name ="password2" id="password2"></input></li>
 			<li class="espacement"><label for ="password2bis"> Confirmation du mot de passe: </label><br>
 			<input class="champ" type="password" name ="password2bis" id="password2bis"></input></li>
 		</div> 	 			
-	</div>
-	<div class="validate">
-		<input class="styleValidate" type="submit" value="Envoyer le formulaire">
 	</div>	
-</form>   
+	<div class="actions">
+		<div class="modify">
+			<button type="submit">Modifier</button>
+		</div>
+		<div class="retour">
+			<?php if (isset($_GET['id'])): ?>
+			<a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
+			<?php else: ?>
+			<a href="../../view/profil/compte.php" class="retour">Retour</a>
+			<?php endif ?>
+		</div>
+	</div>
+</form>
 <div class = "separation">
 		<label> _______________________________________________________________________________________________________________ </label>
 </div>

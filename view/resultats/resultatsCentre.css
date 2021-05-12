@@ -1,19 +1,3 @@
-<<<<<<< HEAD:view/resultatsCentre/resultatsCentre.css
-
-
-/*--------------------------milieu---------------------------*/
-=======
-@import url("http://fonts.cdnfonts.com/css/gemina-2-3d");
-
-* {
-	margin: 0;
-	padding: 0;
-	text-decoration: none;
-	font-family: "Montserrat", sans-serif;
-	font-size: 15px;
-	list-style: none;
-}
-
 .wrapper {
 	margin: 0 auto;
 	padding: 0 10px;
@@ -22,17 +6,14 @@
 .clear {
 	clear: both;
 }
-/*--------------------------body---------------------------*/
->>>>>>> origin/Raph:view/resultats/resultatsCentre.css
 /*intro*/
 
-.intro{
-	
+.intro {
 	margin-top: 50px;
 	height: 300px;
 }
 
-.fond{
+.fond {
 	background-image: url("../images/divers/salle_d_attente.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -40,17 +21,15 @@
 	filter: blur(5px);
 	-webkit-filter: blur(5px);
 	-moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(30px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(30px);
 	z-index: 1;
-	
+
 	height: 100%;
 	border: solid;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-	
 }
-.introDiv{
-	
+.introDiv {
 	position: absolute;
 	top: 35%;
 	left: 50%;
@@ -63,15 +42,13 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	background-color: rgba(94,162,196,.8);
+	background-color: rgba(94, 162, 196, 0.8);
 	height: 200px;
 	width: 50%;
 	min-width: 400px;
-	
-
 }
 
-h1{
+h1 {
 	font-size: 40px;
 	color: white;
 }
@@ -80,62 +57,57 @@ h1{
 	color: white;
 }
 
-.centre u{
+.centre u {
 	text-decoration: underline;
 }
-.imageEtoile{
+.imageEtoile {
 	width: 30px;
 	height: auto;
 }
 
-.lieu{
+.lieu {
 	display: flex;
 	justify-content: space-between;
 	width: 50%;
 	min-width: 300px;
 }
 
-.lieu h2{
+.lieu h2 {
 	font-size: 25px;
 	color: #3a738f;
 }
 
 /*-----------milieu--------------------*/
-.milieu{
+.milieu {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 	align-content: center;
 }
-.resume{
+.resume {
 	margin: 20px;
 	height: 150px;
 	width: 80%;
 	display: flex;
 	display: -ms-flexbox;
-    display: -webkit-flex;
+	display: -webkit-flex;
 
 	flex-wrap: wrap;
 	-webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-
+	-ms-flex-wrap: wrap;
 
 	justify-content: space-evenly;
 	-webkit-justify-content: space-evenly;
-    -ms-flex-pack: distribute;
-    
+	-ms-flex-pack: distribute;
+
 	align-items: center;
 	-webkit-align-items: center;
-    -ms-flex-align: center;
-
-	
-	
-
+	-ms-flex-align: center;
 }
 
-.case{
-	background-color: rgb(94,162,196);
+.case {
+	background-color: rgb(94, 162, 196);
 	height: 120px;
 	width: 160px;
 	color: white;
@@ -143,46 +115,41 @@ h1{
 
 	display: flex;
 	display: -ms-flexbox;
-    display: -webkit-flex;
+	display: -webkit-flex;
 
 	justify-content: space-evenly;
 	-webkit-justify-content: space-evenly;
-    -ms-flex-pack: distribute;
+	-ms-flex-pack: distribute;
 
 	align-items: center;
 	-webkit-align-items: center;
-    -ms-flex-align: center;
+	-ms-flex-align: center;
 
 	align-content: space-around;
-	-ms-flex-align :inherit;
-	
-	
+	-ms-flex-align: inherit;
+
 	flex-direction: column;
 	-ms-flex-direction: column;
-
-	
-	
 }
 
-.case p{
+.case p {
 	font-size: 17px;
 }
 
-.cercle{
+.cercle {
 	width: 50px;
 	height: 50px;
 }
 
 @media screen and (max-width: 768px) {
-	.resume{
+	.resume {
 		height: 300px;
 	}
 }
 
 /*--------------test-------------------*/
 
-
-.test{
+.test {
 	margin: 20px;
 	width: 80%;
 	display: flex;
@@ -191,20 +158,19 @@ h1{
 	align-items: center;
 }
 
-.test h3{
+.test h3 {
 	border-bottom: #97a5aa solid;
 	font-size: 20px;
-	color: rgb(94,162,196);
+	color: rgb(94, 162, 196);
 	padding-bottom: 10px;
-	
 }
 
-.bar{
+.bar {
 	width: 70px;
 	height: 70px;
 }
 
-.resultat{
+.resultat {
 	display: flex;
 	height: 300px;
 	flex-direction: column;
@@ -213,8 +179,8 @@ h1{
 	align-items: center;
 }
 
-.detail{
-	background-color:rgba(151,165,170,.8);
+.detail {
+	background-color: rgba(151, 165, 170, 0.8);
 	/*border-radius: 10%;*/
 	margin-bottom: 20px;
 	width: 90%;
@@ -223,11 +189,11 @@ h1{
 	text-align: justify;
 }
 
-.retour{
+.retour {
 	cursor: pointer;
 	width: 100px;
 	height: 40px;
-	background-color: rgb(94,162,196);
+	background-color: rgb(94, 162, 196);
 	outline: none;
 	border: none;
 	border-radius: 15px;
@@ -236,13 +202,8 @@ h1{
 	margin-bottom: 40px;
 	position: relative;
 	font-weight: bold;
-	
 }
 
-.retour:hover{
+.retour:hover {
 	border: black solid;
 }
-<<<<<<< HEAD:view/resultatsCentre/resultatsCentre.css
-
-=======
->>>>>>> origin/Raph:view/resultats/resultatsCentre.css

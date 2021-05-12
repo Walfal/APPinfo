@@ -6,12 +6,7 @@ session_start();
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
-		<title><?php 
-            if (isset($title)) {
-                echo $title;
-            } else {	
-                echo 'Sensair';
-        }  ?></title>
+		<title><?= (isset($title)) ? $title : "Sens'air" ?></title>
 		<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
