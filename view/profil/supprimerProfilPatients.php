@@ -40,9 +40,9 @@ function checkInput($data){
 
 <div class="contenu">
     <form class="formulaire" action="../../view/profil/supprimerProfilPatients.php" role="form" method="post">
-    <input type="hidden" name="id" value="<?php echo $id; ?>"/>    
-    <p class="alert">Etes-vous sur de vouloir supprimer ?</p>
-    <div class="actions">
+        <input type="hidden" name="id" value="<?php echo $id; ?>"/>    
+        <p class="alert">Etes-vous sûr de vouloir supprimer ?</p>
+        <div class="actions">
             <div class="submit">
                 <button type="submit" class="bouton">Oui</button>
             </div>

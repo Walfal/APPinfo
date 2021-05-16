@@ -50,7 +50,7 @@
 	<body>
 	
 		<section id="main-image">
-			<h2>WELCOME TO <br /><strong>SENS'AIR</strong></h2>
+			<h2 class="ml2">BIENVENUE CHEZ <br /><strong>SENS'AIR</strong></h2>
 			<a href="login/login.php" class="button-1">
 			<?php if(isset($_SESSION['matricule'])): ?>
 				Accéder à mon compte
@@ -59,7 +59,8 @@
 			<?php endif; ?>
 			</a>
 		</section>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+		<script src="titleEffect.js"></script>
 		<section id="presentation">
 			<div class="wrapper">
 				<h2>VOS TESTS PSYCHOTECHNIQUES</h2>
@@ -77,27 +78,29 @@
 			<div class="wrapper">
 				<h2>NOS ENGAGEMENTS</h2>
 				<br />
-				<ul>
-					<li id="step-1">
+				<div class="engagements">
+					<div class="engagement">
+						<img src="images/icons/face.svg" style="width:30px">
 						<h4>Planifier</h4>
-						<p>
+						<p><br>
 							Un fonctionnement en rendez-vous, permettant une bonne gestion des capteurs.
-						</p>
-					</li>
-					<li id="step-2">
+						<br></p>
+					</div>
+					<div class="engagement">
+						<img src="images/icons/face.svg" style="width:30px">
 						<h4>Organiser</h4>
-						<p>
+						<p><br>
 							Une organisation exemplaire pour permettre un suivi des tests psychotechniques des unités.
-						</p>
-					</li>
-					<li id="step-3">
+						<br></p>
+					</div>
+					<div class="engagement">
+						<img src="images/icons/face.svg" style="width:30px">
 						<h4>Voyager</h4>
-						<p>
+						<p><br>
 							Prenez les commandes de manière sereine grâce à un suivi complet de votre condition physique.
-						</p>
-					</li>
-					<div class="clear"></div>
-				</ul>
+						<br></p>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -124,7 +127,7 @@
 
 		<!-- ----------------------------------------------------------- CONTACTEZ-NOUS ---------------------------------------------------------------------------------- -->
 
-		<section id="contact">
+		<div id="contact">
 			<div class="wrapper">
 				<h2>Contactez-nous</h2>
 				<p>
@@ -134,7 +137,7 @@
 				</p>
 				<a href="messagerie/contactezNous.php" class="button-3">Contactez nous</a>
 			</div>
-		</section>
+		</div>
 	</body>
 
 	<footer>
@@ -171,7 +174,7 @@
 					<li><a href=".">Accueil</a></li>
 					<li><a href="services/services.php">Nos services</a></li>
 					<li><a href="quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
-					<li><a href="contactezNous/contactezNous.php">Contactez nous</a></li>
+					<li><a href="messagerie/contactezNous.php">Contactez nous</a></li>
 					<li><a href="FAQ/FAQ.php">FAQ</a></li>
 					<li><a href="headerFooter/CGU.php">Conditions d'utilisations</a></li>
 					</ul>

@@ -25,17 +25,16 @@
     margin-left: 20px;
     margin-top: 40px;
 }
-.form-group{
-    display: flex;
-    list-style:none;
-    padding-bottom: 5%;   
-    color: #5EA2C4;
-}
+
 .contenu{
+    width: 600px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    width: 700px;
-    margin-top: 30px;
+}
+
+.contenu form{
+    width: 100%;
     height: 100%;
     background: white;
     border-radius: 4px;
@@ -44,8 +43,12 @@
     margin-bottom: 40px;
 }
 
-.champ{
-    width:300px;
+.help-inline{
+    color: red;
+}
+
+.contenu form input, .contenu form textarea{
+    width: 100%;
     height: 40px;
     border-radius: 4px;
     border: 1px solid gray;
@@ -53,15 +56,30 @@
     padding-left: 5px;
 }
 
-.espacement{
-    padding-left: 50px;
+#reponse{
+     height: 300px;
+     padding-top: 2px;
+
 }
+
 label{
     color: #5ea2c4;
     font-weight: bold;
     font-size: large;
 }
+@media screen and (max-width: 755px){
+    .contenu {
+        width: 400px;
+        display: flex;
+    }
+}
 
+@media all and (max-device-width: 480px){
+    .contenu {
+        width: 400px;
+        display: flex;
+    }
+}
 .actions{
     display: flex;
     align-items: center;
@@ -72,8 +90,8 @@ label{
     border-radius: 7px;
     border: none;
     text-transform: uppercase;
-    font-size: 16px;
     color: white;
+    font-size: 16px;
     background-color: rgb(224, 153, 46);
 }
 

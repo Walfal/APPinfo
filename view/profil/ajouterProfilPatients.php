@@ -8,7 +8,7 @@ endif;
 
 require '../../model/BDD/connexionBDD.php';
 
-$matricule = $nom = $prenom = $sexe = $num_ss = $adresseRue = $adresseVille = $codePostal= $telephone = $mail = $poids = $taille = $dateDeNaissance = $motDePasse = $role = "";
+$matricule = $nom = $prenom = $sexe = $num_ss = $adresseRue = $adresseVille = $codePostal= $telephone = $mail = $poids = $taille = $dateDeNaissance = $motDePasse = $role = $medecin = "";
 
 if(!empty($_POST)) {
     $matricule = checkInput($_POST['matricule']);
@@ -56,77 +56,71 @@ function checkInput($data){
 
 <!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
 
-<div class="contenu">
-    <form class="formulaire" action="../../view/profil/ajouterProfilPatients.php" role="form" method="post" enctype="multipart/form-data">
+
+<form class="formulaire" action="../../view/profil/ajouterProfilPatients.php" role="form" method="post" enctype="multipart/form-data">
+    <div class="contenu">
         <div class="form-group">
-            <label for="Matricule">Matricule* :</label>
-            <input type="text"  id=matricule name="matricule" value="<?php echo $matricule; ?>" required>
+            <li><label for="Matricule2"> Matricule : </label> <br>
+            <input class="champ" type="text"  id=Matricule2 name="matricule2" value=" <?php echo $matricule; ?>" required></li>
         </div>
         <div class="form-group">
-            <label for="Nom">Nom* :</label>
-            <input type="text"  id=Nom name="nom" value="<?php echo $nom; ?>" required>
-        </div>
+            <li><label for="Nom">Nom :</label><br>
+            <input type="text" class="champ" id=Nom name="nom" value=" <?php echo $nom; ?>" required></li>    
+            <li class="espacement"><label for="Prenom">Prénom :</label><br>
+            <input type="text" class="champ" id=Prenom name="prenom" value=" <?php echo $prenom; ?>" required ></li>    
+        </div>		
         <div class="form-group">
-            <label for="Prenom">Prénom* :</label>
-            <input type="text" id=Prenom name="prenom" value="<?php echo $prenom; ?>" required>
-        </div>
-		<div class="form-group">
-			<Label> Sexe : </Label>
-				<select name="sexe" class="champ">
-				<option value="0" selected="selected"> - </option>
+            <li><label for="sexe"> Sexe : </label><br>
+            <select name="sexe" class="champ">
+                <option value="0" selected="selected"> - </option>
 				<option value="1"> Homme </option>
 				<option value="2"> Femme </option>
-				</select>
-		</div><br>
+            </select></li>
+        </div>    
         <div class="form-group">
-            <label for="Mail">Mail* :</label>
-            <input type="email" id=Mail name="mail" value="<?php echo $mail; ?>" required>
+            <li><label for="Numss">Numéro de sécurité sociale :</label> <br>
+            <input type="text"  class="champ" id=Numss name="num_ss" value="<?php echo $num_ss; ?>" required></li>
+        </div>	 		
+        <div class="form-group">
+            <li><label for="AdresseRue">Adresse (numéro et voie) :</label><br>
+            <input type="text" class="champ" id=AdresseRue name="adresseRue" value=" <?php echo $adresseRue; ?>" required></li>
         </div>
         <div class="form-group">
-            <label for="Numss">Numéro de sécurité social* :</label>
-            <input type="text" id=Numss name="num_ss" value="<?php echo $num_ss; ?>" required>
+            <li><label for="AdresseVille">Adresse (ville) :</label><br>
+            <input type="text" class="champ" id=AdresseVille name="adresseVille" value=" <?php echo $adresseVille; ?>" required></li>
+            <li class="espacement"><label for="CodePostale">Code postal :</label><br>
+            <input type="text" class="champ" id=CodePostal name="codePostal" value=" <?php echo $codePostal; ?>" required></li>
         </div>
         <div class="form-group">
-            <label for="Adresse">Adresse (numéro et voie)* :</label>
-            <input type="text"  id=Adresse name="adresseRue" value="<?php echo $adresseRue; ?>" required>
+            <li><label for="Telephone">Téléphone :</label><br>
+            <input type="tel" class="champ" id=Telephone name="telephone" value=" <?php echo $telephone; ?>" required></li>
         </div>
         <div class="form-group">
-            <label for="Adresse">Adresse (Ville)* :</label>
-            <input type="text"  id=Adresse name="adresseVille" value="<?php echo $adresseVille; ?>" required>
+            <li><label for="Mail">Mail :</label><br>
+            <input type="email" class="champ" id=Mail name="mail" value=" <?php echo $mail; ?>" required></li>
         </div>
         <div class="form-group">
-            <label for="CodePostale">Code postal* :</label>
-            <input type="text" id=CodePostal name="codePostal" value="<?php echo $codePostal; ?>" required>
+            <li><label for="Motdepasse">Mot de passe :</label><br>
+            <input type="password"class="champ" id=Motdepasse name="motDePasse" value="<?php echo $motDePasse; ?>"required></li>
         </div>
         <div class="form-group">
-            <label for="Telephone">Téléphone* :</label>
-            <input type="tel" id=Telephone name="telephone" value="<?php echo $telephone; ?>" required>
+            <li><label for="Poids">Poids :</label><br>
+            <input type="text"  class="champ" id=Poids name="poids" value=" <?php echo $poids; ?>" required></li>
+            <li class="espacement"><label for="Taille">Taille :</label><br>
+            <input type="text" class="champ" id=Taille name="taille" value=" <?php echo $taille; ?>" required></li>
         </div>
         <div class="form-group">
-            <label for="Poids">Poids* :</label>
-            <input type="number" id=Poids name="poids" value="<?php echo $poids; ?>" required>
+            <li><label for="dateDeNaissance">Date de naissance :</label><br>
+            <input type="text" class="champ" id=DateDeNaissance name="dateDeNaissance" value=" <?php echo $dateDeNaissance; ?>" required></li>
         </div>
         <div class="form-group">
-            <label for="Taille">Taille* :</label>
-            <input type="number" id=Taille name="taille" value="<?php echo $taille; ?>" required>
+            <li><label for="Role">Rôle :</label><br>
+            <input type="text" class="champ" id=Role name="role" value=" <?php echo $role; ?>" required></li>
         </div>
         <div class="form-group">
-            <label for="dateDeNaissance">Date de naissance* :</label>
-            <input type="date" id=dateDeNaissance name="dateDeNaissance" value="<?php echo $dateDeNaissance; ?>" required>
+            <li><label for="Medecin">Médecin :</label><br>
+            <input type="text" class="champ" id=Medecin name="medecin" value=" <?php echo $medecin; ?>" required></li>
         </div>
-        <div class="form-group">
-            <label for="motDePasse">Mot de passe* :</label>
-            <input type="password" id=motdepasse name="motDePasse" value="<?php echo $motDePasse; ?>" required>
-        </div>
-        <div class="form-group">
-            <label for="role">Rôle* :</label>
-            <input type="text" id=role name="role" value="<?php echo $role; ?>" required>
-        </div>
-        <div class="form-group">
-            <label for="medecin">Medecin* :</label>
-            <input type="number" id=medecin name="medecin" value="<?php echo $medecin; ?>" required>
-        </div>
-        <br>
         <div class="actions">
             <div class="submit">
                 <button type="submit">+ Ajouter</button>
@@ -135,7 +129,8 @@ function checkInput($data){
                 <a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
             </div>
         </div>
-    </form>
-</div>
+    </div>
+</form>
+
 
 <?php require_once '../headerFooter/footer.php';?>

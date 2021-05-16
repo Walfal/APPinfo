@@ -20,12 +20,12 @@ if(isset($_GET['id'])){
     $sexe = $valeur['sexe'];
     $mail = $valeur['mail'];
     $num_ss = $valeur['numero de securite social'];
-    $adresseRue = $valeur['adresse (numero et voie)'];
-    $adresseVille = $valeur['adresse (ville)'];
-    $codePostal = $valeur['adresse (code postal)'];
+    $adresseRue = $valeur['adresse'];
+    $adresseVille = $valeur['ville'];
+    $codePostal = $valeur['code postal'];
     $telephone = $valeur['telephone'];
-    $poids = $valeur['poids (kg)'];
-    $taille = $valeur['taille (cm)'];
+    $poids = $valeur['poids'];
+    $taille = $valeur['taille'];
     $dateDeNaissance = $valeur['date de naissance'];
     $motDePasse = $valeur['mot de passe'];
     $role = $valeur['role'];
@@ -55,78 +55,72 @@ function checkInput($data){
 
 <!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
 
-<div class="contenu">
-    <form class="formulaire" action="<?php echo '../../view/profil/modifierProfilPatients.php?id=' ?>" role="form" method="post" enctype="multipart/form-data">
+
+<form class="formulaire" action="<?php echo '../../view/profil/modifierProfilPatients.php?id=' ?>" role="form" method="post" enctype="multipart/form-data">
+    <div class="contenu">   
         <input type="hidden"  id=Matricule name="matricule" value=" <?php echo $_GET['id']; ?>">
         <div class="form-group">
-            <label for="Matricule2">Matricule :</label>
-            <input type="text"  id=Matricule2 name="matricule2" value=" <?php echo $_GET['id']; ?>">
+            <li><label for="Matricule2"> Matricule : </label> <br>
+            <input class="champ" type="text"  id=Matricule2 name="matricule2" value=" <?php echo $_GET['id']; ?>"></li>
         </div>
         <div class="form-group">
-            <label for="Nom">Nom :</label>
-            <input type="text"  id=Nom name="nom" value=" <?php echo $nom; ?>">
+            <li><label for="Nom">Nom :</label><br>
+            <input type="text" class="champ" id=Nom name="nom" value=" <?php echo $nom; ?>"></li>    
+            <li class="espacement"><label for="Prenom">Prénom :</label><br>
+            <input type="text" class="champ" id=Prenom name="prenom" value=" <?php echo $prenom; ?>" ></li>    
+        </div>		
+        <div class="form-group">
+            <li><label for="sexe"> Sexe : </label><br>
+            <select name="sexe" class="champ">
+                <option value="0" <?php if($sexe == 0){ echo 'selected="selected"';} ?>> - </option>
+                <option value="1" <?php if($sexe == 1){ echo 'selected="selected"';} ?>> Homme </option>
+                <option value="2" <?php if($sexe == 2){ echo 'selected="selected"';} ?>> Femme </option>
+            </select></li>
+        </div>    
+        <div class="form-group">
+            <li><label for="Numss">Numéro de sécurité sociale :</label> <br>
+            <input type="text"  class="champ" id=Numss name="num_ss" value="<?php echo $num_ss; ?>"></li>
+        </div>	 		
+        <div class="form-group">
+            <li><label for="AdresseRue">Adresse (numéro et voie) :</label><br>
+            <input type="text" class="champ" id=AdresseRue name="adresseRue" value=" <?php echo $adresseRue; ?>"></li>
         </div>
         <div class="form-group">
-            <label for="Prenom">Prénom :</label>
-            <input type="text" id=Prenom name="prenom" value=" <?php echo $prenom; ?>" >
-        </div>
-		<div class="form-group">
-			<Label> Sexe : </Label>
-				<select name="sexe" class="champ">
-				<option value="0" <?php if($sexe == 0){ echo 'selected="selected"';} ?>> - </option>
-				<option value="1" <?php if($sexe == 1){ echo 'selected="selected"';} ?>> Homme </option>
-				<option value="2" <?php if($sexe == 2){ echo 'selected="selected"';} ?>> Femme </option>
-				</select>
-		</div><br>
-        <div class="form-group">
-            <label for="Numss">Numéro de sécurité sociale :</label>
-            <input type="text" id=Numss name="num_ss" value="<?php echo $num_ss; ?>">
+            <li><label for="AdresseVille">Adresse (ville) :</label><br>
+            <input type="text" class="champ" id=AdresseVille name="adresseVille" value=" <?php echo $adresseVille; ?>"></li>
+            <li class="espacement"><label for="CodePostale">Code postal :</label><br>
+            <input type="text" class="champ" id=CodePostal name="codePostal" value=" <?php echo $codePostal; ?>"></li>
         </div>
         <div class="form-group">
-            <label for="AdresseRue">Adresse (numéro et voie) :</label>
-            <input type="text"  id=AdresseRue name="adresseRue" value=" <?php echo $adresseRue; ?>">
+            <li><label for="Telephone">Téléphone :</label><br>
+            <input type="tel" class="champ" id=Telephone name="telephone" value=" <?php echo $telephone; ?>"></li>
         </div>
         <div class="form-group">
-            <label for="AdresseVille">Adresse (ville) :</label>
-            <input type="text"  id=AdresseVille name="adresseVille" value=" <?php echo $adresseVille; ?>">
+            <li><label for="Mail">Mail :</label><br>
+            <input type="email" class="champ" id=Mail name="mail" value=" <?php echo $mail; ?>"></li>
         </div>
         <div class="form-group">
-            <label for="CodePostale">Code postal :</label>
-            <input type="text" id=CodePostal name="codePostal" value=" <?php echo $codePostal; ?>">
+            <li><label for="Motdepasse">Mot de passe :</label><br>
+            <input type="password"class="champ" id=Motdepasse name="motDePasse" value="<?php echo $motDePasse; ?>"></li>
         </div>
         <div class="form-group">
-            <label for="Telephone">Téléphone :</label>
-            <input type="tel" id=Telephone name="telephone" value=" <?php echo $telephone; ?>">
+            <li><label for="Poids">Poids :</label><br>
+            <input type="text"  class="champ" id=Poids name="poids" value=" <?php echo $poids; ?>"></li>
+            <li class="espacement"><label for="Taille">Taille :</label><br>
+            <input type="text" class="champ" id=Taille name="taille" value=" <?php echo $taille; ?>"></li>
         </div>
         <div class="form-group">
-            <label for="Mail">Mail :</label>
-            <input type="email" id=Mail name="mail" value=" <?php echo $mail; ?>">
+            <li><label for="dateDeNaissance">Date de naissance :</label><br>
+            <input type="text" class="champ" id=DateDeNaissance name="dateDeNaissance" value=" <?php echo $dateDeNaissance; ?>"></li>
         </div>
         <div class="form-group">
-            <label for="Poids">Poids :</label>
-            <input type="text" id=Poids name="poids" value=" <?php echo $poids; ?>">
+            <li><label for="Role">Rôle :</label><br>
+            <input type="text" class="champ" id=Role name="role" value=" <?php echo $role; ?>"></li>
         </div>
         <div class="form-group">
-            <label for="Taille">Taille :</label>
-            <input type="text" id=Taille name="taille" value=" <?php echo $taille; ?>">
+            <li><label for="Medecin">Médecin :</label><br>
+            <input type="text" class="champ" id=Medecin name="medecin" value=" <?php echo $medecin; ?>"></li>
         </div>
-        <div class="form-group">
-            <label for="dateDeNaissance">date de naissance :</label>
-            <input type="text" id=DateDeNaissance name="dateDeNaissance" value=" <?php echo $dateDeNaissance; ?>">
-        </div>
-        <div class="form-group">
-            <label for="Motdepasse">Mot de passe :</label>
-            <input type="password" id=Motdepasse name="motDePasse" value="<?php echo $motDePasse; ?>">
-        </div>
-        <div class="form-group">
-            <label for="Role">Rôle :</label>
-            <input type="text" id=Role name="role" value=" <?php echo $role; ?>">
-        </div>
-        <div class="form-group">
-            <label for="Medecin">Médecin :</label>
-            <input type="text" id=Medecin name="medecin" value=" <?php echo $medecin; ?>">
-        </div>
-        <br>
         <div class="actions">
             <div class="modify">
                 <button type="submit">Modifier</button>
@@ -135,8 +129,9 @@ function checkInput($data){
                 <a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
             </div>
         </div>
-    </form>
+    </div> 
+</form> 
     
-</div>
+
 
 <?php require_once '../headerFooter/footer.php';

@@ -33,7 +33,7 @@
 					<li><a href="../">Accueil</a></li>
 					<li><a href="../services/services.php">Nos services</a></li>
 					<li><a href="../quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
-					<li><a href="../contactezNous/contactezNous.php">Contactez nous</a></li>
+					<li><a href="../messagerie/contactezNous.php">Contactez nous</a></li>
 					<li><a href="../FAQ/FAQ.php">FAQ</a></li>
 					<li><a href="../headerFooter/CGU.php">Conditions d'utilisations</a></li>
 					</ul>

@@ -61,24 +61,58 @@ label {
 	margin: 10px 0 18px 0;
 	padding-left: 5px;
 }
-.separation {
-	text-align: center;
-	color: #5ea2c4;
-	margin-top: 7%;
-	margin-bottom: 7%;
-}
 
-.validate {
-	text-align: center;
-	margin-top: 5%;
-	margin-bottom: 5%;
+@media screen and (max-width:790px){
+	.principal{
+		width: auto;
+		margin: 30px 20px;
+		margin-bottom: 370px;
+	}
+	form{
+		text-align: center;
+	}
+	.linedisplay{
+		flex-direction: column;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.espacement{
+		padding-left: 0%;
+	}
+	
 }
-.styleValidate {
-	background-color: #5ea2c4;
-	border-radius: 5px;
-	padding: 10px;
-	border: none;
-	border-color: #5ea2c4;
-	font-weight: bold;
+.actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modify button{
+    padding: 9px;
+    border-radius: 7px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: rgb(224, 153, 46);;
+    border: 2px solid rgb(224, 153, 46);
+	background-color: white; 
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.modify button:hover{
 	color: white;
+	background-color: rgb(224, 153, 46);
+}
+.retour a{
+    margin-left: 18%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+    border: 2px solid #5ea2c4;
+    color: #5ea2c4;
+    text-transform: uppercase;
+}
+.retour a:hover{
+	color: white;
+	background-color: #5ea2c4;
 }

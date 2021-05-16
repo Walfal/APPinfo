@@ -82,7 +82,7 @@ endif;
                                 echo '<td data-label="Prénom :">' . $personne['prenom'] . '</td>';
                                 echo '<td data-label="Mail :">' . $personne['mail'] . '</td>';
                                 echo '<td data-label="N° sécu :">' . $personne['numero de securite social'] . '</td>';
-                                echo '<td data-label="Code Postale :">' . $personne['adresse (code postal)'] . '</td>';
+                                echo '<td data-label="Code Postale :">' . $personne['code postal'] . '</td>';
                                 echo '<td data-label="Actions :" width=300>';
                                 echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $personne['matricule'] . '" >Voir</a>';
                                 if($_SESSION['matricule'] < 20):
@@ -108,7 +108,7 @@ endif;
                             echo '<td data-label="Prénom :">' . $personne['prenom'] . '</td>';
                             echo '<td data-label="Mail :">' . $personne['mail'] . '</td>';
                             echo '<td data-label="N° sécu :">' . $personne['numero de securite social'] . '</td>';
-                            echo '<td data-label="Code Postale :">' . $personne['adresse (code postal)'] . '</td>';
+                            echo '<td data-label="Code Postale :">' . $personne['code postal'] . '</td>';
                             echo '<td data-label="Actions :" width=300>';
                             echo '<a href="../../view/profil/voirProfilPatients.php?id='  . $personne['matricule'] . '" >Voir</a>';
                             if($_SESSION['matricule'] < 20):

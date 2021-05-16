@@ -11,6 +11,7 @@ class connexionBDD{
 	private $NAME = 'APPinfo';
 	private $USER = 'root';
 	private $PASS = '';
+	
 
 	private $connexion;
 
