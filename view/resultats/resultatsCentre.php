@@ -2,6 +2,8 @@
 $title = "Mes résultats - Centre sélectionné";
 require_once('../../view/headerFooter/header.php');
 require_once('../../model/BDD/connexionBDD.php');
+require_once('../../controller/resultats/graphResultats.php');
+
 //require_once('../../model/envoieTest.php');
 ?>    
 <link href="resultatsCentre.css" rel="stylesheet">
@@ -56,7 +58,7 @@ require_once('../../model/BDD/connexionBDD.php');
             <div>
                 <h3>Nom du test</h3>
                 <div class="resultat">
-                    <img src="../../controller/graphResultats.php"/>
+                    <img src="<?= drawGraph($BDD)?>"/>
                 </div>
                 
                 <div class="detail">
