@@ -110,3 +110,4 @@ function checkInput($data){
 	$data = htmlentities($data);
 	return $data;
 }
+

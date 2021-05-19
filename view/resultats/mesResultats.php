@@ -1,54 +1,16 @@
 <?php
+	$title = "Mes résultats";
+	require_once('../../view/headerFooter/header.php');
 	include_once('../../model/BDD/connexionBDD.php');
 	//include('../../model/envoieTest.php');
-	$matriculeTest = 1;
-	$envoieA = 2 - $matriculeTest;
-	$matricule = 1;
-	$test = recuperationDesDonnees($BDD, $Test);
-	$nom = recuperationNom($BDD, $matricule);
+	$matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
+	$req = query($BDD, "SELECT debut, resultat, nom FROM PriseRDV NATURAL JOIN (Test NATURAL JOIN Capteur) WHERE matricule = ? ORDER BY debut", [$matricule]);
+	$tests = $req->fetchAll();
+	$nom = recuperationUneDonnee($BDD, "Personne", "matricule", $matricule);
+	$nom = $nom["nom"];
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>mes Résultats</title>
-		<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
-		<link href="mesResultats.css" rel="stylesheet" />
-		<link rel="icon" href="../images/logo/logo.png" />
-	</head>
-	<!-- -------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
-	<header>
-		<div class="wrapper">
-			<nav>
-				<input id="nav-toggle" type="checkbox" />
-				<a href="../"><img class="logo" src="../images/logo/sensair.png" alt="" /></a>
-				<ul class="links">
-					<li><a href="../">Home</a></li>
-					<li><a href="../services/services.php">Services</a></li>
-					<li><a href="../quiSommesNous/quiSommesNous.php">About Us</a></li>
-					<li><a href="../contactezNous/contactezNous.php">Contact Us</a></li>
-					<li><a href="#">FAQ</a></li>
-					<li>
-						<a href="#">
-							<img class="bi bi-globe" src="../images/icons/language.svg" style="width: 25px" />
-						</a>
-					</li>
-					<li>
-						<a href="../login/login.php"
-							><img class="bi bi-globe" src="../images/icons/account.svg" style="width: 25px"
-						/></a>
-					</li>
-				</ul>
-				<label for="nav-toggle" class="icon-burger">
-					<div class="line"></div>
-					<div class="line"></div>
-					<div class="line"></div>
-				</label>
-			</nav>
-		</div>
-	</header>
+<link href="mesResultats.css" rel="stylesheet" />
 
 	<!-- -------------------------------------------------------------- MAIN ---------------------------------------------------------------------------------- -->
 	<body>
@@ -68,11 +30,10 @@
 							<img src="../images/icons/home.svg" alt="maison" class="home" />
 							<h2>Centre de Lorem</h2>
 						</centre>
-						<button class="getResults">
+						<a class="getResults" href="resultatsCentre.php">
 							Consulter<br />
 							mes résultats
-						</button>
-						
+						</a>
 					</place>
 				</div>
 			</div>
@@ -87,15 +48,16 @@
 			<!--	<th>nom</th>-->
 			<!--	<th>IdCapteur</th>-->
 			</tr>
-			<?php foreach($test as $row): ?>
+			<?php foreach($tests as $test): ?>
 				<tr>
-				<!--<td><?= $row['idTest'];?></td>-->
-				<td><?= $row['type'];?></td>
-				<td><?= $row['resultat'];?></td>
-				<td><?= $row['date'];?></td>
-				<!--<td><?= $row['trame'];?></td>-->
-				<td><?= $nom['nom'];?></td>
-				<!--<td><?= $row['idCapteur'];?></td>-->
+				<td><?= $test['nom'];?></td>
+				<td><?= $test['resultat'];?></td>
+				<td>
+				<?php 
+                    setlocale(LC_TIME, 'fr_FR.utf-8','fra');
+                    $date = new DateTime($test['debut']);
+                    echo (strftime("%A %e %B %Y %k:%M", date_timestamp_get($date)));?></td>
+				<td><?= $nom ?></td>
 				</tr>
 			<?php endforeach ?>
 		</table>

@@ -66,7 +66,7 @@ define('DEFAULT_ERR_LOCALE','en');
 // Deafult graphic format set to 'auto' which will automatically
 // choose the best available format in the order png,gif,jpeg
 // (The supported format depends on what your PHP installation supports)
-define('DEFAULT_GFORMAT','auto');
+define('DEFAULT_GFORMAT','png');
 
 // Should the cache be used at all? By setting this to false no
 // files will be generated in the cache directory.
