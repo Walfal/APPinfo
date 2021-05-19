@@ -6,6 +6,8 @@ require_once '../../model/BDD/connexionBDD.php';
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 99):
     header('Location: ../login/login.php');
 endif;
+
+require '../../controler/traduction/profil/profilPatientsTrad.php';
 ?>
 
 <link href="profilPatients.css" rel="stylesheet" />
@@ -13,7 +15,7 @@ endif;
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
-        <h2>Profil patients</h2>
+        <h2><?php echo $profil?></h2>
     </div>
     <div class="image">
         <img src="../images/icons/baseline_folder_white_24dp.png" alt="">
@@ -25,18 +27,18 @@ endif;
 <div class="filter">
     <form class="aRemplir" method="post">
         <div class="champ">
-            <input type="text" id="nom" class="nom" name="nomPatient" placeholder="Nom du patient">
+            <input type="text" id="nom" class="nom" name="nomPatient" placeholder="<?php echo $nom?>">
         </div>
         <div class="champ">
-            <label for="" class="ou">OU</label>
-            <input type="text" id="prenom" class="prenom" name="prenomPatient" placeholder="Prénom du patient">
+            <label for="" class="ou"><?php echo $ou?></label>
+            <input type="text" id="prenom" class="prenom" name="prenomPatient" placeholder="<?php echo $prenom ?>">
         </div>
         <div class="champ">
-            <label for="" class="ou">OU</label>
-            <input type="text" id="codePostal" class="adresse" name="codePostal" placeholder="Code postal">
+            <label for="" class="ou"><?php echo $ou?></label>
+            <input type="text" id="codePostal" class="adresse" name="codePostal" placeholder="<?php echo $code ?>">
         </div>
         <div class="champ">
-            <input type="submit" class="valider" name="valider" value="Valider >">
+            <input type="submit" class="valider" name="valider" value="<?php echo $valider?> >">
         </div>
 
     </form>
@@ -46,9 +48,9 @@ endif;
 <div class="container admin">
     
     <div class="row">
-        <h1>Liste des utilisateurs
+        <h1><?php echo $liste?>
             <?php if($_SESSION['matricule'] < 20): ?>
-                <a href="../../view/profil/ajouterProfilPatients.php">+ Ajouter</a>
+                <a href="../../view/profil/ajouterProfilPatients.php">+ <?php echo $ajouter ?></a>
             <?php endif ?>
         </h1>
     </div>
@@ -56,13 +58,13 @@ endif;
     <table class="table">
         <thead>
             <tr>
-                <th>Matricule</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Mail</th>
-                <th>N° sécu</th>
-                <th>Code postal</th>
-                <th>Actions</th>
+                <th><?php echo $matricule ?></th>
+                <th><?php echo $name ?></th>
+                <th><?php echo $name2 ?></th>
+                <th><?php echo $mail ?></th>
+                <th><?php echo $nss ?></th>
+                <th><?php echo $code ?></th>
+                <th><?php echo $ajouter ?></th>
             </tr>
         </thead>
         <tbody id="recherche">
@@ -140,17 +142,17 @@ endif;
                     retour += '<td data-label="N° sécu :">'      + personne['numero de securite social'] + '</td>';
                     retour += '<td data-label="Code Postale :">' + personne['code postal']               + '</td>';
                     retour += '<td data-label="Actions :" width=300>';
-                    retour += '<a href="../../view/profil/voirProfilPatients.php?id=' + personne['matricule'] + '" >Voir</a>';
+                    retour += '<a href="../../view/profil/voirProfilPatients.php?id=' + personne['matricule'] + '" ><?php echo $voir ?></a>';
                     if(SessionMatricule < 20){
-                        retour += '<a href="../../view/profil/modifProfil.php?id='             + personne['matricule'] + '" >Modifier</a>';
-                        retour += '<a href="../../view/profil/supprimerProfilPatients.php?id=' + personne['matricule'] + '" >Supprimer</a>';
+                        retour += '<a href="../../view/profil/modifProfil.php?id='             + personne['matricule'] + '" ><?php echo $modifier ?></a>';
+                        retour += '<a href="../../view/profil/supprimerProfilPatients.php?id=' + personne['matricule'] + '" ><?php echo $supprimer ?></a>';
                     }
                     retour += '</td>';
                     retour += '</tr>';
                 }
             })
         }else{
-            retour = '<p class="aucun">Aucun utilisateur trouvé</p>';
+            retour = '<p class="aucun"><?php echo $aucun ?></p>';
         }
         return retour;
     }

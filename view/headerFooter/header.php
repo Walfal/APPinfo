@@ -1,9 +1,16 @@
 <?php 
 session_start();
-?>
 
+require '../../controler/traduction/headerFooter/headeren.php';
+
+if (isset($_POST['langue'])){
+	$_SESSION['langue']= $_POST['langue'];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
+
 	<head>
 		<meta charset="UTF-8" />
 		<title><?= (isset($title)) ? $title : "Sens'air" ?></title>
@@ -11,6 +18,7 @@ session_start();
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
 	<!--------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
+	
 	<header>
 		<div class="wrapper">
 			<nav>
@@ -19,20 +27,22 @@ session_start();
 				<ul class="navbar-nar">
         		</ul>
 				<ul class="links">
-					<li><a href="../">Accueil</a></li>
-					<li><a href="../services/services.php">Nos services</a></li>
-					<li><a href="../quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
-					<li><a href="../messagerie/contactezNous.php">Contactez nous</a></li>
-					<li><a href="../FAQ/FAQ.php">FAQ</a></li>
+					<li><a href="../"><?php echo "$accueil" ?></a></li>
+					<li><a href="../services/services.php"><?php echo "$services" ?></a></li>
+					<li><a href="../quiSommesNous/quiSommesNous.php"><?php echo "$aPropos" ?></a></li>
+					<li><a href="../messagerie/contactezNous.php"><?php echo "$contact" ?></a></li>
+					<li><a href="../FAQ/FAQ.php"><?php echo "$FAQ" ?></a></li>
 					<li>
 						<a href="#">
 							<img class="bi bi-globe" src="../images/icons/language.svg" style="width: 25px" />
 						</a>
 						<ul class="sous">
-							<li><a href="#">Français</a></li>
-							<li><a href="#">English</a></li>
+						<form method="post">
+							<li><button type ="submit" href="../profil/compte.php" name="langue" value="fr">Français</button></li>
+							<li><button type ="submit" href="../profil/compte.php" name="langue" value ="en">English</button></li>
 							<li><a href="#">Espanol</a></li>
-							<li><a href="#">Deutch</a></li>
+							<li><a href="#">Deutch</a></li>  
+							</form>
 						</ul>
 					</li>
 					<li>

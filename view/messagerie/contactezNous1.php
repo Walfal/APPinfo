@@ -1,16 +1,19 @@
+
+
 <?php
 	$title = 'Contactez Nous';
 	require_once '../headerFooter/header.php';
 	$matriculeTest = 1;
 	$matriculeTest = $_SESSION['matricule'];
 	require_once '../../model/BDD/connexionBDD.php';
+	require '../../controler/traduction/messagerie/contactezNousTrad.php';
 	
 ?>
 
 <link href="contactezNous.css" rel="stylesheet" />
 <div class="bandehaut">
-	<h1 class="titrePage" style="line-height: 100%">Contactez-nous</h1>
-	<i class="sousTitre">Nous sommes là pour vous aider</i>
+	<h1 class="titrePage" style="line-height: 100%"><?php echo $contact ?></h1>
+	<i class="sousTitre"><?php echo $aide ?></i>
 </div>
 
 <form class="formulaire" method="post" id="Envoyer">
@@ -19,17 +22,17 @@
 		type="text"
 		name="titre"
 		id="titre"
-		placeholder="Quel est le thème de votre question ?"
+		placeholder="<?php echo $theme ?>"
 	></textarea>
 	<textarea
 		class="boiteMessage"
 		type="text"
 		name="message"
 		id="message"
-		placeholder="Votre message"
+		placeholder="<?php echo $message ?>"
 	></textarea>
 	<br />
-	<input href="contactezNous.php" class="boiteEnvoyer" type="submit" name="Envoyer" value="Envoyer" />
+	<input href="contactezNous.php" class="boiteEnvoyer" type="submit" name="Envoyer" value="<?php echo $envoyer ?>" />
 </form>
 
 <?php require_once '../headerFooter/footer.php'; ?>

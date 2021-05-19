@@ -16,12 +16,15 @@ if(!empty($_POST)){
     $statement = $BDD -> prepare("DELETE FROM Personne WHERE matricule = ?");
     $statement -> execute(array($id));
     header("location: profilPatients.php");
-}?>
+}
+require '../../controler/traduction/profil/supprimerProfilPatientTrad.php';
+
+?>
 <link href="supprimerProfilPatients.css" rel="stylesheet" />
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
-        <h2>Supprimer l'utilisateur</h2> 
+        <h2><?php echo $titre ?></h2> 
     </div>
     <div class="image">
         <img src="../images/icons/baseline_folder_white_24dp.png" alt="">
@@ -33,13 +36,13 @@ if(!empty($_POST)){
 <div class="contenu">
     <form class="formulaire" action="supprimerProfilPatients.php" role="form" method="post">
     <input type="hidden" name="id" value="<?php echo $id; ?>"/>    
-    <p class="alert">Etes-vous sur de vouloir supprimer ?</p>
+    <p class="alert"><?php echo $question ?></p>
     <div class="actions">
             <div class="submit">
-                <button type="submit" class="bouton">Oui</button>
+                <button type="submit" class="bouton"><?php echo $oui ?></button>
             </div>
             <div class="retour">
-                <a href="profilPatients.php" class="retour">Non</a>
+                <a href="profilPatients.php" class="retour"><?php echo $non ?></a>
             </div>
         </div>
     </form>

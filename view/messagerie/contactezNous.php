@@ -2,7 +2,7 @@
 $title = 'Contactez Nous';
 require_once '../headerFooter/header.php';
 require_once '../../model/BDD/connexionBDD.php';
-
+require '../../controler/traduction/messagerie/contactezNousTrad.php';
 ?><link href="contactezNous.css" rel="stylesheet" /><?php
 
 $matricule = $_SESSION['matricule'];
@@ -24,8 +24,8 @@ elseif($matricule > 19):
 	else:
 ?>
 	<div class="bandehaut">
-		<h1 class="titrePage" style="line-height: 100%">Contactez-nous</h1>
-		<i class="sousTitre">Nous sommes là pour vous aider</i>
+		<h1 class="titrePage" style="line-height: 100%"><?php echo $contact ?></h1>
+		<i class="sousTitre"><?php echo $aide ?></i>
 	</div>
 
 	<div class="titre">
@@ -55,7 +55,7 @@ elseif($matricule > 19):
 			placeholder="Votre message"
 		></textarea>
 		<br />
-		<input 	class="boiteEnvoyer" type="submit" name="Envoyer" value="Envoyer" />
+		<input 	class="boiteEnvoyer" type="submit" name="Envoyer" value="<?php echo $envoyer ?>" />
 	</form>
 
 	<?php endif;
@@ -68,7 +68,7 @@ elseif($matricule > 19):
 		?>
 
 		<div class="bandehaut">
-			<h1 class="titrePage" style="line-height: 100%">Réponse à</h1>
+			<h1 class="titrePage" style="line-height: 100%"><?php echo $reponse ?></h1>
 			<i class="sousTitre"><?= $client['prenom'] . ' ' . $client['nom']?></i>
 		</div>
 
@@ -98,10 +98,10 @@ elseif($matricule > 19):
 				type="text"
 				name="message"
 				id="message"
-				placeholder="Votre message"
+				placeholder="<?php echo $message ?>"
 			></textarea>
 			<br />
-			<input class="boiteEnvoyer" type="submit" name="Envoyer" value="Envoyer" />
+			<input class="boiteEnvoyer" type="submit" name="Envoyer" value="<?php echo $envoyer ?>" />
 		</form>
 
 	<?php else:
@@ -110,8 +110,8 @@ elseif($matricule > 19):
 	?>
 
 		<div class="bandehaut">
-			<h1 class="titrePage">Choississez le client</h1>
-			<i class="sousTitre">à qui vous voulez répondre</i>
+			<h1 class="titrePage"><?php echo $choix ?></h1>
+			<i class="sousTitre"><?php echo $aqui ?></i>
 		</div>
 
 		<div class="conversation">
