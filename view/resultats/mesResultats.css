@@ -68,6 +68,12 @@ centre {
 	border: none;
 	padding: 1vh;
 	padding-inline: 3vh;
+	text-decoration: none;
+	color: #3A738F;
+}
+
+.getResults:hover{
+	background-color: grey;
 }
 .resultat {
 	border-collapse: collapse;
