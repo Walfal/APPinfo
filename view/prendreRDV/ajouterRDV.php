@@ -62,7 +62,7 @@ endif?>
 
 <br>
 <br>
-	<button><?php echo $ajouter ?></button>
+	<button class ="envoie"><?php echo $ajouter ?></button>
 </form>
 </div>
 

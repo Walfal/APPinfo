@@ -1,11 +1,14 @@
 <?php 
 session_start();
 
-require '../../controler/traduction/headerFooter/headeren.php';
+
+
 
 if (isset($_POST['langue'])){
 	$_SESSION['langue']= $_POST['langue'];
 }
+
+require '../../controler/traduction/headerFooter/headeren.php';
 
 ?>
 <!DOCTYPE html>
@@ -38,8 +41,8 @@ if (isset($_POST['langue'])){
 						</a>
 						<ul class="sous">
 						<form method="post">
-							<li><button type ="submit" href="../profil/compte.php" name="langue" value="fr">Français</button></li>
-							<li><button type ="submit" href="../profil/compte.php" name="langue" value ="en">English</button></li>
+							<li><button class="langue" type ="submit"  name="langue" value="fr">Français</button></li>
+							<li><button class="langue" type ="submit"  name="langue" value ="en">English</button></li>
 							<li><a href="#">Espanol</a></li>
 							<li><a href="#">Deutch</a></li>  
 							</form>
