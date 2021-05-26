@@ -11,7 +11,7 @@ endif;
 require_once '../../model/RDV/Month.php';
 require_once '../../model/RDV/events.php';
 require_once '../../model/BDD/connexionBDD.php';
-require '../../controler/traduction/prendreRDV/JourMois.php';
+require '../../controller/traduction/prendreRDV/JourMois.php';
 
 $events = new Events();
 $month = new  Month($mois, $jours, $_GET['month'] ?? null, $_GET['year'] ?? null); // ?? : prend la première valeur si elle est définie sinon elle prend la valeur null

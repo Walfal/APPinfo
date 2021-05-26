@@ -9,7 +9,9 @@ if ($_SESSION['langue'] === 'en'){
 	$resultats ='Results';
 	$date ='Date';
 	$nom1 ='Name of the patient';
-
+	$centreTest ='Psychotechnical testing center';
+	$adresse ='Address of the center';
+	$retour ='Back';
 
 }
 
@@ -26,7 +28,7 @@ else{
 	$nom1 ='Nom du patient';
 	$centreTest ='Centre de tests psychotechniques';
 	$adresse ='Adresse du centre';
-	
+	$retour ='Retour';
 
 
 }

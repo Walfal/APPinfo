@@ -17,7 +17,7 @@ if(!empty($_POST)){
     $statement -> execute(array($id));
     header("location: profilPatients.php");
 }
-require '../../controler/traduction/profil/supprimerProfilPatientTrad.php';
+require '../../controller/traduction/profil/supprimerProfilPatientTrad.php';
 
 ?>
 <link href="supprimerProfilPatients.css" rel="stylesheet" />

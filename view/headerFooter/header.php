@@ -13,7 +13,7 @@ if (isset($_POST['langue'])){
 	}
 }
 
-require '../../controler/traduction/headerFooter/headeren.php';
+require '../../controller/traduction/headerFooter/headeren.php';
 
 ?>
 <!DOCTYPE html>

@@ -8,7 +8,7 @@ endif;
 
 require '../../model/BDD/connexionBDD.php';
 
-require '../../controler/traduction/profil/modifProfiltrad.php'
+require '../../controller/traduction/profil/modifProfiltrad.php'
 
 if(!empty($_GET['id'])){
 	$matricule = checkInput($_GET['id']);

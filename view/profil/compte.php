@@ -9,7 +9,7 @@ if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
 
-require '../../controler/traduction/profil/CompteEN.php';
+require '../../controller/traduction/profil/CompteEN.php';
 
 
 

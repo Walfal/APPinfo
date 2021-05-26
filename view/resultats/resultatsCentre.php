@@ -1,10 +1,12 @@
 <?php
 $title = "Mes résultats - Centre sélectionné";
+
 require_once('../../view/headerFooter/header.php');
 require_once('../../model/BDD/connexionBDD.php');
 if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
+require '../../controller/traduction/resultats/resultatsTrad.php';
 
 ?>    
 <link href="resultatsCentre.css" rel="stylesheet">
@@ -15,7 +17,7 @@ endif;
         <div class="fond"></div>
         <div class="introDiv">
             <h1><?php echo $centre ?></h1>
-            <p>Centre de tests psychotechniques</p>
+            <p><?php echo $centreTest ?></p>
             <div id="etoile">
                 <img class="imageEtoile" src="../images/icons/etoile.png">
                 <img class="imageEtoile" src="../images/icons/etoile.png">
@@ -25,11 +27,11 @@ endif;
             <div class="lieu">
                 <div class="centre">
                     <h2>Paris</h2>
-                    <p>Adresse du centre <br> <u>01 22 34 45 22</u></p>
+                    <p><?php echo $adresse ?> <br> <u>01 22 34 45 22</u></p>
                 </div>
                 <div class="centre">
                     <h2>Lyon</h2>
-                    <p>Adresse du centre <br> <u>04 56 71 23 44</u></p>
+                    <p><?php echo $adresse ?> <br> <u>04 56 71 23 44</u></p>
                 </div>
             </div>
         </div>
@@ -41,12 +43,7 @@ endif;
             <div class="case">
                 <p>Nom du patient</p>
             </div>
-            <div class="case">
-                <p>Mercredi 10 février </br> 2020</p>
-            </div>
-            <div class="case">
-                <p>Nom de </br>l'examinateur</p>
-            </div>
+
             <div class="case">
                 <p>Nombre de </br>tests passés</p>
             </div>
@@ -90,7 +87,7 @@ endif;
                 </div>
             </div>
             
-        </section><button class="retour">Retour</button>
+        </section><button class="retour"><?php echo $retour ?></button>
     </section>
         
 </section>

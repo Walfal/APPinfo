@@ -7,7 +7,7 @@ if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 99):
     header('Location: ../login/login.php');
 endif;
 
-require '../../controler/traduction/profil/profilPatientsTrad.php';
+require '../../controller/traduction/profil/profilPatientsTrad.php';
 ?>
 
 <link href="profilPatients.css" rel="stylesheet" />

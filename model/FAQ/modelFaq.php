@@ -1,6 +1,6 @@
 <?php 
 
-//require '../../controler/traduction/FAQ/FAQTrad.php';
+//require '../../controller/traduction/FAQ/FAQTrad.php';
 
 function recuperationTheme($BDD){
     $req = $BDD->prepare("SELECT DISTINCT theme FROM FAQ");

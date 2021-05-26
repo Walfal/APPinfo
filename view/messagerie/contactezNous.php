@@ -2,7 +2,7 @@
 $title = 'Contactez Nous';
 require_once '../headerFooter/header.php';
 require_once '../../model/BDD/connexionBDD.php';
-require '../../controler/traduction/messagerie/contactezNousTrad.php';
+require '../../controller/traduction/messagerie/contactezNousTrad.php';
 ?><link href="contactezNous.css" rel="stylesheet" /><?php
 
 $matricule = $_SESSION['matricule'];

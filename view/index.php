@@ -11,7 +11,7 @@ if (isset($_POST['langue'])){
 	$_SESSION['langue']= $_POST['langue'];
 	}
 }
-require '../controler/traduction/indexTrad.php';
+require '../controller/traduction/indexTrad.php';
 
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 $title = "Mes résultats";
-require '../../controler/traduction/resultats/resultatsTrad.php';
+require '../../controller/traduction/resultats/resultatsTrad.php';
 require_once('../../view/headerFooter/header.php');
 include_once('../../model/BDD/connexionBDD.php');
 //include('../../model/envoieTest.php');

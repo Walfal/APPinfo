@@ -41,7 +41,7 @@ $theme_class = new UniversalTheme;
 
 $graph->SetTheme($theme_class);
 $graph->img->SetAntiAliasing(false);
-$graph->title->Set('Temps de réaction');
+$graph->title->Set('Température corporelle et fréquence cardiaque');
 $graph->SetBox(false);
 
 $graph->SetMargin(40,20,36,63);

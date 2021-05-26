@@ -9,7 +9,7 @@ if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
 endif;
 
 require '../../model/BDD/connexionBDD.php';
-require '../../controler/traduction/profil/ajouterProfilPatientEN.php';
+require '../../controller/traduction/profil/ajouterProfilPatientEN.php';
 $matricule = $nom = $prenom = $sexe = $num_ss = $adresseRue = $adresseVille = $codePostal= $telephone = $mail = $poids = $taille = $dateDeNaissance = $password = $role = "";
 
 if(!empty($_POST)) {
