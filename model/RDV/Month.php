@@ -1,8 +1,7 @@
 <?php
+
 class Month{
 
-	private $months = ['Janvier', 'Février', 'Mars', 'Avril','Mai','Juin','Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
-	public $days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
 	public $month;
 	public $year;
 
@@ -13,7 +12,7 @@ class Month{
 	 * @throws \Exception 
 	 */
 
-	public function __construct(int $month = null, $year = null) 
+	public function __construct($mois, $jours, int $month = null, $year = null) 
 	{
 		if ($month === null || $month < 1 || $month > 12){
 			$month = intval(date('m'));
@@ -30,6 +29,8 @@ class Month{
 		}
 		$this -> month = $month;
 		$this -> year = $year;
+		$this -> months = $mois;
+		$this -> days = $jours;
 	}
 
 	/**
@@ -82,14 +83,14 @@ class Month{
 	 * @return Month
 	 */
 
-	public function nextMonth(): Month{
+	public function nextMonth(){
 		$year = $this -> year;
 		$month = $this -> month + 1;
 		if ($month > 12) {
 			$month = 1;
 			$year += 1;
 		}
-		return new Month($month, $year);
+		return "?month=" . $month . "&year=" . $year;
 	}
 
 	/**
@@ -97,14 +98,14 @@ class Month{
 	 * @return Month
 	 */ 
 
-	public function previousMonth(): Month{
+	public function previousMonth(){
 		$year = $this -> year;
 		$month = $this -> month - 1;
 		if ($month < 1) {
 			$month = 12;
 			$year -= 1;
 		}
-		return new Month($month, $year);
+		return "?month=" . $month . "&year=" . $year;
 	}
 }
 ?>

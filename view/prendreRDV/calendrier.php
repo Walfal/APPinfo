@@ -11,10 +11,10 @@ endif;
 require_once '../../model/RDV/Month.php';
 require_once '../../model/RDV/events.php';
 require_once '../../model/BDD/connexionBDD.php';
-
+require '../../controler/traduction/prendreRDV/JourMois.php';
 
 $events = new Events();
-$month = new  Month($_GET['month'] ?? null, $_GET['year'] ?? null); // ?? : prend la première valeur si elle est définie sinon elle prend la valeur null
+$month = new  Month($mois, $jours, $_GET['month'] ?? null, $_GET['year'] ?? null); // ?? : prend la première valeur si elle est définie sinon elle prend la valeur null
 $debut = $month -> getStartingDay();
 $debut = $debut -> format('N') === '1' ? $debut : $month -> getStartingDay() -> modify('last monday');
 $weeks = $month -> getWeeks();
@@ -31,9 +31,9 @@ $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
 	<h1> <?php echo $month -> toString() ?> </h1>
 	<div class = fleche>
 		<button class = fleche>
-		<a class ="flecheG" href="calendrier.php?month=<?= $month -> previousMonth() -> month; ?>&year=<?= $month -> previousMonth() -> year;?> "> &lt;</a></button>
+		<a class ="flecheG" href="calendrier.php<?php echo $month -> previousMonth() ?>"> &lt;</a></button>
 		<button class = fleche>
-		<a class ="flecheD" href="calendrier.php?month=<?= $month -> nextMonth() -> month; ?>&year=<?= $month -> nextMonth() -> year;?> ">&gt;</a></button>
+		<a class ="flecheD" href="calendrier.php<?php echo $month -> nextMonth()?>" >&gt;</a></button>
 	</div>
 </div>
 <br>

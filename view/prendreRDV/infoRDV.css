@@ -27,17 +27,51 @@
 }
 
 table{
-
-	margin: auto;
+	
+	
+	margin-left: 10%;
+	margin-right: 10%;
 	border-collapse:collapse;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	border-radius: 10px;
 
 }
+
 
 td{
 	font-size: 22px;
 	width: 25% ;
-	padding: 2.5%;
-	border: solid;
-	border-width: 1px;
+	padding: 3.5%;
+	/* border: solid; */
+	border-width: 0.5px;
 	text-align :center;
+	background-color: #eee;
+	border-top: solid whitesmoke;
+}
+
+.colonne1{
+	background-color: #5ea2c4;
+	color: white;
+	
+}
+
+#premiereLigneCol1{
+	border-top-left-radius: 10px;
+}
+#premiereLigneCol2{
+	border-top-right-radius: 10px;
+	background-color: rgb(192, 219, 228);
+}
+
+#derniereLigneCol1{
+	border-bottom-left-radius: 10px;
+}
+
+#derniereLigneCol2{
+	border-bottom-right-radius: 10px;
+	background-color: rgb(192, 219, 228);
+}
+
+#milieuLigneCol2{
+	background-color: rgb(192, 219, 228);
 }

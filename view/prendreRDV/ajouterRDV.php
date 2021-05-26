@@ -2,7 +2,7 @@
 $title = 'Ajouter un RDV';
 require '../headerFooter/header.php'; 
 require_once '../../model/BDD/connexionBDD.php';
-
+require '../../controler/traduction/prendreRDV/ajouterRDVTrad.php';
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
 endif;
@@ -29,16 +29,16 @@ endif?>
 
 <br><br>
 <link rel="stylesheet" href="ajouterRDV.css">
-
+<div class="contenu">
 <div class = "hautPage">
-	<p class="titrePage"><b>Prendre rendez-vous</b></p>
+	<p class="titrePage"><b><?php echo $titre ?></b></p>
 	<img class="imgCalendrier" src="../images/icons/calendrier.svg" alt="icone profil patient">
 </div>
 
 <div class="recherche">
-	<p class="indication"><b>Rentrez les informations suivantes pour prendre RDV :</b></p>
+	<p class="indication"><b><?php echo $consigne ?> :</b></p>
 <form class="aRemplir" method="post">
-	<input width="50px" class="nom" type="text" placeholder="Matricule" name="matricule" id="matricule" required
+	<input width="50px" class="nom" type="text" placeholder="<?php echo $matricule1 ?>" name="matricule" id="matricule" required
 	value="<?php if(isset($name)) {echo $matricule;} ?>"
 	>
 	<input type="date" id="date" name="date" required
@@ -51,19 +51,20 @@ endif?>
 	value="<?php if(isset($fin)) {echo $fin;} ?>"
 	>
 	<br>
-	<span class="indication"><b>Sélectionnez les tests à effectuer :</b></span>
+	<span class="indication"><b><?php echo $consigne2 ?> :</b></span>
 	<br><br>
-	<label><input class="Test" type="checkbox" name ="test[]" value="0" checked>Fréquence Cardiaque</input></label>
-	<label><input class="Test" type="checkbox" name ="test[]" value="1" checked>Temps de réaction à une lumière</input></label>
-	<label><input class="Test" type="checkbox" name ="test[]" value="2" checked>Temps de réaction à un son</input></label>
-	<label><input class="Test" type="checkbox" name ="test[]" value="3" checked>Température corporelle</input></label>
-	<label><input class="Test" type="checkbox" name ="test[]" value="4" checked>Reconnaissance de tonalité</input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="0" checked><?php echo $freq ?></input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="1" checked><?php echo $reactionL ?></input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="2" checked><?php echo $reactionS ?></input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="3" checked><?php echo $temp ?></input></label>
+	<label><input class="Test" type="checkbox" name ="test[]" value="4" checked><?php echo $tonalite ?></input></label>
 
 
 <br>
 <br>
-	<button>Ajouter le RDV</button>
+	<button class ="envoie"><?php echo $ajouter ?></button>
 </form>
+</div>
 </div>
 
 <?php require '../headerFooter/footer.php' ?>
