@@ -10,7 +10,7 @@ session_start();
 		<link href="../headerFooter/headerFooter.css" rel="stylesheet" />
 		<link rel="icon" href="../images/logo/logo.png" />
 	</head>
-	<!--------------------------------------------- BARRE DE NAVIGATION -------------------------------------------------------------------------------------- -->
+	<!--------------------------------------------- BARRE DE NAVIGATION ---------------------------------------------------------------------------------------->
 	<header>
 		<div class="wrapper">
 			<nav>
@@ -29,10 +29,10 @@ session_start();
 							<img class="bi bi-globe" src="../images/icons/language.svg" style="width: 25px" />
 						</a>
 						<ul class="sous">
-							<li><a href="#">Français</a></li>
-							<li><a href="#">English</a></li>
-							<li><a href="#">Espanol</a></li>
-							<li><a href="#">Deutch</a></li>
+							<li><button>Français</button></li>
+							<li><button>English</button><li>
+							<li><button>Espanol</button><li>
+							<li><button>Deutch</button><li>
 						</ul>
 					</li>
 					<li>

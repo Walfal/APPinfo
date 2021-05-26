@@ -8,7 +8,6 @@ endif;
 
 require_once '../../model/Login/loginFunctions.php';
 require_once '../../model/BDD/connexionBDD.php';
-
 $personne = recuperationUneDonnee($BDD, "Personne", "matricule", $_SESSION['matricule']);
 
 ?><link href="compte.css" rel="stylesheet" /><?php
