@@ -1,5 +1,5 @@
 <?php 
-
+if(isset ($_SESSION['langue'])){
 
 if ($_SESSION['langue'] === 'en'){
 	$contact ='Contact us';
@@ -12,7 +12,7 @@ if ($_SESSION['langue'] === 'en'){
 	$theme ='What is the theme of your question ?';
 
 }
-
+}
 else{
 	$contact ='Contacter-nous';
 	$aide ='Nous sommes là pour vous aider';

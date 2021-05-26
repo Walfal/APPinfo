@@ -1,5 +1,5 @@
 <?php 
-
+if(isset ($_SESSION['langue'])){
 
 if ($_SESSION['langue'] === 'en'){
 	$titre='Information about the appointment';
@@ -13,7 +13,7 @@ if ($_SESSION['langue'] === 'en'){
 
 
 }
-
+}
 else {
 	$titre='Information sur le RDV ';
 	$patient ='Patient';

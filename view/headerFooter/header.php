@@ -2,10 +2,15 @@
 session_start();
 
 
-
-
 if (isset($_POST['langue'])){
+	if($_POST['langue'] == 'fr'){
+		if (isset($_SESSION['langue'])){
+			unset($_SESSION['langue']);
+		}
+	}
+	else{
 	$_SESSION['langue']= $_POST['langue'];
+	}
 }
 
 require '../../controler/traduction/headerFooter/headeren.php';

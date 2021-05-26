@@ -1,6 +1,6 @@
 <?php 
 
-
+if(isset ($_SESSION['langue'])){
 if ($_SESSION['langue'] === 'en'){
 	$titre ='Who are we';
 	$description ='Sens\'air is a service company created in 2020 specialized in the realization of psychotechnical tests.
@@ -16,7 +16,7 @@ if ($_SESSION['langue'] === 'en'){
 	$equipe ='Our teams remain at your disposal in order to
 	detect and <palli></palli>detect the slightest malfunction as quickly as possible.';
 
-
+}
 }
 
 else{

@@ -1,5 +1,5 @@
 <?php 
-
+if(isset ($_SESSION['langue'])){
 
 if ($_SESSION['langue'] === 'en'){
 	$titre ='Make an appointment';
@@ -13,7 +13,7 @@ if ($_SESSION['langue'] === 'en'){
 	$tonalite ='Tone recognition';
 	$ajouter ='add appointment';
 }
-
+}
 else {
 	$titre ='Prendre rendez-vous';
 	$consigne ='Rentrez les informations suivantes pour prendre RDV';
