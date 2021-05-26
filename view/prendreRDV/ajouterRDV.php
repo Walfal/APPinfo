@@ -29,7 +29,7 @@ endif?>
 
 <br><br>
 <link rel="stylesheet" href="ajouterRDV.css">
-
+<div class="contenu">
 <div class = "hautPage">
 	<p class="titrePage"><b>Prendre rendez-vous</b></p>
 	<img class="imgCalendrier" src="../images/icons/calendrier.svg" alt="icone profil patient">
@@ -64,6 +64,7 @@ endif?>
 <br>
 	<button>Ajouter le RDV</button>
 </form>
+</div>
 </div>
 
 <?php require '../headerFooter/footer.php' ?>

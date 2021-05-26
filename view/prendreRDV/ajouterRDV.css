@@ -48,7 +48,7 @@ button {
 	color: white;
 	border-style: none;
 	height: 30px;
-	width: 10%;
+	width: 150px;
 	border-radius: 20px;
 	font-size: 15px;
 	margin-bottom: 2%;
@@ -60,4 +60,8 @@ button {
 	padding-bottom: 2%;
 	color: white;
 	font-size: 30px;
+}
+
+.contenu{
+	margin-bottom: 800px;
 }

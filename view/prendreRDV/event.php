@@ -38,27 +38,27 @@ $typeTests = query($BDD, "SELECT nom FROM Capteur NATURAL JOIN Test WHERE idRDV 
 
 <table>
 	<tr>
-		<td>Fiche complète du patient </td>
-		<td><a href="../profil/voirProfilPatients.php?id=<?= $client['matricule']?>" class="profil"><?= $client['prenom'] . ' ' . $client['nom'] ?></a></td>
+		<td class="colonne1" id="premiereLigneCol1">Fiche complète du patient </td>
+		<td id="premiereLigneCol2"><a href="../profil/voirProfilPatients.php?id=<?= $client['matricule']?>" class="profil"><?= $client['prenom'] . ' ' . $client['nom'] ?></a></td>
 	</tr>
 	<tr>
-		<td>Date</td>
+		<td class="colonne1">Date</td>
 		<td><?php
 			setlocale(LC_TIME, 'fr_FR.utf-8','fra'); 
 			$date = new DateTime($event['debut']);
 			echo (strftime("%A %e %B %Y", date_timestamp_get($date))); ?></td>
 	</tr>
 	<tr>
-		<td>Heure de démarage</td>
-		<td><?= (new DateTime($event['debut'])) -> format('H:i'); ?></td>
+		<td class="colonne1">Heure de démarage</td>
+		<td id="milieuLigneCol2"><?= (new DateTime($event['debut'])) -> format('H:i'); ?></td>
 	</tr>
 	<tr>
-		<td>Heure de fin</td>
+		<td class="colonne1">Heure de fin</td>
 		<td><?= (new DateTime($event['fin'])) -> format('H:i'); ?></td>
 	</tr>
 	<tr>
-		<td>Test(s) à faire :</td>
-		<td>
+		<td class="colonne1" id="derniereLigneCol1">Test(s) à faire </td>
+		<td id="derniereLigneCol2">
 		<?php 
 			foreach($typeTests as $typeTest){
 				echo $typeTest['nom'] . '<br>';

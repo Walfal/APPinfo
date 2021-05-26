@@ -25,7 +25,7 @@ require_once '../headerFooter/header.php';?>
 	} elseif (isset($_SESSION['matricule'])){
 		echo '<p>Pour plus d\'informations, contactez-nous, <a href="../messagerie/contactezNous.php">cliquez ici</a></p>';
 	}else{
-		echo '';
+		echo '<p>Pour plus d\'informations, contactez-nous, <a href="../messagerie/contactezNous.php">cliquez ici</a></p>';
 	}?>
 </div>
 <section class="ib-faq js-ib-faq">

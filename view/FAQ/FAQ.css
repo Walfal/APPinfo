@@ -168,6 +168,7 @@ li:first-child .faq-category {
 
 .faq-response p {
 	color: #6b7d8e;
+	text-align: justify;
 }
 .text-block {
 	margin-top: 0.5rem;
