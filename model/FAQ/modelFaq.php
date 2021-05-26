@@ -1,4 +1,7 @@
 <?php 
+
+//require '../../controler/traduction/FAQ/FAQTrad.php';
+
 function recuperationTheme($BDD){
     $req = $BDD->prepare("SELECT DISTINCT theme FROM FAQ");
     $req -> execute();
@@ -18,7 +21,7 @@ function afficherTopic($BDD){
     }
 }
 
-function afficherQuestionRep($BDD){
+function afficherQuestionRep($BDD, $modif, $suppr){
     $themes = recuperationTheme($BDD); // ceci est un tableau
     foreach($themes as $key =>$theme){
         $key++;
@@ -40,9 +43,9 @@ function afficherQuestionRep($BDD){
             if(isset($_SESSION['matricule'])){
                 if($_SESSION['matricule'] < 20){
                 supprimerQuestion($BDD,$id);
-                echo'<div class="boutonFAQ"><a href="../FAQ/modifierFAQ.php?id='. $id. '"><button type="submit" id="modifier" name="modifier'.$id.'">Modifier</button></a>
+                echo'<div class="boutonFAQ"><a href="../FAQ/modifierFAQ.php?id='. $id. '"><button type="submit" id="modifier" name="modifier '. $id .'"> ' .  $modif  . '</button></a>
                 <form method="post">
-                    <button type="submit" id="supprimer" name="supprimer'.$id.'">Supprimer</button>
+                    <button type="submit" id="supprimer" name="supprimer'. $id .'">' .  $suppr . ' </button>
                 </form></div>';
                 } 
             }

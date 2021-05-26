@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+
+if (isset($_POST['langue'])){
+	$_SESSION['langue']= $_POST['langue'];
+}
+require '../controler/traduction/indexTrad.php';
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,20 +25,22 @@
 				<input id="nav-toggle" type="checkbox" />
 				<a href="."><img class="logo" src="images/logo/sensair.png" alt="" /></a>
 				<ul class="links">
-					<li><a href=".">Accueil</a></li>
-					<li><a href="services/services.php">Nos services</a></li>
-					<li><a href="quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
-					<li><a href="messagerie/contactezNous.php">Contactez nous</a></li>
-					<li><a href="FAQ/FAQ.php">FAQ</a></li>
+					<li><a href="."><?php echo $accueil ?> </a></li>
+					<li><a href="services/services.php"><?php echo $services ?></a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php"><?php echo $aPropos ?></a></li>
+					<li><a href="messagerie/contactezNous.php"><?php echo $contact ?></a></li>
+					<li><a href="FAQ/FAQ.php"><?php echo $FAQ ?></a></li>
 					<li>
 						<a href="#">
 							<img class="bi bi-globe" src="images/icons/language.svg" style="width: 25px" />
 						</a>
 						<ul class="sous">
-							<li><a href="#">Français</a></li>
-							<li><a href="#">English</a></li>
-							<li><a href="#">Espanol</a></li>
-							<li><a href="#">Deutch</a></li>
+							<form method="post">
+								<li><button class="langue" type ="submit"  name="langue" value="fr">Français</button></li>
+								<li><button class="langue" type ="submit"  name="langue" value ="en">English</button></li>
+								<li><a href="#">Espanol</a></li>
+								<li><a href="#">Deutch</a></li>  
+							</form>
 						</ul>
 					</li>
 					<li>
@@ -50,23 +60,21 @@
 	<body>
 	
 		<section id="main-image">
-			<h2>BIENVENUE CHEZ <br /><strong>SENS'AIR</strong></h2>
+			<h2><?php echo $bienvenue ?></strong></h2>
 			<a href="login/login.php" class="button-1">
 			<?php if(isset($_SESSION['matricule'])): ?>
-				Accéder à mon compte
+				<?php echo $acces ?>
 			<?php else: ?>			
-				Se connecter
+				<?php echo $login ?>
 			<?php endif; ?>
 			</a>
 		</section>
 
 		<section id="presentation">
 			<div class="wrapper">
-				<h2>VOS TESTS PSYCHOTECHNIQUES</h2>
+				<h2><?php echo $tests ?></h2>
 				<p>
-					Avec les services de Sens'air,
-					nous vous proposons une gestion simple et ergonomique des rendez-vous et des résultats
-					avec du materiel de pointe pour maximiser la condition physique de vos pilotes.
+				<?php echo $description ?>
 				</p>
 			</div>
 		</section>
@@ -75,32 +83,7 @@
 
 		<section id="steps">
 			<div class="wrapper">
-				<h2>NOS ENGAGEMENTS</h2>
-				<br />
-				<ul>
-					<li id="step-1">
-						<h4>Planifier</h4>
-						<p>
-							Un fonctionnement en rendez-vous, permettant une bonne gestion des capteurs.
-						</p>
-					</li>
-					<li id="step-2">
-						<h4>Organiser</h4>
-						<p>
-							Une organisation exemplaire pour permettre un suivi des tests psychotechniques des unités.
-						</p>
-					</li>
-					<li id="step-3">
-						<h4>Voyager</h4>
-						<p>
-							Prenez les commandes de manière sereine grâce à un suivi complet de votre condition physique.
-						</p>
-					</li>
-					<div class="clear"></div>
-				</ul>
-			</div>
-		</section>
-
+			<?php echo $engagement ?>
 		<!-- ----------------------------------------------------------- ---------------------------------------------------------------------------------- -->
 
 		<section id="possibilities">
@@ -111,13 +94,8 @@
 						src="https://www.usinenouvelle.com/mediatheque/9/3/3/000710339_896x598_c.jpg"
 						alt="avion"
 					/>
-					<h4>Maximiser le potentiel de vos pilotes</h4>
-					<p>
-						En mettant en place un suivi profond et complet pour chaque pilote,<br>
-						nous vous donnons l'opportunité de maintenir vos exigences sur les pilotes<br>
-						afin de veiller à ce qu'ils règnent sur les cieux.
-					</p>
-					<a href="quiSommesNous/quiSommesNous.php" class="button-2">Plus d'informations</a>
+					<?php echo $potentiel ?>
+					<a href="quiSommesNous/quiSommesNous.php" class="button-2"><?php echo $information ?></a>
 				</div>
 			</div>
 		</section>
@@ -126,13 +104,8 @@
 
 		<section id="contact">
 			<div class="wrapper">
-				<h2>Contactez-nous</h2>
-				<p>
-					Nos équipes travaillent en permanence pour maintenir la qualité du service,<br>
-					ils sont disponibles et vous pouvez nous contacter en cas de besoin.<br>
-					Nous serons ravis de répondre à vos questions et de vous fournir de l'aide en cas de besoin.
-				</p>
-				<a href="messagerie/contactezNous.php" class="button-3">Contactez nous</a>
+			<?php echo $contacterNous ?>
+				<a href="messagerie/contactezNous.php" class="button-3"><?php echo $contact ?></a>
 			</div>
 		</section>
 	</body>
@@ -168,12 +141,12 @@
 				</div>
 				<div class="liens">
 					<ul>
-					<li><a href=".">Accueil</a></li>
-					<li><a href="services/services.php">Nos services</a></li>
-					<li><a href="quiSommesNous/quiSommesNous.php">À propos de nous</a></li>
-					<li><a href="contactezNous/contactezNous.php">Contactez nous</a></li>
-					<li><a href="FAQ/FAQ.php">FAQ</a></li>
-					<li><a href="headerFooter/CGU.php">Conditions d'utilisations</a></li>
+					<li><a href="."><?php echo $accueil ?></a></li>
+					<li><a href="services/services.php"><?php echo $services ?></a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php"><?php echo $aPropos ?></a></li>
+					<li><a href="contactezNous/contactezNous.php"><?php echo $contact ?></a></li>
+					<li><a href="FAQ/FAQ.php"><?php echo $FAQ ?></a></li>
+					<li><a href="headerFooter/CGU.php"><?php echo $CGU ?></a></li>
 					</ul>
 				</div>
 			</div>

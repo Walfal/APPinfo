@@ -1,7 +1,7 @@
 <?php
 $title = 'Mes résultats';
 require_once '../headerFooter/header.php';
-
+require '../../controler/traduction/resultats/resultatsTrad.php';
 if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
@@ -18,7 +18,7 @@ $nom = recuperationUneDonnee($BDD,"Personne", "matricule", $_SESSION['matricule'
 <link href="mesResultats.css" rel="stylesheet"/>
 
 <div class="title">
-	<h1>Mes résultats</h1>
+	<h1><?php echo $titre ?></h1>
 	<img src="../images/icons/result.svg" alt="fiche de résultats" class="result-img" />
 </div>
 <div>
@@ -26,16 +26,15 @@ $nom = recuperationUneDonnee($BDD,"Personne", "matricule", $_SESSION['matricule'
 		<div class="result">
 			<div class="date">
 				<img src="../images/icons/calendarWhite.svg" alt="calendrier" class="calendar" />
-				<h2>Date</h2>
+				<h2><?php echo $date ?></h2>
 			</div>
 			<place>
 				<centre>
 					<img src="../images/icons/home.svg" alt="maison" class="home" />
-					<h2>Centre de Lorem</h2>
+					<h2><?php echo $centre ?></h2>
 				</centre>
 				<button class="getResults">
-					Consulter<br />
-					mes résultats
+				<?php echo $consulter ?>
 				</button>
 				
 			</place>
@@ -45,11 +44,13 @@ $nom = recuperationUneDonnee($BDD,"Personne", "matricule", $_SESSION['matricule'
 <table class="resultat">
 	<thead>
 		<tr>
-			<th>Type de Test</th>
-			<th>Résultat</th>
-			<th>Date</th>
+			
+			<th><?php echo $test1 ?></th>
+			<th><?php echo $resultats ?></th>
+			<th><?php echo $date ?></th>
 			<!-- <th>Trame</th> -->
-			<th>Nom du patient</th>
+			<th><?php echo $nom1 ?></th>
+			
 		</tr>
 	</thead>
 	<tbody>

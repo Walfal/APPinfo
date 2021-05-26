@@ -1,11 +1,14 @@
 <?php $title='FAQ';
-require_once '../headerFooter/header.php';?>
+
+require_once '../headerFooter/header.php';
+require '../../controler/traduction/FAQ/FAQTrad.php';
+?>
 <link href="FAQ.css" rel="stylesheet" />       
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
 	<div class="content">
-		<h2>UNE QUESTION ?</h2>
-		<p>Nous sommes là pour vous aider</p>
+		<h2><?php echo $question ?></h2>
+		<p><?php echo $aide ?></p>
 	</div>
 	<!--<div class="image">
 		<img src="../view/images/icons/question.png" alt="">
@@ -16,14 +19,15 @@ require_once '../headerFooter/header.php';?>
 <?php
 	require_once '../../model/BDD/connexionBDD.php';
 	require_once '../../model/FAQ/modelFaq.php';
+	
 ?>
 
 <div class="contact">
 	<?php 
 	if(isset($_SESSION['matricule']) && $_SESSION['matricule'] < 20){
-		echo '<p>Pour ajouter des questions et réponses <a href="gererFAQ.php">cliquez ici</a></p>';
+		echo '<p> ' .  $ajouter . '  <a href="gererFAQ.php">  ' . $cliquez . ' </a></p>';
 	} elseif (isset($_SESSION['matricule'])){
-		echo '<p>Pour plus d\'informations, contactez-nous, <a href="../messagerie/contactezNous.php">cliquez ici</a></p>';
+		echo '<p> ' .  $plusInfos . ' <a href="../messagerie/contactezNous.php"> '.  $cliquez . ' </a></p>';
 	}else{
 		echo '';
 	}?>
@@ -34,8 +38,8 @@ require_once '../headerFooter/header.php';?>
 	</ul>
 
 	<div class="faq-items">
-		<?= afficherQuestionRep($BDD); ?>
-
+		<?= afficherQuestionRep($BDD, $modif, $suppr); ?>
+	
 	</div>
 	
 </section>

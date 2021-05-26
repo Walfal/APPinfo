@@ -16,8 +16,12 @@ var_dump($link);
 var_dump($id);	
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 
+
+var_dump(isset($_GET['id']));
 $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 require_once '../../model/Profil/modifProfil.php';
+
+require '../../controler/traduction/profil/modifProfiltrad.php';
 
 ?>
 
@@ -25,7 +29,7 @@ require_once '../../model/Profil/modifProfil.php';
 
 <div class="banniere">
 	<div class="content">
-		<h2>Modifier mon profil</h2> 
+		<h2><?php echo $modif ?></h2> 
 	</div>
 	<div class="image">
 		<img class="imgProfil" src="../images/icons/perm_identity-24px.svg">
@@ -36,20 +40,20 @@ require_once '../../model/Profil/modifProfil.php';
 	<div class="principal">
 		<div class="linedisplay">
 			<li>
-				<label for="nom"> Nom: </label> <br>
+				<label for="nom"> <?php echo $nom ?></label> <br>
 			<input class="champ" name ="nom" id="Nom" placeholder=<?= $personne['nom'] ?>></input></li>
 			<li class="espacement">
-				<label for ="Prenom"> Prénom: </label><br>
+				<label for ="Prenom"> <?php echo $prenom ?> </label><br>
 			<input class="champ" name ="prenom" id="prenom" placeholder=<?= $personne['prenom'] ?>><br></input></li>
 		</div>
 		<div class="linedisplay">
-			<li><Label> Genre : </Label><br>
+			<li><Label> <?php echo $sexe ?> </Label><br>
 				<select name="sexe" class="champ">
-				<option value=0 <?php if($personne['sexe'] == 0){ echo 'selected="selected"';} ?>>Non précisé </option>
-				<option value=1 <?php if($personne['sexe'] == 1){ echo 'selected="selected"';} ?>>Homme </option>
-				<option value=2 <?php if($personne['sexe'] == 2){ echo 'selected="selected"';} ?>>Femme </option></select></li>
+				<option value=0 <?php if($personne['sexe'] == 0){ echo 'selected="selected"';} ?>><?php echo $nonPrecise ?> </option>
+				<option value=1 <?php if($personne['sexe'] == 1){ echo 'selected="selected"';} ?>><?php echo $homme ?> </option>
+				<option value=2 <?php if($personne['sexe'] == 2){ echo 'selected="selected"';} ?>><?php echo $femme ?> </option></select></li>
 			<li class="espacement">
-			<li><Label> Nationalité : </Label><br>
+			<li><Label> <?php echo $nationalite ?> </Label><br>
 				<select name="pays" class="champ">
 				<option value="France">France </option>
 				<option value="Afghanistan">Afghanistan </option>
@@ -285,62 +289,62 @@ require_once '../../model/Profil/modifProfil.php';
 		</div>
 		<div class="linedisplay">
 			<li>
-				<label for ="mail"> Adresse Email : </label><br>
+				<label for ="mail"> <?php echo $mail ?> </label><br>
 				<input class="champ" type="email" name ="mail" id="mail" placeholder=<?= $personne['mail'] ?>></input></li>
 			<li class="espacement">
-				<label for ="tel"> Numero de téléphone: </label><br>
+				<label for ="tel"> <?php echo $tel ?> </label><br>
 				<input type="tel" name="tel" class="champ" placeholder=<?= '0' . $personne['telephone'] ?>></input></li>
 		</div>
 		<div class="linedisplay">
 			<li>
-				<label for="naissance"> Date de naissance: </label> <br>
+				<label for="naissance"> <?php echo $datenaissance ?> </label> <br>
 			<input class="champ" name ="naissance" id="naissance" placeholder=<?= $personne['date de naissance'] ?>></input></li>
 			<li class="espacement">
-				<label for ="num_ss"> Numéro de sécurité social: </label><br>
+				<label for ="num_ss"><?php echo $NSS ?> </label><br>
 			<input class="champ" name ="num_ss" id="num_ss" placeholder=<?= $personne['numero de securite social'] ?>><br></input></li>
 		</div>
 		<div class="linedisplay">
 			<li>
-				<label for="adresse"> Adresse (numéro et voie): </label> <br>
+				<label for="adresse"> <?php echo $adresse ?> </label> <br>
 			<input class="champ" name ="adresse" id="adresse" placeholder=<?= $personne['adresse'] ?>></input></li>
 		</div>
 		<div class="linedisplay">
-			<li><label for ="ville"> Ville : </label><br>
+			<li><label for ="ville"> <?php echo $ville ?> </label><br>
 			<input class="champ" name ="ville" id="ville" placeholder=<?= $personne['ville'] ?>><br></input></li>
-			<li class="espacement"><label for="codePostal"> Code postal: </label> <br>
+			<li class="espacement"><label for="codePostal"> <?php echo $CodePostal ?> </label> <br>
 			<input class="champ" name ="codePostal" id="codePostal" placeholder=<?= $personne['code postal'] ?>></input></li>
 			<li class="espacement">
 		</div>
 		<div class="linedisplay">
 			<li>
-				<label for="poids"> Poids (en kg): </label> <br>
+				<label for="poids"> <?php echo $poids ?> </label> <br>
 			<input class="champ" name ="poids" id="poids" placeholder=<?= $personne['poids'] ?>></input></li>
 			<li class="espacement">
-				<label for ="taille"> Taille (en cm) : </label><br>
+				<label for ="taille"> <?php echo $taille ?> </label><br>
 			<input class="champ" name ="taille" id="taille" placeholder=<?= $personne['taille'] ?>><br></input></li>
 		</div>
 		<?php if($_SESSION['matricule'] > 19  || !isset($_GET['id'])): ?>
 		<div class="linedisplay">
-			<li><label for ="password"> Mot de passe actuel* : </label><br>
+			<li><label for ="password"> <?php echo $mdpAct ?> </label><br>
 			<input class="champ" type="password" name ="password" id="password" required></input></li>
 		</div>
 		<?php endif; ?>
 		<div class="linedisplay">
-			<li><label for ="password2"> Nouveau mot de passe: </label><br>
+			<li><label for ="password2"> <?php echo $mdpNou ?> </label><br>
 			<input class="champ" type="password" name ="password2" id="password2"></input></li>
-			<li class="espacement"><label for ="password2bis"> Confirmation du mot de passe: </label><br>
+			<li class="espacement"><label for ="password2bis"><?php echo $comfirm ?> </label><br>
 			<input class="champ" type="password" name ="password2bis" id="password2bis"></input></li>
 		</div> 	 			
 	</div>	
 	<div class="actions">
 		<div class="modify">
-			<button type="submit">Modifier</button>
+			<button type="submit"><?php echo $modifier ?></button>
 		</div>
 		<div class="retour">
 			<?php if (isset($_GET['id'])): ?>
-			<a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
+			<a href="../../view/profil/profilPatients.php" class="retour"><?php echo $retour ?></a>
 			<?php else: ?>
-			<a href="../../view/profil/compte.php" class="retour">Retour</a>
+			<a href="../../view/profil/compte.php" class="retour"><?php echo $retour ?></a>
 			<?php endif ?>
 		</div>
 	</div>
