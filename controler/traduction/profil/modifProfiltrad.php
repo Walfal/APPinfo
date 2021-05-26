@@ -1,5 +1,5 @@
 <?php
-
+if(isset ($_SESSION['langue'])){
 if ($_SESSION['langue'] === 'en'){
 	$modif ='Edit my profile';
 	$nom ='Last name :';
@@ -30,7 +30,7 @@ if ($_SESSION['langue'] === 'en'){
 	$NDL ='At Notre-Dame de Lorette : '; 
 }
 
-
+}
 
 
 else{

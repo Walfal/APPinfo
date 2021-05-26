@@ -1,5 +1,7 @@
 
 <?php 
+
+if(isset ($_SESSION['langue'])){
 if ($_SESSION['langue'] === 'en'){
 	$profil ='Patient profile';
 	$ou = 'OR';
@@ -20,6 +22,8 @@ if ($_SESSION['langue'] === 'en'){
 	$ajouter ='Add';
 	$aucun ='No user found';
 	$matricule1 ='Number :';
+}
+
 }
 
 else{

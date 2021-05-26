@@ -1,5 +1,5 @@
 <?php 
-
+if(isset ($_SESSION['langue'])){
 if ($_SESSION['langue'] === 'en'){
 	$bienvenue = 'Welcome';
 	$commentaire ='This is your management page,
@@ -14,7 +14,7 @@ if ($_SESSION['langue'] === 'en'){
 	as well as the dates of your appointments.';
 	$resultats ='My results';
 }
-
+}
 else{
 	$bienvenue ='Bienvenue';
 	$commentaire = 'Voici votre page de gestion,

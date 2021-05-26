@@ -1,5 +1,5 @@
 <?php 
-
+if(isset ($_SESSION['langue'])){
 
 
 if ($_SESSION['langue'] === 'en'){
@@ -25,7 +25,7 @@ if ($_SESSION['langue'] === 'en'){
 	$ajouter2 ='+ Add';
 	$retour1 ='Back';
 }
-
+}
 else{
 	$ajouter1 ='Ajouter un utilisateur';
 	$matricule1 ='Matricule*';

@@ -1,6 +1,7 @@
 
 <?php 
 
+if(isset ($_SESSION['langue'])){
  if ($_SESSION['langue'] === 'en'){
 
 	$accueil = 'Home';
@@ -14,7 +15,7 @@
 
 
 }
-
+}
 
 else {
 

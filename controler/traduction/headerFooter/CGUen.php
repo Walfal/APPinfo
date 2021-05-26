@@ -1,5 +1,6 @@
 <?php 
 
+if(isset ($_SESSION['langue'])){
 if ($_SESSION['langue'] === 'en'){
 
 $CGU ='<title>Terms and Conditions of Use</title>
@@ -128,6 +129,7 @@ The deletion or modification by the site of the User\'s content may be made at a
 
 <p>This contract is subject to French law. The absence of amicable resolution of cases of dispute between the parties implies recourse to the competent French courts to settle the dispute.
 </p>';
+}
 }
 
 else {

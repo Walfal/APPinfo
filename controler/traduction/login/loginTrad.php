@@ -1,5 +1,5 @@
 <?php 
-
+if(isset ($_SESSION['langue'])){
 
 if ($_SESSION['langue'] === 'en'){
 
@@ -11,7 +11,7 @@ if ($_SESSION['langue'] === 'en'){
 
 
 }
-
+}
 else {
 	$consigne ='Veuillez entrer vos identifiants';
 	$mail1 ='E-mail';

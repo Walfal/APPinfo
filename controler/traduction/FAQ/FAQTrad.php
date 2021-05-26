@@ -1,5 +1,7 @@
 <?php 
 
+if(isset ($_SESSION['langue'])){
+
 if ($_SESSION['langue'] === 'en'){
 
 	$question ='A QUESTION ?';
@@ -10,6 +12,8 @@ if ($_SESSION['langue'] === 'en'){
 	$suppr ='Delete';
 	$modif ='Modify';
 }
+}
+
 
 else{
 	

@@ -1,5 +1,5 @@
 <?php 
-
+if(isset ($_SESSION['langue'])){
 
 if ($_SESSION['langue'] === 'en'){
 
@@ -58,7 +58,7 @@ $contacterNous ='<h2>Contact Us</h2>
 	We will be happy to answer your questions and provide assistance if needed.
 </p>';
 
-
+}
 }
 
 
