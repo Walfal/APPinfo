@@ -13,10 +13,14 @@ require_once '../headerFooter/header.php';?>
 				De plus, nos équipes travaillent afin de garantir la gestion, le stockage, et la protection des données sur notre plateforme web.
 			</p>
 		</div>
-		<img class="img" src="../images/divers/team target.jpeg" />
-	</div>
+		<div class="image">
+			<img class="img" src="../images/divers/team target.jpeg" />
+		</div>
+		</div>
 	<div class="section section2">
-		<img class="img" src="../images/divers/Satisfaction.jpg" />
+		<div class="image">
+			<img class="img" src="../images/divers/Satisfaction.jpg" />
+		</div>
 		<div class="text">
 			<p class="txt">
 				Votre satisfaction est notre priorité, si vous avez des suggestions n'hésitez pas à nous contacter à travers nos différents canaux.
