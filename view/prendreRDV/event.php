@@ -4,7 +4,7 @@ require '../headerFooter/header.php';
 
 require_once '../../model/RDV/events.php';
 require_once '../../model/BDD/connexionBDD.php';
-
+require '../../controler/traduction/prendreRDV/eventTrad.php';
 if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
@@ -26,38 +26,38 @@ $typeTests = query($BDD, "SELECT nom FROM Capteur NATURAL JOIN Test WHERE idRDV 
 
 <br><br>
 <div class="hautdePage">
-<p><b>Information sur le RDV </b></p>
+<p><b><?php echo $titre ?></b></p>
 </div>
 
 
 <div class="patient">
-<h1>Patient : <?= $client['prenom'] . ' ' . $client['nom'] ?> </h1>
+<h1><?php echo $patient ?> : <?= $client['prenom'] . ' ' . $client['nom'] ?> </h1>
 </div>
 <br><br><br>
 
 
 <table>
 	<tr>
-		<td class="colonne1" id="premiereLigneCol1">Fiche complète du patient </td>
+		<td class="colonne1" id="premiereLigneCol1"><?php echo $fiche ?> </td>
 		<td id="premiereLigneCol2"><a href="../profil/voirProfilPatients.php?id=<?= $client['matricule']?>" class="profil"><?= $client['prenom'] . ' ' . $client['nom'] ?></a></td>
 	</tr>
 	<tr>
-		<td class="colonne1">Date</td>
+		<td class="colonne1"><?php echo $date1 ?></td>
 		<td><?php
 			setlocale(LC_TIME, 'fr_FR.utf-8','fra'); 
 			$date = new DateTime($event['debut']);
 			echo (strftime("%A %e %B %Y", date_timestamp_get($date))); ?></td>
 	</tr>
 	<tr>
-		<td class="colonne1">Heure de démarage</td>
+		<td class="colonne1"><?php echo $heureD ?></td>
 		<td id="milieuLigneCol2"><?= (new DateTime($event['debut'])) -> format('H:i'); ?></td>
 	</tr>
 	<tr>
-		<td class="colonne1">Heure de fin</td>
+		<td class="colonne1"><?php echo $heureF ?></td>
 		<td><?= (new DateTime($event['fin'])) -> format('H:i'); ?></td>
 	</tr>
 	<tr>
-		<td class="colonne1" id="derniereLigneCol1">Test(s) à faire </td>
+		<td class="colonne1" id="derniereLigneCol1"><?php echo $test1 ?> :</td>
 		<td id="derniereLigneCol2">
 		<?php 
 			foreach($typeTests as $typeTest){

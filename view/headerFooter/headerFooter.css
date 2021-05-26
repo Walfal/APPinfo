@@ -109,6 +109,14 @@ nav .sous::after {
 	width: 9%;
 }
 
+.langue{
+	background: #3a738f;
+	border-style: none;
+	color : #fff;
+	font-size: 16px;
+	padding: 1em;
+}
+
 nav > ul li:hover .sous {
 	display: block;
 }

@@ -8,6 +8,8 @@ endif;
 
 require '../../model/BDD/connexionBDD.php';
 
+require '../../controler/traduction/profil/modifProfiltrad.php'
+
 if(!empty($_GET['id'])){
 	$matricule = checkInput($_GET['id']);
 }
@@ -25,58 +27,58 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 	<div class="principal">
 		<div class="left">	
 			<div class="linedisplay">
-				<li > Matricule : <br>
+				<li ><?php echo $matricule1 ?> <br>
 				<p><?= $personne['matricule'] ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li > Adresse mail : <br>
+				<li > <?php echo $mail ?> <br>
 				<p><?= $personne['mail'] ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li> Numéro de téléphone: <br>
+				<li> <?php echo $tel ?> <br>
 				<p><?= '0' . $personne['telephone'] ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li>Date de naissance : <br>
+				<li><?php echo $datenaissance ?> <br>
 				<p> <?php
 			setlocale(LC_TIME, 'fr_FR.utf-8','fra'); 
 			$date = new DateTime($personne['date de naissance']);
 			echo (strftime("%A %e %B %Y", date_timestamp_get($date))); ?></p></li>
 			</div>
 			<div class="linedisplay"> 
-				<li> Genre : </label> <br>
+				<li> <?php echo $sexe ?>: </label> <br>
 				<p><?= ($personne['sexe'] == 0) ? 'Non précisé' : ($personne['sexe'] == 1) ? 'Homme' : 'Femme' ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li>Numéro de sécurité social : <br>
+				<li><?php echo $NSS ?> <br>
 				<p> <?= $personne['numero de securite social'] ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li > poids : <br>
+				<li > <?php echo $poids ?> : <br>
 				<p><?= $personne['poids'] ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li>taille : <br>
+				<li><?php echo $taille ?> <br>
 				<p> <?= $personne['taille'] ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li> Adresse : <br>
+				<li> <?php echo $adresse ?> : <br>
 				<p><?= $personne['adresse'] ?></p></li>	
 			</div>
 			<div class="linedisplay">
-				<li > Ville : <br>
+				<li > <?php echo $ville ?> : <br>
 				<p><?= $personne['ville'] ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li>Code postal : <br>
+				<li><?php echo $CodePostal ?> : <br>
 				<p> <?= $personne['code postal'] ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li > Rôle : <br>
+				<li > <?php echo $role ?> <br>
 				<p><?= $personne['role'] ?></p></li>
 			</div>
 			<div class="linedisplay">
-				<li > Médecin : <br>
+				<li ><?php echo $medecin ?>  <br>
 				<p><?php
 				$medecin = recuperationUneDonnee($BDD, 'Personne', 'matricule', $personne['medecin']);
 				echo $medecin['nom'] . ' ' . $medecin['prenom'] . ' (matricule: ' . $personne['medecin'] . ')';
@@ -90,18 +92,18 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 			<label> _______________________________________________________________________________________________________________ </label>
 		</div>	
 		<div class = "bouttonCentrageModif">
-			<a class="styleValidate" href="modifProfil.php?id=<?= $_GET['id'] ?>">Modifier mon profil</a>
+			<a class="styleValidate" href="modifProfil.php?id=<?= $_GET['id'] ?>"><?php echo $modif ?></a>
 		</div>		
 	</div>
 </div>	
 <div class="title">
 	<p class ="textSize">
-	Dernier(s) test(s) passé(s)
+	<?php echo $medecin ?>
 	</p>
 </div> 
 <div class="dernierTest">
 	<p class = "textSizeNomCentre">
-		À notre dame de Lorette :
+		<?php echo $NDL ?>
 	<form action="../mesResultats/mesResultats.php">
 	<input type="SUBMIT" input class="buttonResultat" value="Accéder aux résultats"></form>
 	</p>

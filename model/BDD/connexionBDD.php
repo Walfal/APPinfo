@@ -39,6 +39,13 @@ $DB = new connexionBDD();
 $BDD = $DB->connexion();
 
 
+function recuperationToutesDonnees($BDD, $table){
+	$req = $BDD -> prepare("SELECT * FROM $table");
+	$req -> execute();
+	return $req -> fetchAll();
+}
+
+
 function recuperationUneDonnee($BDD, $table, $where, $where2){
 	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = ?");
 	$req -> execute(array($where2));
@@ -48,12 +55,6 @@ function recuperationUneDonnee($BDD, $table, $where, $where2){
 function recuperationDesDonnees($BDD, $table, $where, $where2){
 	$req = $BDD -> prepare("SELECT * FROM $table WHERE $where = ?");
 	$req -> execute(array($where2));
-	return $req -> fetchAll();
-}
-
-function recuperationDesTests($BDD, $where2){
-	$req = $BDD -> prepare("SELECT test FROM PriseRDV WHERE debut = '$where2'");
-	$req -> execute();
 	return $req -> fetchAll();
 }
 

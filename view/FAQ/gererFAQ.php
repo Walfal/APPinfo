@@ -1,7 +1,10 @@
+
 <?php
+
+
 $title = 'Gérer la FAQ';
 require_once '../headerFooter/header.php';
-
+require '../../controler/traduction/FAQ/gererFAQTrad.php';
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
 endif;
@@ -34,7 +37,7 @@ if(isset($_POST['submit'])){
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
-        <h2>Ajouter une question</h2> 
+        <h2><?php echo $ajouter ?></h2> 
     </div>
     <div class="image">
         <img src="../images/icons/baseline_folder_white_24dp.png" alt="">
@@ -46,7 +49,7 @@ if(isset($_POST['submit'])){
 <div class="contenu">
     <form class="formulaire"  role="form" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="theme">Theme :</label>
+            <label for="theme"><?= $theme ?></label>
             <input type="text"  id="theme" name="theme" list="themes">
             <datalist id="themes">
                 <?php 
@@ -58,20 +61,20 @@ if(isset($_POST['submit'])){
             </datalist>
         </div>
         <div class="form-group">
-            <label for="question">Question :</label>
+            <label for="question"><?php echo $question ?> :</label>
             <input type="text" id="question" name="question" >
         </div>
         <div class="form-group">
-            <label for="reponse">Réponse :</label>
+            <label for="reponse"><?php echo $reponse ?> :</label>
             <textarea id="reponse" name="reponse" ></textarea>
         </div>
         <br>
         <div class="actions">
             <div class="modify">
-                <button type="submit" name="submit">Ajouter</button>
+                <button type="submit" name="submit"><?php echo $ajouter2 ?></button>
             </div>
             <div class="retour">
-                <a href="FAQ.php" class="retour">Retour</a>
+                <a href="FAQ.php" class="retour"><?php echo $retour ?></a>
             </div>
         </div>
     </form>

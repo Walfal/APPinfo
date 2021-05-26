@@ -43,7 +43,7 @@ input {
 	margin: 1%;
 }
 
-button {
+.envoie {
 	background: #3a738f;
 	color: white;
 	border-style: none;

@@ -1,7 +1,7 @@
 <?php
 $title = 'Connectez vous';
 require_once '../headerFooter/header.php';
-
+require '../../controler/traduction/login/loginTrad.php';
 require_once '../../model/Login/loginUtilisateurs.php';
 ?>
 
@@ -19,17 +19,17 @@ require_once '../../model/Login/loginUtilisateurs.php';
 					<?php if($verif): ?>
 					<div class="erreur"><?= $verif ?></div>
 					<?php endif ?>
-					<p>Veuillez entrer vos identifiants:</p>
+					<p><?php echo $consigne ?>:</p>
 					<div class="textArea">
-						<input type="text" name="mail" id="mail" placeholder="mail" />
+						<input type="text" name="mail" id="mail" placeholder="<?php echo $mail1 ?>" />
 					</div>
 					<div class="textArea">
-						<input type="password" name="password" id="password" placeholder="Mot de passe"/>
+						<input type="password" name="password" id="password" placeholder="<?php echo $mdp ?>"/>
 					</div>
 				</div>
 			
 				<div>
-					<button class="button" type="submit" name="submit">Se connecter</button>
+					<button class="button" type="submit" name="submit"><?php echo $login1 ?></button>
 				</div>
 			</div>
 			
