@@ -1,5 +1,5 @@
 <?php
-(!isset($_SESSION)) ? session_start(): '';
+(!isset($_SESSION)) ? session_start(): "";
 require_once '../../model/BDD/connexionBDD.php';
 
 $nomPatient = (isset($_POST['nom'])) ? $_POST['nom'] : '';
