@@ -1,4 +1,3 @@
-<br><br><br><br><br>
 <?php 
 $title='Modier mon profil';
 require_once '../headerFooter/header.php';
@@ -11,9 +10,6 @@ require_once '../../model/BDD/connexionBDD.php';
 
 $link = 'http://'.$_SERVER['HTTP_POST'].$_SERVER['PHP_SELF'];
 $id = urldecode($link);
-var_dump($_SERVER['PHP_SELF']);
-var_dump($link);
-var_dump($id);	
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 
 $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);

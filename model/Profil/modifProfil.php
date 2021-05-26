@@ -5,7 +5,7 @@ if(isset($_POST['password'])):
     $result = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_SESSION['matricule']);
     $matricule = verifierMotDePasse($_SESSION['matricule'], $_POST['password'], $result); //recuperation du matricule
 else:
-    $matricule = $_GET['id'];
+    $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 endif;
 
 if(isset($_POST['nom'])) {
