@@ -36,8 +36,8 @@ require '../controler/traduction/indexTrad.php';
 						</a>
 						<ul class="sous">
 							<form method="post">
-								<li><button type ="submit"  name="langue" value="fr">Français</button></li>
-								<li><button type ="submit"  name="langue" value ="en">English</button></li>
+								<li><button class="langue" type ="submit"  name="langue" value="fr">Français</button></li>
+								<li><button class="langue" type ="submit"  name="langue" value ="en">English</button></li>
 								<li><a href="#">Espanol</a></li>
 								<li><a href="#">Deutch</a></li>  
 							</form>

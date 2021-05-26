@@ -8,7 +8,7 @@ require '../../controler/traduction/messagerie/contactezNousTrad.php';
 $matricule = $_SESSION['matricule'];
 
 $conv = recuperationUneDonnee($BDD,"Message", "matricule", $matricule);
-$idConversation = ($conv['idConversation'] !== null) ? $conv['idConversation'] : null;
+$idConversation = (isset($conv['idConversation'])) ? $conv['idConversation'] : null;
 $conv = recuperationUneDonnee($BDD, "Conversation", "idConversation", $idConversation);
 
 $messages = recuperationMessages($BDD, $idConversation);

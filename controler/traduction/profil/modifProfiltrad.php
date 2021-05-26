@@ -27,7 +27,7 @@ if ($_SESSION['langue'] === 'en'){
 	$role='Role :';
 	$medecin ='Doctor :';
 	$test ='Last test(s) taken';
-	$NDL ='At Notre-Dame de Lorette : 
+	$NDL ='At Notre-Dame de Lorette : '; 
 }
 
 
@@ -60,7 +60,7 @@ else{
 	$role='Rôle :';
 	$medecin ='Médecin :';
 	$test ='Dernier(s) test(s) passé(s)';
-	$NDL ='A Notre-Dame de Lorette : '
+	$NDL ='A Notre-Dame de Lorette : ';
 
 
 

@@ -7,8 +7,8 @@ if ($_SESSION['langue'] === 'en'){
 	$ajouter ='To add questions and answers';
 	$cliquez ='click here';
 	$plusInfos = 'For more information, contact us,  ';
-	$supprimer ='Delete';
-	$modifier ='Modify';
+	$suppr ='Delete';
+	$modif ='Modify';
 }
 
 else{
@@ -18,7 +18,7 @@ else{
 	$ajouter ='Pour ajouter des questions et réponses';
 	$cliquez ='cliquez ici';
 	$plusInfos = 'Pour plus d\'informations, contactez-nous,  ';
-	$supprimer ='Supprimer';
-	$modifier ='Modifier';
+	$suppr ='Supprimer';
+	$modif ='Modifier';
 
 }

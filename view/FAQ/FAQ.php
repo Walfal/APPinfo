@@ -38,8 +38,8 @@ require '../../controler/traduction/FAQ/FAQTrad.php';
 	</ul>
 
 	<div class="faq-items">
-		<?= afficherQuestionRep($BDD); ?>
-
+		<?= afficherQuestionRep($BDD, $modif, $suppr); ?>
+	
 	</div>
 	
 </section>
