@@ -76,7 +76,8 @@ require '../controller/traduction/indexTrad.php';
 			<?php endif; ?>
 			</a>
 		</section>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+		<script src="titleEffect.js"></script>
 		<section id="presentation">
 			<div class="wrapper">
 				<h2><?php echo $tests ?></h2>
@@ -109,12 +110,12 @@ require '../controller/traduction/indexTrad.php';
 
 		<!-- ----------------------------------------------------------- CONTACTEZ-NOUS ---------------------------------------------------------------------------------- -->
 
-		<section id="contact">
+		<div id="contact">
 			<div class="wrapper">
 			<?php echo $contacterNous ?>
 				<a href="messagerie/contactezNous.php" class="button-3"><?php echo $contact ?></a>
 			</div>
-		</section>
+		</div>
 	</body>
 
 	<footer>

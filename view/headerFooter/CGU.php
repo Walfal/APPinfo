@@ -12,4 +12,5 @@ echo $CGU;
 
 <br><br>
 
+	
 <?php require 'footer.php' ?>

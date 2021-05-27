@@ -113,3 +113,32 @@ td {
 .resultat tbody tr:last-of-type {
 	border-bottom: 2px solid #4f99be;
 }
+@media screen and (max-width: 820px) {
+	.resultat thead {
+		display: none;
+	}
+
+	.resultat tr {
+		display: block;
+	}
+
+	.resultat td {
+		display: block;
+		text-align: right;
+	}
+
+	.resultat a {
+		float: left;
+	}
+
+	.resultat td:before {
+		content: attr(data-label);
+		float: left;
+		color: #5ea2c4;
+		font-weight: bold;
+	}
+
+	.resultat{
+		margin-bottom: 370px;
+	}
+}

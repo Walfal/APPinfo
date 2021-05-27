@@ -19,7 +19,6 @@ require '../../controller/traduction/FAQ/FAQTrad.php';
 <?php
 	require_once '../../model/BDD/connexionBDD.php';
 	require_once '../../model/FAQ/modelFaq.php';
-	
 ?>
 
 <div class="contact">

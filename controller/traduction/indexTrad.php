@@ -20,27 +20,31 @@ if ($_SESSION['langue'] === 'en'){
 	with state-of-the-art equipment to maximize the physical condition of your pilots.';
 	$engagement ='<h2>Our COMMITMENTS</h2>
 	<br />
-	<ul>
-		<li id="step-1">
+	<div class="engagements">
+
+		<div class="engagement">
+			<img src="images/icons/face.svg" style="width:30px">
 			<h4>Planning</h4>
-			<p>
+			<p><br>
 				Appointment-based operation, allowing for proper sensor management.
-			</p>
-		</li>
-		<li id="step-2">
+				<br></p>
+		</div>
+		<div class="engagement">
+			<img src="images/icons/face.svg" style="width:30px">
 			<h4>Organize</h4>
-			<p>
+			<p><br>
 				Exemplary organization to allow for follow-up psychometric testing of units.
-			</p>
-		</li>
-		<li id="step-3">
+			<br></p>
+		</div>
+		<div class="engagement">
+			<img src="images/icons/face.svg" style="width:30px">
 			<h4>Voyager</h4>
-			<p>
+			<p><br>
 				Take the reins with peace of mind with comprehensive fitness tracking.
-			</p>
-		</li>
-		<div class="clear"></div>
-	</ul>
+			<br></p>
+		</div>
+		
+	</div>
 </div>
 </section>';
 
@@ -81,30 +85,32 @@ else {
 
 
 	$engagement ='<h2>NOS ENGAGEMENTS</h2>
-				<br />
-				<ul>
-					<li id="step-1">
-						<h4>Planifier</h4>
-						<p>
-							Un fonctionnement en rendez-vous, permettant une bonne gestion des capteurs.
-						</p>
-					</li>
-					<li id="step-2">
-						<h4>Organiser</h4>
-						<p>
-							Une organisation exemplaire pour permettre un suivi des tests psychotechniques des unités.
-						</p>
-					</li>
-					<li id="step-3">
-						<h4>Voyager</h4>
-						<p>
-							Prenez les commandes de manière sereine grâce à un suivi complet de votre condition physique.
-						</p>
-					</li>
-					<div class="clear"></div>
-				</ul>
-			</div>
-		</section>';
+	<br />
+	<div class="engagements">
+		<div class="engagement">
+			<img src="images/icons/face.svg" style="width:30px">
+			<h4>Planifier</h4>
+			<p><br>
+				Un fonctionnement en rendez-vous, permettant une bonne gestion des capteurs.
+			<br></p>
+		</div>
+		<div class="engagement">
+			<img src="images/icons/face.svg" style="width:30px">
+			<h4>Organiser</h4>
+			<p><br>
+				Une organisation exemplaire pour permettre un suivi des tests psychotechniques des unités.
+			<br></p>
+		</div>
+		<div class="engagement">
+			<img src="images/icons/face.svg" style="width:30px">
+			<h4>Voyager</h4>
+			<p><br>
+				Prenez les commandes de manière sereine grâce à un suivi complet de votre condition physique.
+			<br></p>
+		</div>
+	</div>
+</div>
+</section>';
 $potentiel ='<h4>Maximiser le potentiel de vos pilotes</h4>
 <p>
 	En mettant en place un suivi profond et complet pour chaque pilote,<br>

@@ -5,6 +5,10 @@
 
 .titre{
 	background-color: #5ea2c4;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 h1{
@@ -31,4 +35,8 @@ p{
 
 p , li {
 	font-size: 18px;
+}
+
+.cgu{
+	margin-bottom: 370px;
 }

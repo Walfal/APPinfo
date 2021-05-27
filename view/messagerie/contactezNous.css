@@ -51,6 +51,9 @@
 	.sousTitre {
 		padding-left: 5px;
 	}
+	form{
+		margin-bottom: 370px;
+	}
 }
 .titre {
 	font-size: x-large;

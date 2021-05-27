@@ -59,5 +59,5 @@ $nom = $nom["nom"];
 	<?php endforeach ?>
 </table>
 <?php
-	require_once('../../view/headerFooter/header.php');
+	require_once('../../view/headerFooter/footer.php');
 ?>
