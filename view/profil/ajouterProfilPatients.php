@@ -41,7 +41,7 @@ if(!empty($_POST)) {
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
-        <h2><?php echo $ajouter1 ?></h2> 
+        <h2><?= $ajouter1 ?></h2> 
     </div>
     <div class="image">
         <img src="../images/icons/baseline_folder_white_24dp.png" alt="">
@@ -53,80 +53,80 @@ if(!empty($_POST)) {
 <div class="contenu">
     <form class="formulaire" action="ajouterProfilPatients.php" role="form" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="Matricule"><?php echo $matricule1 ?></label>
-            <input type="text"  id=matricule name="matricule" value="<?php echo $matricule; ?>" required>
+            <label for="Matricule"><?= $matricule1 ?></label>
+            <input type="text"  id=matricule name="matricule" value="<?= $matricule; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Nom"><?php echo $nom1 ?></label>
-            <input type="text"  id=Nom name="nom" value="<?php echo $nom; ?>" required>
+            <label for="Nom"><?= $nom1 ?></label>
+            <input type="text"  id=Nom name="nom" value="<?= $nom; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Prenom"><?php echo $prenom1 ?></label>
-            <input type="text" id=Prenom name="prenom" value="<?php echo $prenom; ?>" required>
+            <label for="Prenom"><?= $prenom1 ?></label>
+            <input type="text" id=Prenom name="prenom" value="<?= $prenom; ?>" required>
         </div>
 		<div class="form-group">
-			<Label> <?php echo $sexe1 ?> </Label>
+			<Label> <?= $sexe1 ?> </Label>
 				<select name="sexe" class="champ">
 				<option value="0" selected="selected"> - </option>
-				<option value="1"> <?php echo $homme1 ?> </option>
-				<option value="2"> <?php echo $femme1 ?> </option>
+				<option value="1"> <?= $homme1 ?> </option>
+				<option value="2"> <?= $femme1 ?> </option>
 				</select>
 		</div><br>
         <div class="form-group">
-            <label for="Mail"><?php echo $mail1 ?></label>
-            <input type="email" id=Mail name="mail" value="<?php echo $mail; ?>" required>
+            <label for="Mail"><?= $mail1 ?></label>
+            <input type="email" id=Mail name="mail" value="<?= $mail; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Numss"><?php echo $NSS1 ?></label>
-            <input type="text" id=Numss name="num_ss" value="<?php echo $num_ss; ?>" required>
+            <label for="Numss"><?= $NSS1 ?></label>
+            <input type="text" id=Numss name="num_ss" value="<?= $num_ss; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Adresse"><?php echo $adresse1 ?></label>
-            <input type="text"  id=Adresse name="adresseRue" value="<?php echo $adresseRue; ?>" required>
+            <label for="Adresse"><?= $adresse1 ?></label>
+            <input type="text"  id=Adresse name="adresseRue" value="<?= $adresseRue; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Adresse"><?php echo $ville1 ?></label>
-            <input type="text"  id=Adresse name="adresseVille" value="<?php echo $adresseVille; ?>" required>
+            <label for="Adresse"><?= $ville1 ?></label>
+            <input type="text"  id=Adresse name="adresseVille" value="<?= $adresseVille; ?>" required>
         </div>
         <div class="form-group">
-            <label for="CodePostale"><?php echo $codePostal1 ?></label>
-            <input type="text" id=CodePostal name="codePostal" value="<?php echo $codePostal; ?>" required>
+            <label for="CodePostale"><?= $codePostal1 ?></label>
+            <input type="text" id=CodePostal name="codePostal" value="<?= $codePostal; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Telephone"><?php echo $tel1 ?></label>
-            <input type="tel" id=Telephone name="telephone" value="<?php echo $telephone; ?>" required>
+            <label for="Telephone"><?= $tel1 ?></label>
+            <input type="tel" id=Telephone name="telephone" value="<?= $telephone; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Poids"><?php echo $poids1 ?></label>
-            <input type="number" id=Poids name="poids" value="<?php echo $poids; ?>" required>
+            <label for="Poids"><?= $poids1 ?></label>
+            <input type="number" id=Poids name="poids" value="<?= $poids; ?>" required>
         </div>
         <div class="form-group">
-            <label for="Taille"><?php echo $taille1 ?></label>
-            <input type="number" id=Tsaille name="taille" value="<?php echo $taille; ?>" required>
+            <label for="Taille"><?= $taille1 ?></label>
+            <input type="number" id=Tsaille name="taille" value="<?= $taille; ?>" required>
         </div>
         <div class="form-group">
-            <label for="dateDeNaissance"><?php echo $dateNaissance1 ?></label>
-            <input type="date" id=dateDeNaissance name="dateDeNaissance" value="<?php echo $dateDeNaissance; ?>" required>
+            <label for="dateDeNaissance"><?= $dateNaissance1 ?></label>
+            <input type="date" id=dateDeNaissance name="dateDeNaissance" value="<?= $dateDeNaissance; ?>" required>
         </div>
         <div class="form-group">
-            <label for="password"><?php echo $mdp1 ?></label>
-            <input type="password" id=password name="password" value="<?php echo $password; ?>" required>
+            <label for="password"><?= $mdp1 ?></label>
+            <input type="password" id=password name="password" value="<?= $password; ?>" required>
         </div>
         <div class="form-group">
-            <label for="role"><?php echo $role1 ?></label>
-            <input type="text" id=role name="role" value="<?php echo $role; ?>" required>
+            <label for="role"><?= $role1 ?></label>
+            <input type="text" id=role name="role" value="<?= $role; ?>" required>
         </div>
         <div class="form-group">
-            <label for="medecin"><?php echo $medecin1 ?></label>
-            <input type="number" id=medecin name="medecin" value="<?php echo $medecin; ?>" required>
+            <label for="medecin"><?= $medecin1 ?></label>
+            <input type="number" id=medecin name="medecin" value="<?= $medecin; ?>" required>
         </div>
         <br>
         <div class="actions">
             <div class="submit">
-                <button type="submit"><?php echo $ajouter2 ?></button>
+                <button type="submit"><?= $ajouter2 ?></button>
             </div>
             <div class="retour">
-                <a href="profilPatients.php" class="retour"><?php echo $retour1 ?></a>
+                <a href="profilPatients.php" class="retour"><?= $retour1 ?></a>
             </div>
         </div>
     </form>

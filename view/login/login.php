@@ -19,17 +19,17 @@ require_once '../../model/Login/loginUtilisateurs.php';
 					<?php if($verif): ?>
 					<div class="erreur"><?= $verif ?></div>
 					<?php endif ?>
-					<p><?php echo $consigne ?>:</p>
+					<p><?= $consigne ?>:</p>
 					<div class="textArea">
-						<input type="text" name="mail" id="mail" placeholder="<?php echo $mail1 ?>" />
+						<input type="text" name="mail" id="mail" placeholder="<?= $mail1 ?>" />
 					</div>
 					<div class="textArea">
-						<input type="password" name="password" id="password" placeholder="<?php echo $mdp ?>"/>
+						<input type="password" name="password" id="password" placeholder="<?= $mdp ?>"/>
 					</div>
 				</div>
 			
 				<div>
-					<button class="button" type="submit" name="submit"><?php echo $login1 ?></button>
+					<button class="button" type="submit" name="submit"><?= $login1 ?></button>
 				</div>
 			</div>
 			

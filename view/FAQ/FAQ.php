@@ -7,8 +7,8 @@ require '../../controler/traduction/FAQ/FAQTrad.php';
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
 	<div class="content">
-		<h2><?php echo $question ?></h2>
-		<p><?php echo $aide ?></p>
+		<h2><?= $question ?></h2>
+		<p><?= $aide ?></p>
 	</div>
 	<!--<div class="image">
 		<img src="../view/images/icons/question.png" alt="">

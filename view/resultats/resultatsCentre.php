@@ -13,7 +13,7 @@ endif;
 		<section class="intro">
             <div class="fond"></div>
             <div class="introDiv">
-                <h1><?php echo $centre ?></h1>
+                <h1><?= $centre ?></h1>
                 <p>Centre de tests psychotechniques</p>
                 <div id="etoile">
                     <img class="imageEtoile" src="../images/icons/etoile.png">

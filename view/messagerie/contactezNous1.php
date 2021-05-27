@@ -12,8 +12,8 @@
 
 <link href="contactezNous.css" rel="stylesheet" />
 <div class="bandehaut">
-	<h1 class="titrePage" style="line-height: 100%"><?php echo $contact ?></h1>
-	<i class="sousTitre"><?php echo $aide ?></i>
+	<h1 class="titrePage" style="line-height: 100%"><?= $contact ?></h1>
+	<i class="sousTitre"><?= $aide ?></i>
 </div>
 
 <form class="formulaire" method="post" id="Envoyer">
@@ -22,17 +22,17 @@
 		type="text"
 		name="titre"
 		id="titre"
-		placeholder="<?php echo $theme ?>"
+		placeholder="<?= $theme ?>"
 	></textarea>
 	<textarea
 		class="boiteMessage"
 		type="text"
 		name="message"
 		id="message"
-		placeholder="<?php echo $message ?>"
+		placeholder="<?= $message ?>"
 	></textarea>
 	<br />
-	<input href="contactezNous.php" class="boiteEnvoyer" type="submit" name="Envoyer" value="<?php echo $envoyer ?>" />
+	<input href="contactezNous.php" class="boiteEnvoyer" type="submit" name="Envoyer" value="<?= $envoyer ?>" />
 </form>
 
 <?php require_once '../headerFooter/footer.php'; ?>

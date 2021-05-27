@@ -24,7 +24,7 @@ require '../../controler/traduction/profil/supprimerProfilPatientTrad.php';
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
-        <h2><?php echo $titre ?></h2> 
+        <h2><?= $titre ?></h2> 
     </div>
     <div class="image">
         <img src="../images/icons/baseline_folder_white_24dp.png" alt="">
@@ -35,14 +35,14 @@ require '../../controler/traduction/profil/supprimerProfilPatientTrad.php';
 
 <div class="contenu">
     <form class="formulaire" action="supprimerProfilPatients.php" role="form" method="post">
-    <input type="hidden" name="id" value="<?php echo $id; ?>"/>    
-    <p class="alert"><?php echo $question ?></p>
+    <input type="hidden" name="id" value="<?= $id; ?>"/>    
+    <p class="alert"><?= $question ?></p>
     <div class="actions">
             <div class="submit">
-                <button type="submit" class="bouton"><?php echo $oui ?></button>
+                <button type="submit" class="bouton"><?= $oui ?></button>
             </div>
             <div class="retour">
-                <a href="profilPatients.php" class="retour"><?php echo $non ?></a>
+                <a href="profilPatients.php" class="retour"><?= $non ?></a>
             </div>
         </div>
     </form>

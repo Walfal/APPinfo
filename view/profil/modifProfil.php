@@ -17,7 +17,7 @@ require '../../controler/traduction/profil/modifProfiltrad.php';
 
 <div class="banniere">
 	<div class="content">
-		<h2><?php echo $modif ?></h2> 
+		<h2><?= $modif ?></h2> 
 	</div>
 	<div class="image">
 		<img class="imgProfil" src="../images/icons/perm_identity-24px.svg">
@@ -28,20 +28,20 @@ require '../../controler/traduction/profil/modifProfiltrad.php';
 	<div class="principal">
 		<div class="linedisplay">
 			<li>
-				<label for="nom"> <?php echo $nom ?></label> <br>
+				<label for="nom"> <?= $nom ?></label> <br>
 			<input class="champ" name ="nom" id="Nom" placeholder=<?= $personne['nom'] ?>></input></li>
 			<li class="espacement">
-				<label for ="Prenom"> <?php echo $prenom ?> </label><br>
+				<label for ="Prenom"> <?= $prenom ?> </label><br>
 			<input class="champ" name ="prenom" id="prenom" placeholder=<?= $personne['prenom'] ?>><br></input></li>
 		</div>
 		<div class="linedisplay">
-			<li><Label> <?php echo $sexe ?> </Label><br>
+			<li><Label> <?= $sexe ?> </Label><br>
 				<select name="sexe" class="champ">
-				<option value=0 <?php if($personne['sexe'] == 0){ echo 'selected="selected"';} ?>><?php echo $nonPrecise ?> </option>
-				<option value=1 <?php if($personne['sexe'] == 1){ echo 'selected="selected"';} ?>><?php echo $homme ?> </option>
-				<option value=2 <?php if($personne['sexe'] == 2){ echo 'selected="selected"';} ?>><?php echo $femme ?> </option></select></li>
+				<option value=0 <?php if($personne['sexe'] == 0){ echo 'selected="selected"';} ?>><?= $nonPrecise ?> </option>
+				<option value=1 <?php if($personne['sexe'] == 1){ echo 'selected="selected"';} ?>><?= $homme ?> </option>
+				<option value=2 <?php if($personne['sexe'] == 2){ echo 'selected="selected"';} ?>><?= $femme ?> </option></select></li>
 			<li class="espacement">
-			<li><Label> <?php echo $nationalite ?> </Label><br>
+			<li><Label> <?= $nationalite ?> </Label><br>
 				<select name="pays" class="champ">
 				<option value="France">France </option>
 				<option value="Afghanistan">Afghanistan </option>
@@ -277,62 +277,62 @@ require '../../controler/traduction/profil/modifProfiltrad.php';
 		</div>
 		<div class="linedisplay">
 			<li>
-				<label for ="mail"> <?php echo $mail ?> </label><br>
+				<label for ="mail"> <?= $mail ?> </label><br>
 				<input class="champ" type="email" name ="mail" id="mail" placeholder=<?= $personne['mail'] ?>></input></li>
 			<li class="espacement">
-				<label for ="tel"> <?php echo $tel ?> </label><br>
+				<label for ="tel"> <?= $tel ?> </label><br>
 				<input type="tel" name="tel" class="champ" placeholder=<?= '0' . $personne['telephone'] ?>></input></li>
 		</div>
 		<div class="linedisplay">
 			<li>
-				<label for="naissance"> <?php echo $datenaissance ?> </label> <br>
+				<label for="naissance"> <?= $datenaissance ?> </label> <br>
 			<input class="champ" name ="naissance" id="naissance" placeholder=<?= $personne['date de naissance'] ?>></input></li>
 			<li class="espacement">
-				<label for ="num_ss"><?php echo $NSS ?> </label><br>
+				<label for ="num_ss"><?= $NSS ?> </label><br>
 			<input class="champ" name ="num_ss" id="num_ss" placeholder=<?= $personne['numero de securite social'] ?>><br></input></li>
 		</div>
 		<div class="linedisplay">
 			<li>
-				<label for="adresse"> <?php echo $adresse ?> </label> <br>
+				<label for="adresse"> <?= $adresse ?> </label> <br>
 			<input class="champ" name ="adresse" id="adresse" placeholder=<?= $personne['adresse'] ?>></input></li>
 		</div>
 		<div class="linedisplay">
-			<li><label for ="ville"> <?php echo $ville ?> </label><br>
+			<li><label for ="ville"> <?= $ville ?> </label><br>
 			<input class="champ" name ="ville" id="ville" placeholder=<?= $personne['ville'] ?>><br></input></li>
-			<li class="espacement"><label for="codePostal"> <?php echo $CodePostal ?> </label> <br>
+			<li class="espacement"><label for="codePostal"> <?= $CodePostal ?> </label> <br>
 			<input class="champ" name ="codePostal" id="codePostal" placeholder=<?= $personne['code postal'] ?>></input></li>
 			<li class="espacement">
 		</div>
 		<div class="linedisplay">
 			<li>
-				<label for="poids"> <?php echo $poids ?> </label> <br>
+				<label for="poids"> <?= $poids ?> </label> <br>
 			<input class="champ" name ="poids" id="poids" placeholder=<?= $personne['poids'] ?>></input></li>
 			<li class="espacement">
-				<label for ="taille"> <?php echo $taille ?> </label><br>
+				<label for ="taille"> <?= $taille ?> </label><br>
 			<input class="champ" name ="taille" id="taille" placeholder=<?= $personne['taille'] ?>><br></input></li>
 		</div>
 		<?php if($_SESSION['matricule'] > 19  || !isset($_GET['id'])): ?>
 		<div class="linedisplay">
-			<li><label for ="password"> <?php echo $mdpAct ?> </label><br>
+			<li><label for ="password"> <?= $mdpAct ?> </label><br>
 			<input class="champ" type="password" name ="password" id="password" required></input></li>
 		</div>
 		<?php endif; ?>
 		<div class="linedisplay">
-			<li><label for ="password2"> <?php echo $mdpNou ?> </label><br>
+			<li><label for ="password2"> <?= $mdpNou ?> </label><br>
 			<input class="champ" type="password" name ="password2" id="password2"></input></li>
-			<li class="espacement"><label for ="password2bis"><?php echo $comfirm ?> </label><br>
+			<li class="espacement"><label for ="password2bis"><?= $comfirm ?> </label><br>
 			<input class="champ" type="password" name ="password2bis" id="password2bis"></input></li>
 		</div> 	 			
 	</div>	
 	<div class="actions">
 		<div class="modify">
-			<button type="submit"><?php echo $modifier ?></button>
+			<button type="submit"><?= $modifier ?></button>
 		</div>
 		<div class="retour">
 			<?php if (isset($_GET['id'])): ?>
-			<a href="../../view/profil/profilPatients.php" class="retour"><?php echo $retour ?></a>
+			<a href="../../view/profil/profilPatients.php" class="retour"><?= $retour ?></a>
 			<?php else: ?>
-			<a href="../../view/profil/compte.php" class="retour"><?php echo $retour ?></a>
+			<a href="../../view/profil/compte.php" class="retour"><?= $retour ?></a>
 			<?php endif ?>
 		</div>
 	</div>

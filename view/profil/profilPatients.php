@@ -15,7 +15,7 @@ require '../../controler/traduction/profil/profilPatientsTrad.php';
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
-        <h2><?php echo $profil?></h2>
+        <h2><?= $profil?></h2>
     </div>
     <div class="image">
         <img src="../images/icons/baseline_folder_white_24dp.png" alt="">
@@ -27,15 +27,15 @@ require '../../controler/traduction/profil/profilPatientsTrad.php';
 <div class="filter">
     <form class="aRemplir" method="post">
         <div class="champ">
-            <input type="text" id="nom" class="nom" name="nomPatient" placeholder="<?php echo $nom?>">
+            <input type="text" id="nom" class="nom" name="nomPatient" placeholder="<?= $nom?>">
         </div>
         <div class="champ">
-            <label for="" class="ou"><?php echo $ou?></label>
-            <input type="text" id="prenom" class="prenom" name="prenomPatient" placeholder="<?php echo $prenom ?>">
+            <label for="" class="ou"><?= $ou?></label>
+            <input type="text" id="prenom" class="prenom" name="prenomPatient" placeholder="<?= $prenom ?>">
         </div>
         <div class="champ">
-            <label for="" class="ou"><?php echo $ou?></label>
-            <input type="text" id="codePostal" class="adresse" name="codePostal" placeholder="<?php echo $code ?>">
+            <label for="" class="ou"><?= $ou?></label>
+            <input type="text" id="codePostal" class="adresse" name="codePostal" placeholder="<?= $code ?>">
         </div>
     </form>
 </div>
@@ -44,9 +44,9 @@ require '../../controler/traduction/profil/profilPatientsTrad.php';
 <div class="container admin">
     
     <div class="row">
-        <h1><?php echo $liste?>
+        <h1><?= $liste?>
             <?php if($_SESSION['matricule'] < 20): ?>
-                <a href="../../view/profil/ajouterProfilPatients.php">+ <?php echo $ajouter ?></a>
+                <a href="../../view/profil/ajouterProfilPatients.php">+ <?= $ajouter ?></a>
             <?php endif ?>
         </h1>
     </div>
@@ -54,13 +54,13 @@ require '../../controler/traduction/profil/profilPatientsTrad.php';
     <table class="table">
         <thead>
             <tr>
-                <th><?php echo $matricule ?></th>
-                <th><?php echo $name ?></th>
-                <th><?php echo $name2 ?></th>
-                <th><?php echo $mail ?></th>
-                <th><?php echo $nss ?></th>
-                <th><?php echo $code ?></th>
-                <th><?php echo $ajouter ?></th>
+                <th><?= $matricule ?></th>
+                <th><?= $name ?></th>
+                <th><?= $name2 ?></th>
+                <th><?= $mail ?></th>
+                <th><?= $nss ?></th>
+                <th><?= $code ?></th>
+                <th><?= $ajouter ?></th>
             </tr>
         </thead>
         <tbody id="recherche">
@@ -138,17 +138,17 @@ require '../../controler/traduction/profil/profilPatientsTrad.php';
                     retour += '<td data-label="N° sécu :">'      + personne['numero de securite social'] + '</td>';
                     retour += '<td data-label="Code Postale :">' + personne['code postal']               + '</td>';
                     retour += '<td data-label="Actions :" width=300>';
-                    retour += '<a href="../../view/profil/voirProfilPatients.php?id=' + personne['matricule'] + '" ><?php echo $voir ?></a>';
+                    retour += '<a href="../../view/profil/voirProfilPatients.php?id=' + personne['matricule'] + '" ><?= $voir ?></a>';
                     if(SessionMatricule < 20){
-                        retour += '<a href="../../view/profil/modifProfil.php?id='             + personne['matricule'] + '" ><?php echo $modifier ?></a>';
-                        retour += '<a href="../../view/profil/supprimerProfilPatients.php?id=' + personne['matricule'] + '" ><?php echo $supprimer ?></a>';
+                        retour += '<a href="../../view/profil/modifProfil.php?id='             + personne['matricule'] + '" ><?= $modifier ?></a>';
+                        retour += '<a href="../../view/profil/supprimerProfilPatients.php?id=' + personne['matricule'] + '" ><?= $supprimer ?></a>';
                     }
                     retour += '</td>';
                     retour += '</tr>';
                 }
             })
         }else{
-            retour = '<p class="aucun"><?php echo $aucun ?></p>';
+            retour = '<p class="aucun"><?= $aucun ?></p>';
         }
         return retour;
     }

@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
     <div class="content">
-        <h2><?php echo $ajouter ?></h2> 
+        <h2><?= $ajouter ?></h2> 
     </div>
     <div class="image">
         <img src="../images/icons/baseline_folder_white_24dp.png" alt="">
@@ -61,20 +61,20 @@ if(isset($_POST['submit'])){
             </datalist>
         </div>
         <div class="form-group">
-            <label for="question"><?php echo $question ?> :</label>
+            <label for="question"><?= $question ?> :</label>
             <input type="text" id="question" name="question" >
         </div>
         <div class="form-group">
-            <label for="reponse"><?php echo $reponse ?> :</label>
+            <label for="reponse"><?= $reponse ?> :</label>
             <textarea id="reponse" name="reponse" ></textarea>
         </div>
         <br>
         <div class="actions">
             <div class="modify">
-                <button type="submit" name="submit"><?php echo $ajouter2 ?></button>
+                <button type="submit" name="submit"><?= $ajouter2 ?></button>
             </div>
             <div class="retour">
-                <a href="FAQ.php" class="retour"><?php echo $retour ?></a>
+                <a href="FAQ.php" class="retour"><?= $retour ?></a>
             </div>
         </div>
     </form>

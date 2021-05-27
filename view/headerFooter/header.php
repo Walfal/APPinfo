@@ -30,11 +30,11 @@ require '../../controler/traduction/headerFooter/headeren.php';
 				<ul class="navbar-nar">
         		</ul>
 				<ul class="links">
-					<li><a href="../"><?php echo "$accueil" ?></a></li>
-					<li><a href="../services/services.php"><?php echo "$services" ?></a></li>
-					<li><a href="../quiSommesNous/quiSommesNous.php"><?php echo "$aPropos" ?></a></li>
-					<li><a href="../messagerie/contactezNous.php"><?php echo "$contact" ?></a></li>
-					<li><a href="../FAQ/FAQ.php"><?php echo "$FAQ" ?></a></li>
+					<li><a href="../"><?= "$accueil" ?></a></li>
+					<li><a href="../services/services.php"><?= "$services" ?></a></li>
+					<li><a href="../quiSommesNous/quiSommesNous.php"><?= "$aPropos" ?></a></li>
+					<li><a href="../messagerie/contactezNous.php"><?= "$contact" ?></a></li>
+					<li><a href="../FAQ/FAQ.php"><?= "$FAQ" ?></a></li>
 					<li>
 						<a href="#">
 							<img class="bi bi-globe" src="../images/icons/language.svg" style="width: 25px" />

@@ -28,12 +28,12 @@ $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
 ?>
 
 <div class="titre">
-	<h1> <?php echo $month -> toString() ?> </h1>
+	<h1> <?= $month -> toString() ?> </h1>
 	<div class = fleche>
 		<button class = fleche>
-		<a class ="flecheG" href="calendrier.php<?php echo $month -> previousMonth() ?>"> &lt;</a></button>
+		<a class ="flecheG" href="calendrier.php<?= $month -> previousMonth() ?>"> &lt;</a></button>
 		<button class = fleche>
-		<a class ="flecheD" href="calendrier.php<?php echo $month -> nextMonth()?>" >&gt;</a></button>
+		<a class ="flecheD" href="calendrier.php<?= $month -> nextMonth()?>" >&gt;</a></button>
 	</div>
 </div>
 <br>

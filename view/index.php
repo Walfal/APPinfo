@@ -25,11 +25,11 @@ require '../controler/traduction/indexTrad.php';
 				<input id="nav-toggle" type="checkbox" />
 				<a href="."><img class="logo" src="images/logo/sensair.png" alt="" /></a>
 				<ul class="links">
-					<li><a href="."><?php echo $accueil ?> </a></li>
-					<li><a href="services/services.php"><?php echo $services ?></a></li>
-					<li><a href="quiSommesNous/quiSommesNous.php"><?php echo $aPropos ?></a></li>
-					<li><a href="messagerie/contactezNous.php"><?php echo $contact ?></a></li>
-					<li><a href="FAQ/FAQ.php"><?php echo $FAQ ?></a></li>
+					<li><a href="."><?= $accueil ?> </a></li>
+					<li><a href="services/services.php"><?= $services ?></a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php"><?= $aPropos ?></a></li>
+					<li><a href="messagerie/contactezNous.php"><?= $contact ?></a></li>
+					<li><a href="FAQ/FAQ.php"><?= $FAQ ?></a></li>
 					<li>
 						<a href="#">
 							<img class="bi bi-globe" src="images/icons/language.svg" style="width: 25px" />
@@ -60,21 +60,21 @@ require '../controler/traduction/indexTrad.php';
 	<body>
 	
 		<section id="main-image">
-			<h2><?php echo $bienvenue ?></strong></h2>
+			<h2><?= $bienvenue ?></strong></h2>
 			<a href="login/login.php" class="button-1">
 			<?php if(isset($_SESSION['matricule'])): ?>
-				<?php echo $acces ?>
+				<?= $acces ?>
 			<?php else: ?>			
-				<?php echo $login ?>
+				<?= $login ?>
 			<?php endif; ?>
 			</a>
 		</section>
 
 		<section id="presentation">
 			<div class="wrapper">
-				<h2><?php echo $tests ?></h2>
+				<h2><?= $tests ?></h2>
 				<p>
-				<?php echo $description ?>
+				<?= $description ?>
 				</p>
 			</div>
 		</section>
@@ -83,7 +83,7 @@ require '../controler/traduction/indexTrad.php';
 
 		<section id="steps">
 			<div class="wrapper">
-			<?php echo $engagement ?>
+			<?= $engagement ?>
 		<!-- ----------------------------------------------------------- ---------------------------------------------------------------------------------- -->
 
 		<section id="possibilities">
@@ -94,8 +94,8 @@ require '../controler/traduction/indexTrad.php';
 						src="https://www.usinenouvelle.com/mediatheque/9/3/3/000710339_896x598_c.jpg"
 						alt="avion"
 					/>
-					<?php echo $potentiel ?>
-					<a href="quiSommesNous/quiSommesNous.php" class="button-2"><?php echo $information ?></a>
+					<?= $potentiel ?>
+					<a href="quiSommesNous/quiSommesNous.php" class="button-2"><?= $information ?></a>
 				</div>
 			</div>
 		</section>
@@ -104,8 +104,8 @@ require '../controler/traduction/indexTrad.php';
 
 		<section id="contact">
 			<div class="wrapper">
-			<?php echo $contacterNous ?>
-				<a href="messagerie/contactezNous.php" class="button-3"><?php echo $contact ?></a>
+			<?= $contacterNous ?>
+				<a href="messagerie/contactezNous.php" class="button-3"><?= $contact ?></a>
 			</div>
 		</section>
 	</body>
@@ -141,12 +141,12 @@ require '../controler/traduction/indexTrad.php';
 				</div>
 				<div class="liens">
 					<ul>
-					<li><a href="."><?php echo $accueil ?></a></li>
-					<li><a href="services/services.php"><?php echo $services ?></a></li>
-					<li><a href="quiSommesNous/quiSommesNous.php"><?php echo $aPropos ?></a></li>
-					<li><a href="contactezNous/contactezNous.php"><?php echo $contact ?></a></li>
-					<li><a href="FAQ/FAQ.php"><?php echo $FAQ ?></a></li>
-					<li><a href="headerFooter/CGU.php"><?php echo $CGU ?></a></li>
+					<li><a href="."><?= $accueil ?></a></li>
+					<li><a href="services/services.php"><?= $services ?></a></li>
+					<li><a href="quiSommesNous/quiSommesNous.php"><?= $aPropos ?></a></li>
+					<li><a href="contactezNous/contactezNous.php"><?= $contact ?></a></li>
+					<li><a href="FAQ/FAQ.php"><?= $FAQ ?></a></li>
+					<li><a href="headerFooter/CGU.php"><?= $CGU ?></a></li>
 					</ul>
 				</div>
 			</div>
