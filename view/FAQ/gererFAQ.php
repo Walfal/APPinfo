@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
         $reponse = $BDD -> quote($reponse);
         $theme = $BDD -> quote($theme);
         
-        $ajout = ajouterQuestion($BDD,$theme,$question, $reponse);
+        $ajout = ajouterQuestion($BDD, $FAQTrad, $theme,$question, $reponse);
         if($ajout != 1){
             echo "<script type=\"text/javascript\"> alert('Erreur Insertion')</script>";
         }else{
@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
             <input type="text"  id="theme" name="theme" list="themes">
             <datalist id="themes">
                 <?php 
-                    $statement =  recuperationTheme($BDD);
+                    $statement =  recuperationTheme($BDD, $FAQTrad);
                     foreach($statement as $valeur){
                         echo '<option value="'.$valeur['theme'].'"></option>';
                     }

@@ -10,7 +10,7 @@ require_once '../../model/BDD/connexionBDD.php';
 require_once '../../model/FAQ/modelFaq.php';
 require '../../controller/traduction/FAQ/gererFAQ.php';
 if(isset($_GET['id'])){
-    $valeur = recuperationUneDonnee($BDD,'FAQ', 'idFAQ', $_GET['id']);
+    $valeur = recuperationUneDonnee($BDD, $FAQTrad, 'idFAQ', $_GET['id']);
     $themePasModif = $valeur['theme'];
     $questionPasModif = $valeur['question'];
     $reponsePasModif = $valeur['reponse'];     
@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
         $reponse = $BDD -> quote($reponse);
         $theme = $BDD -> quote($theme);
         
-        $modif = modifierQuestion($BDD,$theme,$question,$reponse,$_GET['id']);
+        $modif = modifierQuestion($BDD, $FAQTrad, $theme,$question,$reponse,$_GET['id']);
         if($modif != 1){
             echo "<script type=\"text/javascript\"> alert('Erreur Insertion')</script>";
         }else{

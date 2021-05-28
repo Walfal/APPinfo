@@ -33,11 +33,11 @@ require '../../controller/traduction/FAQ/FAQ.php';
 </div>
 <section class="ib-faq js-ib-faq">
 	<ul class="faq-categories">
-		<?= afficherTopic($BDD);?>
+		<?= afficherTopic($BDD, $FAQTrad);?>
 	</ul>
 
 	<div class="faq-items">
-		<?= afficherQuestionRep($BDD, $modif, $suppr); ?>
+		<?= afficherQuestionRep($BDD, $FAQTrad, $modif, $suppr); ?>
 	
 	</div>
 	
