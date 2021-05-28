@@ -6,6 +6,7 @@
 .clear {
 	clear: both;
 }
+/*--------------------------body---------------------------*/
 /*intro*/
 
 .intro {
@@ -31,8 +32,10 @@
 }
 .introDiv {
 	position: absolute;
-	top: 35%;
+	top: 11%;
 	left: 50%;
+	right: 40%;
+	
 	margin-right: auto;
 	transform: translate(-50%, -50%);
 	padding: 20px;
@@ -165,10 +168,7 @@ h1 {
 	padding-bottom: 10px;
 }
 
-.bar {
-	width: 70px;
-	height: 70px;
-}
+
 
 .resultat {
 	display: flex;

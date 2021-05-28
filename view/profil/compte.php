@@ -9,7 +9,7 @@ if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
 
-require '../../controler/traduction/profil/CompteEN.php';
+require '../../controller/traduction/profil/CompteEN.php';
 
 
 
@@ -20,9 +20,7 @@ $personne = recuperationUneDonnee($BDD, "Personne", "matricule", $_SESSION['matr
 
 ?><link href="compte.css" rel="stylesheet" /><?php
 
-if($_SESSION['matricule'] == 0):
-?>
-
+if($_SESSION['matricule'] == 0):?>
 
 <div class="contenu">
     <div class="contenu1">
@@ -37,6 +35,11 @@ if($_SESSION['matricule'] == 0):
             <div>	<?php if(est_connecte()):?>
            <a href="../login/logout.php" ><button class="deconnexion"><?= $deconnexion ?></button> </a>
             <?php endif ?></div>
+        </div>
+        <div class="identite">
+            <p><?= $personne['nom']?></p>
+            <p><?= $personne['prenom']?></p>
+            <p><?= $personne['role']?></p>
         </div>
     </div>
     <div class="contenu2">
@@ -88,6 +91,11 @@ if($_SESSION['matricule'] == 0):
            <a href="../login/logout.php" ><button class="deconnexion"> <?= $deconnexion?></button> </a>
             <?php endif ?></div>
         </div>
+        <div class="identite">
+            <p><?= $personne['nom']?></p>
+            <p><?= $personne['prenom']?></p>
+            <p><?= $personne['role']?></p>
+        </div>
     </div>
     <div class="contenu2">
         <a href="profilPatients.php">
@@ -123,15 +131,18 @@ if($_SESSION['matricule'] == 0):
            <a href="../login/logout.php" ><button class="deconnexion">Se déconnecter</button> </a>
             <?php endif ?></div>
         </div>
+        <div class="identite">
+            <p><?= $personne['nom']?></p>
+            <p><?= $personne['prenom']?></p>
+            <p><?= $personne['role']?></p>
+        </div>
     </div>
     <div class="contenu2">
         
         <a href="../prendreRDV/calendrier.php">
             <button class="case">
                 <img src="../images/icons/calendrier.png" class="image">
-                    <p>
-                        Planning
-                    </p>
+                    <p>Planning</p>
         </button></a>
         <a href="../resultats/mesResultats.php">
         <button class="case">

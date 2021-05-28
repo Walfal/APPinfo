@@ -22,10 +22,10 @@ class Month{
 		}
 
 		if ($month < 1 || $month > 12){
-			throw new \Exception ("Le mois $month n'est pas valide");
+			throw new Exception ("Le mois $month n'est pas valide");
 		}
 		if ($year < 1970){
-			throw new \Exception("L'année $year n'est pas valide");
+			throw new Exception("L'année $year n'est pas valide");
 		}
 		$this -> month = $month;
 		$this -> year = $year;
@@ -45,8 +45,8 @@ class Month{
 	 * retourne le premier jour du mois
 	 * @return string
 	 */
-	public function getStartingDay() : \DateTime{
-		return new \DateTime("{$this -> year}-{$this -> month}-01");
+	public function getStartingDay() : DateTime{
+		return new DateTime("{$this -> year}-{$this -> month}-01");
 	}
 
 	/**
@@ -74,7 +74,7 @@ class Month{
 	 * @return bool
 	 */
 
-	public function withinMonth (\DateTime $date) : bool {
+	public function withinMonth (DateTime $date) : bool {
 		return $this -> getStartingDay()->format('Y-m') === $date -> format('Y-m');
 	}
 

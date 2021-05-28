@@ -27,27 +27,33 @@
 }
 
 .contenu{
-    width: 600px;
-    margin-top: 30px;
+    width: 30%;
+    height: 100%;
+    margin: 30px;
+    text-align: center;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
 }
 
 .contenu form{
-    width: 100%;
-    height: 100%;
     background: white;
     border-radius: 4px;
     box-shadow: 0 8px 16px rgba(0,0,0,.3);
     padding: 20px;
-    margin-bottom: 72px;
+    margin-bottom: 372px;
 }
-
+@media screen and(max-width:720px){
+    form .formulaire p{
+        color: aquamarine;
+    }
+}
 
 .actions{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 20px;
 }
 .bouton{
     color: white;
@@ -56,11 +62,12 @@
     border: none;
     padding: 9px;
     border-radius: 7px;
+    font-size: 16px;
 }
 
 .retour a{
     margin-left: 18%;
-    padding: 10px;
+    padding: 9px;
     text-align: center;
     border-radius: 7px;
     background: #5ea2c4;

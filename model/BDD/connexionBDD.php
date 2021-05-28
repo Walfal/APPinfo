@@ -6,11 +6,8 @@ class connexionBDD{
 	private $USER = 'raph';
 	private $PASS = 'kErUxmg6XwkWRR';
 
-	//BDD local:
-	/* private $HOST = 'localhost';
-	private $NAME = 'APPinfo';
-	private $USER = 'root';
-	private $PASS = ''; */ 
+	
+
 
 	private $connexion;
 
@@ -111,3 +108,4 @@ function checkInput($data){
 	$data = htmlentities($data);
 	return $data;
 }
+

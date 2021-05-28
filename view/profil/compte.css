@@ -7,132 +7,173 @@
 	list-style: none;
 }
 
-.contenu {
-	height: 500px;
-	margin-top: 80px;
+.bienvenue {
+	width: 100%;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
-	align-content: stretch;
+	z-index: 2;
+} 
+
+.content {
+	text-align: center;
+	color: black;
+	position: relative;
 }
-
-
-
-.contenu1 {
-	/* flex-wrap: wrap; */
-	width: 80%;
-	display: flex;
-	justify-content: space-between;
-	margin-top: 5px;
-	margin-bottom: 10px;
+.content h1{
+	font-size: 30px;
 }
-
-.bienvenue h1 {
-	margin-bottom: 25px;
-}
-.bienvenue p {
+.content p {
+	color: rgb(54, 52, 52);
 	font-size: 20px;
 }
-h1 {
-	font-size: 2.5rem;
-	color: #565757;
-	font-weight: bold;
+.contenu{
+	display: flex;
+	position: relative;
+	margin: 90px auto;
+	margin-bottom: 60px;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+.contenu1{
+	padding: 30px;
+	float: left;
+	height: 300px;
+	border-radius: 20px 0 0 20px;
+	background-color: #5ea2c4;
+	opacity: 0.9;
+	text-align: center;
 }
 
-.deconnexion {
-	background-color: rgb(94, 162, 196);
-	border-radius: 5px;
-	width: 150px;
-	height: 50px;
-	cursor: pointer;
-	outline: none;
-	border: none;
+.identite{
+	margin-top: 30px;
 	color: white;
 }
 
-.deconnexion:hover {
-	border: solid #565757;
+.identite p{
+	padding: 10px;
+	font-size: 20px;
 }
 
-.photoProfil {
-	width: 150px;
-	height: auto;
-}
+.contenu2{
+	padding: 44px;
+	float: right;
+	height: 100%;
+	text-align: center;
+	background: white;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0,0,0,.3);
+} 
 
-.contenu2 {
-	width: 65%;
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
+.image {
+	width: 50px;
+	height: 50px;
+	margin-bottom: 5px;
+	padding: 5px;
 }
 
 .case {
 	cursor: pointer;
 	width: 150px;
 	height: 120px;
+	padding: 5px;
 	background-color: rgb(94, 162, 196);
 	outline: none;
 	border: none;
 	border-radius: 15px;
+	color: black;
+	margin: 30px;
+	box-shadow: inset 0 0 0 0 rgb(144, 150, 150);
+	transition:ease-out 0.3s ;
+}
+
+.case:hover{
+	box-shadow: inset 150px 0 0 0 rgb(144, 150, 150);
 	color: white;
-	margin-bottom: 40px;
 }
 
-.case:hover {
-	border: solid #565757;
+.photoProfil {
+	width: 80px;
+	height: auto;
+	margin-bottom: 15px;
 }
 
-.image {
-	width: 50px;
-	height: 50px;
-	margin-bottom: 5px;
+.deconnexion{
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	color: white;
+	transition: ease-out 0.3s;
+	outline: none;
+	background-color: rgb(144, 150, 150);
+	position: relative;
+	z-index: 1;
 }
 
+.deconnexion:hover{
+	color: white;
+	cursor: pointer;
+}
 
-@media screen and (max-width: 768px) {
-	.contenu {
-		height: 800px;
+.deconnexion:before{
+	transition: 0.5s all ease;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: 50%;
+	bottom: 0;
+	opacity: 0;
+	content:"";
+	border-radius: 10px;
+	background-color: rgb(9, 146, 146);
+}
+
+.deconnexion:hover:before{
+	transition: 0.5s all ease;
+	left: 0;
+	right: 0;
+	opacity: 1;
+	z-index: -1;
+}
+
+@media screen and (max-width: 1145px) {
+	.contenu{
+		display: block;
+		margin: 50px auto;
 	}
-
 	.contenu1{
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+		width: 100%;
+		height: 210px;
+		justify-content: center;
 		align-items: center;
-	}
-
-	.photo{
-		margin-top: 20px;
-	}
-
-	
-}
-
-@media all and (max-device-width: 480px) {
-	.contenu {
-		height: 800px;
-	}
-
-	.contenu1{
+		z-index: 2;
+		border-radius: 0px;
+		background-color: #5ea2c4;
 		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		margin-top: 300px;
+		justify-content: space-evenly;
+		padding: 20px;
+		height: 180px;
 	}
-
 	.photo{
-		margin-top: 20px;
+		float: left;
 	}
-
-	.contenu2 {
+	.identite{
+		float: right;
+		margin-bottom: 35px;
+	}
+	.photoProfil {
 		width: 100px;
-		margin-top: 30px;
+		height: auto;
+		margin-bottom: 15px;
 	}
-
-	.case{
-		width: 500px;
+	.contenu2{
+		box-shadow: 0 0 0;
+		width: 100%;
+		padding: 0;
+		margin-bottom: 350px;
+	}
+	.bienvenue{
 		margin-top: 30px;
 	}
 }

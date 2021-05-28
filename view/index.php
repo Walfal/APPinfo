@@ -2,9 +2,16 @@
 
 
 if (isset($_POST['langue'])){
+	if($_POST['langue'] == 'fr'){
+		if (isset($_SESSION['langue'])){
+			unset($_SESSION['langue']);
+		}
+	}
+	else{
 	$_SESSION['langue']= $_POST['langue'];
+	}
 }
-require '../controler/traduction/indexTrad.php';
+require '../controller/traduction/indexTrad.php';
 
 ?>
 
@@ -69,7 +76,8 @@ require '../controler/traduction/indexTrad.php';
 			<?php endif; ?>
 			</a>
 		</section>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+		<script src="titleEffect.js"></script>
 		<section id="presentation">
 			<div class="wrapper">
 				<h2><?= $tests ?></h2>
@@ -102,12 +110,12 @@ require '../controler/traduction/indexTrad.php';
 
 		<!-- ----------------------------------------------------------- CONTACTEZ-NOUS ---------------------------------------------------------------------------------- -->
 
-		<section id="contact">
+		<div id="contact">
 			<div class="wrapper">
 			<?= $contacterNous ?>
 				<a href="messagerie/contactezNous.php" class="button-3"><?= $contact ?></a>
 			</div>
-		</section>
+		</div>
 	</body>
 
 	<footer>

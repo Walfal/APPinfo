@@ -10,7 +10,7 @@ require_once '../../model/BDD/connexionBDD.php';
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 require_once '../../model/Profil/modifProfil.php';
-require '../../controler/traduction/profil/modifProfiltrad.php';
+require '../../controller/traduction/profil/modifProfiltrad.php';
 ?>
 
 <link href="modifProfil.css" rel="stylesheet" />
@@ -322,22 +322,19 @@ require '../../controler/traduction/profil/modifProfiltrad.php';
 			<input class="champ" type="password" name ="password2" id="password2"></input></li>
 			<li class="espacement"><label for ="password2bis"><?= $comfirm ?> </label><br>
 			<input class="champ" type="password" name ="password2bis" id="password2bis"></input></li>
-		</div> 	 			
-	</div>	
-	<div class="actions">
-		<div class="modify">
-			<button type="submit"><?= $modifier ?></button>
-		</div>
-		<div class="retour">
-			<?php if (isset($_GET['id'])): ?>
-			<a href="../../view/profil/profilPatients.php" class="retour"><?= $retour ?></a>
-			<?php else: ?>
-			<a href="../../view/profil/compte.php" class="retour"><?= $retour ?></a>
-			<?php endif ?>
-		</div>
+		</div> 	
+		<div class="actions">
+			<div class="modify">
+				<button type="submit"><?= $modifier ?></button>
+			</div>
+			<div class="retour">
+				<?php if (isset($_GET['id'])): ?>
+				<a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
+				<?php else: ?>
+				<a href="../../view/profil/compte.php" class="retour"><?= $retour ?></a>
+				<?php endif ?>
+			</div>
+    	</div>	 			
 	</div>
-</form>
-<div class = "separation">
-		<label> _______________________________________________________________________________________________________________ </label>
-</div>
+</form>   
 <?php require_once '../headerFooter/footer.php'; ?>

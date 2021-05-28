@@ -7,7 +7,8 @@ if(!isset($_SESSION['matricule'])):
 endif;
 
 require '../../model/BDD/connexionBDD.php';
-require '../../controler/traduction/profil/modifProfiltrad.php';
+
+require '../../controller/traduction/profil/modifProfiltrad.php'
 
 if(!empty($_GET['id'])){
 	$matricule = checkInput($_GET['id']);
@@ -108,5 +109,6 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 	</p>
 	
 </div>
+
 
 <?php require_once '../headerFooter/footer.php';?>

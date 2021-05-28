@@ -1,5 +1,5 @@
 
-<?php require '../../controler/traduction/headerFooter/headeren.php'; ?>
+<?php require '../../controller/traduction/headerFooter/headeren.php'; ?>
 </body>
 	<footer>
 		<div class="contenu-footer">

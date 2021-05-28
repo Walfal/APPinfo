@@ -8,7 +8,7 @@ endif;
 
 require_once '../../model/BDD/connexionBDD.php';
 require_once '../../model/FAQ/modelFaq.php';
-require '../../controler/traduction/FAQ/gererFAQTrad.php';
+require '../../controller/traduction/FAQ/gererFAQTrad.php';
 if(isset($_GET['id'])){
     $valeur = recuperationUneDonnee($BDD,'FAQ', 'idFAQ', $_GET['id']);
     $themePasModif = $valeur['theme'];

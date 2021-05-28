@@ -43,12 +43,16 @@
     margin-bottom: 40px;
 }
 
+
 .help-inline{
     color: red;
 }
 
 .contenu form input, .contenu form textarea{
     width: 100%;
+}
+.champ{
+    width:300px;
     height: 40px;
     border-radius: 4px;
     border: 1px solid gray;
@@ -59,6 +63,9 @@
 #reponse{
      height: 300px;
      padding-top: 2px;
+}
+.espacement{
+    padding-left: 50px;
 
 }
 
@@ -91,6 +98,7 @@ label{
     border: none;
     text-transform: uppercase;
     color: white;
+    font-size: 16px;
     background-color: rgb(224, 153, 46);
 }
 

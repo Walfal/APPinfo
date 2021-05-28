@@ -9,7 +9,7 @@ class Events {
 	}
 
 	// trouver les évènements entre deux date indexés par jours 
-	public function getEventsBetweenByDay($BDD, \DateTime $debut, \DateTime $fin): array {
+	public function getEventsBetweenByDay($BDD, DateTime $debut, DateTime $fin): array {
 
 		$events = $this -> getEventsBetween($BDD, $debut, $fin);
 		$days= [];
@@ -24,13 +24,13 @@ class Events {
 		return $days;
 	}
 
-	public function getEventsBetweenPers($BDD, \DateTime $debut, \DateTime $fin, $matricule): array {
+	public function getEventsBetweenPers($BDD, DateTime $debut, DateTime $fin, $matricule): array {
 		$sql = "SELECT * FROM PriseRDV WHERE matricule = $matricule AND debut BETWEEN '{$debut -> format('Y-m-d 00:00:00')}' AND '{$fin -> format('Y-m-d 23:59:59')}'";
 		$req = query($BDD, $sql);
 		return $req -> fetchAll();
 	}
 
-	public function getEventsBetweenByDayPers($BDD, \DateTime $debut, \DateTime $fin, $matricule): array {
+	public function getEventsBetweenByDayPers($BDD, DateTime $debut, DateTime $fin, $matricule): array {
 
 		$events = $this -> getEventsBetweenPers($BDD, $debut, $fin, $matricule);
 		$days= [];
