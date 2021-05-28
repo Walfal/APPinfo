@@ -4,7 +4,7 @@
 
 $title = 'Gérer la FAQ';
 require_once '../headerFooter/header.php';
-require '../../controller/traduction/FAQ/gererFAQTrad.php';
+require '../../controller/traduction/FAQ/gererFAQ.php';
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
 endif;

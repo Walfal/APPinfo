@@ -17,8 +17,9 @@ if(!empty($_POST)){
     $statement -> execute(array($id));
     header("location: profilPatients.php");
 }
-require '../../controller/traduction/profil/supprimerProfilPatientTrad.php';
+require_once '../../controller/traduction/profil/supprimerProfilPatients.php';
 
+$patient = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_GET['id']);
 ?>
 <link href="supprimerProfilPatients.css" rel="stylesheet" />
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
@@ -37,6 +38,7 @@ require '../../controller/traduction/profil/supprimerProfilPatientTrad.php';
     <form class="formulaire" action="supprimerProfilPatients.php" role="form" method="post">
     <input type="hidden" name="id" value="<?= $id; ?>"/>    
     <p class="alert"><?= $question ?></p>
+    <p class="alert"><br><?= $patient['prenom'] . ' ' . $patient['nom'] ?></p>
     <div class="actions">
             <div class="submit">
                 <button type="submit" class="bouton"><?= $oui ?></button>

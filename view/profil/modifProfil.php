@@ -10,7 +10,7 @@ require_once '../../model/BDD/connexionBDD.php';
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 require_once '../../model/Profil/modifProfil.php';
-require '../../controller/traduction/profil/modifProfiltrad.php';
+require '../../controller/traduction/profil/modifProfil.php';
 ?>
 
 <link href="modifProfil.css" rel="stylesheet" />

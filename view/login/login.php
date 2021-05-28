@@ -1,7 +1,7 @@
 <?php
 $title = 'Connectez vous';
 require_once '../headerFooter/header.php';
-require '../../controller/traduction/login/loginTrad.php';
+require '../../controller/traduction/login/login.php';
 require_once '../../model/Login/loginUtilisateurs.php';
 ?>
 

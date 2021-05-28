@@ -67,11 +67,9 @@ $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
 	<?php endfor; ?>
 	</table>
 	<br>
-
-
-
-
-	<a href="ajouterRDV.php" class = "calendar_button">+</a>
+	<?php if($_SESSION['matricule'] < 20): ?>
+		<a href="ajouterRDV.php" class = "calendar_button">+</a>
+	<?php endif; ?>
 
 <br><br><br><br>
 <?php require '../headerFooter/footer.php' ?>

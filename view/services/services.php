@@ -1,7 +1,7 @@
 <?php
 $title = 'Services';
 require_once '../headerFooter/header.php';
-require '../../controller/traduction/service/serviceTrad.php';
+require '../../controller/traduction/service/service.php';
 require_once '../../model/Login/loginFunctions.php';
 ?>
 

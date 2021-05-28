@@ -3,40 +3,42 @@
 	padding: 0px;
 	text-decoration: none;
 	font-family: "Montserrat", sans-serif;
-	font-size: 15px;
+	font-size: 18px;
 	list-style: none;
 }
 
 .bienvenue {
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	z-index: 2;
-} 
+	padding-inline: 20px;
+	padding-bottom: 20px;
+}
 
 .content {
 	text-align: center;
 	color: black;
 	position: relative;
 }
-.content h1{
+.content h1 {
 	font-size: 30px;
 }
 .content p {
 	color: rgb(54, 52, 52);
 	font-size: 20px;
 }
-.contenu{
+.contenu {
 	display: flex;
 	position: relative;
-	margin: 90px auto;
+	margin: 200px auto;
 	margin-bottom: 60px;
 	height: 100%;
 	justify-content: center;
 	align-items: center;
 }
-.contenu1{
+.contenu1 {
 	padding: 30px;
 	float: left;
 	height: 300px;
@@ -46,25 +48,25 @@
 	text-align: center;
 }
 
-.identite{
+.identite {
 	margin-top: 30px;
 	color: white;
 }
 
-.identite p{
+.identite p {
 	padding: 10px;
 	font-size: 20px;
 }
 
-.contenu2{
-	padding: 44px;
+.contenu2 {
+	padding: 30px;
 	float: right;
-	height: 100%;
+	height: 300px;
 	text-align: center;
 	background: white;
-    border-radius: 4px;
-    box-shadow: 0 8px 16px rgba(0,0,0,.3);
-} 
+	border-radius: 4px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
 
 .image {
 	width: 50px;
@@ -85,10 +87,10 @@
 	color: black;
 	margin: 30px;
 	box-shadow: inset 0 0 0 0 rgb(144, 150, 150);
-	transition:ease-out 0.3s ;
+	transition: ease-out 0.3s;
 }
 
-.case:hover{
+.case:hover {
 	box-shadow: inset 150px 0 0 0 rgb(144, 150, 150);
 	color: white;
 }
@@ -99,7 +101,7 @@
 	margin-bottom: 15px;
 }
 
-.deconnexion{
+.deconnexion {
 	padding: 10px;
 	border-radius: 10px;
 	border: none;
@@ -111,12 +113,12 @@
 	z-index: 1;
 }
 
-.deconnexion:hover{
+.deconnexion:hover {
 	color: white;
 	cursor: pointer;
 }
 
-.deconnexion:before{
+.deconnexion:before {
 	transition: 0.5s all ease;
 	position: absolute;
 	top: 0;
@@ -124,12 +126,12 @@
 	right: 50%;
 	bottom: 0;
 	opacity: 0;
-	content:"";
+	content: "";
 	border-radius: 10px;
 	background-color: rgb(9, 146, 146);
 }
 
-.deconnexion:hover:before{
+.deconnexion:hover:before {
 	transition: 0.5s all ease;
 	left: 0;
 	right: 0;
@@ -138,11 +140,11 @@
 }
 
 @media screen and (max-width: 1145px) {
-	.contenu{
+	.contenu {
 		display: block;
 		margin: 50px auto;
 	}
-	.contenu1{
+	.contenu1 {
 		width: 100%;
 		height: 210px;
 		justify-content: center;
@@ -155,10 +157,10 @@
 		padding: 20px;
 		height: 180px;
 	}
-	.photo{
+	.photo {
 		float: left;
 	}
-	.identite{
+	.identite {
 		float: right;
 		margin-bottom: 35px;
 	}
@@ -167,13 +169,13 @@
 		height: auto;
 		margin-bottom: 15px;
 	}
-	.contenu2{
+	.contenu2 {
 		box-shadow: 0 0 0;
 		width: 100%;
 		padding: 0;
 		margin-bottom: 350px;
 	}
-	.bienvenue{
+	.bienvenue {
 		margin-top: 30px;
 	}
 }

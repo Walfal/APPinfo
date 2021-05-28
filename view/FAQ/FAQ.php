@@ -1,7 +1,7 @@
 <?php $title='FAQ';
 
 require_once '../headerFooter/header.php';
-require '../../controller/traduction/FAQ/FAQTrad.php';
+require '../../controller/traduction/FAQ/FAQ.php';
 ?>
 <link href="FAQ.css" rel="stylesheet" />       
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
