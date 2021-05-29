@@ -46,7 +46,7 @@ $imgtag = $graph->GetCSIMImgHTML($_mapname,$_graphfilename);
 <p>The graph is then be displayed as shown in figure 1. With the following
   created &lt;img> tag:</p>
 <pre><b>
-<?php echo htmlentities($imgtag); ?>
+<?= htmlentities($imgtag); ?>
 </b></pre>
 
 

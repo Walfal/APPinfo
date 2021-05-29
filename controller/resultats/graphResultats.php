@@ -6,7 +6,6 @@ require_once('../../jpgraph/src/jpgraph_line.php');
 require_once('../../jpgraph/src/jpgraph_bar.php');
 require_once('../../model/BDD/connexionBDD.php');
 
-
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 $req = query($BDD, "SELECT debut, resultat, idCapteur FROM Test NATURAL JOIN PriseRDV WHERE matricule = ? AND idCapteur = ? ORDER BY debut", [$matricule, 0]);
 $frequenceCardiaque = $req->fetchAll();
@@ -86,6 +85,26 @@ $p2->SetLegend('Température');
 $graph->legend->SetFrameWeight(1);
 
 // Output line
-$graph->Stroke();
+//$graph->Stroke();
 
+
+
+
+$img = $graph->Stroke(_IMG_HANDLER);
+ob_start();
+imagepng($img);
+$imageData = ob_get_contents();
+ob_end_clean();
+
+/*
+$gdImgHandler = $graph->Stroke(_IMG_HANDLER);
+
+$graph->img->SetImgFormat('png');
+$filename = "../../view/resultats/resultatsCentre1.png";
+$graph->img->Stream($filename);
+#$graph->Stroke('/tmp/myimage.png');
+ 
+// Send it back to browser
+$graph->img->Headers();
+$graph->img->Stream();*/
 ?>

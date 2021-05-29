@@ -8,7 +8,7 @@ endif;
 <br><br>
 <?php
 
-require_once '../../model/RDV/Month.php';
+require_once '../../controller/RDV/Month.php';
 require_once '../../model/RDV/events.php';
 require_once '../../model/BDD/connexionBDD.php';
 require '../../controller/traduction/prendreRDV/JourMois.php';
@@ -28,12 +28,12 @@ $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
 ?>
 
 <div class="titre">
-	<h1> <?php echo $month -> toString() ?> </h1>
+	<h1> <?= $month -> toString() ?> </h1>
 	<div class = fleche>
 		<button class = fleche>
-		<a class ="flecheG" href="calendrier.php<?php echo $month -> previousMonth() ?>"> &lt;</a></button>
+		<a class ="flecheG" href="calendrier.php<?= $month -> previousMonth() ?>"> &lt;</a></button>
 		<button class = fleche>
-		<a class ="flecheD" href="calendrier.php<?php echo $month -> nextMonth()?>" >&gt;</a></button>
+		<a class ="flecheD" href="calendrier.php<?= $month -> nextMonth()?>" >&gt;</a></button>
 	</div>
 </div>
 <br>
@@ -67,11 +67,9 @@ $fin = (clone $debut)->modify('+' . (6 + 7 * $weeks - 1) . 'days');
 	<?php endfor; ?>
 	</table>
 	<br>
-
-
-
-
-	<a href="ajouterRDV.php" class = "calendar_button">+</a>
+	<?php if($_SESSION['matricule'] < 20): ?>
+		<a href="ajouterRDV.php" class = "calendar_button">+</a>
+	<?php endif; ?>
 
 <br><br><br><br>
 <?php require '../headerFooter/footer.php' ?>

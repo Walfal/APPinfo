@@ -1,13 +1,23 @@
 <?php
 $title = "Mes résultats - Centre sélectionné";
 
-require_once('../../view/headerFooter/header.php');
-require_once('../../model/BDD/connexionBDD.php');
+require_once '../../view/headerFooter/header.php';
+require_once '../../model/BDD/connexionBDD.php';
+require '../../controller/traduction/resultats/resultats.php';
+
 if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
-require '../../controller/traduction/resultats/resultatsTrad.php';
 
+$matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
+$patient = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
+
+
+if(isset($_GET['id'])):
+    $id = '?id=' . $_GET['id'];
+else:
+    $id = '';
+endif;
 ?>    
 <link href="resultatsCentre.css" rel="stylesheet">
 <!-- ------------------------------------------------------------ PRESENTATION---------------------------------------------------------------------------------- -->
@@ -16,8 +26,8 @@ require '../../controller/traduction/resultats/resultatsTrad.php';
     <section class="intro">
         <div class="fond"></div>
         <div class="introDiv">
-            <h1><?php echo $centre ?></h1>
-            <p><?php echo $centreTest ?></p>
+            <h1><?= $centre ?></h1>
+            <p><?= $centreTest ?></p>
             <div id="etoile">
                 <img class="imageEtoile" src="../images/icons/etoile.png">
                 <img class="imageEtoile" src="../images/icons/etoile.png">
@@ -27,11 +37,11 @@ require '../../controller/traduction/resultats/resultatsTrad.php';
             <div class="lieu">
                 <div class="centre">
                     <h2>Paris</h2>
-                    <p><?php echo $adresse ?> <br> <u>01 22 34 45 22</u></p>
+                    <p><?= $adresse ?> <br> <u>01 22 34 45 22</u></p>
                 </div>
                 <div class="centre">
                     <h2>Lyon</h2>
-                    <p><?php echo $adresse ?> <br> <u>04 56 71 23 44</u></p>
+                    <p><?= $adresse ?> <br> <u>04 56 71 23 44</u></p>
                 </div>
             </div>
         </div>
@@ -39,55 +49,34 @@ require '../../controller/traduction/resultats/resultatsTrad.php';
         
     </section>
     <section class="milieu">
-        <section class="resume">
-            <div class="case">
-                <p>Nom du patient</p>
-            </div>
-
-            <div class="case">
-                <p>Nombre de </br>tests passés</p>
-            </div>
-            <div class="case">
-                <p>Score total %</p>
-                <img class="cercle" src="../images/icons/diagramme_cercle.png">
-            </div>
-        </section>
         <section class="test">
             <div>
                 <h3></h3>
                 <div class="resultat">
-                    <img src="../../controller/resultats/graphResultats.php?dummy=\'.now()."/>
+                    <img src="data:image/png;base64,<?php echo(base64_encode($imageData)); ?>"/>
+                    <img src="../../controller/resultats/graphResultats.php<?= $id  ?>&dummy=\'.now()."/>
                 </div>
                 
                 <div class="detail">
-                    <h6>Détail des résultats</h6>
+                    <h6><?= $detail ?></h6>
                     
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Curabitur sagittis sollicitudin metus, quis scelerisque tortor rutrum vel.
-                            Pellentesque cursus nisl sed elit egestas ullamcorper. 
-                        Aliquam id lorem laoreet, molestie leo sit amet, consequat nibh. 
-                    </p>
+                    <p><?= $detailTest1 ?></p>
                 </div>
             </div>
             <div>
-                <h3>Nom du test</h3>
+                <h3> </h3>
                 <div class="resultat">
-                    <img  class="bar" src="../../controller/resultats/graphResultats2.php?dummy=\'.now().">
-                    <figcaption>Résultat</figcaption>
+                    <img  class="bar" src="../../controller/resultats/graphResultats2.php<?= $id ?>&dummy=\'.now().">
+                    <figcaption><?= $resultat ?></figcaption>
                 </div>
                 
                 <div class="detail">
-                    <h6>Détail des résultats</h6>
-                    
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Curabitur sagittis sollicitudin metus, quis scelerisque tortor rutrum vel.
-                            Pellentesque cursus nisl sed elit egestas ullamcorper. 
-                        Aliquam id lorem laoreet, molestie leo sit amet, consequat nibh. 
-                    </p>
+                    <h6><?= $detail ?></h6>
+                    <p><?= $detailTest2 ?></p>
                 </div>
             </div>
             
-        </section><button class="retour"><?php echo $retour ?></button>
+        </section><button class="retour"><?= $retour ?></button>
     </section>
         
 </section>

@@ -46,11 +46,9 @@ class Events {
 	}
 
 
-	//recup un événement
+	//recuperation  d'un événement
 	public function find($BDD, int $idRDV):array {
-		//require_once '../../model/BDD/connexionBDD.php';
 		$statement = query($BDD, "SELECT * FROM PriseRDV WHERE idRDV = $idRDV");
-		//$statement -> setFetchMode(PDO::FETCH_CLASS, EventGS::class);
 		return $statement -> fetch();
 	}
 }

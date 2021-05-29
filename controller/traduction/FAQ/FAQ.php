@@ -11,6 +11,7 @@ if ($_SESSION['langue'] === 'en'){
 	$plusInfos = 'For more information, contact us,  ';
 	$suppr ='Delete';
 	$modif ='Modify';
+	$FAQTrad = 'FAQ_EN';
 }
 }
 
@@ -24,5 +25,6 @@ else{
 	$plusInfos = 'Pour plus d\'informations, contactez-nous,  ';
 	$suppr ='Supprimer';
 	$modif ='Modifier';
+	$FAQTrad = "FAQ_FR";
 
 }

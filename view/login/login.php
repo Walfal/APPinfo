@@ -1,8 +1,9 @@
 <?php
 $title = 'Connectez vous';
 require_once '../headerFooter/header.php';
-require '../../controller/traduction/login/loginTrad.php';
-require_once '../../model/Login/loginUtilisateurs.php';
+require_once '../../controller/traduction/login/login.php';
+require_once '../../controller/fonctions.php';
+require_once '../../controller/Login/loginUtilisateurs.php';
 ?>
 
 <link href="login.css" rel="stylesheet" />
@@ -19,17 +20,17 @@ require_once '../../model/Login/loginUtilisateurs.php';
 					<?php if($verif): ?>
 					<div class="erreur"><?= $verif ?></div>
 					<?php endif ?>
-					<p><?php echo $consigne ?>:</p>
+					<p><?= $consigne ?>:</p>
 					<div class="textArea">
-						<input type="text" name="mail" id="mail" placeholder="<?php echo $mail1 ?>" />
+						<input type="text" name="mail" id="mail" placeholder="<?= $mail1 ?>" />
 					</div>
 					<div class="textArea">
-						<input type="password" name="password" id="password" placeholder="<?php echo $mdp ?>"/>
+						<input type="password" name="password" id="password" placeholder="<?= $mdp ?>"/>
 					</div>
 				</div>
 			
 				<div>
-					<button class="button" type="submit" name="submit"><?php echo $login1 ?></button>
+					<button class="button" type="submit" name="submit"><?= $login1 ?></button>
 				</div>
 			</div>
 			

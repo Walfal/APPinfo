@@ -8,7 +8,7 @@ require_once '../headerFooter/header.php';
 <?php
 
 require_once '../../model/RDV/bootstrap.php';
-require_once '../../model/RDV/Month.php';
+require_once '../../controller/RDV/Month.php';
 require_once '../../model/RDV/events.php';
 require_once '../../model/BDD/connexionBDD.php';
 
@@ -23,7 +23,7 @@ $events = $events -> getEventsBetweenByDayPers($BDD, $debut, $fin, $_SESSION['ma
 ?>
 
 <div class="titre">
-	<h1> <?php echo $month -> toString() ?> </h1>
+	<h1> <?= $month -> toString() ?> </h1>
 	<div class = fleche>
 		<button class = fleche>
 		<a class ="flecheG" href="/view/prendreRDV/calendrier.php?month=<?= $month -> previousMonth() -> month; ?>&year=<?= $month -> previousMonth() -> year;?> "> &lt;</a></button>

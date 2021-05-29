@@ -1,6 +1,6 @@
 <?php
 $title = "Mes résultats";
-require '../../controller/traduction/resultats/resultatsTrad.php';
+require '../../controller/traduction/resultats/resultats.php';
 require_once('../../view/headerFooter/header.php');
 include_once('../../model/BDD/connexionBDD.php');
 //include('../../model/envoieTest.php');
@@ -9,13 +9,18 @@ $req = query($BDD, "SELECT debut, resultat, nom FROM PriseRDV NATURAL JOIN (Test
 $tests = $req->fetchAll();
 $nom = recuperationUneDonnee($BDD, "Personne", "matricule", $matricule);
 $nom = $nom["nom"];
+
+if(isset($_GET['id'])):
+	$id = $_GET['id'];
+else:
+	$id = '0';
+endif;
 ?>
 
 <link href="mesResultats.css" rel="stylesheet" />
 
-
 <div class="title">
-	<h1><?php echo $titre ?></h1>
+	<h1><?= $titre ?></h1>
 	<img src="../images/icons/result.svg" alt="fiche de résultats" class="result-img" />
 </div>
 <div>
@@ -23,15 +28,15 @@ $nom = $nom["nom"];
 		<div class="result">
 			<div class="date">
 				<img src="../images/icons/calendarWhite.svg" alt="calendrier" class="calendar" />
-				<h2><?php echo $date ?></h2>
+				<h2><?= $date ?></h2>
 			</div>
 			<place>
 				<centre>
 					<img src="../images/icons/home.svg" alt="maison" class="home" />
-					<h2><?php echo $centre ?></h2>
+					<h2><?= $centre ?></h2>
 				</centre>
-				<a class="getResults" href="resultatsCentre.php">
-					<?php echo $consulter ?>
+				<a class="getResults" href="resultatsCentre.php?id=<?= $id ?>">
+					<?= $consulter ?>
 				</a>
 			</place>
 		</div>
@@ -39,11 +44,11 @@ $nom = $nom["nom"];
 </div>
 <table class="resultat">
 	<tr>
-		<th><?php echo $test1 ?></th>
-		<th><?php echo $resultats ?></th>
-		<th><?php echo $date ?></th>
+		<th><?= $test1 ?></th>
+		<th><?= $resultats ?></th>
+		<th><?= $date ?></th>
 		<!-- <th>Trame</th> -->
-		<th><?php echo $nom1 ?></th>
+		<th><?= $nom1 ?></th>
 	</tr>
 	<?php foreach($tests as $test): ?>
 		<tr>

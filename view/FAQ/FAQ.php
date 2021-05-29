@@ -1,14 +1,17 @@
 <?php $title='FAQ';
 
 require_once '../headerFooter/header.php';
-require '../../controller/traduction/FAQ/FAQTrad.php';
+require '../../controller/traduction/FAQ/FAQ.php';
+require_once '../../controller/fonctions.php';
+require_once '../../model/BDD/connexionBDD.php';
+require_once '../../model/FAQ/modelFaq.php';
 ?>
 <link href="FAQ.css" rel="stylesheet" />       
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
 <div class="banniere">
 	<div class="content">
-		<h2><?php echo $question ?></h2>
-		<p><?php echo $aide ?></p>
+		<h2><?= $question ?></h2>
+		<p><?= $aide ?></p>
 	</div>
 	<!--<div class="image">
 		<img src="../view/images/icons/question.png" alt="">
@@ -16,10 +19,6 @@ require '../../controller/traduction/FAQ/FAQTrad.php';
 </div>
 
 <!-- ----------------------------------------------------------- FAQ ---------------------------------------------------------------------------------- -->
-<?php
-	require_once '../../model/BDD/connexionBDD.php';
-	require_once '../../model/FAQ/modelFaq.php';
-?>
 
 <div class="contact">
 	<?php 
@@ -33,11 +32,11 @@ require '../../controller/traduction/FAQ/FAQTrad.php';
 </div>
 <section class="ib-faq js-ib-faq">
 	<ul class="faq-categories">
-		<?= afficherTopic($BDD);?>
+		<?= afficherTopic($BDD, $FAQTrad);?>
 	</ul>
 
 	<div class="faq-items">
-		<?= afficherQuestionRep($BDD, $modif, $suppr); ?>
+		<?= afficherQuestionRep($BDD, $FAQTrad, $modif, $suppr); ?>
 	
 	</div>
 	

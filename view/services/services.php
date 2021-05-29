@@ -1,45 +1,46 @@
 <?php
 $title = 'Services';
 require_once '../headerFooter/header.php';
-require '../../controller/traduction/service/serviceTrad.php';
-require_once '../../model/Login/loginFunctions.php';
+require '../../controller/traduction/service/service.php';
+require_once '../../controller/fonctions.php';
+require_once '../../controller/Login/loginFunctions.php';
 ?>
 
 <link href="services.css" rel="stylesheet" />
 <section class="sections home text-center">
 	<section class="intro">
-		<?php echo $titre ?>
+		<?= $titre ?>
 	</section>
 	<div class="citation">
-	<?php echo $citation ?>
+	<?= $citation ?>
 	</div>
 
 <section class="nosservices">
-	<h2><?php echo $service ?></h2>
+	<h2><?= $service ?></h2>
 	<div class="services">
 		<div class="ligneune">
 			<div class="service">
 				<img class="verifier" src="../images/icons/v_image.png" />
-				<?php echo $tonalite ?>
+				<?= $tonalite ?>
 			</div>
 			<div class="service">
 				<img class="verifier" src="../images/icons/v_image.png" />
-				<?php echo $frequence ?>
+				<?= $frequence ?>
 			</div>
 			<div class="service">
 				<img class="verifier" src="../images/icons/v_image.png" />
-				<?php echo $temperature ?>
+				<?= $temperature ?>
 			</div>
 		</div>
 
 		<div class="sonlumiere">
 			<div class="service">
 				<img class="verifier" src="../images/icons/v_image.png" />
-				<?php echo $reactionL ?>
+				<?= $reactionL ?>
 			</div>
 			<div class="service">
 				<img class="verifier" src="../images/icons/v_image.png" />
-				<?php echo $reactionS ?>
+				<?= $reactionS ?>
 			</div>
 		</div>
 	</div>

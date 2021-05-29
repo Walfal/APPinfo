@@ -2,10 +2,10 @@
 $title = 'Contactez Nous';
 require_once '../headerFooter/header.php';
 require_once '../../model/BDD/connexionBDD.php';
-require '../../controller/traduction/messagerie/contactezNousTrad.php';
+require '../../controller/traduction/messagerie/contactezNous.php';
 ?><link href="contactezNous.css" rel="stylesheet" /><?php
 
-$matricule = $_SESSION['matricule'];
+$matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 
 $conv = recuperationUneDonnee($BDD,"Message", "matricule", $matricule);
 $idConversation = (isset($conv['idConversation'])) ? $conv['idConversation'] : null;
@@ -24,8 +24,8 @@ elseif($matricule > 19):
 	else:
 ?>
 	<div class="bandehaut">
-		<h1 class="titrePage" style="line-height: 100%"><?php echo $contact ?></h1>
-		<i class="sousTitre"><?php echo $aide ?></i>
+		<h1 class="titrePage" style="line-height: 100%"><?= $contact ?></h1>
+		<i class="sousTitre"><?= $aide ?></i>
 	</div>
 
 	<div class="titre">
@@ -55,7 +55,7 @@ elseif($matricule > 19):
 			placeholder="Votre message"
 		></textarea>
 		<br />
-		<input 	class="boiteEnvoyer" type="submit" name="Envoyer" value="<?php echo $envoyer ?>" />
+		<input 	class="boiteEnvoyer" type="submit" name="Envoyer" value="<?= $envoyer ?>" />
 	</form>
 
 	<?php endif;
@@ -68,7 +68,7 @@ elseif($matricule > 19):
 		?>
 
 		<div class="bandehaut">
-			<h1 class="titrePage" style="line-height: 100%"><?php echo $reponse ?></h1>
+			<h1 class="titrePage" style="line-height: 100%"><?= $reponse ?></h1>
 			<i class="sousTitre"><?= $client['prenom'] . ' ' . $client['nom']?></i>
 		</div>
 
@@ -98,10 +98,10 @@ elseif($matricule > 19):
 				type="text"
 				name="message"
 				id="message"
-				placeholder="<?php echo $message ?>"
+				placeholder="<?= $message ?>"
 			></textarea>
 			<br />
-			<input class="boiteEnvoyer" type="submit" name="Envoyer" value="<?php echo $envoyer ?>" />
+			<input class="boiteEnvoyer" type="submit"  name="Envoyer" value="<?= $envoyer ?>" />
 		</form>
 
 	<?php else:
@@ -110,8 +110,8 @@ elseif($matricule > 19):
 	?>
 
 		<div class="bandehaut">
-			<h1 class="titrePage"><?php echo $choix ?></h1>
-			<i class="sousTitre"><?php echo $aqui ?></i>
+			<h1 class="titrePage"><?= $choix ?></h1>
+			<i class="sousTitre"><?= $aqui ?></i>
 		</div>
 
 		<div class="conversation">
@@ -140,7 +140,6 @@ elseif($matricule > 19):
 
 
 	$(document).ready(function (){
-
 		$('#Envoyer').on("submit", function(e){
 			e.preventDefault()
 
@@ -149,7 +148,7 @@ elseif($matricule > 19):
 			var id = <?= $matricule ?>;
 			
 			document.getElementById('message').value = ''
-			if(message != '' && titre != ''){
+			if(message != ''){
 				$.ajax({
 					url : '../../model/Messagerie/envoyerMessage.php',
 					method : 'post',

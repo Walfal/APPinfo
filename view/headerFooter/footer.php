@@ -25,19 +25,19 @@
 			</div>
 			<div class="bloc reseaux">
 				<div class="res">
-					<h4><?php echo $suivez ?></h4>
+					<h4><?= $suivez ?></h4>
 					<a href="#"><img class="facebook" src="../images/icons/facebook.png" alt="" /></a>
 					<a href="#"><img class="google" src="../images/icons/google.png" alt="" /></a>
 					<a href="#"><img class="linkedin" src="../images/icons/linkedin.png" alt="" /></a>
 				</div>
 				<div class="liens">
 					<ul>
-					<li><a href="../"><?php echo $accueil ?></a></li>
-					<li><a href="../services/services.php"><?php echo $services ?></a></li>
-					<li><a href="../quiSommesNous/quiSommesNous.php"><?php echo $aPropos ?></a></li>
-					<li><a href="../contactezNous/contactezNous.php"><?php echo $contact ?></a></li>
-					<li><a href="../FAQ/FAQ.php"><?php echo $FAQ ?></a></li>
-					<li><a href="../headerFooter/CGU.php"><?php echo $CGU ?></a></li>
+					<li><a href="../"><?= $accueil ?></a></li>
+					<li><a href="../services/services.php"><?= $services ?></a></li>
+					<li><a href="../quiSommesNous/quiSommesNous.php"><?= $aPropos ?></a></li>
+					<li><a href="../contactezNous/contactezNous.php"><?= $contact ?></a></li>
+					<li><a href="../FAQ/FAQ.php"><?= $FAQ ?></a></li>
+					<li><a href="../headerFooter/CGU.php"><?= $CGU ?></a></li>
 					</ul>
 				</div>
 			</div>
