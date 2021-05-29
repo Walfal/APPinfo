@@ -2,7 +2,8 @@
 $title = 'Services';
 require_once '../headerFooter/header.php';
 require '../../controller/traduction/service/service.php';
-require_once '../../model/Login/loginFunctions.php';
+require_once '../../controller/fonctions.php';
+require_once '../../controller/Login/loginFunctions.php';
 ?>
 
 <link href="services.css" rel="stylesheet" />

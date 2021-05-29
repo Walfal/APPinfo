@@ -9,10 +9,15 @@ $req = query($BDD, "SELECT debut, resultat, nom FROM PriseRDV NATURAL JOIN (Test
 $tests = $req->fetchAll();
 $nom = recuperationUneDonnee($BDD, "Personne", "matricule", $matricule);
 $nom = $nom["nom"];
+
+if(isset($_GET['id'])):
+	$id = $_GET['id'];
+else:
+	$id = '0';
+endif;
 ?>
 
 <link href="mesResultats.css" rel="stylesheet" />
-
 
 <div class="title">
 	<h1><?= $titre ?></h1>
@@ -30,7 +35,7 @@ $nom = $nom["nom"];
 					<img src="../images/icons/home.svg" alt="maison" class="home" />
 					<h2><?= $centre ?></h2>
 				</centre>
-				<a class="getResults" href="resultatsCentre.php">
+				<a class="getResults" href="resultatsCentre.php?id=<?= $id ?>">
 					<?= $consulter ?>
 				</a>
 			</place>

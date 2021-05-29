@@ -7,24 +7,20 @@ if(!isset($_SESSION['matricule'])):
 endif;
 
 require '../../controller/traduction/profil/CompteEN.php';
-
-
-
-require_once '../../model/Login/loginFunctions.php';
+require_once '../../controller/fonctions.php';
+require_once '../../controller/Login/loginFunctions.php';
 require_once '../../model/BDD/connexionBDD.php';
+
+
+
 $personne = recuperationUneDonnee($BDD, "Personne", "matricule", $_SESSION['matricule']);
 ?>
 <link href="compte.css" rel="stylesheet" /><?php
 
-if($_SESSION['matricule'] == 0):?>
+if($_SESSION['matricule'] < 20):?>
 
 <div class="contenu">
     <div class="contenu1">
-        <div class="bienvenue">
-            <h1><?= $bienvenue ?> <?= $personne['prenom'] . ' ' . $personne['nom'] ?></h1>
-            <p><?= $commentaire?></p>
-        </div>
-        
         <div class="photo">
             <img src="../images/icons/user.png" class="photoProfil">
             <!--<div class="dateTime">Dernière connexion le : </div>-->
@@ -51,29 +47,23 @@ if($_SESSION['matricule'] == 0):?>
             <button class="case">
                 <img src="../images/icons/dossier.png" class="image">
                     <p>
-                        <?= $capteur?>
+                        <?php //echo $capteur?>
                     </p>
             </button></a> -->
             <a href="profilPatients.php">
             <button class="case">
                 <img src="../images/icons/dossier.png" class="image">
-                    <p>
-                    <?= $profil?>
-                    </p>
+                    <p><?= $profil?></p>
             </button></a>
             <a href="../prendreRDV/calendrier.php">
             <button class="case">
                 <img src="../images/icons/calendrier.png" class="image">
-                    <p>
-                    <?= $calendrier?>
-                    </p>
+                    <p><?= $calendrier?></p>
             </button></a>
-            <a href="../profil/modifProfil.php">
+            <a href="modifProfil.php">
             <button class="case">
                 <img src="../images/icons/dossier.png" class="image">
-                    <p>
-                    <?= $modifier?>
-                    </p>
+                    <p><?= $modifier?></p>
             </button></a>
             
         </div>
@@ -83,13 +73,7 @@ if($_SESSION['matricule'] == 0):?>
 <?php elseif($_SESSION['matricule'] < 100):?>
 
 <div class="contenu">
-    <div class="contenu1">
-        <div class="bienvenue">
-            <h1> <?= $bienvenue?> <?= $personne['prenom'] . ' ' . $personne['nom'] ?></h1>
-            <p> <?= $commentaire?>
-            </p>
-        </div>
-        
+    <div class="contenu1">        
         <div class="photo">
             <img src="../images/icons/user.png" class="photoProfil">
             <!--<div class="dateTime">Dernière connexion le : </div>-->

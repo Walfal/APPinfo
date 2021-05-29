@@ -8,6 +8,7 @@ endif;
 
 require '../../model/BDD/connexionBDD.php';
 require '../../controller/traduction/profil/modifProfil.php';
+require_once '../../controller/fonctions.php';
 
 if(!empty($_GET['id'])){
 	$matricule = checkInput($_GET['id']);
@@ -91,7 +92,7 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 	<div class="droite">
 		<div class="title">
 			<p class ="titre">Dernier(s) test(s) passé(s)</p>
-			<a class="acces" href="../resultats/mesResultats.php"> Accéder aux résultats</a>
+			<a class="acces" href="../resultats/mesResultats.php?id=<?= $_GET['id'] ?>"> Accéder aux résultats</a>
 			
 		</div> 
 		

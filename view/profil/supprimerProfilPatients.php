@@ -1,6 +1,7 @@
 <?php
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';
+require_once '../../controller/fonctions.php';
 
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');

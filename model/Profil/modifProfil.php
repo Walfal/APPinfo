@@ -1,5 +1,6 @@
 <?php
-require_once '../../model/Login/loginFunctions.php';
+require_once '../../controller/fonctions.php';
+require_once '../../controller/Login/loginFunctions.php';
 
 if(isset($_POST['password'])):
     $result = recuperationUneDonnee($BDD, 'Personne', 'matricule', $_SESSION['matricule']);

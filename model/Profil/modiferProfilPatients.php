@@ -1,4 +1,6 @@
 <?php
+require_once '../../controller/fonctions.php';
+
 if(isset($_POST['matricule'])) {
 	
 	$matricule = checkInput($_POST['matricule']);

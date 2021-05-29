@@ -12,7 +12,6 @@ if (isset($_POST['langue'])){
 	}
 }
 require '../controller/traduction/index.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +31,7 @@ require '../controller/traduction/index.php';
 				<input id="nav-toggle" type="checkbox" />
 				<a href="."><img class="logo" src="images/logo/sensair.png" alt="" /></a>
 				<ul class="links">
-					<li><a href="."><?= $accueil ?> </a></li>
+					<li><a href="."><?= $accueil ?></a></li>
 					<li><a href="services/services.php"><?= $services ?></a></li>
 					<li><a href="quiSommesNous/quiSommesNous.php"><?= $aPropos ?></a></li>
 					<li><a href="messagerie/contactezNous.php"><?= $contact ?></a></li>
@@ -45,8 +44,8 @@ require '../controller/traduction/index.php';
 							<form method="post">
 								<li><button class="langue" type ="submit"  name="langue" value="fr">Français</button></li>
 								<li><button class="langue" type ="submit"  name="langue" value ="en">English</button></li>
-								<li><a href="#">Espanol</a></li>
-								<li><a href="#">Deutch</a></li>  
+								<!-- <li><a href="#">Espanol</a></li>
+								<li><a href="#">Deutch</a></li>   -->
 							</form>
 						</ul>
 					</li>
@@ -67,7 +66,7 @@ require '../controller/traduction/index.php';
 	<body>
 	
 		<section id="main-image">
-			<h2><?= $bienvenue ?></strong></h2>
+			<h2 class="ml2"><?= $bienvenue ?></h2>
 			<a href="login/login.php" class="button-1">
 			<?php if(isset($_SESSION['matricule'])): ?>
 				<?= $acces ?>
@@ -76,8 +75,6 @@ require '../controller/traduction/index.php';
 			<?php endif; ?>
 			</a>
 		</section>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-		<script src="titleEffect.js"></script>
 		<section id="presentation">
 			<div class="wrapper">
 				<h2><?= $tests ?></h2>
@@ -162,3 +159,6 @@ require '../controller/traduction/index.php';
 		<p id="copyright">© 2021 Sens'air</p>
 	</footer>
 </html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script src="titleEffect.js"></script>

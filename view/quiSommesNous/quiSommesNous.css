@@ -1,6 +1,5 @@
 /*-------------------------mainPage-----------------------------------*/
 
-
 .mainPage {
 	display: flex;
 	flex-direction: column;
@@ -14,7 +13,6 @@
 	padding-top: 2.5%;
 	padding-bottom: 2.5%;
 	color: black;
-	/* font-size: xx-large; */
 }
 .text {
 	width: 40%;
@@ -23,30 +21,35 @@
 	align-items: center;
 	text-align: justify;
 }
-/* .titre {
+.titre {
 	font-size: xx-large;
 }
 .mainPage p {
 	font-size: 20px;
 }
+
 .img {
-	width: 30%;
+	align-self: center;
+	width: 80%;
+	padding-inline: 10%;
 }
 .section1 {
 	background-color: white;
-	/* background: linear-gradient(#3a738f, #5ea2c4), radial-gradient(at bottom, #5ea2c4, #3a738f); */
 }
 
 .section2 {
 	background-color: #5ea2c4;
-	/* background: linear-gradient(#5ea2c4, #3a738f), radial-gradient(at top, #5ea2c4, #3a738f); */
 }
 
 .section3 {
 	flex-direction: column;
 	background: white;
-	/* background: linear-gradient(#3a738f, #5ea2c4, #3a738f); */
 }
+
+.txt {
+	padding: 20px;
+}
+
 .txt3 {
 	color: #3a738f;
 	/* font-size: xx-large; */
@@ -69,10 +72,9 @@
 	flex-direction: column;
 	align-items: center;
 	box-shadow: 5px 5px rgba(0, 0, 0, 0.4);
-	
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
 	.qualites {
 		display: flex;
 		flex-direction: row;
@@ -83,13 +85,10 @@
 	.qualite {
 		font-size: 20px;
 		width: 60%;
-		
 	}
-	
 }
 
-
-@media all and (max-device-width:480px){
+@media all and (max-device-width: 480px) {
 	.qualites {
 		display: flex;
 		flex-direction: row;
@@ -100,14 +99,12 @@
 	.qualite {
 		font-size: 20px;
 		width: 60%;
-		
-		
 	}
 }
-.qualite p{
+.qualite p {
 	font-size: 20px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
 	.qualites {
 		display: flex;
 		flex-direction: row;
@@ -118,7 +115,7 @@
 		font-size: 20px;
 		width: 60%;
 	}
-	.section{
+	.section {
 		display: flex;
 		flex-direction: column;
 	}
@@ -134,8 +131,7 @@
 	}
 }
 
-
-@media all and (max-device-width:480px){
+@media all and (max-device-width: 480px) {
 	.qualites {
 		display: flex;
 		flex-direction: row;
@@ -147,5 +143,4 @@
 		font-size: 20px;
 		width: 60%;
 	}
-	
 }

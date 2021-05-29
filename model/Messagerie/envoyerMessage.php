@@ -1,5 +1,4 @@
 <?php
-
 require_once '../../model/BDD/connexionBDD.php';
 
 $messageTest = date('Y-m-d H:i:s');
@@ -25,7 +24,6 @@ if(!empty($_POST)){
 		$req = $BDD -> prepare("INSERT INTO Conversation (titre) VALUES (?)");
 		$req -> execute(array($titre));
 
-
 		$req = $BDD -> prepare("SELECT idConversation FROM Conversation ORDER BY idConversation DESC");
 		$req -> execute();
 		$idConversation = $req -> fetch();
@@ -39,7 +37,6 @@ if(!empty($_POST)){
 	}
 }	
 ?>
-
 
 <p class="envoye">
 <?= nl2br($message) ?>

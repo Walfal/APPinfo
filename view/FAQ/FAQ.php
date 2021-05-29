@@ -2,6 +2,9 @@
 
 require_once '../headerFooter/header.php';
 require '../../controller/traduction/FAQ/FAQ.php';
+require_once '../../controller/fonctions.php';
+require_once '../../model/BDD/connexionBDD.php';
+require_once '../../model/FAQ/modelFaq.php';
 ?>
 <link href="FAQ.css" rel="stylesheet" />       
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
@@ -16,10 +19,6 @@ require '../../controller/traduction/FAQ/FAQ.php';
 </div>
 
 <!-- ----------------------------------------------------------- FAQ ---------------------------------------------------------------------------------- -->
-<?php
-	require_once '../../model/BDD/connexionBDD.php';
-	require_once '../../model/FAQ/modelFaq.php';
-?>
 
 <div class="contact">
 	<?php 

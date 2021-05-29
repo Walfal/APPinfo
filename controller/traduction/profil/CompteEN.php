@@ -8,7 +8,7 @@ if ($_SESSION['langue'] === 'en'){
 	$capteur = 'Management <br> tests/sensors';
 	$calendrier ='Schedule';
 	$profil ='Patient profile';
-	$modifier ='Edit my profile';
+	$modifier ='My profile';
 	$deconnexion ='Disconnect';
 	$commentairePatient ='You can consult your results
 	as well as the dates of your appointments.';
@@ -23,7 +23,7 @@ else{
 	$capteur = ' Gestion <br> tests/capteurs';
 	$calendrier ='Planning';
 	$profil ='Profil patient';
-	$modifier = 'Modifier mon profil';
+	$modifier = 'Mon profil';
 	$deconnexion = 'Se déconnecter';
 	$commentairePatient ='Vous pouvez consulter vos résultats
 	ainsi que les dates de vos rendez-vous.';

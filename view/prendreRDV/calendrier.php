@@ -8,7 +8,7 @@ endif;
 <br><br>
 <?php
 
-require_once '../../model/RDV/Month.php';
+require_once '../../controller/RDV/Month.php';
 require_once '../../model/RDV/events.php';
 require_once '../../model/BDD/connexionBDD.php';
 require '../../controller/traduction/prendreRDV/JourMois.php';

@@ -11,6 +11,13 @@ endif;
 
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 $patient = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
+
+
+if(isset($_GET['id'])):
+    $id = '?id=' . $_GET['id'];
+else:
+    $id = '';
+endif;
 ?>    
 <link href="resultatsCentre.css" rel="stylesheet">
 <!-- ------------------------------------------------------------ PRESENTATION---------------------------------------------------------------------------------- -->
@@ -46,7 +53,8 @@ $patient = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
             <div>
                 <h3></h3>
                 <div class="resultat">
-                    <img src="../../controller/resultats/graphResultats.php?dummy=\'.now()."/>
+                    <img src="data:image/png;base64,<?php echo(base64_encode($imageData)); ?>"/>
+                    <img src="../../controller/resultats/graphResultats.php<?= $id  ?>&dummy=\'.now()."/>
                 </div>
                 
                 <div class="detail">
@@ -58,7 +66,7 @@ $patient = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
             <div>
                 <h3> </h3>
                 <div class="resultat">
-                    <img  class="bar" src="../../controller/resultats/graphResultats2.php?dummy=\'.now().">
+                    <img  class="bar" src="../../controller/resultats/graphResultats2.php<?= $id ?>&dummy=\'.now().">
                     <figcaption><?= $resultat ?></figcaption>
                 </div>
                 
