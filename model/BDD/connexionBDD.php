@@ -6,11 +6,8 @@ class connexionBDD{
 	private $USER = 'raph';
 	private $PASS = 'kErUxmg6XwkWRR';
 
-	//BDD local:
-	/* private $HOST = 'localhost';
-	private $NAME = 'APPinfo';
-	private $USER = 'root';
-	private $PASS = ''; */ 
+	
+
 
 	private $connexion;
 
@@ -101,13 +98,4 @@ function query($BDD, $sql, $data = array()){
 function insert($BDD, $sql, $data = array()){
 	$req = $BDD -> prepare($sql);
 	$req -> execute($data);
-}
-
-//pour vérifier donnée qui vient de l'extérieur
-function checkInput($data){
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	$data = htmlentities($data);
-	return $data;
 }

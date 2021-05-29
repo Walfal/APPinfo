@@ -1,14 +1,15 @@
 
 <?php
-
-
 $title = 'Gérer la FAQ';
 require_once '../headerFooter/header.php';
-require '../../controler/traduction/FAQ/gererFAQTrad.php';
+require '../../controller/traduction/FAQ/gererFAQ.php';
+require_once '../../controller/fonctions.php';
+
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
 endif;
 
+require '../../controller/traduction/FAQ/FAQ.php';
 require_once '../../model/BDD/connexionBDD.php';
 require_once '../../model/FAQ/modelFaq.php';
 
@@ -21,7 +22,7 @@ if(isset($_POST['submit'])){
         $reponse = $BDD -> quote($reponse);
         $theme = $BDD -> quote($theme);
         
-        $ajout = ajouterQuestion($BDD,$theme,$question, $reponse);
+        $ajout = ajouterQuestion($BDD, $FAQTrad, $theme,$question, $reponse);
         if($ajout != 1){
             echo "<script type=\"text/javascript\"> alert('Erreur Insertion')</script>";
         }else{
@@ -45,20 +46,24 @@ if(isset($_POST['submit'])){
 </div>
 
 <!-- ----------------------------------------------------------- FORMULAIRE ---------------------------------------------------------------------------------- -->
-
 <div class="contenu">
     <form class="formulaire"  role="form" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="theme"><?= $theme ?></label>
+                    
             <input type="text"  id="theme" name="theme" list="themes">
-            <datalist id="themes">
-                <?php 
-                    $statement =  recuperationTheme($BDD);
-                    foreach($statement as $valeur){
-                        echo '<option value="'.$valeur['theme'].'"></option>';
-                    }
-                ?>
-            </datalist>
+            <!-- <datalist id="themes">
+                <select name="theme">
+                    <option selected value="0"> - </option>
+                    <option selected value="1"> k </option>
+                    <?php /*
+                        $statement =  recuperationTheme($BDD, $FAQTrad);
+                        foreach($statement as $valeur){
+                            echo '<option value="' . $valeur['theme'] . '"></option>';
+                        }*/
+                    ?>
+                </select>
+            </datalist> -->
         </div>
         <div class="form-group">
             <label for="question"><?= $question ?> :</label>

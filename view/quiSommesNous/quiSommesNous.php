@@ -3,7 +3,7 @@
 <?php 
 $title='Qui sommes-nous ?';
 require_once '../headerFooter/header.php';
-require '../../controler/traduction/quiSommesNous/quiSommesNous.php';
+require '../../controller/traduction/quiSommesNous/quiSommesNous.php';
 ?>
 <link href="quiSommesNous.css" rel="stylesheet" />
 
@@ -14,10 +14,14 @@ require '../../controler/traduction/quiSommesNous/quiSommesNous.php';
 			<p class="txt">
 				<br /><?= $description ?>	</p>
 		</div>
-		<img class="img" src="../images/divers/team target.jpeg" />
-	</div>
+		<div class="image">
+			<img class="img" src="../images/divers/team target.jpeg" />
+		</div>
+		</div>
 	<div class="section section2">
-		<img class="img" src="../images/divers/Satisfaction.jpg" />
+		<div class="image">
+			<img class="img" src="../images/divers/Satisfaction.jpg" />
+		</div>
 		<div class="text">
 			<p class="txt">
 			<?= $satisfaction ?>	</p>

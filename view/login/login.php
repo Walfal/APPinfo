@@ -1,8 +1,9 @@
 <?php
 $title = 'Connectez vous';
 require_once '../headerFooter/header.php';
-require '../../controler/traduction/login/loginTrad.php';
-require_once '../../model/Login/loginUtilisateurs.php';
+require_once '../../controller/traduction/login/login.php';
+require_once '../../controller/fonctions.php';
+require_once '../../controller/Login/loginUtilisateurs.php';
 ?>
 
 <link href="login.css" rel="stylesheet" />

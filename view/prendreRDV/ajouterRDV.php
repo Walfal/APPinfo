@@ -2,7 +2,7 @@
 $title = 'Ajouter un RDV';
 require '../headerFooter/header.php'; 
 require_once '../../model/BDD/connexionBDD.php';
-require '../../controler/traduction/prendreRDV/ajouterRDVTrad.php';
+require '../../controller/traduction/prendreRDV/ajouterRDV.php';
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
 endif;
@@ -65,6 +65,8 @@ $capteurs = recuperationDesDonnees($BDD, "Capteur", 1, 1);
 </form>
 </div>
 </div>
+
+
 
 <?php require '../headerFooter/footer.php' ?>
 

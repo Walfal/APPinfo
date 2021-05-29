@@ -1,21 +1,23 @@
 <?php
-$title = 'Mes résultats';
-require_once '../headerFooter/header.php';
-require '../../controler/traduction/resultats/resultatsTrad.php';
-if(!isset($_SESSION['matricule'])):
-    header('Location: ../login/login.php');
+$title = "Mes résultats";
+require '../../controller/traduction/resultats/resultats.php';
+require_once('../../view/headerFooter/header.php');
+include_once('../../model/BDD/connexionBDD.php');
+//include('../../model/envoieTest.php');
+$matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
+$req = query($BDD, "SELECT debut, resultat, nom FROM PriseRDV NATURAL JOIN (Test NATURAL JOIN Capteur) WHERE matricule = ? ORDER BY debut", [$matricule]);
+$tests = $req->fetchAll();
+$nom = recuperationUneDonnee($BDD, "Personne", "matricule", $matricule);
+$nom = $nom["nom"];
+
+if(isset($_GET['id'])):
+	$id = $_GET['id'];
+else:
+	$id = '0';
 endif;
-
-require_once '../../model/BDD/connexionBDD.php';
-$matriculeTest = $_SESSION['matricule'];
-$matricule = $matriculeTest;
-
-$rdvs = recuperationDesDonnees($BDD, "PriseRDV", "matricule", $_SESSION['matricule']);
-//$tests = recuperationDesDonnees($BDD, "Test", );
-$nom = recuperationUneDonnee($BDD,"Personne", "matricule", $_SESSION['matricule']);
 ?>
 
-<link href="mesResultats.css" rel="stylesheet"/>
+<link href="mesResultats.css" rel="stylesheet" />
 
 <div class="title">
 	<h1><?= $titre ?></h1>
@@ -33,45 +35,34 @@ $nom = recuperationUneDonnee($BDD,"Personne", "matricule", $_SESSION['matricule'
 					<img src="../images/icons/home.svg" alt="maison" class="home" />
 					<h2><?= $centre ?></h2>
 				</centre>
-				<button class="getResults">
-				<?= $consulter ?>
-				</button>
-				
+				<a class="getResults" href="resultatsCentre.php?id=<?= $id ?>">
+					<?= $consulter ?>
+				</a>
 			</place>
 		</div>
 	</div>
 </div>
 <table class="resultat">
-	<thead>
+	<tr>
+		<th><?= $test1 ?></th>
+		<th><?= $resultats ?></th>
+		<th><?= $date ?></th>
+		<!-- <th>Trame</th> -->
+		<th><?= $nom1 ?></th>
+	</tr>
+	<?php foreach($tests as $test): ?>
 		<tr>
-			
-			<th><?= $test1 ?></th>
-			<th><?= $resultats ?></th>
-			<th><?= $date ?></th>
-			<!-- <th>Trame</th> -->
-			<th><?= $nom1 ?></th>
-			
+		<td><?= $test['nom'];?></td>
+		<td><?= $test['resultat'];?></td>
+		<td>
+		<?php 
+			setlocale(LC_TIME, 'fr_FR.utf-8','fra');
+			$date = new DateTime($test['debut']);
+			echo (strftime("%A %e %B %Y %k:%M", date_timestamp_get($date)));?></td>
+		<td><?= $nom ?></td>
 		</tr>
-	</thead>
-	<tbody>
-		<?php foreach($rdvs as $rdv):
-				$tests = recuperationDesDonnees($BDD, "Test NATURAL JOIN Capteur", "idRDV", $rdv['idRDV']);
-				foreach($tests as $test): 
-				?>
-					<tr>
-					<td><?= $test['nom'];?></td>
-					<td><?= $test['resultat'];?></td>
-					<td><?php
-					setlocale(LC_TIME, 'fr_FR.utf-8','fra'); 
-					$date = new DateTime($rdv['debut']);
-					echo (strftime("%A %e %B %Y %k:%M", date_timestamp_get($date)));
-					?></td>
-					<!-- <td><?php //echo $test['trame'];?></td> -->
-					<td><?= $nom['nom'];?></td>
-					</tr>
-				<?php endforeach;
-			endforeach; ?>
-	</tbody>
+	<?php endforeach ?>
 </table>
-
-<?php require_once '../headerFooter/footer.php'; ?>
+<?php
+	require_once('../../view/headerFooter/footer.php');
+?>

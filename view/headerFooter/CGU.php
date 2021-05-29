@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="CGU.css">
 
-<?php require '../../controler/traduction/headerFooter/CGUen.php';
+<?php require '../../controller/traduction/headerFooter/CGUen.php';
 
 
 echo $CGU;
@@ -12,4 +12,5 @@ echo $CGU;
 
 <br><br>
 
+	
 <?php require 'footer.php' ?>

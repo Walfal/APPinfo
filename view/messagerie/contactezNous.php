@@ -2,10 +2,10 @@
 $title = 'Contactez Nous';
 require_once '../headerFooter/header.php';
 require_once '../../model/BDD/connexionBDD.php';
-require '../../controler/traduction/messagerie/contactezNousTrad.php';
+require '../../controller/traduction/messagerie/contactezNous.php';
 ?><link href="contactezNous.css" rel="stylesheet" /><?php
 
-$matricule = $_SESSION['matricule'];
+$matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 
 $conv = recuperationUneDonnee($BDD,"Message", "matricule", $matricule);
 $idConversation = (isset($conv['idConversation'])) ? $conv['idConversation'] : null;
@@ -101,7 +101,7 @@ elseif($matricule > 19):
 				placeholder="<?= $message ?>"
 			></textarea>
 			<br />
-			<input class="boiteEnvoyer" type="submit" name="Envoyer" value="<?= $envoyer ?>" />
+			<input class="boiteEnvoyer" type="submit"  name="Envoyer" value="<?= $envoyer ?>" />
 		</form>
 
 	<?php else:
@@ -140,7 +140,6 @@ elseif($matricule > 19):
 
 
 	$(document).ready(function (){
-
 		$('#Envoyer').on("submit", function(e){
 			e.preventDefault()
 
@@ -149,7 +148,7 @@ elseif($matricule > 19):
 			var id = <?= $matricule ?>;
 			
 			document.getElementById('message').value = ''
-			if(message != '' && titre != ''){
+			if(message != ''){
 				$.ajax({
 					url : '../../model/Messagerie/envoyerMessage.php',
 					method : 'post',

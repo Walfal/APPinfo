@@ -1,7 +1,10 @@
 <?php $title='FAQ';
 
 require_once '../headerFooter/header.php';
-require '../../controler/traduction/FAQ/FAQTrad.php';
+require '../../controller/traduction/FAQ/FAQ.php';
+require_once '../../controller/fonctions.php';
+require_once '../../model/BDD/connexionBDD.php';
+require_once '../../model/FAQ/modelFaq.php';
 ?>
 <link href="FAQ.css" rel="stylesheet" />       
 <!-- ----------------------------------------------------------- BANNIERE ---------------------------------------------------------------------------------- -->
@@ -16,11 +19,6 @@ require '../../controler/traduction/FAQ/FAQTrad.php';
 </div>
 
 <!-- ----------------------------------------------------------- FAQ ---------------------------------------------------------------------------------- -->
-<?php
-	require_once '../../model/BDD/connexionBDD.php';
-	require_once '../../model/FAQ/modelFaq.php';
-	
-?>
 
 <div class="contact">
 	<?php 
@@ -34,11 +32,11 @@ require '../../controler/traduction/FAQ/FAQTrad.php';
 </div>
 <section class="ib-faq js-ib-faq">
 	<ul class="faq-categories">
-		<?= afficherTopic($BDD);?>
+		<?= afficherTopic($BDD, $FAQTrad);?>
 	</ul>
 
 	<div class="faq-items">
-		<?= afficherQuestionRep($BDD, $modif, $suppr); ?>
+		<?= afficherQuestionRep($BDD, $FAQTrad, $modif, $suppr); ?>
 	
 	</div>
 	

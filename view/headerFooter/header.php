@@ -2,13 +2,18 @@
 session_start();
 
 
-
-
 if (isset($_POST['langue'])){
+	if($_POST['langue'] == 'fr'){
+		if (isset($_SESSION['langue'])){
+			unset($_SESSION['langue']);
+		}
+	}
+	else{
 	$_SESSION['langue']= $_POST['langue'];
+	}
 }
 
-require '../../controler/traduction/headerFooter/headeren.php';
+require '../../controller/traduction/headerFooter/headeren.php';
 
 ?>
 <!DOCTYPE html>
@@ -43,8 +48,8 @@ require '../../controler/traduction/headerFooter/headeren.php';
 						<form method="post">
 							<li><button class="langue" type ="submit"  name="langue" value="fr">Français</button></li>
 							<li><button class="langue" type ="submit"  name="langue" value ="en">English</button></li>
-							<li><a href="#">Espanol</a></li>
-							<li><a href="#">Deutch</a></li>  
+							<!-- <li><a href="#">Espanol</a></li>
+							<li><a href="#">Deutch</a></li>  --> 
 							</form>
 						</ul>
 					</li>

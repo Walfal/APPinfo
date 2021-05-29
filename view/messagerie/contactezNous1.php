@@ -6,7 +6,7 @@
 	$matriculeTest = 1;
 	$matriculeTest = $_SESSION['matricule'];
 	require_once '../../model/BDD/connexionBDD.php';
-	require '../../controler/traduction/messagerie/contactezNousTrad.php';
+	require '../../controller/traduction/messagerie/contactezNous.php';
 	
 ?>
 
