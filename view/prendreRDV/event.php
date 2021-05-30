@@ -4,7 +4,8 @@ require '../headerFooter/header.php';
 
 require_once '../../model/RDV/events.php';
 require_once '../../model/BDD/connexionBDD.php';
-require '../../controller/traduction/prendreRDV/event.php';
+require_once '../../controller/traduction/prendreRDV/event.php';
+
 if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;

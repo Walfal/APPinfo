@@ -8,7 +8,7 @@ endif;
 
 require_once '../../model/BDD/connexionBDD.php';
 require_once '../../model/FAQ/modelFaq.php';
-require '../../controller/traduction/FAQ/gererFAQ.php';
+require_once '../../controller/traduction/FAQ/gererFAQ.php';
 require_once '../../controller/fonctions.php';
 
 if(isset($_GET['id'])){

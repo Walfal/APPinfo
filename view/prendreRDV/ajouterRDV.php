@@ -1,8 +1,10 @@
 <?php 
+var_dump($_POST);
 $title = 'Ajouter un RDV';
 require '../headerFooter/header.php'; 
 require_once '../../model/BDD/connexionBDD.php';
 require '../../controller/traduction/prendreRDV/ajouterRDV.php';
+
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
 endif;
@@ -37,7 +39,6 @@ $capteurs = recuperationDesDonnees($BDD, "Capteur", 1, 1);
 	<p class="titrePage"><b><?= $titre ?></b></p>
 	<img class="imgCalendrier" src="../images/icons/calendrier.svg" alt="icone profil patient">
 </div>
-
 <div class="recherche">
 	<p class="indication"><b><?= $consigne ?> :</b></p>
 <form class="aRemplir" method="post">
@@ -57,7 +58,7 @@ $capteurs = recuperationDesDonnees($BDD, "Capteur", 1, 1);
 	<span class="indication"><b><?= $consigne2 ?> :</b></span>
 	<br><br>
 	<?php foreach($capteurs as $capteur): ?>
-		<label><input class="Test" type="checkbox" name ="test[]" value="<?= ++$capteur['idCapteur'] ?>"" checked><?= $capteur['nom'] ?></input></label>
+		<label><input class="Test" type="checkbox" name ="test[]" value="<?= $capteur['idCapteur'] ?>" checked><?= $capteur['nom'] ?></input></label>
 	<?php endforeach; ?>
 
 	<br><br>

@@ -47,7 +47,7 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 					echo (strftime("%A %e %B %Y", date_timestamp_get($date))); ?>" readonly></li>
 				</div>
 				<div class="form-group"> 
-					<li> <label for="genre"> <?= $sexe ?> : </label> <br>
+					<li> <label for="genre"> <?= $sexe ?></label> <br>
 					<input type="text " class="champ" id=genre name="genre" value="<?= ($personne['sexe'] == 0) ? 'Non précisé' : ($personne['sexe'] == 1) ? 'Homme' : 'Femme' ?>" readonly> </li>
 				</div>
 				<div class="form-group">
@@ -55,7 +55,7 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 					<input type="text"  class="champ" id=Numss name="num_ss" value="<?= $personne['numero de securite social'] ?>" readonly></li>
 				</div>
 				<div class="form-group">
-					<li><label for="Poids"><?= $poids ?> :</label><br>
+					<li><label for="Poids"><?= $poids ?></label><br>
 					<input type="text"  class="champ" id=Poids name="poids" value=" <?= $personne['poids'] ?>" readonly></li>
 				</div>
 				<div class="form-group">
@@ -63,15 +63,15 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 					<input type="text" class="champ" id=Taille name="taille" value="<?= $personne['taille'] ?>" readonly></li>
 				</div>
 				<div class="form-group">
-					<li><label for="AdresseRue"><?= $adresse ?> :</label><br>
+					<li><label for="AdresseRue"><?= $adresse ?></label><br>
 					<input type="text" class="champ" id=AdresseRue name="adresseRue" value="<?= $personne['adresse'] ?>" readonly></li>
 				</div>
 				<div class="form-group">
-					<li><label for="AdresseVille"><?= $ville ?> :</label><br>
+					<li><label for="AdresseVille"><?= $ville ?></label><br>
 					<input type="text" class="champ" id=AdresseVille name="adresseVille" value="<?= $personne['ville'] ?>" readonly></li>
 				</div>
 				<div class="form-group">
-					<li class="espacement"><label for="CodePostale"><?= $CodePostal ?> :</label><br>
+					<li class="espacement"><label for="CodePostale"><?= $CodePostal ?></label><br>
 					<input type="text" class="champ" id=CodePostal name="codePostal" value="<?= $personne['code postal'] ?>" readonly></li>
 				</div>
 				<div class="form-group">
@@ -89,14 +89,10 @@ $personne = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
 			</div>	
 		</div>
 	</form>
-	<div class="droite">
-		<div class="title">
-			<p class ="titre">Dernier(s) test(s) passé(s)</p>
-			<a class="acces" href="../resultats/mesResultats.php?id=<?= $_GET['id'] ?>"> Accéder aux résultats</a>
-			
-		</div> 
-		
-	</div>
+	<div class="title">
+		<p class ="titre">Dernier(s) test(s) passé(s)</p>
+		<a class="acces" href="../resultats/mesResultats.php?id=<?= $_GET['id'] ?>"> Accéder aux résultats</a>
+	</div> 
 </div>
 
 

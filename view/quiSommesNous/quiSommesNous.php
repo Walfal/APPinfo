@@ -1,5 +1,3 @@
-<br><br>
-
 <?php 
 $title='Qui sommes-nous ?';
 require_once '../headerFooter/header.php';

@@ -1,10 +1,10 @@
 <?php // content="text/plain; charset=utf-8"
 
 session_start();
-require_once('../../jpgraph/src/jpgraph.php');
-require_once('../../jpgraph/src/jpgraph_line.php');
-require_once('../../jpgraph/src/jpgraph_bar.php');
-require_once('../../model/BDD/connexionBDD.php');
+require_once '../../jpgraph/src/jpgraph.php';
+require_once '../../jpgraph/src/jpgraph_line.php';
+require_once '../../jpgraph/src/jpgraph_bar.php';
+require_once '../../model/BDD/connexionBDD.php';
 
 
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];

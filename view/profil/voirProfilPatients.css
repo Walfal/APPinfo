@@ -1,14 +1,15 @@
-.contenu{
-    width: 390px;
-    margin-top: 80px;
-    height: 100%;
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 8px 16px rgba(0,0,0,.3);
-    padding: 20px;
-    margin-bottom: 40px;
+.contenu {
+	width: 390px;
+	margin-top: 80px;
+	height: 100%;
+	background: white;
+	border-radius: 4px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	margin-bottom: 40px;
 	text-align: center;
 }
+
 .textSize {
 	font-size: 30px;
 	font-weight: bold;
@@ -18,69 +19,79 @@
 	margin-bottom: 30px;
 	text-align: center;
 }
-.form-group{
-    display: flex;
-    list-style:none;
-    padding-bottom: 5%;   
-    color: #5EA2C4;
+
+.form-group {
+	display: flex;
+	list-style: none;
+	padding-bottom: 5%;
+	color: #5ea2c4;
 	justify-content: center;
 }
-.champ{
-    width:300px;
-    height: 40px;
-    border-radius: 4px;
-    border: 1px solid gray;
-    margin: 10px 0 18px 0;
-    padding-left: 5px;
+
+.champ {
+	width: 300px;
+	height: 40px;
+	border-radius: 4px;
+	border: 1px solid gray;
+	margin: 10px 0 18px 0;
+	padding-left: 5px;
 	font-size: 16px;
-	color: gray;
-}
-label{
-    color: #5ea2c4;
-    font-weight: bold;
-    font-size: large;
+	color: slategrey;
+	text-align: center;
 }
 
-@media screen and (max-width:730px){
-	.principal{
+label {
+	color: #5ea2c4;
+	font-weight: bold;
+	font-size: large;
+}
+
+@media screen and (max-width: 730px) {
+	.principal {
 		display: inline-block;
 		flex-wrap: wrap;
 	}
-	.contenu{
+	.contenu {
 		margin-left: 0px;
 	}
-	.droite{
+	.droite {
 		margin-bottom: 170px;
 	}
 }
-.titre{
+
+.titre {
 	font-size: 30px;
 	font-weight: bold;
 	color: gray;
 	margin-top: 25px;
 	margin-bottom: 40px;
 }
-.textSizeNomCentre{
+
+.textSizeNomCentre {
 	margin-bottom: 40px;
 }
-.acces{
+
+.acces {
 	margin-left: 1%;
-    padding: 10px;
-    text-align: center;
-    border-radius: 7px;
-    background: #5ea2c4;
-    color: white;
+	padding: 10px;
+	text-align: center;
+	border-radius: 7px;
+	background: #5ea2c4;
+	color: white;
 }
-.acces:hover{
-    background: grey;
+
+.acces:hover {
+	background: grey;
 }
-.principal{
+
+.principal {
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-.gauche{
-	margin-left: 9%;
-}
-.droite{
-	margin-left: 15%;
-	margin-top: 100px;
+
+.title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

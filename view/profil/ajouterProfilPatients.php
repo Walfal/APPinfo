@@ -1,5 +1,3 @@
-
-
 <?php
 $title = 'Profil des patients';
 require_once '../headerFooter/header.php';

@@ -1,13 +1,14 @@
-
-
 <?php
 	$title = 'Contactez Nous';
 	require_once '../headerFooter/header.php';
-	$matriculeTest = 1;
-	$matriculeTest = $_SESSION['matricule'];
+	$matricule = 1;
+	$matricule = $_SESSION['matricule'];
 	require_once '../../model/BDD/connexionBDD.php';
 	require '../../controller/traduction/messagerie/contactezNous.php';
-	
+
+if(!isset($matricule)):
+	header('Location: ../login/login.php');
+endif;
 ?>
 
 <link href="contactezNous.css" rel="stylesheet" />
@@ -48,7 +49,7 @@
 
 			var message  = document.getElementById('message').value
 			var titre  = document.getElementById('titre').value
-			var id = <?= $matriculeTest ?>;
+			var id = <?= $matricule ?>;
 			
 			document.getElementById('message').value = ''
 			document.getElementById('titre').value = ''

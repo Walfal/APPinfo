@@ -1,6 +1,6 @@
 <?php 
 $title = 'Gestion des capteurs';
-require '../headerFooter/header.php'; 
+require_once '../headerFooter/header.php'; 
 
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
@@ -55,4 +55,4 @@ endif;
 	</div>
 </div>
 
-<?php require '../headerFooter/footer.php'; ?>
+<?php require_once '../headerFooter/footer.php'; ?>

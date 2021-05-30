@@ -6,12 +6,10 @@ if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
 
-require '../../controller/traduction/profil/CompteEN.php';
+require_once '../../controller/traduction/profil/CompteEN.php';
 require_once '../../controller/fonctions.php';
 require_once '../../controller/Login/loginFunctions.php';
 require_once '../../model/BDD/connexionBDD.php';
-
-
 
 $personne = recuperationUneDonnee($BDD, "Personne", "matricule", $_SESSION['matricule']);
 ?>
@@ -163,6 +161,5 @@ if($_SESSION['matricule'] < 20):?>
     </div>
 </div>
 
-<?php endif ?>
-
-<?php require '../headerFooter/footer.php'; ?>
+<?php endif;
+require_once '../headerFooter/footer.php'; ?>

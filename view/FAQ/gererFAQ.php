@@ -2,14 +2,14 @@
 <?php
 $title = 'Gérer la FAQ';
 require_once '../headerFooter/header.php';
-require '../../controller/traduction/FAQ/gererFAQ.php';
+require_once '../../controller/traduction/FAQ/gererFAQ.php';
 require_once '../../controller/fonctions.php';
 
 if(!isset($_SESSION['matricule']) || $_SESSION['matricule'] > 20):
     header('Location: ../login/login.php');
 endif;
 
-require '../../controller/traduction/FAQ/FAQ.php';
+require_once '../../controller/traduction/FAQ/FAQ.php';
 require_once '../../model/BDD/connexionBDD.php';
 require_once '../../model/FAQ/modelFaq.php';
 

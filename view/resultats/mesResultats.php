@@ -1,9 +1,13 @@
 <?php
 $title = "Mes résultats";
-require '../../controller/traduction/resultats/resultats.php';
-require_once('../../view/headerFooter/header.php');
-include_once('../../model/BDD/connexionBDD.php');
-//include('../../model/envoieTest.php');
+require_once '../../view/headerFooter/header.php';
+require_once '../../model/BDD/connexionBDD.php';
+require_once '../../controller/traduction/resultats/resultats.php';
+
+if(!isset($_SESSION['matricule'])):
+	header('Location: ../login/login.php');
+endif;
+
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 $req = query($BDD, "SELECT debut, resultat, nom FROM PriseRDV NATURAL JOIN (Test NATURAL JOIN Capteur) WHERE matricule = ? ORDER BY debut", [$matricule]);
 $tests = $req->fetchAll();
@@ -64,5 +68,5 @@ endif;
 	<?php endforeach ?>
 </table>
 <?php
-	require_once('../../view/headerFooter/footer.php');
+	require_once '../../view/headerFooter/footer.php';
 ?>

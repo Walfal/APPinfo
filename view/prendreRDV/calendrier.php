@@ -4,7 +4,8 @@ require_once '../headerFooter/header.php';
 if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
 endif;
-?><link rel="stylesheet" href="calendrier.css">
+?>
+<link rel="stylesheet" href="calendrier.css">
 <br><br>
 <?php
 

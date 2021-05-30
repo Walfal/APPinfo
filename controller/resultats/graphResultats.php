@@ -1,10 +1,10 @@
 <?php // content="text/plain; charset=utf-8"
 
 session_start();
-require_once('../../jpgraph/src/jpgraph.php');
-require_once('../../jpgraph/src/jpgraph_line.php');
-require_once('../../jpgraph/src/jpgraph_bar.php');
-require_once('../../model/BDD/connexionBDD.php');
+require_once '../../jpgraph/src/jpgraph.php';
+require_once '../../jpgraph/src/jpgraph_line.php';
+require_once '../../jpgraph/src/jpgraph_bar.php';
+require_once '../../model/BDD/connexionBDD.php';
 
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 $req = query($BDD, "SELECT debut, resultat, idCapteur FROM Test NATURAL JOIN PriseRDV WHERE matricule = ? AND idCapteur = ? ORDER BY debut", [$matricule, 0]);
@@ -56,9 +56,6 @@ $graph->SetScale('textlin',20,120);
 $graph->yaxis->SetColor('blue','blue');
 
 
-
-
-
 $graph->xgrid->Show();
 $graph->xgrid->SetLineStyle("solid");
 $graph->xaxis->SetTickLabels($dates);
@@ -69,7 +66,6 @@ $p1 = new LinePlot($datay1);
 $graph->Add($p1);
 $p1->SetColor("#6495ED");
 $p1->SetLegend('Cardiaque');
-
 
 
 // Create the second line
@@ -85,26 +81,5 @@ $p2->SetLegend('Température');
 $graph->legend->SetFrameWeight(1);
 
 // Output line
-//$graph->Stroke();
-
-
-
-
-$img = $graph->Stroke(_IMG_HANDLER);
-ob_start();
-imagepng($img);
-$imageData = ob_get_contents();
-ob_end_clean();
-
-/*
-$gdImgHandler = $graph->Stroke(_IMG_HANDLER);
-
-$graph->img->SetImgFormat('png');
-$filename = "../../view/resultats/resultatsCentre1.png";
-$graph->img->Stream($filename);
-#$graph->Stroke('/tmp/myimage.png');
- 
-// Send it back to browser
-$graph->img->Headers();
-$graph->img->Stream();*/
+$graph->Stroke();
 ?>

@@ -11,10 +11,10 @@
 	background-repeat: no-repeat;
 }
 
-.langue{
+.langue {
 	background: #3a738f;
 	border-style: none;
-	color : #fff;
+	color: #fff;
 	font-size: 16px;
 	padding: 1em;
 }
@@ -46,7 +46,7 @@
 	z-index: 1;
 }
 
-.button-1:hover {
+/*.button-1:hover {
 	background: #5ea2c4;
 	cursor: pointer;
 }
@@ -69,7 +69,7 @@
 	right: 0;
 	opacity: 1;
 	z-index: -1;
-}
+}*/
 /* ------------------------------------------PRESENTATION --------------------------------------------------*/
 
 #presentation p {
@@ -101,12 +101,12 @@
 	text-transform: uppercase;
 	font-size: 40px;
 }
-.engagements{
+.engagements {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 }
-.engagement{
+.engagement {
 	margin: 5%;
 	margin-top: 2%;
 	width: 20%;
@@ -128,7 +128,6 @@
 	line-height: 20px;
 	color: dimgray;
 }
-
 
 /* ------------------------------------POSSIBILITIES ---------------------------------------*/
 #possibilities {
@@ -180,7 +179,7 @@
 	background: #5ea2c4;
 	cursor: pointer;
 }
-.button-2:before{
+.button-2:before {
 	transition: 0.5s all ease;
 	position: absolute;
 	top: 0;
@@ -188,12 +187,12 @@
 	right: 50%;
 	bottom: 0;
 	opacity: 0;
-	content:"";
+	content: "";
 	border-radius: 10px;
 	background-color: dimgray;
 }
 
-.button-2:hover:before{
+.button-2:hover:before {
 	transition: 0.5s all ease;
 	left: 0;
 	right: 0;
@@ -247,7 +246,7 @@
 	background: #5ea2c4;
 	cursor: pointer;
 }
-.button-3:before{
+.button-3:before {
 	transition: 0.5s all ease;
 	position: absolute;
 	top: 0;
@@ -255,12 +254,12 @@
 	right: 50%;
 	bottom: 0;
 	opacity: 0;
-	content:"";
+	content: "";
 	border-radius: 10px;
 	background-color: dimgray;
 }
 
-.button-3:hover:before{
+.button-3:hover:before {
 	transition: 0.5s all ease;
 	left: 0;
 	right: 0;

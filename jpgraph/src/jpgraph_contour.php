@@ -8,7 +8,7 @@
 // Copyright (c) Asial Corporation. All rights reserved.
 //========================================================================
 */
-require_once('jpgraph_meshinterpolate.inc.php');
+require_once 'jpgraph_meshinterpolate.inc.php';
 define('HORIZ_EDGE',0);
 define('VERT_EDGE',1);
 
