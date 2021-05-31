@@ -52,18 +52,18 @@ if(isset($_POST['submit'])){
             <label for="theme"><?= $theme ?></label>
                     
             <input type="text"  id="theme" name="theme" list="themes">
-            <!-- <datalist id="themes">
+             <datalist id="themes">
                 <select name="theme">
                     <option selected value="0"> - </option>
                     <option selected value="1"> k </option>
-                    <?php /*
+                    <?php 
                         $statement =  recuperationTheme($BDD, $FAQTrad);
                         foreach($statement as $valeur){
                             echo '<option value="' . $valeur['theme'] . '"></option>';
-                        }*/
+                        }
                     ?>
                 </select>
-            </datalist> -->
+            </datalist> 
         </div>
         <div class="form-group">
             <label for="question"><?= $question ?> :</label>
