@@ -86,7 +86,7 @@ if($_SESSION['matricule'] < 20):?>
         </div>
     </div>
     <div class="contenu2">
-<div class="bienvenue">
+        <div class="bienvenue">
             <div class="content">
                 <h1><?= $bienvenue?> <?= $personne['prenom'] . ' ' . $personne['nom'] ?></h1> <br>
                 <p><?= $commentaire?>

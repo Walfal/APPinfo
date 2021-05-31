@@ -329,7 +329,7 @@ require '../../controller/traduction/profil/modifProfil.php';
 			</div>
 			<div class="retour">
 				<?php if (isset($_GET['id'])): ?>
-				<a href="../../view/profil/profilPatients.php" class="retour">Retour</a>
+				<a href="../../view/profil/profilPatients.php" class="retour"><?= $retour ?></a>
 				<?php else: ?>
 				<a href="../../view/profil/compte.php" class="retour"><?= $retour ?></a>
 				<?php endif ?>

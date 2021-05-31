@@ -1,5 +1,4 @@
 <?php 
-var_dump($_POST);
 $title = 'Ajouter un RDV';
 require '../headerFooter/header.php'; 
 require_once '../../model/BDD/connexionBDD.php';

@@ -18,7 +18,7 @@ if ($_SESSION['langue'] === 'en'){
 	$CodePostal ='Postal Code :';
 	$poids ='Weight (in Kg) :';
 	$taille ='Size (in cm) :';
-	$mdpAct ='Current password :';
+	$mdpAct ='Current password* :';
 	$mdpNou ='New password :';
 	$comfirm ='Comfirm new password :';
 	$modifier ='Modify';
@@ -51,7 +51,7 @@ else{
 	$CodePostal = 'Code Postal :';
 	$poids ='Poids (en Kg) :';
 	$taille ='Taille (en cm) :';
-	$mdpAct ='Mot de passe actuel :';
+	$mdpAct ='Mot de passe actuel* :';
 	$mdpNou ='Nouveau mot de passe :';
 	$comfirm ='Comfirmer le nouveau mot de passe :';
 	$modifier ='Modifier';
