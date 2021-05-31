@@ -115,6 +115,7 @@ h1 {
 }
 .service {
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 .service {
@@ -133,7 +134,7 @@ h1 {
 	}
 }
 
-@media screen and (max-width:754px) {
+@media screen and (max-width:860px) {
 	.nosservices{
 		width: 400px;
 	}
@@ -151,6 +152,10 @@ h1 {
 		height: 450px;
 		justify-content: space-around;
 		padding-bottom: 30%;
+		margin-top: 80px;
+	}
+	.citation{
+		height: 140px;
 	}
 }
 
@@ -172,5 +177,11 @@ h1 {
 		height: 450px;
 		justify-content: space-around;
 		padding-bottom: 30%;
+		margin-top: 80px;
+	}
+}
+@media all and (max-device-width:480px){
+	.intro{
+		margin-top: 70px;
 	}
 }

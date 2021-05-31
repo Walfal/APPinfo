@@ -135,8 +135,10 @@ if($_SESSION['matricule'] < 20):?>
     <div class="contenu2">
         
     <div class="bienvenue">
+        <div class="content">
             <h1> <?= $bienvenue?> <?= $personne['prenom'] . ' ' . $personne['nom'] ?></h1>
             <p><?= $commentairePatient?></p>
+            </div>
         </div>
         <div class="boutons">
         <a href="../prendreRDV/calendrier.php">

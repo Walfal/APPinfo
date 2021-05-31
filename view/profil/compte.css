@@ -32,8 +32,8 @@
 .contenu {
 	display: flex;
 	position: relative;
-	margin: 200px auto;
-	margin-bottom: 60px;
+	margin: 100px auto;
+	margin-bottom: 360px;
 	height: 100%;
 	justify-content: center;
 	align-items: center;
@@ -173,9 +173,40 @@
 		box-shadow: 0 0 0;
 		width: 100%;
 		padding: 0;
-		margin-bottom: 350px;
+		margin-bottom: 630px;
 	}
 	.bienvenue {
 		margin-top: 30px;
+	}
+	.bienvenue p{
+		margin-right: 20px;
+	}
+}
+@media all and (max-device-width:480px){
+	.contenu1{
+		margin-top: 20px;
+	}
+	.identite p {
+		font-size: 25px;
+	}
+	.deconnexion{
+		font-size: 25px;
+	}
+	.content h1{
+		font-size: 40px;
+	}
+	.content p{
+		font-size: 30px;
+	}
+	.case{
+		width: 200px;
+		height: 170px;
+	}
+	.case p{
+		font-size: 25px;
+	}
+	.image{
+		width: 80px;
+		height: 80px;
 	}
 }

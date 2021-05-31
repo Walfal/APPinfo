@@ -43,23 +43,25 @@ endif;
 	</div>
 </div>
 <table class="resultat">
+<thead>
 	<tr>
 		<th><?= $test1 ?></th>
 		<th><?= $resultats ?></th>
 		<th><?= $date ?></th>
 		<!-- <th>Trame</th> -->
 		<th><?= $nom1 ?></th>
+		</thead>
 	</tr>
 	<?php foreach($tests as $test): ?>
 		<tr>
-		<td><?= $test['nom'];?></td>
-		<td><?= $test['resultat'];?></td>
-		<td>
+		<td data-label="Type de test :"><?= $test['nom'];?></td>
+		<td data-label="Résultat :"><?= $test['resultat'];?></td>
+		<td data-label="Date :">
 		<?php 
 			setlocale(LC_TIME, 'fr_FR.utf-8','fra');
 			$date = new DateTime($test['debut']);
 			echo (strftime("%A %e %B %Y %k:%M", date_timestamp_get($date)));?></td>
-		<td><?= $nom ?></td>
+		<td data-label="Nom du patient :"><?= $nom ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>

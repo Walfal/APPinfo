@@ -31,7 +31,7 @@
 }
 
 .button-1 {
-	width: 190px;
+	width: 220px;
 	height: 50px;
 	display: block;
 	background: #3a738f;
@@ -230,7 +230,7 @@
 }
 
 .button-3 {
-	width: 150px; /*changement ici */
+	width: 160px; /*changement ici */
 	display: block;
 	margin: 0 auto;
 	background: #3a738f;
