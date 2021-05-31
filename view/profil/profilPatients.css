@@ -221,3 +221,34 @@ td a:hover{
 		margin-bottom: 370px;
 	}
 }
+@media all and (max-device-width:480px){
+	.table td:before {
+		font-size: 20px;
+		float: left;
+	}
+	td a{
+		font-size: 20px;
+		padding: 15px;
+	}
+	td a:first-child{
+		margin-left: 90px;
+	}
+	.row h1{
+		font-size: 45px;
+	}
+	.row a{
+		font-size: 30px;
+	}
+	.banniere{
+		margin-top: 70px;
+	}
+	.content h2{
+		font-size: 50px;
+	}
+	img{
+		width: 58px;
+	}
+	input[type="text"]{
+		font-size: 20px;
+	}
+}

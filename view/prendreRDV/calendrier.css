@@ -178,6 +178,7 @@
 	background-color: #5ea2c4;
 	color: white;
 	font-size: 25px;
+	height: 150px;
 }
 
 h1 {
@@ -191,6 +192,7 @@ h1 {
 	border-radius: 10px;
 	border-style: none;
 	text-decoration: none;
+	margin-right: 15px;
 }
 
 .flecheG {
@@ -227,4 +229,9 @@ h1 {
 
 table {
 	border-collapse: collapse;
+}
+@media all and (max-device-width: 480px){
+    .titre {
+        margin-top: 20px;
+    }
 }

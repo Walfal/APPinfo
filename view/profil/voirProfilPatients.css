@@ -1,5 +1,7 @@
 .contenu {
-	width: 390px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
 	margin-top: 80px;
 	height: 100%;
 	background: white;
@@ -17,15 +19,13 @@
 	width: 400px;
 	margin-top: 30px;
 	margin-bottom: 30px;
-	text-align: center;
+	margin-left: 150px;
 }
-
 .form-group {
 	display: flex;
 	list-style: none;
 	padding-bottom: 5%;
 	color: #5ea2c4;
-	justify-content: center;
 }
 
 .champ {
@@ -45,18 +45,35 @@ label {
 	font-weight: bold;
 	font-size: large;
 }
-
+.espacement {
+	padding-left: 50px;
+}
+.principal {
+	justify-content: center;
+}
 @media screen and (max-width: 730px) {
-	.principal {
-		display: inline-block;
-		flex-wrap: wrap;
-	}
 	.contenu {
+		width: auto;
+		margin-top: 70px;
+	}
+	form {
+		text-align: center;
+	}
+	.form-group {
+		flex-direction: column;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.espacement {
+		padding-left: 0%;
+	}
+	.textSize {
 		margin-left: 0px;
 	}
-	.droite {
-		margin-bottom: 170px;
-	}
+}
+.title2 {
+	text-align: center;
+	margin-bottom: 280px;
 }
 
 .titre {
@@ -89,9 +106,8 @@ label {
 	flex-direction: column;
 	align-items: center;
 }
-
-.title {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+@media all and (max-device-width: 480px) {
+	.contenu {
+		margin-top: 120px;
+	}
 }
