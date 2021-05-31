@@ -98,6 +98,7 @@ label {
 	-webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
+	font-size: 20px;
 }
 .modify button:hover{
 	color: white;
@@ -115,4 +116,15 @@ label {
 .retour a:hover{
 	color: white;
 	background-color: #5ea2c4;
+}
+@media all and (max-device-width:480px){
+	.banniere{
+		margin-top: 70px;
+	}
+	.content h2 {
+		font-size: 50px;
+	}
+	.imgProfil{
+		width: 130%;
+	}
 }

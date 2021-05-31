@@ -10,6 +10,7 @@ require_once '../../model/BDD/connexionBDD.php';
 require_once '../../model/FAQ/modelFaq.php';
 require_once '../../controller/traduction/FAQ/gererFAQ.php';
 require_once '../../controller/fonctions.php';
+require '../../controller/traduction/FAQ/FAQ.php';
 
 if(isset($_GET['id'])){
     $valeur = recuperationUneDonnee($BDD, $FAQTrad, 'idFAQ', $_GET['id']);
