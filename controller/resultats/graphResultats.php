@@ -20,20 +20,12 @@ foreach($frequenceCardiaque as $test){
     $resultatCardio[] = $test["resultat"];
 }
 
-
 foreach($temperature as $test){
-    //$date = new DateTime($test['debut']);
-    //$dates[] = $date->format("d-m-Y");
     $resultatTemperature[] = $test["resultat"];
 }
 
-
-$datay1 = $resultatCardio;
-$datay2 = $resultatTemperature;
-
-
 // Setup the graph
-$graph = new Graph(400,250);
+$graph = new Graph(700, 400);
 $graph->SetScale("textlin");
 
 $theme_class = new UniversalTheme;
@@ -43,7 +35,7 @@ $graph->img->SetAntiAliasing(false);
 $graph->title->Set('Température corporelle et fréquence cardiaque');
 $graph->SetBox(false);
 
-$graph->SetMargin(40,20,36,63);
+$graph->SetMargin(50, 50, 50, 100);
 
 $graph->img->SetAntiAliasing();
 
@@ -62,7 +54,7 @@ $graph->xaxis->SetTickLabels($dates);
 $graph->xgrid->SetColor('#E3E3E3');
 
 // Create the first line
-$p1 = new LinePlot($datay1);
+$p1 = new LinePlot($resultatCardio);
 $graph->Add($p1);
 $p1->SetColor("#6495ED");
 $p1->SetLegend('Cardiaque');
@@ -70,7 +62,7 @@ $p1->SetLegend('Cardiaque');
 
 // Create the second line
 $graph->SetYScale(0,'lin');
-$p2 = new LinePlot($datay2);
+$p2 = new LinePlot($resultatTemperature);
 $graph->AddY(0,$p2);
 $graph->ynaxis[0]->SetColor('red');
 $graph->ynaxis[0]->scale->SetAutoMax(30);

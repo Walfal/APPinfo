@@ -79,7 +79,7 @@ h1 {
 	font-size: 25px;
 	color: #3a738f;
 }
-h6{
+h6 {
 	font-size: 30px;
 }
 .milieu {
@@ -109,8 +109,8 @@ h6{
 }
 
 .resultat {
+	margin-top: 3%;
 	display: flex;
-	height: 300px;
 	flex-direction: column;
 	justify-content: space-around;
 	align-content: center;
@@ -144,9 +144,8 @@ h6{
 .retour:hover {
 	border: black solid;
 }
-@media all and (max-device-width:480px){
-	.introDiv{
+@media all and (max-device-width: 480px) {
+	.introDiv {
 		top: 220px;
 	}
-	
 }
