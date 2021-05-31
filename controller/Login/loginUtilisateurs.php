@@ -25,3 +25,4 @@ if(est_connecte()){//faire la distinction ici entre l 'admin et l'utilisateur
     header('Location: ../profil/compte.php');
     exit();
 }
+
