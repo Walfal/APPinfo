@@ -94,8 +94,9 @@ if(!empty($_POST)) {
         </div>
         <div class="form-group">
             <li><label for="Motdepasse"><?= $mdp1 ?></label><br>
-            <input type="password"class="champ" id=Motdepasse name="motDePasse" value="<?= $motDePasse; ?>"required></li>
+            <input type="password" class="champ" id=MotDePasse name="motDePasse" value="<?= $motDePasse; ?>"required></li>
         </div>
+        <label class="validMdp" id="invalide"></label>
         <div class="form-group">
             <li><label for="Poids"><?= $poids1 ?></label><br>
             <input type="text"  class="champ" id=Poids name="poids" value=" <?= $poids; ?>" required></li>
@@ -125,5 +126,37 @@ if(!empty($_POST)) {
     </div>
 </form>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#MotDePasse").keyup(function(){
+		var motDePasse = this.value;
+		var invalide = document.getElementById("invalide");
+		invalide.style.color = "red";
+
+		if (motDePasse.length < 8){
+			invalide.innerHTML = "<?= $errLongueur ?>";
+			this.focus();
+		}
+		/*if (!motDepasse.match(//)){  //`~!@#$%^&*()_+-=[]\{}|;’:”,./<>?£ ///^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8})$/
+			invalide.innerHTML ="Veuilliez entrer un mot de passe contenant un caractère spécial";
+			invalide.style.color = "red";
+		}*/
+		else if (!motDePasse.match(/[1-9]/)){
+			invalide.innerHTML = "<?= $errChiffre ?>";
+			this.focus();
+		}
+		else if (!motDePasse.match(/[A-Z]/)){
+			invalide.innerHTML = "<?= $errMaj ?>";
+			this.focus();
+		}
+		else{
+			invalide.innerHTML ="";
+		}
+	})
+})
+
+</script>
 
 <?php require_once '../headerFooter/footer.php';?>

@@ -5,7 +5,7 @@
 
 //verification du mot de passe
 function verifierMotDePasse($mail, $password, $result){
-    if(sizeof($result) > 0){
+    if(isset($result) && sizeof($result) > 0){
         //cas où le mot de passe n'est pas crypté   
         /*if($password === $result["password"]){
             $_SESSION['mail'] = $result["mail"];

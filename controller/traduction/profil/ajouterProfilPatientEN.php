@@ -24,6 +24,9 @@ if ($_SESSION['langue'] === 'en'){
 	$medecin1 = 'Doctor* :';
 	$ajouter2 ='+ Add';
 	$retour1 ='Back';
+	$errLongueur = 'Please enter a password with at least 8 characters';
+	$errChiffre = 'Please enter a password with at least a number';
+	$errMaj = 'Please enter a password with at least an uppercase character';
 }
 }
 else{
@@ -48,9 +51,8 @@ else{
 	$medecin1 = 'Médecin* :';
 	$ajouter2 ='+ Ajouter';
 	$retour1 ='Retour';
-
-
-
+	$errLongueur = 'Veuilliez entrer un mot de passe plus long';
+	$errChiffre = 'Veuilliez entrer un mot de passe contenant au moins un chiffre';
+	$errMaj = 'Veuilliez entrer un mot de passe contenant au moins une majuscule';
 }
-
 ?>

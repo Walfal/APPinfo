@@ -67,7 +67,8 @@ nav .links a {
 	text-decoration: none;
 }
 
-.links li a:hover {
+.links li a:hover,
+.links li button:hover {
 	color: #97a5aa;
 	transition: all 0.3s ease 0s;
 }
@@ -133,12 +134,6 @@ nav > ul li:hover .sous {
 	float: none;
 	width: 100%;
 	text-align: center;
-}
-
-.sous button {
-	padding-top: 0;
-	margin-top: 0;
-	border-bottom: none;
 }
 
 @media screen and (max-width: 895px) {

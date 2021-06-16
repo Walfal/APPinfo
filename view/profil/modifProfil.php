@@ -323,6 +323,7 @@ require '../../controller/traduction/profil/modifProfil.php';
 			<li class="espacement"><label for ="password2bis"><?= $comfirm ?> </label><br>
 			<input class="champ" type="password" name ="password2bis" id="password2bis"></input></li>
 		</div> 	
+		<label class="validMdp" id="invalide"></label>
 		<div class="actions">
 			<div class="modify">
 				<button type="submit"><?= $modifier ?></button>
@@ -337,4 +338,52 @@ require '../../controller/traduction/profil/modifProfil.php';
     	</div>	 			
 	</div>
 </form>   
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#password2").keyup(function(){
+		var motDePasse = this.value;
+		var invalide = document.getElementById("invalide");
+		invalide.style.color = "red";
+		if (motDePasse.length < 8){
+			invalide.innerHTML = "<?= $errLongueur ?>";
+			document.getElementById("password2").focus();
+		}
+		/*if (!motDepasse.match(//)){  //`~!@#$%^&*()_+-=[]\{}|;’:”,./<>?£ ///^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8})$/
+			invalide.innerHTML ="Veuilliez entrer un mot de passe contenant un caractère spécial";
+			invalide.style.color = "red";
+		}*/
+		else if (!motDePasse.match(/[1-9]/)){
+			invalide.innerHTML = "<?= $errChiffre ?>";
+			document.getElementById("password2").focus();
+		}
+		else if (!motDePasse.match(/[A-Z]/)){
+			invalide.innerHTML = "<?= $errMaj ?>";
+			document.getElementById("password2").focus();
+		}
+		else{
+			invalide.innerHTML = "";
+			invalide.style.color = "green";
+		}
+	})
+
+
+	$("#password2bis").keyup(function(){
+		var motDePasse2 = document.getElementById("password2").value;
+		var motDePasse2bis = this;
+		var invalide = document.getElementById("invalide");
+		invalide.style.color = "red";
+
+		if(motDePasse2 != motDePasse2bis.value){
+			invalide.innerHTML = "<?= $nonIdentiques ?>";
+			document.getElementById("password2bis").focus();
+		}
+		else{
+			invalide.innerHTML ="";
+		}
+	})
+})
+</script>
+
 <?php require_once '../headerFooter/footer.php'; ?>

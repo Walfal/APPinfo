@@ -27,7 +27,11 @@ if ($_SESSION['langue'] === 'en'){
 	$role='Role :';
 	$medecin ='Doctor :';
 	$test ='Last test(s) taken';
-	$NDL ='At Notre-Dame de Lorette : '; 
+	$NDL ='At Notre-Dame de Lorette : ';
+	$errLongueur = 'Please enter a password with at least 8 characters';
+	$errChiffre = 'Please enter a password with at least a number';
+	$errMaj = 'Please enter a password with at least an uppercase character';
+	$nonIdentiques = 'The two passwords are not identical';
 }
 
 }
@@ -61,5 +65,9 @@ else{
 	$medecin ='Médecin :';
 	$test ='Dernier(s) test(s) passé(s)';
 	$NDL ='A Notre-Dame de Lorette : ';
+	$errLongueur = 'Veuilliez entrer un mot de passe plus long';
+	$errChiffre = 'Veuilliez entrer un mot de passe contenant au moins un chiffre';
+	$errMaj = 'Veuilliez entrer un mot de passe contenant au moins une majuscule';
+	$nonIdentiques = 'Les deux mots de passes ne sont pas identiques';
 }
 ?>

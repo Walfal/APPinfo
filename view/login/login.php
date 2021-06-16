@@ -25,8 +25,7 @@ require_once '../../controller/Login/loginUtilisateurs.php';
 						<input type="text" name="mail" id="mail" placeholder="<?= $mail1 ?>" />
 					</div>
 					<div class="textArea">
-						<input type="password" name="password" oninput="verifmdp()" id="password" placeholder="<?= $mdp ?>"/><br>
-						<label class="validMdp" id="invalide"></label>
+						<input type="password" name="password" id="password" placeholder="<?= $mdp ?>"/><br>
 					</div>
 				</div>
 			
@@ -38,37 +37,5 @@ require_once '../../controller/Login/loginUtilisateurs.php';
 		</form>
 	</div>
 </section>
-
-<script>
-	function verifmdp(){
-		var motDepasse = document.getElementById("password").value;
-		if (motDepasse.length < 8){
-			document.getElementById("invalide").innerHTML ="Veuilliez entrer un mot de passe plus long";
-			document.getElementById("invalide").style.color = "red";
-			motDepasse.focus();
-		
-		}
-		/*if (!motDepasse.match(//)){  //`~!@#$%^&*()_+-=[]\{}|;’:”,./<>?£ ///^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8})$/
-			document.getElementById("invalide").innerHTML ="Veuilliez entrer un mot de passe contenant un caractère spécial";
-			document.getElementById("invalide").style.color = "red";
-		}*/
-		if (!motDepasse.match(/[1-9]/)){
-			document.getElementById("invalide").innerHTML ="Veuilliez entrer un mot de passe contenant au moins un chiffre";
-			document.getElementById("invalide").style.color = "red";
-			motDepasse.focus();
-		}
-		if (!motDepasse.match(/[A-Z]/)){
-			document.getElementById("invalide").innerHTML ="Veuilliez entrer un mot de passe contenant au moins une majuscule";
-			document.getElementById("invalide").style.color = "red";
-			motDepasse.focus();
-		}
-	else{
-		document.getElementById("invalide").innerHTML ="Mot de passe valide";
-		document.getElementById("invalide").style.color = "green";
-	}
-	}
-
-</script>
-
 
 <?php require_once '../headerFooter/footer.php'; ?>
