@@ -1,9 +1,13 @@
 <?php
 $title = "Mes résultats";
-require '../../controller/traduction/resultats/resultats.php';
-require_once('../../view/headerFooter/header.php');
-include_once('../../model/BDD/connexionBDD.php');
-//include('../../model/envoieTest.php');
+require_once '../../view/headerFooter/header.php';
+require_once '../../model/BDD/connexionBDD.php';
+require_once '../../controller/traduction/resultats/resultats.php';
+
+if(!isset($_SESSION['matricule'])):
+	header('Location: ../login/login.php');
+endif;
+
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 $req = query($BDD, "SELECT debut, resultat, nom FROM PriseRDV NATURAL JOIN (Test NATURAL JOIN Capteur) WHERE matricule = ? ORDER BY debut", [$matricule]);
 $tests = $req->fetchAll();
@@ -43,26 +47,28 @@ endif;
 	</div>
 </div>
 <table class="resultat">
+<thead>
 	<tr>
 		<th><?= $test1 ?></th>
 		<th><?= $resultats ?></th>
 		<th><?= $date ?></th>
 		<!-- <th>Trame</th> -->
 		<th><?= $nom1 ?></th>
+		</thead>
 	</tr>
 	<?php foreach($tests as $test): ?>
 		<tr>
-		<td><?= $test['nom'];?></td>
-		<td><?= $test['resultat'];?></td>
-		<td>
+		<td data-label="Type de test :"><?= $test['nom'];?></td>
+		<td data-label="Résultat :"><?= $test['resultat'];?></td>
+		<td data-label="Date :">
 		<?php 
 			setlocale(LC_TIME, 'fr_FR.utf-8','fra');
 			$date = new DateTime($test['debut']);
 			echo (strftime("%A %e %B %Y %k:%M", date_timestamp_get($date)));?></td>
-		<td><?= $nom ?></td>
+		<td data-label="Nom du patient :"><?= $nom ?></td>
 		</tr>
 	<?php endforeach ?>
 </table>
 <?php
-	require_once('../../view/headerFooter/footer.php');
+	require_once '../../view/headerFooter/footer.php';
 ?>

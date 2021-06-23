@@ -30,11 +30,11 @@ if(isset($_POST['nom'])) {
     $photo        = 0;
 
     if(!empty(checkInput($_POST['password2'])) && checkInput($_POST['password2']) === checkInput($_POST['password2bis'])):
-    $password = checkInput($_POST['password2']);
+        $password = password_hash(checkInput($_POST['password2']), PASSWORD_DEFAULT);
     endif;
 
     $statement = $BDD -> prepare("UPDATE Personne SET matricule=?, nom=?, prenom=?, sexe=?, mail=?, `numero de securite social`=?, adresse=?, ville=?, `code postal`=?, telephone=?, poids=?, taille=?, `date de naissance`=?, password=?, role=?, photo=?, medecin=? WHERE matricule = ?");
-    $statement -> execute(array($matricule2, $nom, $prenom, $sexe, $mail, $num_ss, $adresse, $ville, $codePostal, $telephone, $poids, $taille, $naissance, $password, $role, $photo, $medecin, $matricule));
+    $statement -> execute([$matricule2, $nom, $prenom, $sexe, $mail, $num_ss, $adresse, $ville, $codePostal, $telephone, $poids, $taille, $naissance, $password, $role, $photo, $medecin, $matricule]);
     if (!isset($_POST['password'])):
         header("Location: ../../view/profil/profilPatients.php");
     else:

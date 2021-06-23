@@ -236,3 +236,42 @@ li:first-child .faq-category {
 	display: flex;
 	width: 25%;
 }
+@media all and (max-device-width:480px){
+	.banniere{
+		margin-top: 70px;
+	}
+	.faq-categories{
+		width: 40%;
+		margin-top: 50px;
+	}
+	li:first-child .faq-category {
+		margin-top: 50px;
+	}
+	.content h2{
+		font-size: 40px;
+	}
+	.content p{
+		font-size: 30px;
+	}
+	.ib-faq{
+		margin-top: 70px;
+	}
+	.ib-faq a {
+		font-size: 27px;
+	}
+	.contact p{
+		font-size: 30px;
+	}
+	.contact a{
+		font-size: 30px;
+	}
+	.faq-title {
+		margin-top: 5rem;
+	}
+	#supprimer{
+		font-size: 30px;
+	}
+	#modifier{
+		font-size: 30px;
+	}
+}

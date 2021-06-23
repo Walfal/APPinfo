@@ -3,7 +3,7 @@ $title = "Mes résultats - Centre sélectionné";
 
 require_once '../../view/headerFooter/header.php';
 require_once '../../model/BDD/connexionBDD.php';
-require '../../controller/traduction/resultats/resultats.php';
+require_once '../../controller/traduction/resultats/resultats.php';
 
 if(!isset($_SESSION['matricule'])):
     header('Location: ../login/login.php');
@@ -11,7 +11,6 @@ endif;
 
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 $patient = recuperationUneDonnee($BDD, 'Personne', 'matricule', $matricule);
-
 
 if(isset($_GET['id'])):
     $id = '?id=' . $_GET['id'];
@@ -53,7 +52,6 @@ endif;
             <div>
                 <h3></h3>
                 <div class="resultat">
-                    <img src="data:image/png;base64,<?php echo(base64_encode($imageData)); ?>"/>
                     <img src="../../controller/resultats/graphResultats.php<?= $id  ?>&dummy=\'.now()."/>
                 </div>
                 
@@ -67,7 +65,6 @@ endif;
                 <h3> </h3>
                 <div class="resultat">
                     <img  class="bar" src="../../controller/resultats/graphResultats2.php<?= $id ?>&dummy=\'.now().">
-                    <figcaption><?= $resultat ?></figcaption>
                 </div>
                 
                 <div class="detail">
@@ -83,5 +80,5 @@ endif;
     
 <?php
 
-require_once('../../view/headerFooter/footer.php');
+require_once '../../view/headerFooter/footer.php';
 ?>

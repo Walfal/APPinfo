@@ -1,10 +1,10 @@
 <?php // content="text/plain; charset=utf-8"
 
 session_start();
-require_once('../../jpgraph/src/jpgraph.php');
-require_once('../../jpgraph/src/jpgraph_line.php');
-require_once('../../jpgraph/src/jpgraph_bar.php');
-require_once('../../model/BDD/connexionBDD.php');
+require_once '../../jpgraph/src/jpgraph.php';
+require_once '../../jpgraph/src/jpgraph_line.php';
+require_once '../../jpgraph/src/jpgraph_bar.php';
+require_once '../../model/BDD/connexionBDD.php';
 
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
 $req = query($BDD, "SELECT debut, resultat, idCapteur FROM Test NATURAL JOIN PriseRDV WHERE matricule = ? AND idCapteur = ? ORDER BY debut", [$matricule, 0]);
@@ -20,20 +20,12 @@ foreach($frequenceCardiaque as $test){
     $resultatCardio[] = $test["resultat"];
 }
 
-
 foreach($temperature as $test){
-    //$date = new DateTime($test['debut']);
-    //$dates[] = $date->format("d-m-Y");
     $resultatTemperature[] = $test["resultat"];
 }
 
-
-$datay1 = $resultatCardio;
-$datay2 = $resultatTemperature;
-
-
 // Setup the graph
-$graph = new Graph(400,250);
+$graph = new Graph(700, 400);
 $graph->SetScale("textlin");
 
 $theme_class = new UniversalTheme;
@@ -43,7 +35,7 @@ $graph->img->SetAntiAliasing(false);
 $graph->title->Set('Température corporelle et fréquence cardiaque');
 $graph->SetBox(false);
 
-$graph->SetMargin(40,20,36,63);
+$graph->SetMargin(50, 50, 50, 100);
 
 $graph->img->SetAntiAliasing();
 
@@ -56,25 +48,21 @@ $graph->SetScale('textlin',20,120);
 $graph->yaxis->SetColor('blue','blue');
 
 
-
-
-
 $graph->xgrid->Show();
 $graph->xgrid->SetLineStyle("solid");
 $graph->xaxis->SetTickLabels($dates);
 $graph->xgrid->SetColor('#E3E3E3');
 
 // Create the first line
-$p1 = new LinePlot($datay1);
+$p1 = new LinePlot($resultatCardio);
 $graph->Add($p1);
 $p1->SetColor("#6495ED");
 $p1->SetLegend('Cardiaque');
 
 
-
 // Create the second line
 $graph->SetYScale(0,'lin');
-$p2 = new LinePlot($datay2);
+$p2 = new LinePlot($resultatTemperature);
 $graph->AddY(0,$p2);
 $graph->ynaxis[0]->SetColor('red');
 $graph->ynaxis[0]->scale->SetAutoMax(30);
@@ -85,26 +73,5 @@ $p2->SetLegend('Température');
 $graph->legend->SetFrameWeight(1);
 
 // Output line
-//$graph->Stroke();
-
-
-
-
-$img = $graph->Stroke(_IMG_HANDLER);
-ob_start();
-imagepng($img);
-$imageData = ob_get_contents();
-ob_end_clean();
-
-/*
-$gdImgHandler = $graph->Stroke(_IMG_HANDLER);
-
-$graph->img->SetImgFormat('png');
-$filename = "../../view/resultats/resultatsCentre1.png";
-$graph->img->Stream($filename);
-#$graph->Stroke('/tmp/myimage.png');
- 
-// Send it back to browser
-$graph->img->Headers();
-$graph->img->Stream();*/
+$graph->Stroke();
 ?>

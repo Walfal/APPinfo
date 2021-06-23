@@ -10,6 +10,9 @@ body {
 .title {
 	background: #5ea2c4;
 	display: flex;
+	height: 230px;
+	justify-content: center;
+	align-items: center;
 }
 .title h1 {
 	font-size: 50px;
@@ -61,6 +64,7 @@ centre {
 }
 .home {
 	width: 40px;
+	margin-left: 30px;
 }
 .getResults {
 	background: white;
@@ -70,6 +74,7 @@ centre {
 	padding-inline: 3vh;
 	text-decoration: none;
 	color: #3A738F;
+	text-align: center;
 }
 
 .getResults:hover{
@@ -113,7 +118,7 @@ td {
 .resultat tbody tr:last-of-type {
 	border-bottom: 2px solid #4f99be;
 }
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 880px) {
 	.resultat thead {
 		display: none;
 	}
@@ -121,7 +126,9 @@ td {
 	.resultat tr {
 		display: block;
 	}
-
+	.table thead {
+		display: none;
+	}
 	.resultat td {
 		display: block;
 		text-align: right;
@@ -134,11 +141,30 @@ td {
 	.resultat td:before {
 		content: attr(data-label);
 		float: left;
-		color: #5ea2c4;
 		font-weight: bold;
 	}
 
 	.resultat{
-		margin-bottom: 370px;
+		margin-bottom: 400px;
+	}
+}
+@media all and (max-device-width:480px){
+	.result{
+		width: 55%;
+	}
+	h2{
+		font-size: 30px;
+	}
+	.calendar{
+		width: 40px;
+	}
+	.home{
+		width: 70px;
+	}
+	th,td{
+		font-size: 25px;
+	}
+	.resultat{
+		margin-bottom: 420px;
 	}
 }

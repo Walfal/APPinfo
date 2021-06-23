@@ -65,7 +65,7 @@ input {
 	border-radius: 5px;
 	outline: none;
 	border: none;
-
+	font-size: 15px;
 	background-color: #eee;
 
 	padding: 12px 15px;
@@ -84,6 +84,7 @@ input {
 	cursor: pointer;
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
+	font-size: 20px;
 }
 
 .button:hover {

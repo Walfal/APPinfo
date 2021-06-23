@@ -1,10 +1,10 @@
 <?php // content="text/plain; charset=utf-8"
 
 session_start();
-require_once('../../jpgraph/src/jpgraph.php');
-require_once('../../jpgraph/src/jpgraph_line.php');
-require_once('../../jpgraph/src/jpgraph_bar.php');
-require_once('../../model/BDD/connexionBDD.php');
+require_once '../../jpgraph/src/jpgraph.php';
+require_once '../../jpgraph/src/jpgraph_line.php';
+require_once '../../jpgraph/src/jpgraph_bar.php';
+require_once '../../model/BDD/connexionBDD.php';
 
 
 $matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
@@ -34,7 +34,7 @@ $datay2 = $resultatLumiere;
 
 
 // Setup the graph
-$graph = new Graph(300,250);
+$graph = new Graph(700, 400);
 $graph->SetScale("textlin");
 
 $theme_class=new UniversalTheme;
@@ -44,7 +44,7 @@ $graph->img->SetAntiAliasing(false);
 $graph->title->Set('Temps de réaction');
 $graph->SetBox(false);
 
-$graph->SetMargin(40,20,36,63);
+$graph->SetMargin(50, 50, 50, 100);
 
 $graph->img->SetAntiAliasing();
 

@@ -5,24 +5,23 @@
 	flex-direction: column;
 	overflow: hidden;
 	margin-top: 50px;
+	text-align: center;
 }
 .section {
 	display: flex;
 	align-items: center;
+	text-align: center;
 	justify-content: space-around;
 	padding-top: 2.5%;
 	padding-bottom: 2.5%;
 	color: black;
 }
 .text {
-	width: 40%;
+	width: 50%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: justify;
-}
-.titre {
-	font-size: xx-large;
 }
 .mainPage p {
 	font-size: 20px;
@@ -30,17 +29,21 @@
 
 .img {
 	align-self: center;
-	width: 80%;
+	width: 70%;
 	padding-inline: 10%;
 }
 .section1 {
 	background-color: white;
 }
-
+.section1 .text{
+	margin-left: 60px;
+}
 .section2 {
 	background-color: #5ea2c4;
 }
-
+.section2 .text{
+	margin-right: 60px;
+}
 .section3 {
 	flex-direction: column;
 	background: white;
@@ -85,6 +88,12 @@
 	.qualite {
 		font-size: 20px;
 		width: 60%;
+	}
+	.section1 .text{
+		margin-left: 0px;
+	}
+	.section2 .text{
+		margin-right: 0px;
 	}
 }
 

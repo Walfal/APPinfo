@@ -62,7 +62,7 @@ function recuperationMessages($BDD, $idConversation){
 }
 
 function recuperationConversationsAdmin($BDD){
-	$req = $BDD->prepare("SELECT * FROM Conversation ORDER BY idConversation");
+	$req = $BDD->prepare("SELECT * FROM Conversation ORDER BY idConversation DESC");
 	$req -> execute();
 	return $req->fetchAll();
 }

@@ -62,7 +62,7 @@
     border: none;
     padding: 9px;
     border-radius: 7px;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .retour a{
@@ -73,4 +73,12 @@
     background: #5ea2c4;
     color: white;
     text-transform: uppercase;
+}
+@media all and (max-device-width:480px){
+	.banniere{
+		margin-top: 70px;
+	}
+    .content h2 {
+        font-size: 50px;
+    }
 }

@@ -106,3 +106,14 @@ label{
 		padding-left: 0;
 	}
 }
+@media all and (max-device-width:480px){
+    .banniere{
+        margin-top: 70px;
+    }
+    .banniere h2{
+        font-size: 50px;
+    }
+    img{
+        width: 58px;
+    }
+}

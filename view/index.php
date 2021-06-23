@@ -11,7 +11,7 @@ if (isset($_POST['langue'])){
 	$_SESSION['langue']= $_POST['langue'];
 	}
 }
-require '../controller/traduction/index.php';
+require_once '../controller/traduction/index.php';
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ require '../controller/traduction/index.php';
 	
 		<section id="main-image">
 			<h2 class="ml2"><?= $bienvenue ?></h2>
-			<a href="login/login.php" class="button-1">
+			<a href="login/login.php" id="button-1" class="button-1">
 			<?php if(isset($_SESSION['matricule'])): ?>
 				<?= $acces ?>
 			<?php else: ?>			
@@ -162,3 +162,14 @@ require '../controller/traduction/index.php';
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 <script src="titleEffect.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).mousemove(function(e) {
+	var bouton = document.getElementById("button-1");
+	var x = e.pageX - bouton.offsetLeft;
+  var y = e.pageY - bouton.offsetTop;
+  bg ="radial-gradient(circle at " + x + "px " + y + "px, #5ea2c4 0%, #3a738f 100%)";  
+	$(".button-1").css("background", bg);
+});
+</script>

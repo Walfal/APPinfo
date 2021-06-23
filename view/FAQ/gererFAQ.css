@@ -63,6 +63,7 @@
 #reponse{
      height: 300px;
      padding-top: 2px;
+     font-size: 20px;
 }
 .espacement{
     padding-left: 50px;
@@ -73,7 +74,12 @@ label{
     color: #5ea2c4;
     font-weight: bold;
     font-size: large;
+    font-size: 25px;
 }
+input[type="text"]{
+    height: 25px;
+    font-size: 20px;
+} 
 @media screen and (max-width: 755px){
     .contenu {
         width: 400px;
@@ -86,6 +92,22 @@ label{
         width: 400px;
         display: flex;
     }
+    .banniere{
+        margin-top: 70px;
+    }
+    .banniere h2{
+        font-size: 40px;
+    }
+    label{
+        font-size: 30px;
+    }
+    .contenu{
+        width: 700px;
+    }
+    input[type="text"]{
+        margin-bottom: 20px;
+        font-size: 30px;
+    } 
 }
 .actions{
     display: flex;
@@ -98,8 +120,8 @@ label{
     border: none;
     text-transform: uppercase;
     color: white;
-    font-size: 16px;
     background-color: rgb(224, 153, 46);
+    font-size: 20px;
 }
 
 .retour a{
