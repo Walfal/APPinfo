@@ -99,3 +99,17 @@ function insert($BDD, $sql, $data = array()){
 	$req = $BDD -> prepare($sql);
 	$req -> execute($data);
 }
+
+function updateResultats($BDD, $t, $o, $r, $c, $typeCapteur, $v, $resultat, $x, $year, $month, $day, $hour, $min, $sec){
+	$date = $year . "-" . $month . "-" . $day . " " . $hour . ":" . $min . ":" . $sec;
+	$resultat2 = hexdec($resultat);
+	$req = $BDD -> prepare("SELECT idRDV FROM PriseRDV WHERE debut <= ? AND ? <= fin");
+	$req -> execute([$date, $date]);
+	$rdv= $req -> fetch();
+	$idRDV = $rdv["idRDV"];
+	$req = $BDD -> prepare("UPDATE Test SET `resultat` = '$resultat2'  WHERE idRDV = ? AND idCapteur = ?");
+	$req -> execute([$idRDV, $typeCapteur]);
+	$req = $BDD -> prepare("SELECT * FROM Test WHERE idRDV = ?");
+	$req -> execute([$idRDV]);
+	$out= $req -> fetchAll();
+}

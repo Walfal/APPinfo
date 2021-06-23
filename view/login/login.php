@@ -48,7 +48,7 @@ require_once '../../controller/Login/loginUtilisateurs.php';
 			motDepasse.focus();
 		
 		}
-		/*if (!motDepasse.match(//)){  //`~!@#$%^&*()_+-=[]\{}|;’:”,./<>?£ ///^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8})$/
+		/*if (!motDepasse.match(//)){  //`~!@#$%^&*()_+-=[]\{}|;’:”,./<>?£ //
 			document.getElementById("invalide").innerHTML ="Veuilliez entrer un mot de passe contenant un caractère spécial";
 			document.getElementById("invalide").style.color = "red";
 		}*/
