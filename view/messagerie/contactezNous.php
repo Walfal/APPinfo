@@ -5,14 +5,14 @@ require_once '../../model/BDD/connexionBDD.php';
 require '../../controller/traduction/messagerie/contactezNous.php';
 ?><link href="contactezNous.css" rel="stylesheet" /><?php
 
-$matricule = (isset($_GET['id']) && $_SESSION['matricule'] < 20) ? $_GET['id'] : $_SESSION['matricule'];
+$matricule = isset($_GET['id']) && $_SESSION['matricule'] < 20 ? $_GET['id'] : $_SESSION['matricule'];
 
-$conv = recuperationUneDonnee($BDD,"Message", "matricule", $matricule);
-$idConversation = (isset($conv['idConversation'])) ? $conv['idConversation'] : null;
-$conv = recuperationUneDonnee($BDD, "Conversation", "idConversation", $idConversation);
+$conv           = recuperationUneDonnee($BDD,"Message", "matricule", $matricule);
+$idConversation = isset($conv['idConversation']) ? $conv['idConversation'] : null;
+$conv           = recuperationUneDonnee($BDD, "Conversation", "idConversation", $idConversation);
 
 $messages = recuperationMessages($BDD, $idConversation);
-$client = recuperationUneDonnee($BDD, "Personne", "matricule", $matricule);
+$client   = recuperationUneDonnee($BDD, "Personne", "matricule", $matricule);
 
 if(!isset($matricule)):
 	header('Location: ../login/login.php');
@@ -61,8 +61,8 @@ elseif($matricule > 19):
 	<?php endif;
 		elseif(isset($_GET['client'])):
 		$idConversation = $_GET['client'];
-		$conv = recuperationUneDonnee($BDD, "Conversation", "idConversation", $idConversation);
-		$messages = recuperationMessages($BDD, $idConversation);
+		$conv           = recuperationUneDonnee($BDD, "Conversation", "idConversation", $idConversation);
+		$messages       = recuperationMessages($BDD, $idConversation);
 		
 		$client = recuperationUneDonnee($BDD, "Personne", "matricule", $messages[0]['matricule']);
 		?>
@@ -143,37 +143,31 @@ elseif($matricule > 19):
 		$('#Envoyer').on("submit", function(e){
 			e.preventDefault()
 
-			var message  = document.getElementById('message').value
+			var message         = document.getElementById('message').value
 			var idConversation  = <?= $idConversation ?>;
-			var id = <?= $matricule ?>;
+			var id              = <?= $matricule ?>;
 			
 			document.getElementById('message').value = ''
 			if(message != ''){
 				$.ajax({
-					url : '../../model/Messagerie/envoyerMessage.php',
-					method : 'post',
+					url      : '../../model/Messagerie/envoyerMessage.php',
+					method   : 'post',
 					dataType : 'html',
-					data : {
-						idConversation: idConversation,
-						message: message,
-						id : id
+					data     : {
+						idConversation : idConversation,
+						message        : message,
+						id             : id
 					},
 					success : function(data){
 						$('#affMessage').append(data)
 					},
 					error : function(e, xhr, s){
 						let error = e.responsJSON;
-						if(e.status == 403 && typeof error !== 'undefined'){
-							alert('Erreur 403')
-						}else if(e.status == 404){
-							alert('Erreur 404')
-						}else if(e.status == 403){
-							alert('Erreur 403')
-						}else if(e.status == 401){
-							alert('Erreur 401')
-						}else{
-							alert('Erreur Ajax')
-						}
+						if(e.status == 403 && typeof error !== 'undefined') alert('Erreur 403')
+            else if(e.status == 404) alert('Erreur 404')
+            else if(e.status == 403) alert('Erreur 403')
+            else if(e.status == 401) alert('Erreur 401')
+            else alert('Erreur Ajax')
 					}
 				})
 			}

@@ -9,18 +9,18 @@ curl_setopt($ch, CURLOPT_HEADER, FALSE);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); 
 $data = curl_exec($ch); //$data contient les donnees brutes, sous forme d’une longue chaine de caracteres.
 curl_close($ch);
-echo "Raw Data:<br />";
-echo $data;
-echo "Combien de caractères ".strlen($data)." <br/>";
+//echo "Raw Data:<br />";
+//echo $data;
+//echo "Combien de caractères ".strlen($data)." <br/>";
 
 //-----------donnees sous forme de tableau
 //str_split permet de decouper la chaine de caracteres $data en portion de 33 caracteres.
 //Le resultat est un tableau: 1 ligne par trame
 $data_tab = str_split($data,33);
 $size=count($data_tab);
-echo "Combien de trames ".$size." <br/>";
+//echo "Combien de trames ".$size." <br/>";
 
-echo "Tabular Data:<br />";
+//echo "Tabular Data:<br />";
 for($i=0, $size=count($data_tab); $i<$size; $i++)
 {
 	//echo "Trame $i: $data_tab[$i]<br/>";
@@ -35,8 +35,8 @@ var_dump($trame);
 // decodage avec des substring
 $t = substr($trame,0,1);  // parameter (chain, starting point, length)
 $o = substr($trame,1,4); //
-echo $t."</br>";
-echo $o; 
+//echo $t."</br>";
+//echo $o; 
 // decodage avec sscanf
 list($t, $o, $r, $c, $typeCapteur, $v, $resultat, $x, $year, $month, $day, $hour, $min, $sec) = sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 echo("<br />$t,$o,$r,$c,$typeCapteur,$v,$resultat,$x,$year,$month,$day,$hour,$min,$sec<br />");
